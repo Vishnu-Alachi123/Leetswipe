@@ -1,0 +1,27 @@
+{
+  "name": "leetswipe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@playwright/test": "^1.55.0",
+    "dotenv": "^17.2.2",
+    "install": "^0.13.0",
+    "leetcode-query": "^2.0.1",
+    "mongodb": "^6.20.0",
+    "npx": "^10.2.2",
+    "playwright": "^1.55.0",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2"
+  },
+  "type": "module"
+}
