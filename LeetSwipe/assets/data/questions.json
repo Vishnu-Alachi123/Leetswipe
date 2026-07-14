@@ -1,0 +1,132 @@
+{
+  "questions": [
+    {
+      "leetQuestionId": 1,
+      "questionId": "1A",
+      "title": "Two Sum — why a hash map",
+      "topics": ["Hash Table", "Array"],
+      "difficulty": "Easy",
+      "question": "You need to find two numbers in an unsorted array that add up to a target. What data structure lets you do this in a single pass with O(n) time?",
+      "options": [
+        "A hash map from value to index",
+        "A sorted copy of the array",
+        "A min-heap of all values",
+        "A doubly linked list"
+      ],
+      "answer": 0,
+      "explanation": "As you scan, store each value's index in a hash map and check whether target - current has already been seen. Lookups are O(1), giving one pass and O(n) total."
+    },
+    {
+      "leetQuestionId": 20,
+      "questionId": "20A",
+      "title": "Valid Parentheses — the right structure",
+      "topics": ["Stack", "String"],
+      "difficulty": "Easy",
+      "question": "To check whether brackets like (), [], and {} are correctly matched and nested, which structure naturally models the 'most recently opened must close first' rule?",
+      "options": [
+        "A queue",
+        "A stack",
+        "A hash set",
+        "A binary tree"
+      ],
+      "answer": 1,
+      "explanation": "A stack is LIFO: push each opening bracket, and on a closing bracket pop and confirm it matches. An empty stack at the end means every bracket was balanced."
+    },
+    {
+      "leetQuestionId": 121,
+      "questionId": "121A",
+      "title": "Best Time to Buy and Sell Stock",
+      "topics": ["Array", "Dynamic Programming"],
+      "difficulty": "Easy",
+      "question": "Given daily prices, you may buy once and sell once later for maximum profit. What must you track while scanning left to right?",
+      "options": [
+        "The maximum price seen so far",
+        "The minimum price so far and the best profit so far",
+        "The average of all prices",
+        "The median price"
+      ],
+      "answer": 1,
+      "explanation": "Track the lowest price seen so far as a candidate buy day; at each day compute price - minSoFar and update the best profit. One pass, O(n) time and O(1) space."
+    },
+    {
+      "leetQuestionId": 217,
+      "questionId": "217A",
+      "title": "Contains Duplicate",
+      "topics": ["Array", "Hash Table"],
+      "difficulty": "Easy",
+      "question": "What is the most time-efficient way to determine if any value appears at least twice in an array?",
+      "options": [
+        "Compare every pair with nested loops",
+        "Sort the array, then compare neighbors",
+        "Insert into a hash set and check for a collision",
+        "Use binary search for each element"
+      ],
+      "answer": 2,
+      "explanation": "Adding elements to a hash set and stopping the moment an insert finds an existing value is O(n) time. Sorting works but is O(n log n); nested loops are O(n^2)."
+    },
+    {
+      "leetQuestionId": 53,
+      "questionId": "53A",
+      "title": "Maximum Subarray — Kadane's insight",
+      "topics": ["Array", "Dynamic Programming"],
+      "difficulty": "Medium",
+      "question": "Kadane's algorithm finds the maximum-sum contiguous subarray. At each element, what decision does it make?",
+      "options": [
+        "Whether to extend the current subarray or start fresh at this element",
+        "Whether to sort the remaining elements",
+        "Whether to remove the smallest element",
+        "Whether to split the array in half"
+      ],
+      "answer": 0,
+      "explanation": "current = max(num, current + num): either extend the running subarray or restart at the current element. Track the best current seen. This is O(n)."
+    },
+    {
+      "leetQuestionId": 704,
+      "questionId": "704A",
+      "title": "Binary Search — the precondition",
+      "topics": ["Binary Search", "Array"],
+      "difficulty": "Easy",
+      "question": "Binary search achieves O(log n) lookup, but only if which condition holds for the input array?",
+      "options": [
+        "It contains no duplicates",
+        "It is sorted",
+        "It has an even length",
+        "All values are positive"
+      ],
+      "answer": 1,
+      "explanation": "Binary search relies on order: comparing the middle element tells you which half to discard. Without a sorted array that guarantee breaks and you must use linear search."
+    },
+    {
+      "leetQuestionId": 70,
+      "questionId": "70A",
+      "title": "Climbing Stairs",
+      "topics": ["Dynamic Programming", "Math"],
+      "difficulty": "Easy",
+      "question": "You can climb 1 or 2 steps at a time. The number of distinct ways to reach step n follows which well-known sequence?",
+      "options": [
+        "Powers of two",
+        "The Fibonacci sequence",
+        "Triangular numbers",
+        "Prime numbers"
+      ],
+      "answer": 1,
+      "explanation": "ways(n) = ways(n-1) + ways(n-2), because the last move is either a 1-step or a 2-step. That recurrence is exactly Fibonacci, computable in O(n) time and O(1) space."
+    },
+    {
+      "leetQuestionId": 226,
+      "questionId": "226A",
+      "title": "Invert Binary Tree",
+      "topics": ["Tree", "Recursion"],
+      "difficulty": "Easy",
+      "question": "Inverting a binary tree means mirroring it. What is the cleanest recursive step at each node?",
+      "options": [
+        "Delete the node and rebuild it",
+        "Swap the node's left and right children, then recurse on both",
+        "Sort the children by value",
+        "Rotate the node to the root"
+      ],
+      "answer": 1,
+      "explanation": "Swap left and right, then recursively invert each subtree. The base case is a null node. Every node is visited once, so it is O(n)."
+    }
+  ]
+}

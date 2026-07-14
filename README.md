@@ -50,7 +50,35 @@ python generate.py --from-db --num 5
 
 `.env` (git-ignored) holds `OPENAI_API_KEY` and `MONGODB_KEY`.
 
+## Frontend (`LeetSwipe/`)
+
+An Expo / React Native app with a working swipe deck:
+
+- **Swipe tab** (`app/(tabs)/index.tsx`) — a card stack built on `Animated` +
+  `PanResponder` (no extra gesture deps). Swipe right / **Save** to keep a
+  question, swipe left / **Skip** to pass. Tap an option to check your answer;
+  the correct choice and the explanation are revealed inline. A running progress
+  and saved count are shown, and finishing the deck gives a summary of everything
+  you saved.
+- **About tab** (`app/(tabs)/explore.tsx`) — how it works and how to plug in live
+  questions.
+- **Data layer** (`api/get-questions.tsx`) — a React-Native-safe loader typed to
+  the backend's `schema.MCQ`. It bundles a sample deck (`assets/data/questions.json`)
+  so the app runs with zero setup, and will fetch from `EXPO_PUBLIC_QUESTIONS_URL`
+  when set (an HTTP endpoint returning `{ questions: MCQ[] }`). MongoDB is never
+  queried from the client — put it behind that endpoint.
+
+```bash
+cd LeetSwipe
+npm install
+npx expo start        # then press w for web, or scan the QR for a device
+npx tsc --noEmit      # typecheck
+```
+
 ## Status / next steps
 - ✅ Backend MCQ pipeline: working, validated, offline-testable, documented.
-- 🚧 Frontend: the Expo app is scaffolded; the swipe UI still needs to be wired to
-  the generated-questions collection (`api/get-questions.tsx` is a stub).
+- ✅ Frontend swipe UI: card deck, answer-checking, save/skip, saved summary,
+  bundled sample deck, typechecks clean.
+- 🚧 Next: a thin HTTP endpoint in front of the `GeneratedQuestionsCollection`
+  so the app can pull live questions, plus persisting saved questions across
+  sessions.
