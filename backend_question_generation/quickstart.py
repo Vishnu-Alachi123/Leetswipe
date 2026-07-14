@@ -99,12 +99,16 @@ def postQuestions(Questions: list[QuestionSchema]):
     db = client["LeetQuestionsDB"]
     collection = db["GeneratedQuestionsCollection"] # Changed to a valid collection name from the sample dataset
 
-    # Insert the document
+    # Upsert each document (idempotent on questionId to avoid duplicates)
     try:
         for question in Questions.questions:
-            question_dict = question.dict()
-            collection.insert_one(question_dict)
-        print("Questions inserted successfully.")
+            question_dict = question.model_dump()
+            key = question_dict.get("questionId")
+            if key:
+                collection.replace_one({"questionId": key}, question_dict, upsert=True)
+            else:
+                collection.insert_one(question_dict)
+        print(f"Upserted {len(Questions.questions)} questions successfully.")
 
     except Exception as e:
         print(f"An error occurred during insertion: {e}")
