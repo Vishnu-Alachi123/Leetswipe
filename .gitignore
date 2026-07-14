@@ -10,3 +10,8 @@ venv/
 *.env
 .env
 leetData.json
+
+# generated MCQ output
+generated_questions.json
+out.json
+backend_question_generation/generated_questions.json
