@@ -15,3 +15,6 @@ leetData.json
 generated_questions.json
 out.json
 backend_question_generation/generated_questions.json
+
+# Expo web build
+LeetSwipe/dist/
