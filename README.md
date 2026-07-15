@@ -5,10 +5,15 @@ interview questions. Swipe through auto-generated multiple-choice questions that
 teach the *reasoning* behind each problem, save the ones worth revisiting, and pull
 fresh questions on demand.
 
+**▶ Live web demo:** https://vishnu-alachi123.github.io/Leetswipe/ (works on mobile too)
+**📱 Run on your phone:** see [`LeetSwipe/MOBILE.md`](LeetSwipe/MOBILE.md) (Expo Go / EAS Build)
+
 ## Stack
-- **Frontend:** React Native / Expo (`LeetSwipe/`) — swipe UI (in progress)
+- **Frontend:** React Native / Expo (`LeetSwipe/`) — swipe UI, runs on iOS, Android, and web
 - **Backend:** Python MCQ-generation pipeline (`backend_question_generation/`)
 - **Data:** MongoDB Atlas; LeetCode question extraction (`leetcode_q_extractor.ts`)
+- **CI/CD:** GitHub Actions auto-builds the web export and deploys to GitHub Pages
+  on every push to `main` (`.github/workflows/deploy-web.yml`)
 
 ## Question generation (`backend_question_generation/`)
 

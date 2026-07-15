@@ -1,0 +1,54 @@
+name: Deploy LeetSwipe web
+
+# Builds the Expo web export and publishes it to the gh-pages branch,
+# which GitHub Pages serves at https://vishnu-alachi123.github.io/Leetswipe/
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'LeetSwipe/**'
+      - '.github/workflows/deploy-web.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: LeetSwipe
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: LeetSwipe/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Export web build
+        run: npx expo export --platform web
+
+      - name: Add Pages helpers (.nojekyll + SPA fallback)
+        run: |
+          touch dist/.nojekyll
+          cp dist/index.html dist/404.html
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./LeetSwipe/dist
+          publish_branch: gh-pages
+          force_orphan: true
