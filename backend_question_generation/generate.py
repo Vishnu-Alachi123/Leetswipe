@@ -24,6 +24,7 @@ import sys
 
 from schema import MCQ, MCQSet
 from prompts import SYSTEM_PROMPT, build_user_prompt
+from curated import classify
 
 
 # ---------------------------------------------------------------- input
@@ -46,6 +47,18 @@ def _tags(problem: dict) -> list[str]:
 
 
 # ---------------------------------------------------------------- generators
+def _stamp(mset: MCQSet, problem: dict, source: str) -> MCQSet:
+    """Authoritatively tag every MCQ with the source problem's curated category,
+    lists, and generation source. Runs after generation so the app can filter
+    reliably regardless of what the LLM chose."""
+    category, lists = classify(problem)
+    for q in mset.questions:
+        q.category = category
+        q.lists = lists
+        q.source = source
+    return mset
+
+
 def generate_llm(problem: dict, num: int, model: str) -> MCQSet:
     """Production path: OpenAI structured output via LangChain."""
     from langchain_openai import ChatOpenAI  # lazy import
@@ -135,8 +148,9 @@ def dedupe(mcqs: list[MCQ]) -> list[MCQ]:
 
 
 def write_db(mcqs: list[MCQ]) -> None:
-    from quickstart import postQuestions  # lazy
+    from quickstart import postQuestions, ensureIndexes  # lazy
     postQuestions(MCQSet(questions=mcqs))
+    ensureIndexes()
 
 
 # ---------------------------------------------------------------- main
@@ -149,6 +163,10 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0, help="Max problems to process (0 = all).")
     ap.add_argument("--model", default="gpt-4o-mini", help="OpenAI model (default gpt-4o-mini).")
     ap.add_argument("--mock", action="store_true", help="Use the offline deterministic generator (no API key).")
+    ap.add_argument("--fill", action="store_true",
+                    help="Top-up mode: skip problems that already have >= --min-per-problem MCQs in Mongo, generate the rest. Idempotent; used by the scheduled top-up job.")
+    ap.add_argument("--min-per-problem", type=int, default=3,
+                    help="With --fill, the target number of MCQs each problem should have (default 3).")
     ap.add_argument("--dry-run", action="store_true", help="Do not write to MongoDB; print/save instead.")
     ap.add_argument("--out", default="generated_questions.json", help="Output file for --dry-run.")
     args = ap.parse_args()
@@ -161,6 +179,24 @@ def main() -> int:
             return 2
 
     problems = load_problems(args)
+
+    if args.fill:
+        # Skip problems already stocked with enough MCQs so re-runs only fill gaps.
+        from quickstart import countByLeetId  # lazy: needs pymongo + MONGODB_KEY
+        counts = countByLeetId()
+
+        def _needs(p: dict) -> bool:
+            try:
+                qid = int(p.get("questionId", 0) or 0)
+            except (TypeError, ValueError):
+                return True
+            return counts.get(qid, 0) < args.min_per_problem
+
+        before = len(problems)
+        problems = [p for p in problems if _needs(p)]
+        print(f"--fill: {before - len(problems)} problems already stocked "
+              f"(>= {args.min_per_problem} MCQs); {len(problems)} to top up.")
+
     if args.limit:
         problems = problems[: args.limit]
     if not problems:
@@ -172,6 +208,7 @@ def main() -> int:
         title = problem.get("title", f"#{i}")
         try:
             mset = generate_mock(problem, args.num) if args.mock else generate_llm(problem, args.num, args.model)
+            _stamp(mset, problem, "mock" if args.mock else "llm")
             all_mcqs.extend(mset.questions)
             print(f"[{i}/{len(problems)}] {title}: +{len(mset.questions)} MCQs")
         except Exception as e:  # keep going on a single failure

@@ -38,15 +38,28 @@ When the build finishes, EAS gives you a URL. On Android, open it on your phone
 and install the APK directly. This is the easiest way to "have it on my phone
 to test before the App Store".
 
-## 3. App Store / TestFlight (production)
-- **iOS:** requires an **Apple Developer account** ($99/yr). Then:
+## 3. App Store / Google Play (production)
+Production builds produce the store artifacts (`.ipa` for iOS, `.aab` for Android)
+and `eas submit` uploads them. Prerequisites (deferred until you have the accounts):
+
+- **iOS** — an **Apple Developer account** ($99/yr):
   ```bash
   eas build --platform ios --profile production
   eas submit --platform ios          # uploads to App Store Connect → TestFlight
   ```
-  Testers install via the TestFlight app.
-- **Android:** requires a one-time **$25** Google Play Developer account, then
-  `eas submit --platform android` for internal testing / Play Store.
+  Testers install via TestFlight; then submit for App Store review from App Store Connect.
+- **Android** — a one-time **$25** Google Play Developer account:
+  ```bash
+  eas build --platform android --profile production   # builds an .aab
+  eas submit --platform android
+  ```
+  Note: the **first** Android upload must be done **manually** in the Play Console
+  (a Play Store API limitation); after that `eas submit` works. `eas submit` also
+  needs a **Google Service Account key** — see
+  https://docs.expo.dev/submit/android/.
+
+Docs: https://docs.expo.dev/deploy/submit-to-app-stores/ ·
+https://docs.expo.dev/submit/introduction/
 
 ## Notes
 - `ios.bundleIdentifier` / `android.package` are set to `com.vishnualachi.leetswipe`
@@ -54,5 +67,7 @@ to test before the App Store".
 - The **web build** (what's deployed at
   https://vishnu-alachi123.github.io/Leetswipe/) already works in a phone
   browser today; the native builds above are for a real installable app.
-- Question data: the app ships a bundled deck (`assets/data/questions.json`).
-  Set `EXPO_PUBLIC_QUESTIONS_URL` to serve live generated questions from an API.
+- Question data: the app ships a bundled deck (`assets/data/questions.json`) so it
+  runs offline. Set `EXPO_PUBLIC_API_URL` to the deployed LeetSwipe API (see
+  `../server`) to serve live questions by topic/difficulty and sync saved questions
+  across devices. (`EXPO_PUBLIC_QUESTIONS_URL` is still honored for backward compat.)
