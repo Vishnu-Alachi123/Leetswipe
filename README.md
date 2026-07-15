@@ -9,11 +9,16 @@ fresh questions on demand.
 **📱 Run on your phone:** see [`LeetSwipe/MOBILE.md`](LeetSwipe/MOBILE.md) (Expo Go / EAS Build)
 
 ## Stack
-- **Frontend:** React Native / Expo (`LeetSwipe/`) — swipe UI, runs on iOS, Android, and web
-- **Backend:** Python MCQ-generation pipeline (`backend_question_generation/`)
-- **Data:** MongoDB Atlas; LeetCode question extraction (`leetcode_q_extractor.ts`)
+- **Frontend:** React Native / Expo (`LeetSwipe/`) — topic picker, swipe deck, saved
+  library; runs on iOS, Android, and web
+- **API:** TypeScript / Express (`server/`) — serves questions by topic/difficulty/list
+  and stores per-user saved questions; the client never touches MongoDB directly
+- **Generator:** Python MCQ-generation pipeline (`backend_question_generation/`)
+- **Data:** MongoDB Atlas; LeetCode question extraction (`leetcode_q_extractor.ts`);
+  NeetCode-150 category map (`backend_question_generation/lists/neetcode150.json`)
 - **CI/CD:** GitHub Actions auto-builds the web export and deploys to GitHub Pages
-  on every push to `main` (`.github/workflows/deploy-web.yml`)
+  (`.github/workflows/deploy-web.yml`), plus a scheduled question top-up job
+  (`.github/workflows/generate-questions.yml`)
 
 ## Question generation (`backend_question_generation/`)
 
@@ -80,10 +85,20 @@ npx expo start        # then press w for web, or scan the QR for a device
 npx tsc --noEmit      # typecheck
 ```
 
+## API (`server/`)
+
+A thin TypeScript/Express service between the app and MongoDB. Serves
+`GET /topics`, `GET /questions?category=&difficulty=&list=&exclude=`, issues
+anonymous JWTs (`POST /auth/anon`), and stores per-user saved questions
+(`GET/POST/DELETE /saved`). Run it with `cd server && npm install && npm run dev`,
+then set `EXPO_PUBLIC_API_URL` in the app. See `server/README.md`.
+
 ## Status / next steps
-- ✅ Backend MCQ pipeline: working, validated, offline-testable, documented.
-- ✅ Frontend swipe UI: card deck, answer-checking, save/skip, saved summary,
-  bundled sample deck, typechecks clean.
-- 🚧 Next: a thin HTTP endpoint in front of the `GeneratedQuestionsCollection`
-  so the app can pull live questions, plus persisting saved questions across
-  sessions.
+- ✅ Backend MCQ pipeline: working, validated, offline-testable; questions tagged by
+  category + curated list; `--fill` top-up mode + scheduled workflow.
+- ✅ API server: topic/difficulty/list filtering, anonymous auth, saved-question sync.
+- ✅ Frontend: topic/list/difficulty picker, filtered swipe deck, persistent Saved
+  tab with sort/filter, streak + "seen" tracking, haptics. Typechecks clean; web
+  export builds.
+- 🚧 Next: deploy the API to a host and set `EXPO_PUBLIC_API_URL`; run the generator
+  with an OpenAI key to fill the bank; submit to the stores once dev accounts exist.

@@ -22,19 +22,29 @@ behind solving it. Follow these rules strictly:
 3. STRONG DISTRACTORS: Provide exactly four options. Exactly one is correct. The
    three wrong options must be *plausible* and reflect real misconceptions or naive
    approaches (e.g. brute force when a better method exists), not obviously-wrong
-   filler. Vary which position (0-3) holds the correct answer across questions.
+   filler. Keep all four options similar in length and specificity so the answer
+   cannot be guessed from formatting. IMPORTANT: vary which position (0-3) holds
+   the correct answer across the set — do not always put it first.
 
-4. CALIBRATED DIFFICULTY: Match the difficulty of the source problem. Label each
+4. DISTINCT ANGLES: When asked for multiple questions about one problem, make each
+   one test a *different* facet — e.g. one on data-structure/approach choice, one on
+   time/space complexity, one on edge cases or why the brute force fails. Do not
+   restate the same idea. Never reuse the answer's wording inside the question stem
+   (no giveaways).
+
+5. CALIBRATED DIFFICULTY: Match the difficulty of the source problem. Label each
    question Easy / Medium / Hard.
 
-5. EXPLANATIONS: For each question, give a concise explanation (1-3 sentences) that
-   states why the correct option wins on correctness, efficiency, or robustness —
-   and, where useful, why a tempting distractor fails.
+6. EXPLANATIONS: For each question, give a concise explanation (2-4 sentences) that
+   (a) states why the correct option wins on correctness, efficiency, or robustness,
+   and (b) explicitly names the most tempting distractor and says why it fails. This
+   explanation is shown to the learner after they answer — whether right or wrong —
+   so it must teach the underlying reasoning, not just declare the answer.
 
-6. IDS: Set leetQuestionId to the problem's numeric id. Set questionId to that id
+7. IDS: Set leetQuestionId to the problem's numeric id. Set questionId to that id
    followed by a capital letter (A, B, C, …) unique within this set.
 
-7. TOPICS: Include 1-4 concise topic tags per question, derived from the problem's
+8. TOPICS: Include 1-4 concise topic tags per question, derived from the problem's
    own tags where possible.
 
 Return ONLY the structured set of questions. Do not add commentary."""
