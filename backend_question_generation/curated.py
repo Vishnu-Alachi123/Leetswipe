@@ -36,6 +36,32 @@ def categories(list_name: str = "neetcode150") -> list[str]:
     return _neetcode().get("categories", []) if list_name == "neetcode150" else []
 
 
+def slug_for(problem: dict) -> str:
+    """Best-effort LeetCode slug for a source problem."""
+    return problem.get("titleSlug") or _slugify(problem.get("title", ""))
+
+
+def neetcode_problems() -> list[dict]:
+    """Build source-problem stubs for every NeetCode-150 problem.
+
+    These stubs carry title/category/difficulty but no statement or numeric id —
+    the generator's prompt handles statement-less problems (the model knows these
+    canonical problems by name and fills in leetQuestionId itself).
+    """
+    data = _neetcode()
+    problems = []
+    for slug, entry in data.get("bySlug", {}).items():
+        problems.append({
+            "titleSlug": slug,
+            "title": entry.get("title", slug.replace("-", " ").title()),
+            "difficulty": entry.get("difficulty", "Medium"),
+            "topicTags": [entry.get("category", "Algorithms")],
+            "content": "",
+            "hints": [],
+        })
+    return problems
+
+
 def classify(problem: dict) -> tuple[str, list[str]]:
     """Return (category, lists) for a source problem.
 

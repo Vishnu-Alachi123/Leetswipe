@@ -14,6 +14,7 @@ class MCQ(BaseModel):
     category: str = Field(default="Algorithms", description="The primary study bucket used by the app's topic picker, e.g. 'Arrays & Hashing', 'Two Pointers', 'Graphs'. Derived from the source problem's curated-list category.")
     lists: list[str] = Field(default_factory=list, description="Curated lists this question belongs to, e.g. ['neetcode150'].")
     source: str = Field(default="llm", description="How this MCQ was produced: 'llm' or 'mock'.")
+    sourceSlug: str = Field(default="", description="LeetCode slug of the source problem, e.g. 'two-sum'. Set by the pipeline, not the LLM.")
     difficulty: str = Field(description="One of 'Easy', 'Medium', or 'Hard'.")
     question: str = Field(description="A standalone, conceptual question that does not require seeing the original problem statement.")
     options: list[str] = Field(description="Exactly four answer choices. No 'A)'/'B)' prefixes.")
