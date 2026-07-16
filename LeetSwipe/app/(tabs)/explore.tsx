@@ -30,15 +30,19 @@ export default function AboutScreen() {
 
         <Row
           title="How it works"
-          body="Swipe through auto-generated multiple-choice questions. Tap an answer to check it and read the explanation. Swipe right (or Save) to keep a question for later; swipe left (or Skip) to move on."
+          body="Pick a topic, curated list (like NeetCode 150), or difficulty on the Topics tab, then swipe through the deck. Tap an answer to check it and read the explanation. Swipe right (or Save) to keep a question; swipe left (or Skip) to move on."
+        />
+        <Row
+          title="Saved questions"
+          body="Everything you save lands in the Saved tab. Use the Sort control in the top-right to sort by recency, difficulty, category, or title, and to filter by difficulty or category — arrange your review list however you like."
         />
         <Row
           title="Where questions come from"
-          body="Each card is a standalone conceptual MCQ generated from a LeetCode problem by the Python pipeline in backend_question_generation/. Questions teach the reasoning behind a problem rather than just its answer."
+          body="Each card is a standalone conceptual MCQ generated from a LeetCode problem by the Python pipeline in backend_question_generation/, tagged by topic, difficulty, and curated list. A scheduled job keeps the bank topped up. Questions teach the reasoning behind a problem, not just its answer."
         />
         <Row
-          title="Live questions"
-          body="The app ships with a bundled sample deck so it runs with no setup. Point EXPO_PUBLIC_QUESTIONS_URL at an endpoint returning { questions: MCQ[] } to serve freshly generated questions from the database."
+          title="Live questions & sync"
+          body="The app ships with a bundled sample deck so it runs with no setup. Point EXPO_PUBLIC_API_URL at the LeetSwipe API (server/) to serve live questions by topic and sync your saved list across devices."
         />
 
         <Text style={styles.footer}>Built by Vishnu Alachi</Text>
