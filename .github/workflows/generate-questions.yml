@@ -1,9 +1,13 @@
 name: Generate questions (top-up)
 
-# Keeps the question bank stocked: on a schedule (and on demand) it runs the
-# generator in --fill mode, which skips problems that already have enough MCQs
-# and generates the rest, writing them to MongoDB. This is the "constantly
-# generating" job. Requires OPENAI_API_KEY and MONGODB_KEY repository secrets.
+# Keeps the question bank stocked ("constantly generating"). Two targets:
+#   db     — top up MongoDB in --fill mode (skips already-stocked problems).
+#            Needs MONGODB_KEY + an LLM key.
+#   bundle — regenerate the app's bundled deck (LeetSwipe/assets/data/questions.json)
+#            and commit it, which auto-triggers the web deploy. Needs only an
+#            LLM key — no database or hosting required.
+# LLM key: ANTHROPIC_API_KEY (preferred, claude-opus-4-8) or OPENAI_API_KEY —
+# the generator auto-selects the provider from whichever secret is set.
 
 on:
   schedule:
@@ -11,25 +15,31 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch:
     inputs:
+      target:
+        description: 'Where to write questions'
+        type: choice
+        options: [db, bundle]
+        default: 'db'
       num:
         description: 'MCQs to generate per problem'
-        default: '3'
-      min_per_problem:
-        description: 'Target MCQs each problem should have'
         default: '3'
       limit:
         description: 'Max problems to process this run (0 = all)'
         default: '40'
+      model:
+        description: 'Model override (blank = provider default)'
+        default: ''
 
 concurrency:
   group: generate-questions
   cancel-in-progress: false
 
 jobs:
-  fill:
+  generate:
     runs-on: ubuntu-latest
-    # Skip entirely if the required secret is absent (e.g. on forks).
     if: ${{ github.event_name == 'workflow_dispatch' || github.repository == 'vishnu-alachi123/leetswipe' }}
+    permissions:
+      contents: write
     defaults:
       run:
         working-directory: backend_question_generation
@@ -43,18 +53,51 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install langchain langchain-openai openai pymongo python-dotenv pydantic
+        run: pip install anthropic langchain langchain-openai openai pymongo python-dotenv pydantic
 
-      - name: Top up question bank
+      - name: Top up MongoDB question bank
+        if: ${{ (github.event.inputs.target || 'db') == 'db' }}
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MONGODB_KEY: ${{ secrets.MONGODB_KEY }}
         run: |
-          if [ -z "$MONGODB_KEY" ] || [ -z "$OPENAI_API_KEY" ]; then
-            echo "Missing OPENAI_API_KEY or MONGODB_KEY secret; skipping generation."
+          if [ -z "$MONGODB_KEY" ] || { [ -z "$ANTHROPIC_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; }; then
+            echo "Missing MONGODB_KEY or an LLM key secret; skipping DB top-up."
             exit 0
           fi
-          python generate.py --from-db --fill \
+          python generate.py --neetcode --fill \
             --num "${{ github.event.inputs.num || '3' }}" \
-            --min-per-problem "${{ github.event.inputs.min_per_problem || '3' }}" \
-            --limit "${{ github.event.inputs.limit || '40' }}"
+            --limit "${{ github.event.inputs.limit || '40' }}" \
+            ${{ github.event.inputs.model && format('--model {0}', github.event.inputs.model) || '' }}
+
+      - name: Regenerate bundled deck
+        if: ${{ github.event.inputs.target == 'bundle' }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; then
+            echo "Missing ANTHROPIC_API_KEY / OPENAI_API_KEY secret; cannot generate."
+            exit 1
+          fi
+          python generate.py --neetcode --dry-run \
+            --num "${{ github.event.inputs.num || '3' }}" \
+            --limit "${{ github.event.inputs.limit || '40' }}" \
+            --out /tmp/generated.json \
+            --app-out ../LeetSwipe/assets/data/questions.json \
+            ${{ github.event.inputs.model && format('--model {0}', github.event.inputs.model) || '' }}
+
+      - name: Commit bundled deck
+        if: ${{ github.event.inputs.target == 'bundle' }}
+        working-directory: .
+        run: |
+          if git diff --quiet LeetSwipe/assets/data/questions.json; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add LeetSwipe/assets/data/questions.json
+          git commit -m "Regenerate bundled question deck"
+          git push

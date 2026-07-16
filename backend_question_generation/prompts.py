@@ -51,11 +51,36 @@ Return ONLY the structured set of questions. Do not add commentary."""
 
 
 def build_user_prompt(problem: dict, num_questions: int) -> str:
-    """Render a single LeetCode problem into the user message."""
+    """Render a single LeetCode problem into the user message.
+
+    Works in two modes: when the problem dict carries the full statement
+    (`content`), it is included verbatim; when it does not (e.g. problems seeded
+    from the NeetCode-150 map, which only has title/category/difficulty), the
+    prompt asks the model to draw on its own knowledge of the named problem —
+    these are canonical, widely-documented interview problems.
+    """
     tags = problem.get("topicTags") or []
     if tags and isinstance(tags[0], dict):
         tags = [t.get("name", "") for t in tags]
     hints = problem.get("hints") or []
+    content = (problem.get("content") or "").strip()
+
+    if content:
+        statement = f"""problem statement:
+\"\"\"
+{content[:4000]}
+\"\"\"
+
+official hints (for your reasoning only, do not quote directly):
+{chr(10).join(f'- {h}' for h in hints) if hints else '- none'}"""
+    else:
+        statement = """problem statement: not included. This is the well-known LeetCode
+problem named above — use your own knowledge of it (its input/output contract,
+the canonical optimal approach, common naive approaches, and classic pitfalls)
+to write the MCQs. If you are not confident you know this exact problem, write
+questions about the general technique its topic tags imply instead of guessing
+problem-specific details."""
+
     return f"""Create {num_questions} MCQs for the following problem.
 
 leetQuestionId: {problem.get('questionId')}
@@ -63,11 +88,5 @@ title: {problem.get('title')}
 difficulty: {problem.get('difficulty', 'Medium')}
 topic tags: {', '.join(tags) if tags else 'n/a'}
 
-problem statement:
-\"\"\"
-{(problem.get('content') or '').strip()[:4000]}
-\"\"\"
-
-official hints (for your reasoning only, do not quote directly):
-{chr(10).join(f'- {h}' for h in hints) if hints else '- none'}
+{statement}
 """

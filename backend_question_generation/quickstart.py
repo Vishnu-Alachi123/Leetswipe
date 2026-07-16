@@ -120,6 +120,25 @@ def countByLeetId() -> dict[int, int]:
         client.close()
 
 
+def countBySlug() -> dict[str, int]:
+    """Map sourceSlug -> number of generated MCQs already stored. Used by --fill
+    when source problems carry no numeric id (e.g. --neetcode)."""
+    if not uri:
+        raise ValueError("The MONGODB_KEY environment variable is not set.")
+    client = MongoClient(uri, server_api=ServerApi('1'))
+    try:
+        coll = _generated_collection(client)
+        counts: dict[str, int] = {}
+        for doc in coll.aggregate([
+            {"$match": {"sourceSlug": {"$exists": True, "$ne": ""}}},
+            {"$group": {"_id": "$sourceSlug", "n": {"$sum": 1}}},
+        ]):
+            counts[str(doc["_id"])] = doc["n"]
+        return counts
+    finally:
+        client.close()
+
+
 def postQuestions(Questions: list[QuestionSchema]):
     if not uri:
         raise ValueError("The MONGODB_KEY environment variable is not set.")
