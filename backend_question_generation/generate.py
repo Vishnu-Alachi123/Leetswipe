@@ -58,7 +58,6 @@ def _stamp(mset: MCQSet, problem: dict, source: str) -> MCQSet:
     questionIds are re-lettered from it here to guarantee uniqueness."""
     category, lists = classify(problem)
     slug = slug_for(problem)
-    letters = "ABCDEFGHIJKLMNOP"
     for i, q in enumerate(mset.questions):
         q.category = category
         q.lists = lists
@@ -68,7 +67,8 @@ def _stamp(mset: MCQSet, problem: dict, source: str) -> MCQSet:
             # No trusted numeric id on the source problem — key the id off the
             # slug so ids are unique even if the model mis-remembers a number
             # (leetQuestionId stays as the model's best guess, informational).
-            q.questionId = f"{slug}-{letters[i % len(letters)]}"
+            # A numeric suffix (not a wrapping letter) stays unique for any --num.
+            q.questionId = f"{slug}-{i + 1}"
     return mset
 
 
@@ -291,6 +291,13 @@ def main() -> int:
 
     all_mcqs = dedupe(all_mcqs)
     print(f"\nGenerated {len(all_mcqs)} unique MCQs from {len(problems)} problems.")
+
+    if not args.mock and not all_mcqs:
+        # Every problem failed (bad key, wrong model, network down, etc). Fail
+        # loudly instead of exiting 0 with nothing written — a scheduled job
+        # (or CI) should surface this as a failure, not a silent no-op.
+        print("! No MCQs were generated — every problem failed. See errors above.", file=sys.stderr)
+        return 1
 
     if args.dry_run:
         payload = [q.model_dump() for q in all_mcqs]
