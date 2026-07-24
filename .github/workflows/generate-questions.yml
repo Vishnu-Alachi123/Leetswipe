@@ -18,8 +18,8 @@ on:
       target:
         description: 'Where to write questions'
         type: choice
-        options: [db, bundle]
-        default: 'db'
+        options: [bundle, db]
+        default: 'bundle'
       num:
         description: 'MCQs to generate per problem'
         default: '3'
@@ -56,7 +56,7 @@ jobs:
         run: pip install anthropic langchain langchain-openai openai pymongo python-dotenv pydantic
 
       - name: Top up MongoDB question bank
-        if: ${{ (github.event.inputs.target || 'db') == 'db' }}
+        if: ${{ github.event.inputs.target == 'db' }}
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -72,7 +72,7 @@ jobs:
             ${{ github.event.inputs.model && format('--model {0}', github.event.inputs.model) || '' }}
 
       - name: Regenerate bundled deck
-        if: ${{ github.event.inputs.target == 'bundle' }}
+        if: ${{ github.event.inputs.target == 'bundle' || !github.event.inputs.target }}
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
