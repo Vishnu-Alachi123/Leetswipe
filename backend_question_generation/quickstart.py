@@ -48,7 +48,7 @@ def getQuestions():
 
     # Create a new client and connect to the server
     try:
-        client = MongoClient(uri, server_api=ServerApi('1'))
+        client = MongoClient(uri, server_api=ServerApi('1'), ssl=True, tlsAllowInvalidCertificates=True, retryWrites=True)
         
         # Ping the deployment to confirm a successful connection
         client.admin.command('ping')
@@ -87,7 +87,7 @@ def ensureIndexes():
     """Create indexes used by the API for fast filtered reads. Idempotent."""
     if not uri:
         raise ValueError("The MONGODB_KEY environment variable is not set.")
-    client = MongoClient(uri, server_api=ServerApi('1'))
+    client = MongoClient(uri, server_api=ServerApi('1'), ssl=True, tlsAllowInvalidCertificates=True, retryWrites=True)
     try:
         coll = _generated_collection(client)
         coll.create_index("category")
@@ -105,7 +105,7 @@ def countByLeetId() -> dict[int, int]:
     the --fill top-up job to skip already-stocked problems."""
     if not uri:
         raise ValueError("The MONGODB_KEY environment variable is not set.")
-    client = MongoClient(uri, server_api=ServerApi('1'))
+    client = MongoClient(uri, server_api=ServerApi('1'), ssl=True, tlsAllowInvalidCertificates=True, retryWrites=True)
     try:
         coll = _generated_collection(client)
         counts: dict[int, int] = {}
@@ -125,7 +125,7 @@ def countBySlug() -> dict[str, int]:
     when source problems carry no numeric id (e.g. --neetcode)."""
     if not uri:
         raise ValueError("The MONGODB_KEY environment variable is not set.")
-    client = MongoClient(uri, server_api=ServerApi('1'))
+    client = MongoClient(uri, server_api=ServerApi('1'), ssl=True, tlsAllowInvalidCertificates=True, retryWrites=True)
     try:
         coll = _generated_collection(client)
         counts: dict[str, int] = {}
@@ -145,7 +145,7 @@ def postQuestions(Questions: list[QuestionSchema]):
 
     # Create a new client and connect to the server
     try:
-        client = MongoClient(uri, server_api=ServerApi('1'))
+        client = MongoClient(uri, server_api=ServerApi('1'), ssl=True, tlsAllowInvalidCertificates=True, retryWrites=True)
         
         # Ping the deployment to confirm a successful connection
         client.admin.command('ping')
