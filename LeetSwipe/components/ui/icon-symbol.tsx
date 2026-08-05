@@ -17,6 +17,8 @@ const MAPPING = {
   'house.fill': 'home',
   'paperplane.fill': 'send',
   'rectangle.stack.fill': 'style',
+  'play.rectangle.fill': 'smart-display',
+  'heart.fill': 'favorite',
   'info.circle.fill': 'info',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',

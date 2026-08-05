@@ -1,0 +1,1749 @@
+{
+  "reels": [
+    {
+      "type": "reel",
+      "reelId": "binary-search-py",
+      "algorithmName": "Binary Search",
+      "description": "Find a value in a sorted array by halving the search space every comparison.",
+      "hook": "Find one item among 4 billion in 32 guesses.",
+      "language": "python",
+      "fullCode": "def search(nums, target):\n    lo, hi = 0, len(nums) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if nums[mid] == target:\n            return mid\n        if nums[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "code": "lo, hi = 0, len(nums) - 1",
+          "highlightLines": [
+            2
+          ],
+          "explanation": "Two pointers mark the range still worth searching \u2014 initially the whole array.",
+          "audioScript": "We're looking for twenty-three in this sorted array. Two markers fence off the region that could still contain it. Low starts at the far left, high at the far right, so right now everything is in play.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 2,
+                  "status": "normal",
+                  "label": "lo"
+                },
+                {
+                  "value": 5,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 12,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 16,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 23,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 38,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 56,
+                  "status": "normal",
+                  "label": "hi"
+                }
+              ]
+            },
+            "caption": "Search range: the whole array"
+          }
+        },
+        {
+          "stepNumber": 2,
+          "code": "mid = (lo + hi) // 2",
+          "highlightLines": [
+            4
+          ],
+          "explanation": "Look at the middle of the current range. Index (0 + 7) // 2 = 3.",
+          "audioScript": "Instead of checking items one by one, we jump straight to the middle. Zero plus seven, halved and rounded down, gives index three. That's the value twelve.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 2,
+                  "status": "normal",
+                  "label": "lo"
+                },
+                {
+                  "value": 5,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 12,
+                  "status": "active",
+                  "label": "mid"
+                },
+                {
+                  "value": 16,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 23,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 38,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 56,
+                  "status": "normal",
+                  "label": "hi"
+                }
+              ]
+            },
+            "caption": "mid = 3 \u2192 nums[3] = 12"
+          }
+        },
+        {
+          "stepNumber": 3,
+          "code": "if nums[mid] < target:  # 12 < 23",
+          "highlightLines": [
+            7
+          ],
+          "explanation": "12 is smaller than 23, so the answer cannot be at mid or anywhere left of it.",
+          "audioScript": "Twelve is less than twenty-three. Because the array is sorted, everything to the left of twelve is also less than twenty-three. That entire half is now impossible, so we discard it in one move.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 2,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 5,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 12,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 16,
+                  "status": "normal",
+                  "label": "lo"
+                },
+                {
+                  "value": 23,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 38,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 56,
+                  "status": "normal",
+                  "label": "hi"
+                }
+              ]
+            },
+            "caption": "Half the array eliminated in one comparison"
+          }
+        },
+        {
+          "stepNumber": 4,
+          "code": "lo = mid + 1",
+          "highlightLines": [
+            8
+          ],
+          "explanation": "Move the low pointer past mid. The live range is now indices 4 through 7.",
+          "audioScript": "So we slide the low marker to just past the middle. Four candidates remain where there were eight. That halving is the whole trick.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 2,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 5,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 12,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 16,
+                  "status": "normal",
+                  "label": "lo"
+                },
+                {
+                  "value": 23,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 38,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 56,
+                  "status": "normal",
+                  "label": "hi"
+                }
+              ]
+            },
+            "caption": "4 candidates left"
+          }
+        },
+        {
+          "stepNumber": 5,
+          "code": "mid = (4 + 7) // 2  # 5",
+          "highlightLines": [
+            4
+          ],
+          "explanation": "Same move on the smaller range: the midpoint is now index 5, holding 23.",
+          "audioScript": "We repeat the exact same step on what's left. Four plus seven, halved, is index five. That happens to hold twenty-three.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 2,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 5,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 12,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 16,
+                  "status": "normal",
+                  "label": "lo"
+                },
+                {
+                  "value": 23,
+                  "status": "active",
+                  "label": "mid"
+                },
+                {
+                  "value": 38,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 56,
+                  "status": "normal",
+                  "label": "hi"
+                }
+              ]
+            },
+            "caption": "mid = 5 \u2192 nums[5] = 23"
+          }
+        },
+        {
+          "stepNumber": 6,
+          "code": "if nums[mid] == target: return mid",
+          "highlightLines": [
+            5,
+            6
+          ],
+          "explanation": "Match. Return index 5.",
+          "audioScript": "It matches the target, so we return index five and stop. Eight elements, and we only ever looked at two of them.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 2,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 5,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 12,
+                  "status": "eliminated",
+                  "label": ""
+                },
+                {
+                  "value": 16,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 23,
+                  "status": "found",
+                  "label": "found"
+                },
+                {
+                  "value": 38,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 56,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Found at index 5 \u2014 2 comparisons total"
+          }
+        },
+        {
+          "stepNumber": 7,
+          "code": "# why O(log n)",
+          "highlightLines": [
+            3
+          ],
+          "explanation": "Each comparison discards half of what remains, so the work grows with the number of halvings, not the size.",
+          "audioScript": "Every comparison throws away half the remaining candidates. Doubling the array adds just one extra step. That's why a list of four billion items needs only about thirty-two comparisons.",
+          "visualization": {
+            "kind": "table",
+            "state": {
+              "columns": [
+                "array size",
+                "comparisons"
+              ],
+              "rows": [
+                [
+                  "8",
+                  "3"
+                ],
+                [
+                  "1,000",
+                  "10"
+                ],
+                [
+                  "1,000,000",
+                  "20"
+                ],
+                [
+                  "4,000,000,000",
+                  "32"
+                ]
+              ],
+              "highlight": 3
+            },
+            "caption": "Doubling the input costs one more step"
+          }
+        }
+      ],
+      "difficulty": "Easy",
+      "topics": [
+        "Binary Search",
+        "Array"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "sourceSlug": "binary-search",
+      "timeComplexity": "O(log n)",
+      "spaceComplexity": "O(1)",
+      "durationSeconds": 75,
+      "source": "curated",
+      "generatedAt": "2026-08-05T03:35:16.936851+00:00"
+    },
+    {
+      "type": "reel",
+      "reelId": "two-pointers-palindrome-py",
+      "algorithmName": "Two Pointers",
+      "description": "Walk inward from both ends of a sequence to compare pairs without extra memory.",
+      "hook": "Check a palindrome without copying a single character.",
+      "language": "python",
+      "fullCode": "def is_palindrome(s):\n    left, right = 0, len(s) - 1\n    while left < right:\n        if s[left] != s[right]:\n            return False\n        left += 1\n        right -= 1\n    return True",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "code": "left, right = 0, len(s) - 1",
+          "highlightLines": [
+            2
+          ],
+          "explanation": "Start one pointer at each end of the string.",
+          "audioScript": "The obvious way to check a palindrome is to reverse the string and compare. That works, but it copies the whole thing. Instead we place one finger on the first character and one on the last.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "r",
+                  "status": "normal",
+                  "label": "left"
+                },
+                {
+                  "value": "a",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "e",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "a",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "r",
+                  "status": "normal",
+                  "label": "right"
+                }
+              ]
+            },
+            "caption": "Pointers at both ends"
+          }
+        },
+        {
+          "stepNumber": 2,
+          "code": "if s[left] != s[right]: return False",
+          "highlightLines": [
+            4,
+            5
+          ],
+          "explanation": "Compare the outermost pair. 'r' equals 'r', so the string is still a candidate.",
+          "audioScript": "We compare the two characters under our fingers. Both are r, so this pair is fine and we keep going.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "r",
+                  "status": "active",
+                  "label": "left"
+                },
+                {
+                  "value": "a",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "e",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "a",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "r",
+                  "status": "active",
+                  "label": "right"
+                }
+              ]
+            },
+            "caption": "'r' == 'r' \u2713"
+          }
+        },
+        {
+          "stepNumber": 3,
+          "code": "left += 1; right -= 1",
+          "highlightLines": [
+            6,
+            7
+          ],
+          "explanation": "Step both pointers inward. They now sit on 'a' and 'a'.",
+          "audioScript": "Now both fingers move one step toward the centre. The characters they land on are a and a, which match again.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "r",
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": "a",
+                  "status": "active",
+                  "label": "left"
+                },
+                {
+                  "value": "c",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "e",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "a",
+                  "status": "active",
+                  "label": "right"
+                },
+                {
+                  "value": "r",
+                  "status": "visited",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "'a' == 'a' \u2713"
+          }
+        },
+        {
+          "stepNumber": 4,
+          "code": "# third pair",
+          "highlightLines": [
+            4
+          ],
+          "explanation": "'c' and 'c' match. Two characters remain between the pointers.",
+          "audioScript": "Third pair, c and c. Notice we've checked six characters while storing nothing but two numbers.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "r",
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": "a",
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "active",
+                  "label": "left"
+                },
+                {
+                  "value": "e",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "active",
+                  "label": "right"
+                },
+                {
+                  "value": "a",
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": "r",
+                  "status": "visited",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "'c' == 'c' \u2713"
+          }
+        },
+        {
+          "stepNumber": 5,
+          "code": "while left < right:  # 3 < 3 is False",
+          "highlightLines": [
+            3
+          ],
+          "explanation": "The pointers have met in the middle. Every pair has been checked.",
+          "audioScript": "The fingers meet on the middle character. There's nothing left to pair it with, so the loop condition fails and we're done.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "r",
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": "a",
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": "e",
+                  "status": "active",
+                  "label": "left=right"
+                },
+                {
+                  "value": "c",
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": "a",
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": "r",
+                  "status": "visited",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Pointers met \u2014 every pair checked"
+          }
+        },
+        {
+          "stepNumber": 6,
+          "code": "return True",
+          "highlightLines": [
+            8
+          ],
+          "explanation": "No mismatch was ever found, so the string reads the same both ways.",
+          "audioScript": "We never found a mismatch, so it's a palindrome. One pass, and the extra memory used was two integers regardless of how long the string is.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "r",
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": "a",
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": "e",
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": "a",
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": "r",
+                  "status": "found",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Palindrome \u2713 \u2014 O(1) extra space"
+          }
+        }
+      ],
+      "difficulty": "Easy",
+      "topics": [
+        "Two Pointers",
+        "String"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "sourceSlug": "valid-palindrome",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(1)",
+      "durationSeconds": 54,
+      "source": "curated",
+      "generatedAt": "2026-08-05T03:35:16.937067+00:00"
+    },
+    {
+      "type": "reel",
+      "reelId": "sliding-window-py",
+      "algorithmName": "Sliding Window",
+      "description": "Keep a moving range over the input, growing it on the right and shrinking it on the left, so each element is handled once.",
+      "hook": "Turn a nested loop into a single pass.",
+      "language": "python",
+      "fullCode": "def longest_unique(s):\n    seen = set()\n    left = best = 0\n    for right in range(len(s)):\n        while s[right] in seen:\n            seen.remove(s[left])\n            left += 1\n        seen.add(s[right])\n        best = max(best, right - left + 1)\n    return best",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "code": "seen = set(); left = best = 0",
+          "highlightLines": [
+            2,
+            3
+          ],
+          "explanation": "The window spans left..right and `seen` holds exactly the characters inside it.",
+          "audioScript": "We want the longest stretch with no repeated characters. Checking every possible substring would be quadratic. Instead we maintain one window and a set of what's inside it.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "a",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "a",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Window empty, about to grow"
+          }
+        },
+        {
+          "stepNumber": 2,
+          "code": "for right in ...: seen.add(s[right])",
+          "highlightLines": [
+            4,
+            8
+          ],
+          "explanation": "Grow the window rightward while characters stay unique. a, b, c are all new.",
+          "audioScript": "The right edge advances, pulling characters into the window. A, then b, then c \u2014 all new, so the window keeps growing. Length is three.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "a",
+                  "status": "active",
+                  "label": "left"
+                },
+                {
+                  "value": "b",
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "active",
+                  "label": "right"
+                },
+                {
+                  "value": "a",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "window = 'abc', length 3"
+          }
+        },
+        {
+          "stepNumber": 3,
+          "code": "while s[right] in seen:",
+          "highlightLines": [
+            5
+          ],
+          "explanation": "The next character is 'a', which is already inside the window. The window must shrink.",
+          "audioScript": "Now the right edge hits another a. That a is already in our window, so the window is no longer valid and we have to shrink it from the left.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "a",
+                  "status": "active",
+                  "label": "left"
+                },
+                {
+                  "value": "b",
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": "a",
+                  "status": "eliminated",
+                  "label": "right"
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "'a' already in window \u2014 conflict"
+          }
+        },
+        {
+          "stepNumber": 4,
+          "code": "seen.remove(s[left]); left += 1",
+          "highlightLines": [
+            6,
+            7
+          ],
+          "explanation": "Drop the leftmost character and advance left, which clears the duplicate.",
+          "audioScript": "We remove the character at the left edge and slide that edge forward. That drops the old a, so the new one can join. Crucially, the left edge only ever moves forward.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "a",
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "active",
+                  "label": "left"
+                },
+                {
+                  "value": "c",
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": "a",
+                  "status": "active",
+                  "label": "right"
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "window = 'bca', still length 3"
+          }
+        },
+        {
+          "stepNumber": 5,
+          "code": "best = max(best, right - left + 1)",
+          "highlightLines": [
+            9
+          ],
+          "explanation": "The window keeps sliding, and the best length seen so far is recorded at each step.",
+          "audioScript": "The window continues sliding across the string, and after each move we record its size if it's the biggest yet. The answer is that running maximum.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "a",
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": "c",
+                  "status": "active",
+                  "label": "left"
+                },
+                {
+                  "value": "a",
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "active",
+                  "label": "right"
+                },
+                {
+                  "value": "c",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": "b",
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "window = 'cab', best = 3"
+          }
+        },
+        {
+          "stepNumber": 6,
+          "code": "# each index moves forward only",
+          "highlightLines": [
+            4,
+            5
+          ],
+          "explanation": "Both edges only ever advance, so every character enters and leaves the window at most once.",
+          "audioScript": "Here's why this is linear rather than quadratic. Each edge only ever moves right, so every character is added once and removed at most once. Two pointers crossing the string once, not a loop inside a loop.",
+          "visualization": {
+            "kind": "table",
+            "state": {
+              "columns": [
+                "approach",
+                "time",
+                "work on n = 1000"
+              ],
+              "rows": [
+                [
+                  "check every substring",
+                  "O(n\u00b2)",
+                  "1,000,000"
+                ],
+                [
+                  "sliding window",
+                  "O(n)",
+                  "1,000"
+                ]
+              ],
+              "highlight": 1
+            },
+            "caption": "Same answer, a thousand times less work"
+          }
+        }
+      ],
+      "difficulty": "Medium",
+      "topics": [
+        "Sliding Window",
+        "Hash Set",
+        "String"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "sourceSlug": "longest-substring-without-repeating-characters",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(k)",
+      "durationSeconds": 68,
+      "source": "curated",
+      "generatedAt": "2026-08-05T03:35:16.937138+00:00"
+    },
+    {
+      "type": "reel",
+      "reelId": "bfs-py",
+      "algorithmName": "Breadth-First Search",
+      "description": "Explore a graph level by level using a queue, which finds the shortest path in an unweighted graph.",
+      "hook": "Why a queue finds the shortest route and a stack doesn't.",
+      "language": "python",
+      "fullCode": "from collections import deque\n\ndef bfs(graph, start):\n    seen = {start}\n    q = deque([start])\n    while q:\n        node = q.popleft()\n        for nxt in graph[node]:\n            if nxt not in seen:\n                seen.add(nxt)\n                q.append(nxt)",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "code": "seen = {start}; q = deque([start])",
+          "highlightLines": [
+            4,
+            5
+          ],
+          "explanation": "Start at node A. The queue holds what to visit next; `seen` prevents revisiting.",
+          "audioScript": "We start at node A. A queue tracks what to visit next, and a set remembers where we've already been so cycles can't trap us.",
+          "visualization": {
+            "kind": "tree",
+            "state": {
+              "nodes": [
+                {
+                  "id": "A",
+                  "value": "A",
+                  "status": "active"
+                },
+                {
+                  "id": "B",
+                  "value": "B",
+                  "status": "normal"
+                },
+                {
+                  "id": "C",
+                  "value": "C",
+                  "status": "normal"
+                },
+                {
+                  "id": "D",
+                  "value": "D",
+                  "status": "normal"
+                },
+                {
+                  "id": "E",
+                  "value": "E",
+                  "status": "normal"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "A",
+                  "to": "B",
+                  "status": "normal"
+                },
+                {
+                  "from": "A",
+                  "to": "C",
+                  "status": "normal"
+                },
+                {
+                  "from": "B",
+                  "to": "D",
+                  "status": "normal"
+                },
+                {
+                  "from": "C",
+                  "to": "E",
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Queue: [A]"
+          }
+        },
+        {
+          "stepNumber": 2,
+          "code": "node = q.popleft()",
+          "highlightLines": [
+            7
+          ],
+          "explanation": "Take A off the front of the queue and look at its neighbours.",
+          "audioScript": "We pull A off the front of the queue. Taking from the front is the detail that makes this breadth-first \u2014 we'll come back to that.",
+          "visualization": {
+            "kind": "queue",
+            "state": {
+              "cells": [
+                {
+                  "value": "A",
+                  "status": "active",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Processing A"
+          }
+        },
+        {
+          "stepNumber": 3,
+          "code": "for nxt in graph[node]: q.append(nxt)",
+          "highlightLines": [
+            8,
+            11
+          ],
+          "explanation": "A's neighbours B and C join the back of the queue. Both are one step from the start.",
+          "audioScript": "A's neighbours, B and C, go onto the back of the queue. Both sit exactly one step from the start.",
+          "visualization": {
+            "kind": "tree",
+            "state": {
+              "nodes": [
+                {
+                  "id": "A",
+                  "value": "A",
+                  "status": "visited"
+                },
+                {
+                  "id": "B",
+                  "value": "B",
+                  "status": "active"
+                },
+                {
+                  "id": "C",
+                  "value": "C",
+                  "status": "active"
+                },
+                {
+                  "id": "D",
+                  "value": "D",
+                  "status": "normal"
+                },
+                {
+                  "id": "E",
+                  "value": "E",
+                  "status": "normal"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "A",
+                  "to": "B",
+                  "status": "visited"
+                },
+                {
+                  "from": "A",
+                  "to": "C",
+                  "status": "visited"
+                },
+                {
+                  "from": "B",
+                  "to": "D",
+                  "status": "normal"
+                },
+                {
+                  "from": "C",
+                  "to": "E",
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Queue: [B, C] \u2014 distance 1"
+          }
+        },
+        {
+          "stepNumber": 4,
+          "code": "# B comes off before D goes on",
+          "highlightLines": [
+            6,
+            7
+          ],
+          "explanation": "Because the queue is first-in-first-out, every node at distance 1 is processed before any node at distance 2.",
+          "audioScript": "Here's the key. Because we always take from the front and add to the back, everything one step away is handled before anything two steps away. The search expands in rings.",
+          "visualization": {
+            "kind": "queue",
+            "state": {
+              "cells": [
+                {
+                  "value": "B",
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": "C",
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "FIFO: distance 1 finishes first"
+          }
+        },
+        {
+          "stepNumber": 5,
+          "code": "if nxt not in seen: seen.add(nxt)",
+          "highlightLines": [
+            9,
+            10,
+            11
+          ],
+          "explanation": "D and E are discovered at distance 2 and appended behind the distance-1 nodes.",
+          "audioScript": "Processing B and C uncovers D and E, two steps out. They queue up behind everything closer, preserving the ordering.",
+          "visualization": {
+            "kind": "tree",
+            "state": {
+              "nodes": [
+                {
+                  "id": "A",
+                  "value": "A",
+                  "status": "visited"
+                },
+                {
+                  "id": "B",
+                  "value": "B",
+                  "status": "visited"
+                },
+                {
+                  "id": "C",
+                  "value": "C",
+                  "status": "visited"
+                },
+                {
+                  "id": "D",
+                  "value": "D",
+                  "status": "active"
+                },
+                {
+                  "id": "E",
+                  "value": "E",
+                  "status": "active"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "A",
+                  "to": "B",
+                  "status": "visited"
+                },
+                {
+                  "from": "A",
+                  "to": "C",
+                  "status": "visited"
+                },
+                {
+                  "from": "B",
+                  "to": "D",
+                  "status": "visited"
+                },
+                {
+                  "from": "C",
+                  "to": "E",
+                  "status": "visited"
+                }
+              ]
+            },
+            "caption": "Queue: [D, E] \u2014 distance 2"
+          }
+        },
+        {
+          "stepNumber": 6,
+          "code": "# queue vs stack",
+          "highlightLines": [
+            7
+          ],
+          "explanation": "Swap the queue for a stack and you get depth-first search, which dives down one branch and loses the shortest-path guarantee.",
+          "audioScript": "Change one thing \u2014 take from the back instead of the front \u2014 and this becomes depth-first search. It still visits every node, but it dives down one branch first, so the first time it reaches a node is no longer by the shortest route.",
+          "visualization": {
+            "kind": "table",
+            "state": {
+              "columns": [
+                "structure",
+                "order",
+                "first arrival is shortest?"
+              ],
+              "rows": [
+                [
+                  "queue (FIFO)",
+                  "level by level",
+                  "yes"
+                ],
+                [
+                  "stack (LIFO)",
+                  "branch by branch",
+                  "no"
+                ]
+              ],
+              "highlight": 0
+            },
+            "caption": "One line of difference, a different algorithm"
+          }
+        }
+      ],
+      "difficulty": "Medium",
+      "topics": [
+        "BFS",
+        "Graph",
+        "Queue"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "sourceSlug": "clone-graph",
+      "timeComplexity": "O(V + E)",
+      "spaceComplexity": "O(V)",
+      "durationSeconds": 64,
+      "source": "curated",
+      "generatedAt": "2026-08-05T03:35:16.937208+00:00"
+    },
+    {
+      "type": "reel",
+      "reelId": "kadane-py",
+      "algorithmName": "Kadane's Algorithm",
+      "description": "Find the highest-sum contiguous run by deciding, at each element, whether to extend the current run or start over.",
+      "hook": "One decision per element solves maximum subarray.",
+      "language": "python",
+      "fullCode": "def max_subarray(nums):\n    best = cur = nums[0]\n    for x in nums[1:]:\n        cur = max(x, cur + x)\n        best = max(best, cur)\n    return best",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "code": "best = cur = nums[0]",
+          "highlightLines": [
+            2
+          ],
+          "explanation": "`cur` is the best run ending exactly here; `best` is the best run seen anywhere.",
+          "audioScript": "We track two numbers. Current is the best total for a run ending right where we're standing. Best is the highest total we've seen anywhere so far.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": -2,
+                  "status": "active",
+                  "label": "cur=-2"
+                },
+                {
+                  "value": 3,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": -1,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": -5,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 2,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "cur = -2, best = -2"
+          }
+        },
+        {
+          "stepNumber": 2,
+          "code": "cur = max(x, cur + x)  # max(3, -2+3)",
+          "highlightLines": [
+            4
+          ],
+          "explanation": "At 3, extending the previous run gives 1, but starting fresh gives 3. Start fresh.",
+          "audioScript": "At the value three we face the only decision this algorithm ever makes. Extend the previous run for a total of one, or abandon it and start fresh at three. Three wins, so we drop the negative history.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": -2,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 3,
+                  "status": "active",
+                  "label": "cur=3"
+                },
+                {
+                  "value": -1,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": -5,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 2,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Start fresh: cur = 3, best = 3"
+          }
+        },
+        {
+          "stepNumber": 3,
+          "code": "# at -1: extend, because 3 + -1 = 2 beats -1",
+          "highlightLines": [
+            4
+          ],
+          "explanation": "A negative number is worth carrying if the run behind it is strong enough.",
+          "audioScript": "Next comes negative one. Starting over would give negative one, but extending gives two. So we carry the loss, because the run behind it is strong enough to absorb it.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": -2,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 3,
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": -1,
+                  "status": "active",
+                  "label": "cur=2"
+                },
+                {
+                  "value": 4,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": -5,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 2,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Extend: cur = 2, best = 3"
+          }
+        },
+        {
+          "stepNumber": 4,
+          "code": "# at 4: cur = 2 + 4 = 6",
+          "highlightLines": [
+            4,
+            5
+          ],
+          "explanation": "Extending again gives 6, the best run found so far.",
+          "audioScript": "That patience pays off immediately. Adding four brings the current run to six, the best total yet, so best updates.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": -2,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 3,
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": -1,
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "active",
+                  "label": "cur=6"
+                },
+                {
+                  "value": -5,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 2,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "cur = 6, best = 6 \u2190 answer"
+          }
+        },
+        {
+          "stepNumber": 5,
+          "code": "# at -5: cur = 6 - 5 = 1, best stays 6",
+          "highlightLines": [
+            5
+          ],
+          "explanation": "The run survives but weakens. `best` remembers the peak, so the drop is harmless.",
+          "audioScript": "A five-point drop knocks the current run down to one. But best already recorded six, so the peak is safely remembered even as the current run decays.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": -2,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 3,
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": -1,
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": -5,
+                  "status": "active",
+                  "label": "cur=1"
+                },
+                {
+                  "value": 2,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "cur = 1, best still 6"
+          }
+        },
+        {
+          "stepNumber": 6,
+          "code": "return best",
+          "highlightLines": [
+            6
+          ],
+          "explanation": "The answer is 6, from the run [3, -1, 4].",
+          "audioScript": "The final element lifts the current run to three, still short of six. We return six, the sum of three, negative one, and four.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": -2,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 3,
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": -1,
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": -5,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 2,
+                  "status": "visited",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Answer: 6 from [3, -1, 4]"
+          }
+        },
+        {
+          "stepNumber": 7,
+          "code": "# why this is O(n)",
+          "highlightLines": [
+            3,
+            4
+          ],
+          "explanation": "Every element is visited once and only two numbers are stored, no matter how long the array is.",
+          "audioScript": "Checking every possible run would be quadratic. Kadane's asks one question per element \u2014 extend or restart \u2014 and stores just two numbers, so it's linear time and constant space.",
+          "visualization": {
+            "kind": "table",
+            "state": {
+              "columns": [
+                "approach",
+                "time",
+                "extra space"
+              ],
+              "rows": [
+                [
+                  "every subarray",
+                  "O(n\u00b2)",
+                  "O(1)"
+                ],
+                [
+                  "Kadane's",
+                  "O(n)",
+                  "O(1)"
+                ]
+              ],
+              "highlight": 1
+            },
+            "caption": "Linear, with two variables"
+          }
+        }
+      ],
+      "difficulty": "Medium",
+      "topics": [
+        "Dynamic Programming",
+        "Array"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "sourceSlug": "maximum-subarray",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(1)",
+      "durationSeconds": 75,
+      "source": "curated",
+      "generatedAt": "2026-08-05T03:35:16.937277+00:00"
+    }
+  ]
+}
