@@ -127,4 +127,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add LeetSwipe/assets/data/
           git commit -m "Regenerate bundled content"
+          # Two queued runs commit back-to-back (bundle then reels), so this
+          # checkout may be behind main by the time it pushes. They touch
+          # different files, so a rebase always lands cleanly.
+          git pull --rebase origin main
           git push
