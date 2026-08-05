@@ -79,12 +79,31 @@ function isValidQuestion(q: any): q is Question {
   );
 }
 
+/**
+ * Repair the shapes generation models predictably get wrong.
+ *
+ * Observed in real output: for a `table` visual the model puts the column
+ * headers into `cells` and leaves `columns` empty. Rendering must not depend
+ * on the model reading the schema docs carefully, so lift them across here.
+ */
+function normalizeVisual(v: any): Visualization | null {
+  if (!v?.kind || !v.state) return null;
+  if (v.kind === 'table' && !v.state.columns?.length && v.state.cells?.length) {
+    return {
+      ...v,
+      state: { ...v.state, columns: v.state.cells.map((c: any) => String(c.value)), cells: [] },
+    };
+  }
+  return v;
+}
+
 /** Fill in tag fields that older bundled data may lack. */
 function withDefaults(q: any): Question {
   return {
     ...q,
     category: q.category ?? q.topics?.[0] ?? 'Algorithms',
     lists: q.lists ?? [],
+    visual: normalizeVisual(q.visual),
   };
 }
 

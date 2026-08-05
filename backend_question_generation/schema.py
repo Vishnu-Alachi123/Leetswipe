@@ -33,9 +33,9 @@ class VisualCell(BaseModel):
 class MCQVisualState(BaseModel):
     """Renderer payload. Fill `cells` for array/queue, `columns`+`rows` for table."""
 
-    cells: list[VisualCell] = Field(default_factory=list)
-    columns: list[str] = Field(default_factory=list)
-    rows: list[list[str]] = Field(default_factory=list)
+    cells: list[VisualCell] = Field(default_factory=list, description="For kind 'array'/'queue' ONLY. Leave empty for tables.")
+    columns: list[str] = Field(default_factory=list, description="For kind 'table': the header row. Never put headers in `cells`.")
+    rows: list[list[str]] = Field(default_factory=list, description="For kind 'table': the data rows, one list per row.")
 
 
 class MCQVisual(BaseModel):
