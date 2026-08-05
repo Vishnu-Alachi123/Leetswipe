@@ -221,3 +221,83 @@ of them change what the product *is*.
   short-function challenges are the right size for the device.
 - **Video lessons.** Ten times the production cost of reels for less
   interactivity, and reels already carry the visual explanation.
+
+---
+
+# Part 6 — Multiplayer: the head-to-head game
+
+Brainstormed after Speed Round shipped, since that is the natural single-player
+core to build a competitive mode on.
+
+## The candidates
+
+**A. Live realtime duel** — two people, same 12 questions, first to answer each
+scores. Highest tension, but needs a websocket server, matchmaking, presence,
+and reconnect handling. It also needs *concurrent players*: with a small user
+base you queue and nobody comes, which is worse than no feature at all.
+
+**B. Async duel ("challenge a friend")** ⭐ — you play a Speed Round, your score
+and the exact question set are saved as a challenge, and a link invites someone
+to play the identical set. They see your score as the target while they play.
+Both see a result screen afterwards.
+
+**C. Daily gauntlet** — everyone gets the same 12 questions each day, one
+attempt, ranked on a daily board that resets. Competitive without needing anyone
+online simultaneously.
+
+**D. Co-op relay** — a team works through a category together, each person's
+correct answers filling a shared bar. Nice, but weak motivation for strangers.
+
+## Recommendation: B first, then C
+
+Async duel is the right first multiplayer feature for one blunt reason: **it
+works with two users.** Realtime matchmaking needs a crowd to feel alive, and
+until LeetSwipe has one, a duel that never finds an opponent is worse than
+nothing. Async also runs entirely on the REST API already built — no websockets,
+no presence, no reconnect logic — and it is inherently viral, since playing
+requires sending someone a link.
+
+The daily gauntlet (C) is the natural follow-up: same infrastructure, and its
+fixed question set gives a reason to open the app at a specific time. Realtime
+(A) becomes worth building once daily actives make instant matchmaking plausible
+— roughly a few hundred, not before.
+
+### How an async duel works
+
+1. Play a Speed Round. On finishing, "Challenge a friend" mints a duel:
+   `POST /duels` with your score and the question IDs you played.
+2. You share the returned link (`leetswipe://duel/<id>` or a web URL).
+3. They open it, play the **identical questions in the identical order**, with
+   your score shown as a target bar filling as they go.
+4. `POST /duels/:id/result` records their score; both sides see a result screen.
+
+Same questions in the same order is what makes it fair, and it is why the duel
+stores question IDs rather than regenerating a round.
+
+### Endpoints it would need
+
+| Method | Path | Purpose |
+|---|---|---|
+| POST | `/duels` | mint a duel from a completed round |
+| GET | `/duels/:id` | fetch the question set and challenger's score |
+| POST | `/duels/:id/result` | record the opponent's score |
+| GET | `/duels/mine` | your sent and received duels |
+
+Roughly a day's work on top of what exists — the client already has the round
+builder, the timer, and the scoring.
+
+### Anti-cheat, briefly
+
+The honest answer is that a determined cheater on a client-scored quiz cannot be
+stopped, and it does not matter much here — the scoreboard is between friends.
+Two cheap measures worth taking anyway: the server records the duel's start time
+and rejects a result that arrives faster than the round length, and a score
+above the question count is rejected outright. Anything stronger means grading
+server-side, which costs the offline-first property for very little gain.
+
+### Why not XP for duels
+
+Winning a duel should award **bragging rights, not XP**. XP is the "I understand
+this" currency, and paying it out for beating a friend who happened to be slower
+detaches it from learning. A duel record (W-L) on the profile is the right
+reward.
