@@ -205,7 +205,9 @@ class ReelStep(BaseModel):
     and the narration read over it."""
 
     stepNumber: int = Field(ge=1, description="1-based position in the reel.")
-    code: str = Field(description="The 1-3 lines of code this step executes. Not the whole program.")
+    # Defaulted because models intermittently omit it on a summary step, and
+    # losing a whole reel to one missing line is a bad trade.
+    code: str = Field(default="", description="The 1-3 lines of code this step executes. Not the whole program.")
     highlightLines: list[int] = Field(default_factory=list, description="1-based line numbers to highlight within the full listing.")
     explanation: str = Field(description="One or two sentences on what this line does to the data.")
     audioScript: str = Field(description="40-90 words of conversational narration. Spoken aloud, so no symbols or code syntax — say 'i plus one', not 'i+1'.")
@@ -223,7 +225,10 @@ class AlgorithmReel(BaseModel):
     language: Literal["python", "javascript"] = Field(default="python")
     fullCode: str = Field(description="The complete implementation the steps walk through, so line highlights line up.")
     steps: list[ReelStep] = Field(description="5-8 steps. Each must change the visualisation — no filler.")
-    difficulty: str = Field(description="One of 'Easy', 'Medium', or 'Hard'.")
+    # Defaulted and then overwritten from the catalog: the generator knows the
+    # intended difficulty already, and models omit this field often enough that
+    # requiring it threw away otherwise-good reels.
+    difficulty: str = Field(default="Medium", description="One of 'Easy', 'Medium', or 'Hard'.")
     topics: list[str] = Field(default_factory=list)
     category: str = Field(default="Algorithms")
     lists: list[str] = Field(default_factory=list)

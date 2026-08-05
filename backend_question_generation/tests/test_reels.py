@@ -14,7 +14,7 @@ import pytest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import seed_reels  # noqa: E402
-from generate_reels import CATALOG, generate_mock, validate_reel  # noqa: E402
+from generate_reels import CATALOG, generate_mock, repair_reel, validate_reel  # noqa: E402
 from schema import AlgorithmReel, ReelStep, Visualization  # noqa: E402
 
 REELS_JSON = os.path.join(
@@ -133,6 +133,66 @@ def test_blank_explanation_rejected():
 
 def test_mock_generator_output_is_valid():
     assert validate_reel(generate_mock("Binary Search", "Binary Search", "Easy", "python")) == []
+
+
+# ------------------------------------------------------------------- repair
+def test_repair_drops_a_step_that_redraws_the_same_picture():
+    """The dominant generation fault. Dropping the offending step leaves a
+    shorter, correct reel — far better than binning seven good steps."""
+    r = reel([step(1, marker="a"), step(2, marker="a"), step(3, marker="b")])
+    notes = repair_reel(r)
+    assert len(r.steps) == 2
+    assert any("unchanged" in n for n in notes)
+    assert validate_reel(r) == []
+
+
+def test_repair_renumbers_after_dropping():
+    r = reel([step(1, marker="a"), step(2, marker="a"), step(3, marker="b")])
+    repair_reel(r)
+    assert [s.stepNumber for s in r.steps] == [1, 2]
+
+
+def test_repair_leaves_a_clean_reel_untouched():
+    r = reel([step(1, marker="a"), step(2, marker="b")])
+    assert repair_reel(r) == []
+    assert len(r.steps) == 2
+
+
+def test_repair_clamps_out_of_range_highlights():
+    r = reel([step(1, lines=[2, 99]), step(2, marker="z")])
+    notes = repair_reel(r)
+    assert r.steps[0].highlightLines == [2]
+    assert any("out-of-range" in n for n in notes)
+    assert validate_reel(r) == []
+
+
+def test_repair_keeps_a_non_adjacent_repeat():
+    """Returning to an earlier state is legitimate; only a wasted tap is not."""
+    r = reel([step(1, marker="a"), step(2, marker="b"), step(3, marker="a")])
+    repair_reel(r)
+    assert len(r.steps) == 3
+
+
+def test_missing_difficulty_defaults_rather_than_failing():
+    """Models omit this field often; the catalog supplies the real value after
+    generation, so requiring it only threw away good reels."""
+    r = AlgorithmReel(reelId="t", algorithmName="T", description="d", fullCode="a = 1",
+                      steps=[step(1), step(2, marker="b")])
+    assert r.difficulty == "Medium"
+
+
+def test_missing_step_code_defaults_rather_than_failing():
+    s = ReelStep(stepNumber=1, explanation="x", audioScript=NARRATION,
+                 visualization=viz("a"))
+    assert s.code == ""
+
+
+def test_short_but_speakable_narration_is_accepted():
+    """A closing "and that's why it's linear" lands around 16 words and reads
+    fine aloud; only a fragment should be rejected."""
+    sixteen = "That is why the whole scan finishes in linear time instead of quadratic time overall here"
+    assert len(sixteen.split()) == 16
+    assert validate_reel(reel([step(1, audio=sixteen), step(2, marker="b")])) == []
 
 
 # ------------------------------------------------------------- curated reels
