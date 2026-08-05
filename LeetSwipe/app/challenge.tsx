@@ -26,6 +26,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { challengeById, challenges } from '@/api/challenges';
 import { runTests, type RunOutcome } from '@/api/code-runner';
+import { awardXp } from '@/api/profile';
 import { COLORS, DIFFICULTY_COLOR } from '@/constants/colors';
 import { Celebration } from '@/components/celebration';
 
@@ -74,6 +75,8 @@ export default function ChallengeScreen() {
     const outcome = runTests(code, challenge.functionName, challenge.testCases);
     setResult(outcome);
     if (outcome.passed) {
+      // Only the first pass earns — re-running a solved challenge is free.
+      if (!solved) awardXp('challengeSolved');
       setSolved(true);
       setBurst((n) => (n ?? 0) + 1);
       if (Platform.OS !== 'web') {
@@ -82,7 +85,7 @@ export default function ChallengeScreen() {
     } else if (Platform.OS !== 'web') {
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning).catch(() => {});
     }
-  }, [challenge, code]);
+  }, [challenge, code, solved]);
 
   const reset = useCallback(() => {
     setCode(challenge?.starterCode ?? '');

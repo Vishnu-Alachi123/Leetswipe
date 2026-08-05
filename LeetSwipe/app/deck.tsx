@@ -21,6 +21,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { fetchQuestions, type Difficulty, type Question } from '@/api/get-questions';
 import { saveQuestion } from '@/api/saved';
 import { getSeen, markSeen, recordActivity } from '@/api/progress';
+import { awardXp } from '@/api/profile';
 import * as Speech from '@/api/voice';
 
 import { COLORS, DIFFICULTY_COLOR } from '@/constants/colors';
@@ -370,6 +371,7 @@ export default function DeckScreen() {
                     speak(isCorrect, current.explanation);
                     if (isCorrect) {
                       celebrate();
+                      awardXp('mcqCorrect');
                       // A heavier tap for a right answer, so the feedback is
                       // felt as well as seen.
                       if (Platform.OS !== 'web') {
