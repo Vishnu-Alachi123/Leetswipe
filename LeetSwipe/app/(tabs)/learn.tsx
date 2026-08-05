@@ -35,8 +35,12 @@ export default function LearnScreen() {
   const [loading, setLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
   const [narrate, setNarrate] = useState(false);
+  const [autoPlay, setAutoPlay] = useState(true);
   const [category, setCategory] = useState<string | null>(null);
   const [listHeight, setListHeight] = useState(PAGE_HEIGHT);
+  // Whether this tab is the one on screen. Passed down so a reel that scrolls
+  // out of focus stops its own playback — see the focus effect below.
+  const [focused, setFocused] = useState(true);
   const listRef = useRef<FlatList<AlgorithmReel>>(null);
 
   useEffect(() => {
@@ -57,10 +61,18 @@ export default function LearnScreen() {
   }, [category]);
 
   // Leaving the tab must silence narration — otherwise it keeps talking over
-  // the deck on the next screen.
+  // whatever screen comes next.
+  //
+  // Stopping the speech engine here is not enough: pre-rendered narration plays
+  // through an expo-audio player owned by the reel, which `Speech.stop()` knows
+  // nothing about. Tab screens also stay mounted, so no unmount cleanup fires.
+  // Flipping `focused` marks every reel inactive, and each player's own effect
+  // tears its playback down.
   useFocusEffect(
     useCallback(() => {
+      setFocused(true);
       return () => {
+        setFocused(false);
         Speech.stop();
       };
     }, []),
@@ -154,10 +166,18 @@ export default function LearnScreen() {
           renderItem={({ item, index }) => (
             <ReelPlayer
               reel={item}
-              active={index === activeIndex}
+              active={index === activeIndex && focused}
               height={listHeight}
               narrate={narrate}
               onToggleNarrate={() => setNarrate((n) => !n)}
+              autoPlay={autoPlay}
+              onToggleAutoPlay={() => setAutoPlay((a) => !a)}
+              onFinished={() => {
+                // Roll into the next walkthrough, like a video feed.
+                if (index + 1 < reels.length) {
+                  listRef.current?.scrollToIndex({ index: index + 1, animated: true });
+                }
+              }}
             />
           )}
         />
