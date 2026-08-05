@@ -21,7 +21,7 @@ import {
 } from 'react-native';
 import * as Haptics from 'expo-haptics';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useAudioPlayer } from 'expo-audio';
+import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
 
 import * as Voice from '@/api/voice';
 import { reelAudio } from '@/assets/audio/manifest';
@@ -43,14 +43,28 @@ const CODE_PANE_HEIGHT = 178;
 
 interface Props {
   reel: AlgorithmReel;
-  /** False when this reel is scrolled off-screen, so it stops speaking. */
+  /** False when this reel is scrolled off-screen or its tab is not focused. */
   active: boolean;
   height: number;
   narrate: boolean;
   onToggleNarrate: () => void;
+  /** Advance steps automatically as each narration finishes. */
+  autoPlay?: boolean;
+  onToggleAutoPlay?: () => void;
+  /** Called after the last step finishes while auto-playing. */
+  onFinished?: () => void;
 }
 
-export function ReelPlayer({ reel, active, height, narrate, onToggleNarrate }: Props) {
+export function ReelPlayer({
+  reel,
+  active,
+  height,
+  narrate,
+  onToggleNarrate,
+  autoPlay = false,
+  onToggleAutoPlay,
+  onFinished,
+}: Props) {
   const [stepIndex, setStepIndex] = useState(0);
   const step = reel.steps[stepIndex];
   // On short screens (small phones, browser chrome eating height) the fixed
@@ -83,6 +97,40 @@ export function ReelPlayer({ reel, active, height, narrate, onToggleNarrate }: P
   // freshly generated reels still narrate before their audio run happens.
   const clip = reelAudio[reel.reelId]?.[step?.stepNumber ?? -1] ?? null;
   const player = useAudioPlayer(clip);
+  const status = useAudioPlayerStatus(player);
+
+  const atStartOfReel = stepIndex === 0;
+  const atEndOfReel = stepIndex === reel.steps.length - 1;
+
+  // Move on when the current narration ends. Guarded by a ref so a status
+  // object that reports `didJustFinish` across several renders only advances
+  // once.
+  const advancedFor = useRef(-1);
+  const advance = useCallback(() => {
+    if (advancedFor.current === stepIndex) return;
+    advancedFor.current = stepIndex;
+    if (atEndOfReel) onFinished?.();
+    else setStepIndex((i) => i + 1);
+  }, [stepIndex, atEndOfReel, onFinished]);
+
+  useEffect(() => {
+    advancedFor.current = -1;
+  }, [stepIndex, active]);
+
+  useEffect(() => {
+    if (!active || !narrate || !autoPlay || !clip) return;
+    if (status?.didJustFinish) advance();
+  }, [status?.didJustFinish, active, narrate, autoPlay, clip, advance]);
+
+  // Without narration there is no natural cue for when a step is "done", so
+  // fall back to a reading-speed timer derived from the script length.
+  useEffect(() => {
+    if (!active || !autoPlay || narrate || !step) return;
+    const words = step.audioScript.split(/\s+/).length;
+    const ms = Math.max(3500, Math.min(14000, (words / 2.6) * 1000));
+    const timer = setTimeout(advance, ms);
+    return () => clearTimeout(timer);
+  }, [active, autoPlay, narrate, step, advance]);
 
   const stop = useCallback(() => {
     if (speaking.current) {
@@ -139,8 +187,8 @@ export function ReelPlayer({ reel, active, height, narrate, onToggleNarrate }: P
     [reel.steps.length],
   );
 
-  const atStart = stepIndex === 0;
-  const atEnd = stepIndex === reel.steps.length - 1;
+  const atStart = atStartOfReel;
+  const atEnd = atEndOfReel;
 
   if (!step) return null;
 
@@ -165,17 +213,34 @@ export function ReelPlayer({ reel, active, height, narrate, onToggleNarrate }: P
             <Text style={styles.badge}>~{estimatedSeconds(reel)}s</Text>
           </View>
         </View>
-        <Pressable
-          onPress={onToggleNarrate}
-          hitSlop={10}
-          accessibilityRole="switch"
-          accessibilityState={{ checked: narrate }}
-          accessibilityLabel={narrate ? 'Turn narration off' : 'Turn narration on'}
-          style={[styles.audioButton, narrate && styles.audioButtonOn]}>
-          <Text style={[styles.audioIcon, narrate && styles.audioIconOn]}>
-            {narrate ? '🔊' : '🔇'}
-          </Text>
-        </Pressable>
+        <View style={styles.headerButtons}>
+          {!!onToggleAutoPlay && (
+            <Pressable
+              onPress={onToggleAutoPlay}
+              hitSlop={10}
+              accessibilityRole="switch"
+              accessibilityState={{ checked: autoPlay }}
+              accessibilityLabel={
+                autoPlay ? 'Turn auto-advance off' : 'Advance steps automatically'
+              }
+              style={[styles.audioButton, autoPlay && styles.audioButtonOn]}>
+              <Text style={[styles.audioIcon, autoPlay && styles.audioIconOn]}>
+                {autoPlay ? '▶' : '⏸'}
+              </Text>
+            </Pressable>
+          )}
+          <Pressable
+            onPress={onToggleNarrate}
+            hitSlop={10}
+            accessibilityRole="switch"
+            accessibilityState={{ checked: narrate }}
+            accessibilityLabel={narrate ? 'Turn narration off' : 'Turn narration on'}
+            style={[styles.audioButton, narrate && styles.audioButtonOn]}>
+            <Text style={[styles.audioIcon, narrate && styles.audioIconOn]}>
+              {narrate ? '🔊' : '🔇'}
+            </Text>
+          </Pressable>
+        </View>
       </View>
 
       {/* The problem being solved. Without this, a reader lands on line one
@@ -270,6 +335,7 @@ const styles = StyleSheet.create({
   badgeRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 5 },
   badge: { fontSize: 11, fontWeight: '600', color: COLORS.muted },
   context: { marginTop: 8, fontSize: 13, lineHeight: 18, color: COLORS.muted },
+  headerButtons: { flexDirection: 'row', gap: 8 },
   audioButton: {
     width: 40,
     height: 40,
