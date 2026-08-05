@@ -19,7 +19,7 @@ on:
       target:
         description: 'What to generate'
         type: choice
-        options: [bundle, reels, audio, db]
+        options: [bundle, reels, patterns, audio, db]
         default: 'bundle'
       num:
         description: 'MCQs to generate per problem'
@@ -116,6 +116,21 @@ jobs:
           python generate_reels.py --fill \
             --limit "${{ github.event.inputs.limit || '4' }}" \
             --out ../LeetSwipe/assets/data/reels.json \
+            ${{ github.event.inputs.model && format('--model {0}', github.event.inputs.model) || '' }}
+
+      - name: Generate Pattern Match questions
+        if: ${{ github.event.inputs.target == 'patterns' }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; then
+            echo "Missing ANTHROPIC_API_KEY / OPENAI_API_KEY secret; cannot generate."
+            exit 1
+          fi
+          python generate_patterns.py --fill \
+            --limit "${{ github.event.inputs.limit || '40' }}" \
+            --out ../LeetSwipe/assets/data/patterns.json \
             ${{ github.event.inputs.model && format('--model {0}', github.event.inputs.model) || '' }}
 
       - name: Render reel narration audio
