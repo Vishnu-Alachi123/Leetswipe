@@ -15,6 +15,9 @@ import { Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router, useLocalSearchParams } from 'expo-router';
 
+import { useWindowDimensions } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+
 import { fetchQuestions, type Difficulty, type Question } from '@/api/get-questions';
 import { saveQuestion } from '@/api/saved';
 import { getSeen, markSeen, recordActivity } from '@/api/progress';
@@ -58,6 +61,19 @@ export default function DeckScreen() {
   // Read explanations aloud after answering. Off by default — audio that
   // starts unasked in a quiet room is how apps get uninstalled.
   const [narrate, setNarrate] = useState(false);
+  // Small phones need tighter spacing, otherwise a card carrying a diagram
+  // pushes the fourth answer option below the fold.
+  const { height: windowHeight } = useWindowDimensions();
+  const short = windowHeight < 700;
+  // On a small screen a card carrying a diagram genuinely cannot fit, so the
+  // card scrolls. Scrolling is useless if it isn't discoverable — track whether
+  // there is more below and fade the card's bottom edge to say so.
+  const [moreBelow, setMoreBelow] = useState(false);
+  const cardScroll = useRef({ contentH: 0, viewH: 0 });
+  const updateOverflow = useCallback(() => {
+    const { contentH, viewH } = cardScroll.current;
+    setMoreBelow(contentH > viewH + 8);
+  }, []);
 
   const speak = useCallback(
     (correct: boolean, explanation: string) => {
@@ -232,7 +248,10 @@ export default function DeckScreen() {
     <SafeAreaView style={styles.screen}>
       <View style={styles.header}>
         <Pressable onPress={() => router.back()} hitSlop={12}>
-          <Text style={styles.back}>‹ Topics</Text>
+          {/* The filter name folds into the back row when its own line is cut. */}
+          <Text style={styles.back} numberOfLines={1}>
+            ‹ {short ? filterLabel : 'Topics'}
+          </Text>
         </Pressable>
         <View style={styles.headerRight}>
           <Text style={styles.progress}>
@@ -254,9 +273,11 @@ export default function DeckScreen() {
           </Pressable>
         </View>
       </View>
-      <Text style={styles.filterLabel} numberOfLines={1}>
-        {filterLabel}
-      </Text>
+      {!short && (
+        <Text style={styles.filterLabel} numberOfLines={1}>
+          {filterLabel}
+        </Text>
+      )}
 
       <View style={styles.deck}>
         {next && (
@@ -269,6 +290,7 @@ export default function DeckScreen() {
         <Animated.View
           style={[
             styles.card,
+            short && styles.cardShort,
             { transform: [{ translateX: position.x }, { translateY: position.y }, { rotate }] },
           ]}
           {...panResponder.panHandlers}>
@@ -279,7 +301,21 @@ export default function DeckScreen() {
             <Text style={[styles.stampText, { color: COLORS.skip }]}>SKIP</Text>
           </Animated.View>
 
-          <ScrollView showsVerticalScrollIndicator={false}>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            scrollEventThrottle={16}
+            onLayout={(e) => {
+              cardScroll.current.viewH = e.nativeEvent.layout.height;
+              updateOverflow();
+            }}
+            onContentSizeChange={(_, h) => {
+              cardScroll.current.contentH = h;
+              updateOverflow();
+            }}
+            onScroll={(e) => {
+              const { contentOffset, contentSize, layoutMeasurement } = e.nativeEvent;
+              setMoreBelow(contentOffset.y + layoutMeasurement.height < contentSize.height - 8);
+            }}>
             <View style={styles.metaRow}>
               <View
                 style={[
@@ -297,26 +333,32 @@ export default function DeckScreen() {
               <Text style={styles.muted}>{current.topics.join(' · ')}</Text>
             </View>
 
-            <Text style={styles.cardTitle}>{current.title}</Text>
-            <Text style={styles.question}>{current.question}</Text>
+            <Text style={[styles.cardTitle, short && styles.cardTitleShort]}>{current.title}</Text>
+            <Text style={[styles.question, short && styles.questionShort]}>{current.question}</Text>
 
             {/* Data-driven diagram, drawn by the same renderer the Learn tab
                 uses — one component library serves every question format. */}
             {current.visual?.kind && current.visual.state && (
               <View style={styles.visualWrap}>
-                <VisualizationView viz={current.visual} />
+                {/* Compact: in the deck the diagram supports the question, and
+                    a full-height one pushed the answer options below the fold
+                    on shorter phones. */}
+                <VisualizationView viz={current.visual} compact />
               </View>
             )}
 
             {current.options.map((opt, i) => {
               const isCorrect = i === current.answer;
-              let optStyle = styles.option;
+              // Base first, so the answered states below keep the compact
+              // spacing instead of replacing it.
+              const optBase = short ? { ...styles.option, ...styles.optionShort } : styles.option;
+              let optStyle = optBase;
               let labelStyle = styles.optionText;
               if (answered && isCorrect) {
-                optStyle = { ...styles.option, ...styles.optionCorrect };
+                optStyle = { ...optBase, ...styles.optionCorrect };
                 labelStyle = { ...styles.optionText, color: '#fff' };
               } else if (answered && i === selected && !isCorrect) {
-                optStyle = { ...styles.option, ...styles.optionWrong };
+                optStyle = { ...optBase, ...styles.optionWrong };
                 labelStyle = { ...styles.optionText, color: '#fff' };
               }
               return (
@@ -355,6 +397,17 @@ export default function DeckScreen() {
               </View>
             )}
           </ScrollView>
+
+          {/* Fade the bottom edge while content remains below, so a clipped
+              answer option reads as "scroll for more" rather than "missing". */}
+          {moreBelow && (
+            <LinearGradient
+              pointerEvents="none"
+              colors={['#171c2400', COLORS.card]}
+              style={styles.scrollFade}>
+              <Text style={styles.scrollFadeHint}>▾ more</Text>
+            </LinearGradient>
+          )}
         </Animated.View>
       </View>
 
@@ -370,7 +423,11 @@ export default function DeckScreen() {
           <Text style={[styles.actionText, { color: COLORS.save }]}>Save ♥</Text>
         </Pressable>
       </View>
-      <Text style={styles.hint}>Tap an answer to check it · swipe or use the buttons to move on</Text>
+      {/* On short screens every row counts; the gestures are discoverable from
+          the buttons themselves. */}
+      {!short && (
+        <Text style={styles.hint}>Tap an answer to check it · swipe or use the buttons to move on</Text>
+      )}
     </SafeAreaView>
   );
 }
@@ -410,8 +467,9 @@ const styles = StyleSheet.create({
   narrateBtnOn: { borderColor: COLORS.accent, backgroundColor: '#1d3a5f' },
   narrateIcon: { fontSize: 13 },
   visualWrap: {
-    marginBottom: 16,
-    paddingVertical: 6,
+    marginBottom: 12,
+    paddingVertical: 10,
+    paddingHorizontal: 4,
     borderRadius: 14,
     backgroundColor: '#10151d',
     borderWidth: 1,
@@ -431,12 +489,31 @@ const styles = StyleSheet.create({
     borderColor: COLORS.border,
     padding: 22,
   },
+  scrollFade: {
+    position: 'absolute',
+    left: 1,
+    right: 1,
+    bottom: 1,
+    height: 46,
+    borderBottomLeftRadius: 21,
+    borderBottomRightRadius: 21,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    paddingBottom: 6,
+  },
+  scrollFadeHint: { color: COLORS.accent, fontSize: 11, fontWeight: '700' },
+  cardShort: { padding: 16 },
+  cardTitleShort: { fontSize: 18, marginBottom: 6 },
+  questionShort: { fontSize: 15, lineHeight: 21, marginBottom: 10 },
+  // padding stays at 11 so each row is still a comfortable ~43px tap target;
+  // the savings come from the gaps between them.
+  optionShort: { padding: 11, marginBottom: 5, gap: 10 },
   cardBehind: { backgroundColor: COLORS.cardBehind, transform: [{ scale: 0.95 }, { translateY: 14 }] },
   metaRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 14, flexWrap: 'wrap' },
   pill: { borderWidth: 1, borderRadius: 999, paddingHorizontal: 10, paddingVertical: 3 },
   pillText: { fontSize: 12, fontWeight: '700' },
   cardTitle: { color: COLORS.text, fontSize: 20, fontWeight: '800', marginBottom: 10, letterSpacing: -0.3 },
-  question: { color: COLORS.text, fontSize: 16, lineHeight: 23, marginBottom: 18 },
+  question: { color: COLORS.text, fontSize: 16, lineHeight: 23, marginBottom: 14 },
   option: {
     flexDirection: 'row',
     alignItems: 'center',
