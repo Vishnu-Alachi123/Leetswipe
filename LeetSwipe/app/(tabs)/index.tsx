@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router, useFocusEffect } from 'expo-router';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import { fetchTopics, type Difficulty, type TopicsResponse } from '@/api/get-questions';
 import { getStreak } from '@/api/progress';
@@ -76,7 +77,11 @@ export default function PickerScreen() {
         {/* The streak is shown even at zero. Hiding it until day two means the
             people most likely to churn — first-timers — never learn the app
             tracks one, so there is nothing to protect on day two. */}
-        <View style={[styles.streakCard, streak > 0 && styles.streakCardActive]}>
+        <LinearGradient
+          colors={streak > 0 ? ['#2a1c10', '#231d16'] : [COLORS.card, COLORS.card]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={[styles.streakCard, streak > 0 && styles.streakCardActive]}>
           <Text style={styles.streakEmoji}>{streak > 0 ? '🔥' : '👋'}</Text>
           <View style={styles.streakBody}>
             <Text style={styles.streakTitle}>
@@ -90,7 +95,7 @@ export default function PickerScreen() {
                 : 'Answer a question today and come back tomorrow.'}
             </Text>
           </View>
-        </View>
+        </LinearGradient>
 
         {/* Difficulty filter — applies to whatever you open next. */}
         <Text style={styles.sectionLabel}>Difficulty</Text>

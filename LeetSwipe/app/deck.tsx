@@ -18,8 +18,11 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { fetchQuestions, type Difficulty, type Question } from '@/api/get-questions';
 import { saveQuestion } from '@/api/saved';
 import { getSeen, markSeen, recordActivity } from '@/api/progress';
+import * as Speech from 'expo-speech';
+
 import { COLORS, DIFFICULTY_COLOR } from '@/constants/colors';
 import { Celebration } from '@/components/celebration';
+import { VisualizationView } from '@/components/visualization';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SWIPE_THRESHOLD = 0.25 * SCREEN_WIDTH;
@@ -49,6 +52,24 @@ export default function DeckScreen() {
   // Bumped on each correct answer; the Celebration keys its burst off the value.
   const [burst, setBurst] = useState<number | null>(null);
   const celebrate = useCallback(() => setBurst((n) => (n ?? 0) + 1), []);
+  // Read explanations aloud after answering. Off by default — audio that
+  // starts unasked in a quiet room is how apps get uninstalled.
+  const [narrate, setNarrate] = useState(false);
+
+  const speak = useCallback(
+    (correct: boolean, explanation: string) => {
+      if (!narrate) return;
+      Speech.stop();
+      // A short verdict first, so the audio is useful even if the listener
+      // stops it before the full explanation.
+      const lead = correct ? 'Correct. ' : 'Not quite. ';
+      Speech.speak(lead + explanation, { rate: 0.98 });
+    },
+    [narrate],
+  );
+
+  // Leaving the deck must never leave a voice talking over the next screen.
+  useEffect(() => () => { Speech.stop(); }, []);
 
   const position = useRef(new Animated.ValueXY()).current;
 
@@ -88,8 +109,10 @@ export default function DeckScreen() {
       }
       position.setValue({ x: 0, y: 0 });
       setSelected(null);
-      // Clear the burst so it cannot linger over the next card.
+      // Clear the burst so it cannot linger over the next card, and cut any
+      // narration mid-sentence — it belongs to the card that just left.
       setBurst(null);
+      Speech.stop();
       setIndex((i) => i + 1);
     },
     [current, position],
@@ -208,9 +231,25 @@ export default function DeckScreen() {
         <Pressable onPress={() => router.back()} hitSlop={12}>
           <Text style={styles.back}>‹ Topics</Text>
         </Pressable>
-        <Text style={styles.progress}>
-          {index + 1} / {questions.length} · ♥ {savedCount}
-        </Text>
+        <View style={styles.headerRight}>
+          <Text style={styles.progress}>
+            {index + 1} / {questions.length} · ♥ {savedCount}
+          </Text>
+          <Pressable
+            onPress={() => {
+              setNarrate((n) => {
+                if (n) Speech.stop();
+                return !n;
+              });
+            }}
+            hitSlop={10}
+            accessibilityRole="switch"
+            accessibilityState={{ checked: narrate }}
+            accessibilityLabel={narrate ? 'Turn spoken explanations off' : 'Turn spoken explanations on'}
+            style={[styles.narrateBtn, narrate && styles.narrateBtnOn]}>
+            <Text style={styles.narrateIcon}>{narrate ? '🔊' : '🔇'}</Text>
+          </Pressable>
+        </View>
       </View>
       <Text style={styles.filterLabel} numberOfLines={1}>
         {filterLabel}
@@ -258,6 +297,14 @@ export default function DeckScreen() {
             <Text style={styles.cardTitle}>{current.title}</Text>
             <Text style={styles.question}>{current.question}</Text>
 
+            {/* Data-driven diagram, drawn by the same renderer the Learn tab
+                uses — one component library serves every question format. */}
+            {current.visual?.kind && current.visual.state && (
+              <View style={styles.visualWrap}>
+                <VisualizationView viz={current.visual} />
+              </View>
+            )}
+
             {current.options.map((opt, i) => {
               const isCorrect = i === current.answer;
               let optStyle = styles.option;
@@ -275,6 +322,7 @@ export default function DeckScreen() {
                   disabled={answered}
                   onPress={() => {
                     setSelected(i);
+                    speak(isCorrect, current.explanation);
                     if (isCorrect) {
                       celebrate();
                       // A heavier tap for a right answer, so the feedback is
@@ -345,6 +393,27 @@ const styles = StyleSheet.create({
     letterSpacing: -0.3,
   },
   progress: { color: COLORS.muted, fontSize: 13, fontWeight: '600' },
+  headerRight: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  narrateBtn: {
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    backgroundColor: COLORS.card,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  narrateBtnOn: { borderColor: COLORS.accent, backgroundColor: '#1d3a5f' },
+  narrateIcon: { fontSize: 13 },
+  visualWrap: {
+    marginBottom: 16,
+    paddingVertical: 6,
+    borderRadius: 14,
+    backgroundColor: '#10151d',
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
   deck: { flex: 1, width: '100%', alignItems: 'center', justifyContent: 'center', paddingHorizontal: 16 },
   card: {
     position: 'absolute',

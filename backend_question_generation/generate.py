@@ -139,6 +139,19 @@ def generate_mock(problem: dict, num: int) -> MCQSet:
         {
             "title": f"Choosing a data structure for {title}",
             "question": "You must repeatedly ask whether a value has already been encountered, while touching each element only once. Which structure supports that access pattern best?",
+            # Exercises the deck's visual rendering offline. Sets the scene
+            # (a scan in progress) without pointing at any option.
+            "visual": {
+                "kind": "array",
+                "state": {"cells": [
+                    {"value": 4, "status": "visited", "label": ""},
+                    {"value": 9, "status": "visited", "label": ""},
+                    {"value": 2, "status": "active", "label": "current"},
+                    {"value": 9, "status": "normal", "label": ""},
+                    {"value": 7, "status": "normal", "label": ""},
+                ]},
+                "caption": "Mid-scan: has 2 been seen before?",
+            },
             "options": [
                 "A hash set",
                 "A sorted array searched by bisection",
@@ -207,6 +220,7 @@ def generate_mock(problem: dict, num: int) -> MCQSet:
             options=t["options"],
             answer=t["answer"],
             explanation=t["explanation"],
+            visual=t.get("visual"),
         ))
     return MCQSet(questions=out)
 
