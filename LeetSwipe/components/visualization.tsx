@@ -98,13 +98,24 @@ function AnimatedCell({ cell, size }: { cell: VizCell; size: number }) {
   );
 }
 
-function CellRow({ cells, horizontal }: { cells: VizCell[]; horizontal?: boolean }) {
+function CellRow({
+  cells,
+  horizontal,
+  compact,
+}: {
+  cells: VizCell[];
+  horizontal?: boolean;
+  compact?: boolean;
+}) {
   // Size cells from the actual screen so the whole row fits without clipping —
   // a fixed size overflowed and cut the edge cells on 375px-wide phones.
   const { width } = useWindowDimensions();
   const gap = 6;
   const available = Math.min(width, 460) - 56 - (cells.length - 1) * gap;
-  const size = Math.max(26, Math.min(52, Math.floor(available / Math.max(cells.length, 1))));
+  const size = Math.max(
+    26,
+    Math.min(compact ? 42 : 52, Math.floor(available / Math.max(cells.length, 1))),
+  );
   const body = (
     <View style={styles.row}>
       {cells.map((cell, i) => (
@@ -224,7 +235,18 @@ function TableView({
   );
 }
 
-export function VisualizationView({ viz }: { viz: Visualization }) {
+/**
+ * @param compact Shrinks the diagram for contexts where it supports the content
+ *   rather than being the content — the swipe deck, where a full-height diagram
+ *   pushes the answer options below the fold on a short phone.
+ */
+export function VisualizationView({
+  viz,
+  compact,
+}: {
+  viz: Visualization;
+  compact?: boolean;
+}) {
   const { kind, state, caption } = viz;
   const { width } = useWindowDimensions();
 
@@ -233,7 +255,7 @@ export function VisualizationView({ viz }: { viz: Visualization }) {
     case 'array':
     case 'stack':
     case 'linkedlist':
-      body = <CellRow cells={state.cells ?? []} horizontal />;
+      body = <CellRow cells={state.cells ?? []} horizontal compact={compact} />;
       break;
     case 'queue':
       body = <QueueView cells={state.cells ?? []} />;
@@ -266,7 +288,7 @@ export function VisualizationView({ viz }: { viz: Visualization }) {
   }
 
   return (
-    <View style={styles.wrap}>
+    <View style={[styles.wrap, compact && styles.wrapCompact]}>
       {/* Last-resort safety net: anything wider than the screen — outsized
           system fonts, a future model emitting 14 cells — becomes scrollable
           instead of clipped. Content that fits stays centred and the scroll
@@ -279,7 +301,10 @@ export function VisualizationView({ viz }: { viz: Visualization }) {
         <View style={styles.body}>{body}</View>
       </ScrollView>
       {!!caption && (
-        <Text style={styles.caption} maxFontSizeMultiplier={1.3}>
+        <Text
+          style={[styles.caption, compact && styles.captionCompact]}
+          numberOfLines={compact ? 2 : undefined}
+          maxFontSizeMultiplier={1.3}>
           {caption}
         </Text>
       )}
@@ -289,6 +314,7 @@ export function VisualizationView({ viz }: { viz: Visualization }) {
 
 const styles = StyleSheet.create({
   wrap: { alignItems: 'center', justifyContent: 'center', minHeight: 150 },
+  wrapCompact: { minHeight: 0 },
   body: { alignItems: 'center', justifyContent: 'center' },
   safetyScroll: { flexGrow: 1, justifyContent: 'center', paddingHorizontal: 6 },
   row: { flexDirection: 'row', alignItems: 'flex-end', gap: 6 },
@@ -351,4 +377,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     paddingHorizontal: 12,
   },
+  captionCompact: { marginTop: 8, fontSize: 12, lineHeight: 16 },
 });
