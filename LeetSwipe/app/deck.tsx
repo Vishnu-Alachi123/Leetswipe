@@ -19,6 +19,7 @@ import { fetchQuestions, type Difficulty, type Question } from '@/api/get-questi
 import { saveQuestion } from '@/api/saved';
 import { getSeen, markSeen, recordActivity } from '@/api/progress';
 import { COLORS, DIFFICULTY_COLOR } from '@/constants/colors';
+import { Celebration } from '@/components/celebration';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SWIPE_THRESHOLD = 0.25 * SCREEN_WIDTH;
@@ -45,6 +46,9 @@ export default function DeckScreen() {
   const [savedCount, setSavedCount] = useState(0);
   const [savedList, setSavedList] = useState<Question[]>([]);
   const [selected, setSelected] = useState<number | null>(null);
+  // Bumped on each correct answer; the Celebration keys its burst off the value.
+  const [burst, setBurst] = useState<number | null>(null);
+  const celebrate = useCallback(() => setBurst((n) => (n ?? 0) + 1), []);
 
   const position = useRef(new Animated.ValueXY()).current;
 
@@ -84,6 +88,8 @@ export default function DeckScreen() {
       }
       position.setValue({ x: 0, y: 0 });
       setSelected(null);
+      // Clear the burst so it cannot linger over the next card.
+      setBurst(null);
       setIndex((i) => i + 1);
     },
     [current, position],
@@ -216,6 +222,7 @@ export default function DeckScreen() {
             <Text style={styles.cardTitle}>{next.title}</Text>
           </View>
         )}
+        <Celebration trigger={burst} />
 
         <Animated.View
           style={[
@@ -267,8 +274,19 @@ export default function DeckScreen() {
                   key={i}
                   disabled={answered}
                   onPress={() => {
-                    haptic();
                     setSelected(i);
+                    if (isCorrect) {
+                      celebrate();
+                      // A heavier tap for a right answer, so the feedback is
+                      // felt as well as seen.
+                      if (Platform.OS !== 'web') {
+                        Haptics.notificationAsync(
+                          Haptics.NotificationFeedbackType.Success,
+                        ).catch(() => {});
+                      }
+                    } else {
+                      haptic();
+                    }
                   }}
                   style={optStyle}>
                   <Text style={styles.optionLetter}>{String.fromCharCode(65 + i)}</Text>
@@ -332,7 +350,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
     maxWidth: 460,
-    height: '92%',
+    // Height follows the content up to this ceiling. A fixed height left a
+    // short question sitting above a large empty panel.
+    maxHeight: '92%',
     backgroundColor: COLORS.card,
     borderRadius: 22,
     borderWidth: 1,

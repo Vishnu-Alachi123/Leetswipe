@@ -13,6 +13,7 @@ import { router, useFocusEffect } from 'expo-router';
 import { fetchTopics, type Difficulty, type TopicsResponse } from '@/api/get-questions';
 import { getStreak } from '@/api/progress';
 import { COLORS, DIFFICULTY_COLOR } from '@/constants/colors';
+import { DifficultyBar } from '@/components/difficulty-bar';
 
 const DIFFICULTIES: Difficulty[] = ['Easy', 'Medium', 'Hard'];
 
@@ -69,13 +70,26 @@ export default function PickerScreen() {
           <Text style={styles.brand}>
             Leet<Text style={{ color: COLORS.accent }}>Swipe</Text>
           </Text>
-          {streak > 0 && (
-            <View style={styles.streakPill}>
-              <Text style={styles.streakText}>🔥 {streak}-day streak</Text>
-            </View>
-          )}
         </View>
-        <Text style={styles.tagline}>Pick a topic and start swiping.</Text>
+
+        {/* The streak is shown even at zero. Hiding it until day two means the
+            people most likely to churn — first-timers — never learn the app
+            tracks one, so there is nothing to protect on day two. */}
+        <View style={[styles.streakCard, streak > 0 && styles.streakCardActive]}>
+          <Text style={styles.streakEmoji}>{streak > 0 ? '🔥' : '👋'}</Text>
+          <View style={styles.streakBody}>
+            <Text style={styles.streakTitle}>
+              {streak > 0
+                ? `${streak}-day streak`
+                : 'Start your streak'}
+            </Text>
+            <Text style={styles.streakSub}>
+              {streak > 0
+                ? 'Answer one question today to keep it alive.'
+                : 'Answer a question today and come back tomorrow.'}
+            </Text>
+          </View>
+        </View>
 
         {/* Difficulty filter — applies to whatever you open next. */}
         <Text style={styles.sectionLabel}>Difficulty</Text>
@@ -113,15 +127,17 @@ export default function PickerScreen() {
         {topics!.categories.map((c) => (
           <Pressable
             key={c.category}
-            style={styles.topicCard}
+            accessibilityRole="button"
+            accessibilityLabel={`${c.category}, ${c.total} questions`}
+            style={({ pressed }) => [styles.topicCard, pressed && styles.topicCardPressed]}
             onPress={() => open({ category: c.category, label: c.category })}>
-            <View style={styles.topicMain}>
-              <Text style={styles.topicTitle}>{c.category}</Text>
-              <Text style={styles.topicMeta}>
-                {c.total} question{c.total === 1 ? '' : 's'} · {c.easy}E · {c.medium}M · {c.hard}H
+            <View style={styles.topicHeader}>
+              <Text style={styles.topicTitle} numberOfLines={1}>
+                {c.category}
               </Text>
+              <Text style={styles.topicCount}>{c.total}</Text>
             </View>
-            <Text style={styles.chevron}>›</Text>
+            <DifficultyBar easy={c.easy} medium={c.medium} hard={c.hard} />
           </Pressable>
         ))}
 
@@ -163,16 +179,22 @@ const styles = StyleSheet.create({
   wrap: { padding: 20, gap: 10, paddingBottom: 40 },
   headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 6 },
   brand: { color: COLORS.text, fontSize: 28, fontWeight: '800', letterSpacing: -0.5 },
-  streakPill: {
-    backgroundColor: '#1c2430',
-    borderRadius: 999,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
+  streakCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 14,
+    backgroundColor: COLORS.card,
     borderWidth: 1,
     borderColor: COLORS.border,
+    borderRadius: 16,
+    padding: 16,
+    marginTop: 12,
   },
-  streakText: { color: '#ffb454', fontSize: 13, fontWeight: '700' },
-  tagline: { color: COLORS.muted, fontSize: 15, marginBottom: 6 },
+  streakCardActive: { borderColor: '#ffb45455', backgroundColor: '#231d16' },
+  streakEmoji: { fontSize: 26 },
+  streakBody: { flex: 1 },
+  streakTitle: { color: COLORS.text, fontSize: 17, fontWeight: '800' },
+  streakSub: { color: COLORS.muted, fontSize: 13, marginTop: 2, lineHeight: 18 },
   sectionLabel: {
     color: COLORS.muted,
     fontSize: 12,
@@ -203,18 +225,27 @@ const styles = StyleSheet.create({
   },
   listTitle: { color: COLORS.text, fontSize: 18, fontWeight: '800' },
   topicCard: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
     backgroundColor: COLORS.card,
     borderWidth: 1,
     borderColor: COLORS.border,
     borderRadius: 14,
     padding: 16,
   },
-  topicMain: { flex: 1 },
-  topicTitle: { color: COLORS.text, fontSize: 16, fontWeight: '700', marginBottom: 3 },
-  topicMeta: { color: COLORS.muted, fontSize: 13 },
+  topicCardPressed: { borderColor: COLORS.accent, backgroundColor: '#1a222e' },
+  topicHeader: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    justifyContent: 'space-between',
+    gap: 10,
+    marginBottom: 12,
+  },
+  topicTitle: { flex: 1, color: COLORS.text, fontSize: 16, fontWeight: '700' },
+  topicCount: {
+    color: COLORS.muted,
+    fontSize: 15,
+    fontWeight: '700',
+    fontVariant: ['tabular-nums'],
+  },
   chevron: { color: COLORS.muted, fontSize: 26, fontWeight: '300', marginLeft: 12 },
   footer: { color: COLORS.muted, fontSize: 13, textAlign: 'center', marginTop: 16 },
   muted: { color: COLORS.muted, fontSize: 14, textAlign: 'center', marginTop: 8 },
