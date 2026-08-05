@@ -10891,6 +10891,2669 @@
       ],
       "answer": 1,
       "explanation": "Converting the integer to a string and reversing it is a straightforward and naive approach, as it leverages string manipulation functions. The stack method is also valid but more complex. Bitwise operations are not applicable for reversing digits, and recursion, while possible, is not the most efficient method."
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "contains-duplicate-4",
+      "title": "Optimal Data Structure for Duplicate Detection",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "contains-duplicate",
+      "difficulty": "Easy",
+      "question": "Which data structure allows for efficient duplicate detection in an array with O(1) average time complexity for lookups?",
+      "options": [
+        "Array",
+        "Hash Set",
+        "Linked List",
+        "Binary Search Tree"
+      ],
+      "answer": 1,
+      "explanation": "A Hash Set allows for O(1) average time complexity for lookups, making it ideal for detecting duplicates in an array. The Array option is tempting because it can store elements, but it does not provide efficient lookup times. The Linked List and Binary Search Tree both have higher average lookup times, making them less suitable for this task.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.470574+00:00",
+      "contentHash": "e0bce2e346dee838dc2bc826f61edd16",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "contains-duplicate-5",
+      "title": "Space Complexity Trade-offs",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "contains-duplicate",
+      "difficulty": "Easy",
+      "question": "What is the space complexity of using a Hash Set to check for duplicates in an array of size n?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(1)",
+        "O(n^2)"
+      ],
+      "answer": 0,
+      "explanation": "Using a Hash Set to check for duplicates requires O(n) space in the worst case, as each unique element may need to be stored. The O(1) option is misleading because it implies constant space, which is not the case here. O(log n) and O(n^2) are also incorrect as they do not accurately reflect the storage needs of a Hash Set.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.470632+00:00",
+      "contentHash": "5ad6d30f0a4badc620395a6ef3094bbf",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "contains-duplicate-6",
+      "title": "Handling Edge Cases with Duplicates",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "contains-duplicate",
+      "difficulty": "Easy",
+      "question": "What potential issue arises when checking for duplicates in an array that contains multiple identical elements?",
+      "options": [
+        "Increased time complexity",
+        "Incorrect duplicate detection",
+        "Memory overflow",
+        "Unbounded recursion"
+      ],
+      "answer": 1,
+      "explanation": "If the approach does not account for multiple identical elements, it may incorrectly conclude that there are no duplicates when there are. The increased time complexity option is misleading because the algorithm's complexity remains the same regardless of duplicates. Memory overflow and unbounded recursion are not relevant to this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.470666+00:00",
+      "contentHash": "a3f282c0f3f29e4ac8942fe8f5d619e8",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-anagram-4",
+      "title": "Which data structure is most efficient for checking if two strings are anagrams?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-anagram",
+      "difficulty": "Easy",
+      "question": "What is the best data structure to use for efficiently checking if two strings are anagrams of each other?",
+      "options": [
+        "A hash table to count character frequencies",
+        "A stack to compare characters",
+        "A linked list to store characters",
+        "An array to store characters in sorted order"
+      ],
+      "answer": 0,
+      "explanation": "Using a hash table to count character frequencies allows for O(n) time complexity, where n is the length of the strings. The stack option fails because it does not provide a way to count occurrences of characters, which is essential for anagram checking.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.470724+00:00",
+      "contentHash": "7c3ab26163323a8efc14c745df087977",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-anagram-6",
+      "title": "What issue arises when using sorting to check for anagrams?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-anagram",
+      "difficulty": "Easy",
+      "question": "What is a potential drawback of using sorting to determine if two strings are anagrams?",
+      "options": [
+        "It requires additional space for the sorted arrays",
+        "It can fail with case sensitivity",
+        "It does not handle special characters",
+        "It has a higher time complexity than necessary"
+      ],
+      "answer": 3,
+      "explanation": "Sorting has a time complexity of O(n log n), which is less efficient than the O(n) approach of counting character frequencies. The space requirement for sorted arrays is not the main issue; rather, the inefficiency of sorting compared to counting is the critical drawback.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.470788+00:00",
+      "contentHash": "a6888cf3b512a0799b4e0865a6efc9df",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "two-sum-4",
+      "title": "Choosing the Right Data Structure for Fast Lookups",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "two-sum",
+      "difficulty": "Easy",
+      "question": "Which data structure allows for average O(1) time complexity for lookups when trying to find a complement in a two-sum problem?",
+      "options": [
+        "Array",
+        "Hash Table",
+        "Linked List",
+        "Binary Search Tree"
+      ],
+      "answer": 1,
+      "explanation": "A hash table provides average O(1) time complexity for lookups, making it ideal for finding complements efficiently. In contrast, an array would require O(n) time to search for an element, which is less efficient.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.470817+00:00",
+      "contentHash": "2f96f0aae37ad92afdcf80d1d7dce64f",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "two-sum-5",
+      "title": "Understanding Edge Cases in Input",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "two-sum",
+      "difficulty": "Easy",
+      "question": "What issue arises when the input array contains duplicate numbers in a two-sum problem?",
+      "options": [
+        "It will always return the first pair found.",
+        "It will lead to an infinite loop.",
+        "It may return incorrect results if not handled properly.",
+        "It will not affect the solution at all."
+      ],
+      "answer": 2,
+      "explanation": "When duplicates are present, the algorithm must be careful to ensure that it correctly identifies unique pairs that sum to the target. If duplicates are not handled, it may mistakenly count the same element multiple times, leading to incorrect results. The first option seems tempting, but it doesn't address the potential for incorrect results.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.470856+00:00",
+      "contentHash": "9db63cbd863b9ab28db64c897a0bc267",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "two-sum-6",
+      "title": "Evaluating Brute Force Solutions",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "two-sum",
+      "difficulty": "Easy",
+      "question": "Why is a brute force approach of checking all pairs for the two-sum problem inefficient?",
+      "options": [
+        "It requires sorting the array first.",
+        "It has a time complexity of O(n^2).",
+        "It cannot handle negative numbers.",
+        "It only works for sorted arrays."
+      ],
+      "answer": 1,
+      "explanation": "The brute force method involves checking every possible pair of numbers, resulting in a time complexity of O(n^2), which is inefficient for large arrays. The first option is misleading because sorting is not necessary for the brute force approach, while the other options do not accurately describe the brute force method's limitations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.470889+00:00",
+      "contentHash": "acf4621937ed46d028cb5879c8de5945",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "group-anagrams-4",
+      "title": "Which data structure is most suitable for grouping anagrams efficiently?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "group-anagrams",
+      "difficulty": "Medium",
+      "question": "Which data structure is most suitable for grouping anagrams efficiently?",
+      "options": [
+        "Hash Table",
+        "Array",
+        "Linked List",
+        "Stack"
+      ],
+      "answer": 0,
+      "explanation": "A hash table allows for O(1) average time complexity for insertions and lookups, making it ideal for grouping anagrams by their sorted character representations. The most tempting distractor, 'Array', fails because it does not provide efficient access for grouping and requires additional handling for duplicates.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.470914+00:00",
+      "contentHash": "1254d7f61a62dbc17210a174a795a864",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "group-anagrams-5",
+      "title": "What is the time complexity of the optimal solution for grouping anagrams?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "group-anagrams",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal solution for grouping anagrams?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(n * k)"
+      ],
+      "answer": 3,
+      "explanation": "The optimal solution involves sorting each string, which takes O(k log k) time for each of the n strings, resulting in an overall time complexity of O(n * k log k). Here, k is the maximum length of the strings. The distractor 'O(n log n)' is tempting as it resembles sorting complexity, but it does not account for the multiple strings being processed.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.470939+00:00",
+      "contentHash": "69697e8f160c67603dea4835f58d3f1a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "group-anagrams-6",
+      "title": "Which edge case must be considered when implementing a solution for grouping anagrams?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "group-anagrams",
+      "difficulty": "Medium",
+      "question": "Which edge case must be considered when implementing a solution for grouping anagrams?",
+      "options": [
+        "Empty strings",
+        "Strings with different lengths",
+        "Strings with special characters",
+        "Case sensitivity"
+      ],
+      "answer": 0,
+      "explanation": "Empty strings are a valid input and should be handled correctly, as they can be considered anagrams of each other. The distractor 'Strings with different lengths' is misleading because strings of different lengths cannot be anagrams, so they do not need special handling.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.470966+00:00",
+      "contentHash": "efbdac8e3f9cb4b2ee296b2a720ad49c",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "top-k-frequent-elements-4",
+      "title": "Choosing the Right Data Structure for Frequency Counting",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "top-k-frequent-elements",
+      "difficulty": "Medium",
+      "question": "Which data structure is most efficient for counting the frequency of elements in an array when aiming for O(n) time complexity?",
+      "options": [
+        "Hash Map",
+        "Sorted Array",
+        "Binary Search Tree",
+        "Linked List"
+      ],
+      "answer": 0,
+      "explanation": "A Hash Map allows for average O(1) time complexity for insertions and lookups, making it the best choice for counting frequencies efficiently. The Sorted Array option is tempting as it allows for ordered data, but it requires O(n log n) time for sorting, which is less efficient than a Hash Map's O(n).",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471008+00:00",
+      "contentHash": "1bfe1c699775fa7ec6a0d1216963c856",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "top-k-frequent-elements-5",
+      "title": "Handling Edge Cases in Frequency Counting",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "top-k-frequent-elements",
+      "difficulty": "Medium",
+      "question": "What issue might arise if the input array contains negative numbers or zeros when counting frequencies?",
+      "options": [
+        "Negative numbers are ignored",
+        "Frequency counts become inaccurate",
+        "The algorithm fails to run",
+        "All elements are treated equally"
+      ],
+      "answer": 1,
+      "explanation": "Negative numbers and zeros can affect the frequency counts if not handled correctly, especially if the implementation assumes a specific range of positive integers. The option about the algorithm failing to run is incorrect, as the algorithm can still process these numbers, but it may yield inaccurate frequency counts without proper handling.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471037+00:00",
+      "contentHash": "048c1459f3078071cd4189aa3cda8ce0",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "top-k-frequent-elements-6",
+      "title": "Optimizing for Top K Elements",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "top-k-frequent-elements",
+      "difficulty": "Medium",
+      "question": "Which approach is most efficient for retrieving the top K frequent elements after counting their frequencies?",
+      "options": [
+        "Sorting the frequency map",
+        "Using a Max Heap",
+        "Iterating through the array multiple times",
+        "Using a Min Heap"
+      ],
+      "answer": 1,
+      "explanation": "Using a Max Heap allows you to efficiently retrieve the top K frequent elements in O(n log k) time, which is optimal for this problem. Sorting the frequency map is less efficient at O(n log n), and iterating multiple times is not efficient at all. A Min Heap could also work, but it requires additional steps to maintain the size, making it less straightforward than a Max Heap in this context.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471064+00:00",
+      "contentHash": "cb3c27914021f5a07c04c719c2b6f06b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "encode-and-decode-strings-4",
+      "title": "What is a common naive approach to encoding strings for transmission?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "encode-and-decode-strings",
+      "difficulty": "Medium",
+      "question": "Which method is often used as a naive approach to encode strings by simply concatenating them?",
+      "options": [
+        "Using a delimiter to separate strings",
+        "Base64 encoding each string",
+        "Reversing each string before concatenation",
+        "Using hexadecimal representation for each character"
+      ],
+      "answer": 0,
+      "explanation": "Using a delimiter is a common naive approach, as it allows for simple separation of strings when decoding. However, this method can fail if the delimiter appears in the original strings, leading to incorrect parsing. The most tempting distractor, Base64 encoding, is more complex and not as straightforward as using a simple delimiter.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471093+00:00",
+      "contentHash": "7c1a7ef645447990900ef04d543f5535",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "encode-and-decode-strings-5",
+      "title": "What is the time complexity of the optimal encoding and decoding method?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "encode-and-decode-strings",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal approach for encoding and decoding a list of strings?",
+      "options": [
+        "O(n) for both encoding and decoding",
+        "O(n^2) for encoding, O(n) for decoding",
+        "O(n) for encoding, O(n^2) for decoding",
+        "O(n log n) for both encoding and decoding"
+      ],
+      "answer": 0,
+      "explanation": "The optimal approach for encoding and decoding strings operates in O(n) time complexity for both processes, where n is the total number of characters across all strings. The distractor suggesting O(n^2) for encoding misrepresents the efficiency of the concatenation process when using delimiters.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471126+00:00",
+      "contentHash": "99f27b2151f2f1f3457ef1400d913887",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "encode-and-decode-strings-6",
+      "title": "What issue can arise when decoding encoded strings?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "encode-and-decode-strings",
+      "difficulty": "Medium",
+      "question": "What potential problem must be addressed when decoding strings that were encoded with a delimiter?",
+      "options": [
+        "The delimiter might be misinterpreted as part of a string",
+        "Strings may contain special characters that break decoding",
+        "The order of strings may be lost during encoding",
+        "Encoded strings may exceed a certain length limit"
+      ],
+      "answer": 0,
+      "explanation": "When using a delimiter for encoding, a significant issue is that the delimiter might appear in the original strings, causing confusion during decoding. This is why careful selection of a unique delimiter is crucial. The distractor about special characters is less relevant when a proper encoding scheme is in place.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471159+00:00",
+      "contentHash": "de8737bf3a6c2b838acc1a253941370f",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "product-of-array-except-self-4",
+      "title": "Optimal Approach for Product Calculation",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "product-of-array-except-self",
+      "difficulty": "Medium",
+      "question": "Which approach allows you to calculate the product of an array except for the current element in O(n) time without using division?",
+      "options": [
+        "Using a prefix product array and a suffix product array",
+        "Iterating through the array multiple times to compute products",
+        "Using a hash table to store intermediate products",
+        "Calculating the total product and dividing by each element"
+      ],
+      "answer": 0,
+      "explanation": "The correct approach is to use a prefix product array and a suffix product array, which allows you to compute the required product in a single pass for each direction. The most tempting distractor, iterating through the array multiple times, is inefficient and has a time complexity of O(n^2).",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471194+00:00",
+      "contentHash": "0384a3ca10d7720b18c44e723505b796",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "product-of-array-except-self-5",
+      "title": "Space Complexity Considerations",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "product-of-array-except-self",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of the optimal solution that uses two additional arrays for prefix and suffix products?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal solution that uses two additional arrays for prefix and suffix products has a space complexity of O(n) due to the need to store the products for each element. The option O(1) is incorrect because it implies no additional space is used, which is not the case here.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471220+00:00",
+      "contentHash": "52bc5593fda670bcf5106a3794d54900",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "product-of-array-except-self-6",
+      "title": "Handling Edge Cases",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "product-of-array-except-self",
+      "difficulty": "Medium",
+      "question": "What happens if the input array contains a zero?",
+      "options": [
+        "The output will always contain zeros",
+        "The output will have one non-zero element",
+        "The output will have all non-zero elements",
+        "The output will be undefined"
+      ],
+      "answer": 1,
+      "explanation": "If the input array contains a zero, the output will have one non-zero element corresponding to the product of the other elements, while all other positions will be zero. The option stating that the output will always contain zeros is misleading, as it overlooks the presence of one non-zero product when there is exactly one zero in the input.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471250+00:00",
+      "contentHash": "3c4bcef1177d1ac5e5f401c1beb5f825",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-sudoku-4",
+      "title": "Which data structure is best for tracking seen numbers in a Sudoku row?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-sudoku",
+      "difficulty": "Medium",
+      "question": "In a Sudoku validation algorithm, which data structure provides efficient tracking of numbers already seen in a row?",
+      "options": [
+        "Array",
+        "Hash Set",
+        "Stack",
+        "Queue"
+      ],
+      "answer": 1,
+      "explanation": "A Hash Set allows for O(1) average time complexity for insertions and lookups, making it ideal for tracking unique numbers in a row. An Array, while usable, would require additional logic to check for duplicates, making it less efficient. The Stack and Queue are not suitable for this purpose as they are designed for different access patterns.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471275+00:00",
+      "contentHash": "816e3141525e8409cc08301f503e7709",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-sudoku-5",
+      "title": "What is the time complexity of a brute force Sudoku validation?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-sudoku",
+      "difficulty": "Medium",
+      "question": "If a brute force approach is used to validate a Sudoku board, what is the expected time complexity?",
+      "options": [
+        "O(1)",
+        "O(N^2)",
+        "O(N^3)",
+        "O(N)"
+      ],
+      "answer": 2,
+      "explanation": "A brute force approach would involve checking each cell and potentially comparing it against all other cells in the same row, column, and sub-grid, leading to a time complexity of O(N^3) in the worst case. O(N^2) might seem plausible, but it does not account for the nested checks required for validation.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471302+00:00",
+      "contentHash": "13425e945be6a3edd16ec17e433cdcc9",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-sudoku-6",
+      "title": "What issue arises if the Sudoku input contains invalid characters?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-sudoku",
+      "difficulty": "Medium",
+      "question": "If a Sudoku board contains characters outside the valid range (1-9 and '.'), what problem does this introduce?",
+      "options": [
+        "It will still validate correctly",
+        "It may cause an infinite loop",
+        "It will produce incorrect validation results",
+        "It will raise an exception"
+      ],
+      "answer": 2,
+      "explanation": "Invalid characters will disrupt the validation logic, leading to incorrect results since the algorithm expects only digits and the '.' character. The option about raising an exception is misleading; while it might happen in some implementations, the primary concern is incorrect validation. The other options do not accurately reflect the implications of invalid input.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471334+00:00",
+      "contentHash": "264d85d03f4a2975221252e9f2982a9b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-consecutive-sequence-4",
+      "title": "Optimal Data Structure for Tracking Seen Elements",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-consecutive-sequence",
+      "difficulty": "Medium",
+      "question": "Which data structure is most efficient for tracking whether elements have been seen while finding the longest consecutive sequence?",
+      "options": [
+        "A sorted array for binary search",
+        "A hash set for O(1) lookups",
+        "A linked list for ordered traversal",
+        "A stack for last-in-first-out access"
+      ],
+      "answer": 1,
+      "explanation": "A hash set allows for O(1) average time complexity for lookups, which is crucial for efficiently checking if a number exists while iterating through the sequence. The sorted array option may seem appealing for searching but requires O(log n) time for each lookup, making it less efficient in this context. The other options do not provide the necessary efficiency for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471368+00:00",
+      "contentHash": "7576343083409ea2f2f6bf50f173ac7e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-consecutive-sequence-5",
+      "title": "Handling Edge Cases in Input",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-consecutive-sequence",
+      "difficulty": "Medium",
+      "question": "What potential issue arises if the input array contains duplicate elements when finding the longest consecutive sequence?",
+      "options": [
+        "Duplicates can inflate the sequence count",
+        "Duplicates can be ignored without issue",
+        "Duplicates can cause infinite loops",
+        "Duplicates can reduce the time complexity"
+      ],
+      "answer": 1,
+      "explanation": "Duplicates do not affect the length of the longest consecutive sequence directly and can be ignored during processing. The first option is misleading because duplicates do not inflate the count of unique sequences. The other options are incorrect as they do not accurately describe the behavior of duplicates in this context.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471399+00:00",
+      "contentHash": "df94dd7e86accc7703fb1b1dc9c21f1d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-consecutive-sequence-6",
+      "title": "Time Complexity of the Optimal Approach",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-consecutive-sequence",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal solution for finding the longest consecutive sequence in an unsorted array?",
+      "options": [
+        "O(n log n) due to sorting",
+        "O(n) due to linear traversal",
+        "O(n^2) due to nested loops",
+        "O(n^2 log n) due to multiple passes"
+      ],
+      "answer": 1,
+      "explanation": "The optimal solution involves using a hash set to achieve O(n) time complexity, where n is the number of elements in the array, allowing for linear traversal and constant-time lookups. The O(n log n) option is incorrect because sorting is not necessary for this problem. The other options suggest inefficient methods that do not apply to the optimal approach.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471430+00:00",
+      "contentHash": "eadfc71a167d13edd8b46d38b3264bb6",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-palindrome-4",
+      "title": "Optimal Approach for Palindrome Checking",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-palindrome",
+      "difficulty": "Easy",
+      "question": "Which approach is most efficient for checking if a string is a palindrome?",
+      "options": [
+        "Using a stack to reverse the string",
+        "Iterating from both ends towards the center",
+        "Recursively checking each character",
+        "Sorting the string and comparing halves"
+      ],
+      "answer": 1,
+      "explanation": "The most efficient method is to iterate from both ends towards the center, which runs in O(n) time and O(1) space. The stack approach, while valid, uses O(n) space for storing characters, making it less efficient. Sorting also takes O(n log n) time, which is unnecessary for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471458+00:00",
+      "contentHash": "555de8c5a533d2d4814a879499a4cc17",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-palindrome-5",
+      "title": "Handling Non-Alphanumeric Characters",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-palindrome",
+      "difficulty": "Easy",
+      "question": "What issue arises if non-alphanumeric characters are included in the palindrome check?",
+      "options": [
+        "They should be ignored in the comparison",
+        "They should be counted as invalid characters",
+        "They should be treated as unique characters",
+        "They should always return false"
+      ],
+      "answer": 0,
+      "explanation": "Non-alphanumeric characters should be ignored in the comparison, allowing for a valid palindrome check on the remaining characters. The option that suggests counting them as invalid characters fails because it would incorrectly disqualify valid palindromes like 'A man, a plan, a canal: Panama'.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471491+00:00",
+      "contentHash": "22f2b2027bb1d7657897cade683a59f6",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-palindrome-6",
+      "title": "Edge Cases in Palindrome Checking",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-palindrome",
+      "difficulty": "Easy",
+      "question": "Which of the following is an important edge case to consider when checking for palindromes?",
+      "options": [
+        "An empty string should return true",
+        "A single character should return false",
+        "Strings with only spaces should return false",
+        "Strings with mixed case should be treated differently"
+      ],
+      "answer": 0,
+      "explanation": "An empty string is considered a palindrome and should return true. This is a common edge case in palindrome checks. The option stating that a single character should return false is incorrect, as single characters are palindromes by definition.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471521+00:00",
+      "contentHash": "c095ea44a44af685607066ef1068504e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "two-sum-ii-input-array-is-sorted-4",
+      "title": "Optimal Approach for Sorted Input",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "two-sum-ii-input-array-is-sorted",
+      "difficulty": "Medium",
+      "question": "When given a sorted array to find two numbers that add up to a target, which approach is most efficient?",
+      "options": [
+        "Using a hash map to store complements",
+        "Iterating through the array with a nested loop",
+        "Employing a two-pointer technique",
+        "Sorting the array and then using binary search"
+      ],
+      "answer": 2,
+      "explanation": "The two-pointer technique is optimal here because it leverages the sorted nature of the array, allowing for a linear time complexity of O(n). The nested loop approach is less efficient, resulting in O(n^2) time complexity, which is unnecessary when a two-pointer strategy can achieve the same result efficiently.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471555+00:00",
+      "contentHash": "e4d010bc563f0b876951b4cc63a13b46",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "two-sum-ii-input-array-is-sorted-5",
+      "title": "Handling Edge Cases",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "two-sum-ii-input-array-is-sorted",
+      "difficulty": "Medium",
+      "question": "What potential issue should be considered when the input array contains duplicate values?",
+      "options": [
+        "The algorithm will always find the first pair",
+        "Duplicates can lead to incorrect results",
+        "The two-pointer approach will still work correctly",
+        "Duplicates can improve the efficiency of the algorithm"
+      ],
+      "answer": 2,
+      "explanation": "The two-pointer approach is robust to duplicates, as it will still correctly identify pairs that sum to the target. The tempting distractor suggests that duplicates lead to incorrect results, but the algorithm is designed to handle them by moving pointers appropriately.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471585+00:00",
+      "contentHash": "7e2230b88c57bab8ef0427181db6b0fe",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "two-sum-ii-input-array-is-sorted-6",
+      "title": "Space Complexity Considerations",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "two-sum-ii-input-array-is-sorted",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of the two-pointer approach for this problem?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "answer": 0,
+      "explanation": "The two-pointer technique operates in-place, requiring only a constant amount of additional space for the pointers, resulting in O(1) space complexity. The O(n) option might seem plausible if considering the input array, but that does not count towards the additional space used by the algorithm itself.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471611+00:00",
+      "contentHash": "f7453415bb0a3121f846469416b8ceeb",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "3sum-4",
+      "title": "Optimal Approach for Finding Triplets",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "3sum",
+      "difficulty": "Medium",
+      "question": "Which algorithmic technique is most effective for solving the problem of finding all unique triplets in an array that sum to zero?",
+      "options": [
+        "Using a hash set to track complements for each element",
+        "Sorting the array and using two pointers to find pairs",
+        "Brute force checking all combinations of three elements",
+        "Using a binary search for each element to find pairs"
+      ],
+      "answer": 1,
+      "explanation": "The most effective technique is sorting the array and using two pointers to find pairs that sum to the negative of the current element. This approach reduces the time complexity to O(n^2). The brute force method, while correct, is inefficient with O(n^3) complexity, making it impractical for larger inputs.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471647+00:00",
+      "contentHash": "b4478b5a91c1bd403dfdf7a7cc5141aa",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "3sum-5",
+      "title": "Handling Duplicates in Triplet Search",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "3sum",
+      "difficulty": "Medium",
+      "question": "What is a crucial consideration when implementing the two-pointer technique for the 3Sum problem to ensure unique triplets are found?",
+      "options": [
+        "Ignoring the first element if it is a duplicate",
+        "Using a set to store found triplets",
+        "Skipping over duplicate values after finding a triplet",
+        "Sorting the array before applying the two-pointer technique"
+      ],
+      "answer": 2,
+      "explanation": "When using the two-pointer technique, it is essential to skip over duplicate values after finding a triplet to avoid counting the same triplet multiple times. While sorting the array is important for the two-pointer approach, it does not directly prevent duplicates from being counted. The option about using a set is also tempting but can lead to increased space complexity.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471698+00:00",
+      "contentHash": "1aa1abb59230095a117981bf74464970",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "3sum-6",
+      "title": "Time Complexity of 3Sum Solutions",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "3sum",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal solution for the 3Sum problem using the two-pointer technique after sorting the array?",
+      "options": [
+        "O(n log n) due to sorting",
+        "O(n^2) for the nested loop",
+        "O(n^3) for checking all triplet combinations",
+        "O(n) because of linear traversal"
+      ],
+      "answer": 1,
+      "explanation": "The optimal solution has a time complexity of O(n^2) due to the nested loop for each element combined with the two-pointer search for pairs. The initial sorting step takes O(n log n), but the dominating factor in the overall complexity comes from the O(n^2) search. The O(n^3) option is incorrect as it refers to a brute-force approach.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471732+00:00",
+      "contentHash": "88bfabbe3a3b77fe5e70cdc6313da03c",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "container-with-most-water-4",
+      "title": "Optimal Approach for Water Container Problem",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "container-with-most-water",
+      "difficulty": "Medium",
+      "question": "In the problem of finding the container that holds the most water, which approach is most efficient in terms of time complexity?",
+      "options": [
+        "Brute force checking all pairs of lines",
+        "Using a single pointer to traverse the array",
+        "Utilizing two pointers to narrow down the search",
+        "Sorting the lines before checking pairs"
+      ],
+      "answer": 2,
+      "explanation": "The optimal approach uses two pointers to efficiently find the maximum area in O(n) time complexity, as it systematically narrows down the search space. The brute force method, although straightforward, has a time complexity of O(n^2), making it inefficient for larger inputs.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471768+00:00",
+      "contentHash": "219bc16ac9210360d9e827d434c0f73f",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "container-with-most-water-5",
+      "title": "Space Complexity Consideration",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "container-with-most-water",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of the optimal two-pointer solution for the water container problem?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "answer": 0,
+      "explanation": "The two-pointer approach for this problem operates in constant space, O(1), as it only uses a fixed number of pointers regardless of the input size. The O(n) option might confuse some, as it suggests storing intermediate results, which is unnecessary in this case.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471793+00:00",
+      "contentHash": "f699d01f840f72926b19de5599420b91",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "container-with-most-water-6",
+      "title": "Handling Edge Cases in Water Container Problem",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "container-with-most-water",
+      "difficulty": "Medium",
+      "question": "What potential issue arises if the input array for the water container problem contains only identical heights?",
+      "options": [
+        "The area calculation will always be zero",
+        "The algorithm will not terminate",
+        "The maximum area will be the product of the height and width",
+        "The two-pointer approach will fail to find a solution"
+      ],
+      "answer": 2,
+      "explanation": "If all heights are identical, the maximum area is simply the product of the height and the width between the two pointers, which is valid. The distractor suggesting that the area will be zero is misleading, as the area will be non-zero if heights are positive. The algorithm will still function correctly in this scenario.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471824+00:00",
+      "contentHash": "6d789f6af851a154edd28f5ac27bc5c1",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "trapping-rain-water-4",
+      "title": "Optimal Approach for Water Trapping",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "trapping-rain-water",
+      "difficulty": "Hard",
+      "question": "Which approach efficiently calculates the total amount of trapped rainwater using a two-pointer technique?",
+      "options": [
+        "Iterate through the array and calculate water trapped at each index individually.",
+        "Use two pointers to track the left and right boundaries and calculate trapped water based on the minimum of these boundaries.",
+        "Store the maximum height encountered from the left for each index and then calculate trapped water in a second pass.",
+        "Use a stack to keep track of the indices of the heights and calculate trapped water when encountering a lower height."
+      ],
+      "answer": 1,
+      "explanation": "The two-pointer technique effectively calculates trapped water by maintaining the left and right boundaries, allowing for O(n) time complexity and O(1) space complexity. The first option is incorrect because it suggests a brute-force approach that results in O(n^2) complexity.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471867+00:00",
+      "contentHash": "4e1a974a58bde57ea55644c2241957a4",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "trapping-rain-water-5",
+      "title": "Space Complexity Considerations",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "trapping-rain-water",
+      "difficulty": "Hard",
+      "question": "What is the space complexity of the optimal two-pointer solution for the rainwater trapping problem?",
+      "options": [
+        "O(n), due to additional arrays for left and right maximum heights.",
+        "O(1), since it uses only a constant amount of space for pointers and variables.",
+        "O(log n), because of the recursive stack space in a divide-and-conquer approach.",
+        "O(n^2), due to the need to store all possible water levels."
+      ],
+      "answer": 1,
+      "explanation": "The optimal two-pointer solution achieves O(1) space complexity by using two pointers and a few variables, avoiding the need for extra data structures. The first option is misleading because it suggests using additional arrays, which is unnecessary for this approach.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471909+00:00",
+      "contentHash": "5abed178fb2de0b3a09d3f605433e581",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "trapping-rain-water-6",
+      "title": "Handling Edge Cases in Water Trapping",
+      "topics": [
+        "Two Pointers"
+      ],
+      "category": "Two Pointers",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "trapping-rain-water",
+      "difficulty": "Hard",
+      "question": "Which scenario could lead to incorrect results when calculating trapped rainwater using a naive approach?",
+      "options": [
+        "An array with all elements being the same height.",
+        "An array with strictly increasing heights.",
+        "An array with strictly decreasing heights.",
+        "An array with alternating high and low values."
+      ],
+      "answer": 0,
+      "explanation": "A naive approach that calculates water trapped at each index could fail in the case where all elements are the same height, as it would incorrectly assume that water can be trapped. The other options do not lead to such pitfalls, as they either have clear boundaries or do not create any trapping.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471941+00:00",
+      "contentHash": "aa28356b9d07ab2c1c41687d37eae3d8",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "best-time-to-buy-and-sell-stock-4",
+      "title": "Optimal Approach for Stock Trading",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "best-time-to-buy-and-sell-stock",
+      "difficulty": "Easy",
+      "question": "Which approach efficiently determines the maximum profit from stock prices over time?",
+      "options": [
+        "Iterate through all pairs of buy and sell days",
+        "Use a single pass to track the minimum price and calculate profit",
+        "Sort the prices before calculating profits",
+        "Use a stack to store prices and calculate profits later"
+      ],
+      "answer": 1,
+      "explanation": "The correct option uses a single pass to track the minimum price seen so far and calculates potential profits, achieving O(n) time complexity. The first option, while intuitive, results in O(n^2) complexity due to nested loops, which is inefficient for large datasets.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.471972+00:00",
+      "contentHash": "38d4dce181388010f9293d605e493280",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "best-time-to-buy-and-sell-stock-5",
+      "title": "Space Complexity Consideration",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "best-time-to-buy-and-sell-stock",
+      "difficulty": "Easy",
+      "question": "What is the space complexity of the optimal solution for maximizing stock trading profit?",
+      "options": [
+        "O(n) due to storing all prices",
+        "O(1) since only a few variables are used",
+        "O(log n) for recursive stack space",
+        "O(n^2) for storing profits of all transactions"
+      ],
+      "answer": 1,
+      "explanation": "The optimal solution only requires a constant amount of space to store the minimum price and maximum profit, leading to O(1) space complexity. The first option incorrectly assumes that all prices need to be stored, which is unnecessary.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472006+00:00",
+      "contentHash": "d949206be6919793de692c994355e0db",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "best-time-to-buy-and-sell-stock-6",
+      "title": "Handling Edge Cases in Stock Prices",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "best-time-to-buy-and-sell-stock",
+      "difficulty": "Easy",
+      "question": "What scenario could lead to a maximum profit of zero when trading stocks?",
+      "options": [
+        "Prices are in a strictly increasing order",
+        "Prices are in a strictly decreasing order",
+        "Prices fluctuate randomly",
+        "Prices remain constant throughout the period"
+      ],
+      "answer": 1,
+      "explanation": "If stock prices are in a strictly decreasing order, the best action is not to buy or sell, resulting in zero profit. The first option would yield a positive profit, while the last option would also yield zero, but only if no transactions occur.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472034+00:00",
+      "contentHash": "af9b3e8c6f90445e6bf4f166c6d17153",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-substring-without-repeating-characters-4",
+      "title": "Optimal Data Structure for Tracking Characters",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-substring-without-repeating-characters",
+      "difficulty": "Medium",
+      "question": "Which data structure is best suited for efficiently tracking characters in a substring to ensure no duplicates are present?",
+      "options": [
+        "Array",
+        "Hash Set",
+        "Linked List",
+        "Stack"
+      ],
+      "answer": 1,
+      "explanation": "A Hash Set allows for O(1) average time complexity for insertions and lookups, making it ideal for tracking characters in a substring without duplicates. The Array option is less efficient as it requires O(n) time for lookups in the worst case, which can slow down the algorithm significantly.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472059+00:00",
+      "contentHash": "1b2a77ecefb46c735a081bb19ee8f7e2",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-substring-without-repeating-characters-5",
+      "title": "Time Complexity of Sliding Window Approach",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-substring-without-repeating-characters",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the sliding window approach used to find the longest substring without repeating characters?",
+      "options": [
+        "O(n^2)",
+        "O(n log n)",
+        "O(n)",
+        "O(1)"
+      ],
+      "answer": 2,
+      "explanation": "The sliding window technique processes each character at most twice (once added and once removed), leading to a linear time complexity of O(n). The O(n^2) option reflects a naive approach that checks all substrings, which is inefficient for larger inputs.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472084+00:00",
+      "contentHash": "cead9b5f014eac2dce5c1077ed6e7ed3",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-substring-without-repeating-characters-6",
+      "title": "Handling Edge Cases in Substring Problems",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-substring-without-repeating-characters",
+      "difficulty": "Medium",
+      "question": "What issue arises if the input string contains all identical characters when finding the longest substring without repeating characters?",
+      "options": [
+        "The result will be the length of the string",
+        "The result will be zero",
+        "The algorithm will fail to terminate",
+        "The result will be one"
+      ],
+      "answer": 3,
+      "explanation": "If the input string consists of identical characters, the longest substring without repeating characters will be of length one, as only one character can be included. The option stating the result will be zero is incorrect because at least one character is present.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472118+00:00",
+      "contentHash": "1f1e692120a94343d8f1ce01af7961a2",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-repeating-character-replacement-5",
+      "title": "Handling Edge Cases in Character Replacement",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-repeating-character-replacement",
+      "difficulty": "Medium",
+      "question": "What issue might arise if the input string contains only unique characters when trying to find the longest substring with character replacements?",
+      "options": [
+        "The algorithm will run indefinitely",
+        "The result will always be zero",
+        "The maximum length will equal the string length",
+        "The algorithm will throw an error"
+      ],
+      "answer": 2,
+      "explanation": "If the input string contains only unique characters, the maximum length of the substring with replacements will equal the length of the string itself, as any character can be replaced. The most tempting distractor is that the result will always be zero, which is incorrect because the substring can still be the entire string.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472149+00:00",
+      "contentHash": "3fb1708c238263d52feac2e37ff94842",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-repeating-character-replacement-6",
+      "title": "Time Complexity of the Sliding Window Approach",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-repeating-character-replacement",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the sliding window approach used to solve the longest repeating character replacement problem?",
+      "options": [
+        "O(n^2)",
+        "O(n log n)",
+        "O(n)",
+        "O(1)"
+      ],
+      "answer": 2,
+      "explanation": "The sliding window approach operates in O(n) time complexity, as it processes each character at most twice (once when expanding the window and once when contracting it). The O(n^2) option is tempting because it represents a naive approach where every possible substring is checked, which is inefficient. O(1) is incorrect as it does not account for the length of the input.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472175+00:00",
+      "contentHash": "530bb415aec832106c0d9a7c57b5abe9",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "permutation-in-string-4",
+      "title": "Optimal Data Structure for Character Counting",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "permutation-in-string",
+      "difficulty": "Medium",
+      "question": "Which data structure is most efficient for counting character frequencies in a sliding window approach?",
+      "options": [
+        "Hash Map",
+        "Array",
+        "Linked List",
+        "Stack"
+      ],
+      "answer": 0,
+      "explanation": "A hash map is optimal for counting character frequencies because it allows for O(1) average time complexity for insertions and lookups. An array could work for a fixed character set, but a hash map is more flexible for varying character sets. The linked list and stack are not suitable for this purpose as they do not provide efficient frequency counting.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472198+00:00",
+      "contentHash": "df22272d07e9f353bf8a98d70a17a5ec",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "permutation-in-string-5",
+      "title": "Handling Edge Cases with Input Strings",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "permutation-in-string",
+      "difficulty": "Medium",
+      "question": "What issue may arise if the input strings contain characters outside the expected range?",
+      "options": [
+        "The algorithm will run slower",
+        "The algorithm will fail to find permutations",
+        "The algorithm will produce incorrect results",
+        "The algorithm will crash"
+      ],
+      "answer": 2,
+      "explanation": "If the input strings contain unexpected characters, the algorithm may incorrectly count frequencies and thus fail to identify valid permutations, leading to incorrect results. The other options do not accurately reflect the nature of the problem; the algorithm may still run but yield wrong outcomes.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472229+00:00",
+      "contentHash": "777df881dd9596d57524e95166bde99a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "minimum-window-substring-4",
+      "title": "Optimal Data Structure for Tracking Characters",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "minimum-window-substring",
+      "difficulty": "Hard",
+      "question": "Which data structure is most effective for tracking the frequency of characters in a sliding window when solving substring problems?",
+      "options": [
+        "Hash Map",
+        "Array",
+        "Linked List",
+        "Stack"
+      ],
+      "answer": 0,
+      "explanation": "A hash map is ideal for tracking character frequencies because it allows for O(1) average time complexity for insertions and lookups. An array could work if the character set is limited (like ASCII), but it lacks the flexibility of a hash map for larger sets. The other options do not provide efficient frequency counting.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472283+00:00",
+      "contentHash": "532abae21ade9945d56277bc466f0a97",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "minimum-window-substring-5",
+      "title": "Handling Edge Cases in Substring Problems",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "minimum-window-substring",
+      "difficulty": "Medium",
+      "question": "What issue might arise when the input string contains characters that are not in the target substring?",
+      "options": [
+        "The algorithm will run indefinitely",
+        "The result will be incorrect",
+        "The window size will be too large",
+        "The algorithm will fail to find any substring"
+      ],
+      "answer": 1,
+      "explanation": "If the input string contains characters not present in the target substring, the algorithm may incorrectly calculate the minimum window, leading to an incorrect result. The other options do not accurately describe the consequences of such characters in the input.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472315+00:00",
+      "contentHash": "3dd3ac9c043eb474ede2704648c9a16d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "minimum-window-substring-6",
+      "title": "Time Complexity of Sliding Window Approach",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "minimum-window-substring",
+      "difficulty": "Hard",
+      "question": "What is the time complexity of the optimal sliding window approach for finding the minimum window substring?",
+      "options": [
+        "O(n^2)",
+        "O(n)",
+        "O(n log n)",
+        "O(1)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal sliding window approach has a time complexity of O(n) because each character in the string is processed at most twice (once when expanding and once when contracting the window). The O(n^2) option reflects a naive approach that checks all substrings, while O(n log n) and O(1) do not apply here.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472340+00:00",
+      "contentHash": "d3f356019d6922f78d130a539fa6167f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "sliding-window-maximum-4",
+      "title": "Choosing the Right Data Structure for Sliding Window Maximum",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "sliding-window-maximum",
+      "difficulty": "Hard",
+      "question": "Which data structure is most efficient for maintaining the maximum value in a sliding window?",
+      "options": [
+        "Array",
+        "Hash Map",
+        "Deque",
+        "Binary Search Tree"
+      ],
+      "answer": 2,
+      "explanation": "A Deque is optimal for maintaining the maximum value in a sliding window because it allows for O(1) time complexity for both enqueue and dequeue operations, while also maintaining the order of elements. The most tempting distractor is the Array, which would require O(n) time to find the maximum value in each window, making it inefficient for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472363+00:00",
+      "contentHash": "e0106c31b615f9f5a5cbdb5e42277ba6",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "sliding-window-maximum-5",
+      "title": "Time Complexity of Sliding Window Maximum",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "sliding-window-maximum",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal solution for the sliding window maximum problem?",
+      "options": [
+        "O(n^2)",
+        "O(n log n)",
+        "O(n)",
+        "O(n^2 log n)"
+      ],
+      "answer": 2,
+      "explanation": "The optimal solution for the sliding window maximum problem using a Deque has a time complexity of O(n) because each element is added and removed from the Deque at most once. The O(n^2) option is a common misconception, as it reflects a naive approach that checks each window independently.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472387+00:00",
+      "contentHash": "07424e98f5cd9b45810dd9aecde8e850",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "sliding-window-maximum-6",
+      "title": "Handling Edge Cases in Sliding Window Maximum",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "sliding-window-maximum",
+      "difficulty": "Medium",
+      "question": "Which of the following scenarios could lead to incorrect results in a naive implementation of the sliding window maximum?",
+      "options": [
+        "Window size is larger than the array",
+        "Array contains negative numbers",
+        "Array is empty",
+        "Window size is one"
+      ],
+      "answer": 0,
+      "explanation": "A naive implementation that does not handle the case where the window size exceeds the length of the array will lead to incorrect results or runtime errors. The option regarding an empty array is also a concern, but it does not directly relate to the sliding window logic itself. The window size being one is trivial and would not cause issues.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472418+00:00",
+      "contentHash": "c5b2b8f0fbffa1b4c98c2b032e652263",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-parentheses-4",
+      "title": "Which data structure is best suited for validating parentheses?",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-parentheses",
+      "difficulty": "Easy",
+      "question": "What data structure should be used to efficiently check if a string of parentheses is valid?",
+      "options": [
+        "Array",
+        "Stack",
+        "Queue",
+        "Linked List"
+      ],
+      "answer": 1,
+      "explanation": "A stack is the most appropriate data structure for this problem because it follows the Last In First Out (LIFO) principle, which is essential for matching opening and closing parentheses correctly. The array option may seem plausible, but it does not provide the necessary operations for efficiently managing the nested structure of parentheses.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472441+00:00",
+      "contentHash": "55663af5363620263d7e747036645441",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-parentheses-5",
+      "title": "What is the time complexity of the optimal solution?",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-parentheses",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of the algorithm that checks for valid parentheses using a stack?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n^2)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal solution for checking valid parentheses involves a single pass through the string, making the time complexity O(n), where n is the length of the string. The O(n^2) option is a common misconception, as it might arise from considering a naive approach that checks each pair of parentheses separately.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472466+00:00",
+      "contentHash": "0a72cdff6908949d22d9566a66655ce0",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-parentheses-6",
+      "title": "What edge case must be handled when validating parentheses?",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-parentheses",
+      "difficulty": "Easy",
+      "question": "Which edge case could cause the validation algorithm to fail if not handled properly?",
+      "options": [
+        "Empty string",
+        "Single closing parenthesis",
+        "Nested parentheses",
+        "Multiple types of brackets"
+      ],
+      "answer": 1,
+      "explanation": "A single closing parenthesis without a corresponding opening one is an edge case that would cause the validation to fail. While an empty string is valid, and nested parentheses are part of the problem, the single closing parenthesis is a direct violation of the rules. The option about multiple types of brackets is misleading as it introduces complexity not present in the basic parentheses validation problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472491+00:00",
+      "contentHash": "67261bcedc896a87d140e294ea3f67df",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "min-stack-5",
+      "title": "What is the time complexity of pushing an element onto the stack?",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "min-stack",
+      "difficulty": "Medium",
+      "question": "When using a stack to maintain minimum values, what is the time complexity for the push operation?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "answer": 0,
+      "explanation": "The push operation can be performed in constant time, O(1), by simply adding the new element to the top of the stack and updating the minimum if necessary. The distractor O(n) might seem plausible if one considers the need to find the minimum, but with a secondary stack, this is not required during push.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472518+00:00",
+      "contentHash": "b9a81cec3d1585be8aa9cdeb2a1eafd4",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "min-stack-6",
+      "title": "What issue arises when implementing a min stack with duplicate values?",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "min-stack",
+      "difficulty": "Medium",
+      "question": "How does the presence of duplicate values affect the implementation of a min stack?",
+      "options": [
+        "It complicates the push operation",
+        "It requires additional space",
+        "It can lead to incorrect minimum retrieval",
+        "It has no effect on the implementation"
+      ],
+      "answer": 2,
+      "explanation": "If duplicates are not handled correctly, the minimum retrieval may return an incorrect value when the minimum element is removed from the stack. The distractor stating it has no effect is misleading, as duplicates can indeed complicate the logic of maintaining the minimum.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472547+00:00",
+      "contentHash": "21af7a607956e93433c0a125a09961fe",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "evaluate-reverse-polish-notation-4",
+      "title": "Which data structure is most suitable for evaluating expressions in Reverse Polish Notation?",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "evaluate-reverse-polish-notation",
+      "difficulty": "Medium",
+      "question": "What data structure is best suited for evaluating expressions in Reverse Polish Notation (RPN)?",
+      "options": [
+        "Queue",
+        "Stack",
+        "Array",
+        "Linked List"
+      ],
+      "answer": 1,
+      "explanation": "A stack is ideal for evaluating RPN because it allows for the Last In First Out (LIFO) principle, which matches the order of operations in RPN. A queue, while useful for other scenarios, does not support the necessary order of operations for RPN evaluation effectively.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472570+00:00",
+      "contentHash": "4856289c9283015ef767bb12197ef7ba",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "evaluate-reverse-polish-notation-5",
+      "title": "What is the time complexity of evaluating an expression in Reverse Polish Notation?",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "evaluate-reverse-polish-notation",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of evaluating an expression in Reverse Polish Notation?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n^2)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The time complexity of evaluating an expression in Reverse Polish Notation is O(n), where n is the number of tokens in the expression. Each token is processed exactly once, making it linear. The O(n^2) option might tempt some due to misunderstanding the nested operations, but each operation is independent and processed sequentially.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472598+00:00",
+      "contentHash": "e882fa0f2c9dbdb099d797399076a508",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "evaluate-reverse-polish-notation-6",
+      "title": "What issue arises when using the wrong data type for operands in RPN evaluation?",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "evaluate-reverse-polish-notation",
+      "difficulty": "Medium",
+      "question": "What problem can occur if the wrong data type is used for operands during RPN evaluation?",
+      "options": [
+        "Incorrect results due to type mismatch",
+        "Increased time complexity",
+        "Stack overflow errors",
+        "Memory leaks"
+      ],
+      "answer": 0,
+      "explanation": "Using the wrong data type for operands can lead to incorrect results due to type mismatch, especially when performing arithmetic operations. While stack overflow or memory leaks are possible in other contexts, they are not directly related to data types in this scenario. The increased time complexity option is misleading, as the complexity remains O(n) regardless of data types.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472624+00:00",
+      "contentHash": "e87985f32a63bf372d0a847936a20f7c",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "daily-temperatures-4",
+      "title": "Choosing the Right Data Structure for Temperature Tracking",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "daily-temperatures",
+      "difficulty": "Medium",
+      "question": "Which data structure is most suitable for efficiently tracking the next warmer temperature for each day in a list of temperatures?",
+      "options": [
+        "Array",
+        "Queue",
+        "Stack",
+        "Linked List"
+      ],
+      "answer": 2,
+      "explanation": "A stack is ideal for this problem because it allows you to keep track of the indices of temperatures in a way that you can easily find the next warmer temperature. The other options, like an array or queue, do not provide the necessary LIFO (Last In, First Out) access that is crucial for this problem, making them less efficient for the task.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472651+00:00",
+      "contentHash": "97053c4e6e938c1feed090b331423fb6",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "daily-temperatures-5",
+      "title": "Time Complexity of the Optimal Approach",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "daily-temperatures",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal solution for finding the next warmer temperature using a stack?",
+      "options": [
+        "O(n^2)",
+        "O(n log n)",
+        "O(n)",
+        "O(n^3)"
+      ],
+      "answer": 2,
+      "explanation": "The optimal solution using a stack processes each temperature once, leading to a linear time complexity of O(n). The O(n^2) option is a common misconception from a naive approach that checks each temperature against all subsequent temperatures, which is inefficient. The other complexities are also not applicable to this specific problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472693+00:00",
+      "contentHash": "370ccbcefa3a623ce9e96f123eb64742",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "daily-temperatures-6",
+      "title": "Handling Edge Cases in Temperature Data",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "daily-temperatures",
+      "difficulty": "Medium",
+      "question": "What potential issue arises if the input temperature list contains multiple identical temperatures?",
+      "options": [
+        "It will cause an infinite loop",
+        "It will lead to incorrect next warmer temperatures",
+        "It will not affect the algorithm",
+        "It will increase the space complexity"
+      ],
+      "answer": 1,
+      "explanation": "Having multiple identical temperatures can lead to incorrect next warmer temperatures if not handled properly, as the stack may not correctly identify the next warmer day. The option stating it will not affect the algorithm is misleading, as it can disrupt the logic of finding the next warmer day. The other options are not relevant to the problem's structure.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472724+00:00",
+      "contentHash": "c00365c160e78f9ff5dc7e0fa11f0c1a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "car-fleet-4",
+      "title": "Choosing the Right Data Structure for Tracking Fleets",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "car-fleet",
+      "difficulty": "Medium",
+      "question": "Which data structure is most suitable for tracking the formation of car fleets as they approach a destination?",
+      "options": [
+        "Array",
+        "Queue",
+        "Stack",
+        "Linked List"
+      ],
+      "answer": 2,
+      "explanation": "A stack is ideal for tracking the formation of car fleets because it allows you to easily manage the last car that was added, which is the one that will dictate the speed of the fleet. The queue, while it allows for FIFO access, does not provide the necessary LIFO access needed for this problem. The array and linked list do not provide efficient operations for the specific needs of this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472748+00:00",
+      "contentHash": "2ed314c331aa54daa9264a9bdee6b379",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "car-fleet-5",
+      "title": "Understanding Time Complexity in Fleet Calculation",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "car-fleet",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal algorithm for calculating the number of car fleets?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal solution for calculating the number of car fleets runs in O(n) time complexity because it processes each car only once while utilizing a stack to manage the fleets. The O(n log n) complexity might arise from sorting, which is unnecessary here. O(n^2) would imply nested iterations, which is not the case, and O(1) suggests constant time, which is not applicable for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472771+00:00",
+      "contentHash": "62897a2fed6fa72a9bf33e29f5b6ca85",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "car-fleet-6",
+      "title": "Handling Edge Cases in Fleet Formation",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "car-fleet",
+      "difficulty": "Medium",
+      "question": "What potential issue arises if the input includes cars with the same position and speed?",
+      "options": [
+        "No fleets will form",
+        "All cars will form a single fleet",
+        "The algorithm will crash",
+        "Fleets will be counted multiple times"
+      ],
+      "answer": 1,
+      "explanation": "If multiple cars have the same position and speed, they will all form a single fleet, as they will travel together to the destination. This is a key edge case that must be handled correctly. The option suggesting that no fleets will form is incorrect, as they will indeed form a fleet. The algorithm should not crash, and counting fleets multiple times is not an issue if managed properly.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472802+00:00",
+      "contentHash": "156ed92e18b26c27f572ed7bfba46659",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "largest-rectangle-in-histogram-4",
+      "title": "Optimal Data Structure for Area Calculation",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "largest-rectangle-in-histogram",
+      "difficulty": "Hard",
+      "question": "Which data structure is most suitable for efficiently calculating the largest rectangle area in a histogram?",
+      "options": [
+        "Array",
+        "Stack",
+        "Linked List",
+        "Queue"
+      ],
+      "answer": 1,
+      "explanation": "A stack is the most suitable data structure for this problem because it allows for efficient tracking of the heights and indices of the histogram bars, enabling O(n) time complexity for area calculations. The array option may seem tempting, but it cannot efficiently manage the necessary indices for height comparisons as the stack does.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472826+00:00",
+      "contentHash": "3d8275af05c0f5d43129736ed386d624",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "largest-rectangle-in-histogram-5",
+      "title": "Handling Edge Cases in Histogram",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "largest-rectangle-in-histogram",
+      "difficulty": "Medium",
+      "question": "What could go wrong if the histogram contains bars of height zero?",
+      "options": [
+        "It will not affect the area calculation.",
+        "The algorithm will fail to terminate.",
+        "It may lead to incorrect area calculations.",
+        "It will cause an out-of-bounds error."
+      ],
+      "answer": 2,
+      "explanation": "If the histogram contains bars of height zero, the algorithm must handle these cases correctly to avoid miscalculating areas. Specifically, it may incorrectly compute areas if it doesn't account for zero-height bars when popping from the stack. The option about termination is misleading, as the algorithm can still terminate.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472861+00:00",
+      "contentHash": "9d77ee64cf9dcb0540a620561d262ac0",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "largest-rectangle-in-histogram-6",
+      "title": "Brute Force Approach Limitations",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "largest-rectangle-in-histogram",
+      "difficulty": "Hard",
+      "question": "What is a major drawback of using a brute force approach to find the largest rectangle in a histogram?",
+      "options": [
+        "It requires O(n) time complexity.",
+        "It is difficult to implement correctly.",
+        "It has a high space complexity.",
+        "It has a time complexity of O(n^2)."
+      ],
+      "answer": 3,
+      "explanation": "The brute force approach typically involves checking every possible rectangle, leading to a time complexity of O(n^2), which is inefficient for large histograms. While it may seem easy to implement, the performance is a significant drawback compared to the optimal O(n) stack-based solution. The space complexity is not as high as O(n^2), making that option less relevant.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472895+00:00",
+      "contentHash": "cf22764fec613efdb5558d1ff33eaacb",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "binary-search-4",
+      "title": "Optimal Data Structure for Binary Search",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "binary-search",
+      "difficulty": "Easy",
+      "question": "Which data structure is most suitable for implementing a binary search algorithm?",
+      "options": [
+        "Unsorted array",
+        "Sorted array",
+        "Linked list",
+        "Hash table"
+      ],
+      "answer": 1,
+      "explanation": "A binary search algorithm requires the data to be sorted, making a sorted array the most suitable data structure. The tempting distractor, 'Unsorted array', fails because binary search cannot be performed on unsorted data, as it relies on the order to eliminate half of the search space with each iteration.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472918+00:00",
+      "contentHash": "871beaf2a52b3702a94daac3a654fd9f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "binary-search-5",
+      "title": "Time Complexity of Binary Search",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "binary-search",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of the binary search algorithm in the worst case?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n log n)",
+        "O(1)"
+      ],
+      "answer": 1,
+      "explanation": "The time complexity of binary search is O(log n) in the worst case because it divides the search space in half with each iteration. The distractor 'O(n)' is misleading, as that represents a linear search, which does not utilize the divide-and-conquer strategy of binary search.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472942+00:00",
+      "contentHash": "256b6ea3acfc46de89545ee7ed3f08c5",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "binary-search-6",
+      "title": "Handling Edge Cases in Binary Search",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "binary-search",
+      "difficulty": "Easy",
+      "question": "What issue arises when using binary search on an array with duplicate elements?",
+      "options": [
+        "It will always find the first occurrence",
+        "It will not work at all",
+        "It may return any occurrence of the target",
+        "It will always find the last occurrence"
+      ],
+      "answer": 2,
+      "explanation": "When using binary search on an array with duplicates, the algorithm may return any occurrence of the target element, which can lead to unexpected results. The distractor 'It will always find the first occurrence' is incorrect because binary search does not guarantee which instance of a duplicate it will find.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.472970+00:00",
+      "contentHash": "4655a7e91a48c227efa0e2bbabd81fd3",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "search-a-2d-matrix-4",
+      "title": "Choosing the Right Search Method",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "search-a-2d-matrix",
+      "difficulty": "Medium",
+      "question": "When searching for a target value in a 2D matrix where each row is sorted and the first integer of each row is greater than the last integer of the previous row, which search method is most efficient?",
+      "options": [
+        "Linear search through each row",
+        "Binary search on each row individually",
+        "Binary search treating the matrix as a single sorted array",
+        "Depth-first search across the matrix"
+      ],
+      "answer": 2,
+      "explanation": "Using binary search by treating the matrix as a single sorted array is the most efficient method, achieving O(log(m*n)) time complexity. The tempting option of binary search on each row individually only yields O(m log(n)), which is less efficient for larger matrices. ",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.473006+00:00",
+      "contentHash": "2098cafc5b724fb4007b2164c518c160",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "search-a-2d-matrix-5",
+      "title": "Matrix Dimensions and Edge Cases",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "search-a-2d-matrix",
+      "difficulty": "Medium",
+      "question": "What is a potential issue when searching in a 2D matrix that has varying row lengths?",
+      "options": [
+        "The binary search algorithm will not work at all",
+        "The search space must be adjusted for each row's length",
+        "The matrix must be converted to a square shape first",
+        "The algorithm will always find the target if it exists"
+      ],
+      "answer": 1,
+      "explanation": "When dealing with a 2D matrix of varying row lengths, the search space must be adjusted based on the actual lengths of each row to avoid index errors. The incorrect assumption that binary search will work without adjustments is a common pitfall.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.473038+00:00",
+      "contentHash": "757aa476412b11555ded6d6b37496e9e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "search-a-2d-matrix-6",
+      "title": "Space Complexity Considerations",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "search-a-2d-matrix",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of the optimal binary search algorithm for a 2D matrix?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log(n))",
+        "O(m+n)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal binary search algorithm for a 2D matrix operates in O(1) space complexity since it only uses a few variables for indexing and does not require additional data structures. The option suggesting O(n) fails because it implies unnecessary space usage for storage.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.473062+00:00",
+      "contentHash": "1255dc4d7b5359aa4ce4365b3d83d048",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "koko-eating-bananas-4",
+      "title": "Choosing the Right Approach for Minimizing Time",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "koko-eating-bananas",
+      "difficulty": "Medium",
+      "question": "When trying to minimize the time it takes for Koko to eat all the bananas, which approach is most efficient?",
+      "options": [
+        "Brute force by testing each possible eating speed",
+        "Using a greedy algorithm to select the fastest speed",
+        "Employing binary search to find the minimum feasible speed",
+        "Simulating the eating process for each speed until all bananas are eaten"
+      ],
+      "answer": 2,
+      "explanation": "Using binary search allows you to efficiently narrow down the minimum eating speed that allows Koko to finish in the given time. The brute force method, while straightforward, is inefficient as it tests all speeds without leveraging the structure of the problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.473101+00:00",
+      "contentHash": "d0aaca054a1e9d086899f1c8f50bb75e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "koko-eating-bananas-5",
+      "title": "Understanding Edge Cases in Input",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "koko-eating-bananas",
+      "difficulty": "Medium",
+      "question": "What is a critical edge case to consider when implementing a solution for Koko Eating Bananas?",
+      "options": [
+        "Koko having to eat only one banana",
+        "All piles having the same number of bananas",
+        "The maximum number of piles being zero",
+        "Koko's eating speed being set to zero"
+      ],
+      "answer": 0,
+      "explanation": "When Koko has to eat only one banana, it simplifies the problem significantly and can lead to incorrect assumptions if not handled properly. The option regarding Koko's speed being zero fails because it is not a valid scenario in the context of the problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.473222+00:00",
+      "contentHash": "3f5ba3e7ddad716c26c40a20ac7d280b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "find-minimum-in-rotated-sorted-array-4",
+      "title": "Optimal Search Technique for Rotated Arrays",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "find-minimum-in-rotated-sorted-array",
+      "difficulty": "Medium",
+      "question": "What is the most efficient algorithmic approach to find the minimum element in a rotated sorted array?",
+      "options": [
+        "Linear search through the array",
+        "Binary search by comparing mid with the endpoints",
+        "Recursive search by dividing the array into halves",
+        "Iterative search by checking each element sequentially"
+      ],
+      "answer": 1,
+      "explanation": "The optimal approach to find the minimum in a rotated sorted array is to use binary search, which compares the middle element with the endpoints to determine which half of the array to continue searching in. The linear search option is less efficient, as it has a time complexity of O(n) compared to the O(log n) of binary search.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.473256+00:00",
+      "contentHash": "e7ee96fc773b3aecd9733e543773beff",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "find-minimum-in-rotated-sorted-array-5",
+      "title": "Handling Edge Cases in Rotated Arrays",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "find-minimum-in-rotated-sorted-array",
+      "difficulty": "Medium",
+      "question": "Which scenario could lead to incorrect results when searching for the minimum in a rotated sorted array?",
+      "options": [
+        "Array is fully sorted without rotation",
+        "Array contains duplicate elements",
+        "Array is empty",
+        "Array has only one element"
+      ],
+      "answer": 1,
+      "explanation": "While all options present valid scenarios, searching in an array with duplicates can lead to ambiguity in determining which half to search next, potentially causing incorrect results. The other options either do not apply to the problem or yield straightforward answers.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.473284+00:00",
+      "contentHash": "fb5f5f33c69a3d392cc04c2b93148309",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "find-minimum-in-rotated-sorted-array-6",
+      "title": "Time Complexity Considerations",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "find-minimum-in-rotated-sorted-array",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal solution for finding the minimum in a rotated sorted array?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n log n)",
+        "O(1)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal solution utilizes binary search, which effectively reduces the search space by half with each iteration, leading to a time complexity of O(log n). The O(n) option represents a linear search, which is less efficient for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:34:02.473310+00:00",
+      "contentHash": "3dba01cc7b0a9941b239e4c4daae4de9",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
     }
   ]
 }
