@@ -24,8 +24,11 @@ on:
         description: 'MCQs to generate per problem'
         default: '3'
       limit:
-        description: 'Max problems to process this run (0 = all)'
+        description: 'Max problems to process this run (0 = all) — the per-run cost cap'
         default: '40'
+      min_per_problem:
+        description: 'Target questions per problem. Runs are free no-ops once every problem reaches it; raise it to grow the deck.'
+        default: '6'
       model:
         description: 'Model override (blank = provider default)'
         default: ''
@@ -66,9 +69,10 @@ jobs:
             echo "Missing MONGODB_KEY or an LLM key secret; skipping DB top-up."
             exit 0
           fi
-          python generate.py --neetcode --fill \
+          python generate.py --neetcode --fill --fill-source db \
             --num "${{ github.event.inputs.num || '3' }}" \
             --limit "${{ github.event.inputs.limit || '40' }}" \
+            --min-per-problem "${{ github.event.inputs.min_per_problem || '6' }}" \
             ${{ github.event.inputs.model && format('--model {0}', github.event.inputs.model) || '' }}
 
       - name: Regenerate bundled deck
@@ -81,9 +85,14 @@ jobs:
             echo "Missing ANTHROPIC_API_KEY / OPENAI_API_KEY secret; cannot generate."
             exit 1
           fi
-          python generate.py --neetcode --dry-run \
+          # --fill + --fill-source bundle: read current stock from the committed
+          # deck, work on the thinnest problems first, and MERGE the result in.
+          # Without --fill this step would regenerate the same first N problems
+          # every run and overwrite the deck with just those.
+          python generate.py --neetcode --dry-run --fill --fill-source bundle \
             --num "${{ github.event.inputs.num || '3' }}" \
             --limit "${{ github.event.inputs.limit || '40' }}" \
+            --min-per-problem "${{ github.event.inputs.min_per_problem || '6' }}" \
             --out /tmp/generated.json \
             --app-out ../LeetSwipe/assets/data/questions.json \
             ${{ github.event.inputs.model && format('--model {0}', github.event.inputs.model) || '' }}
