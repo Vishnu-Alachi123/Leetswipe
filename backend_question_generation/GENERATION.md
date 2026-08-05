@@ -1,8 +1,9 @@
-# How question generation stays clean
+# How content generation stays clean
 
 This describes the guarantees the pipeline makes about the deck: that it grows,
 that it never repeats itself, and that runs stop spending money once there is
-nothing left to add.
+nothing left to add. [Algorithm reels](#algorithm-reels) follow the same rules
+with their own validator.
 
 ## The bug this replaced
 
@@ -129,7 +130,7 @@ UI without editing anything.
 
 ```bash
 cd backend_question_generation
-python -m pytest tests/ -q          # 69 tests, no network, no API key
+python -m pytest tests/ -q          # 95 tests, no network, no API key
 
 # audit the shipped deck for duplicates
 python -c "
@@ -150,6 +151,50 @@ print(filter_questions(deck)[1].summary())
 
 Current state of the shipped 450-question deck: **0 duplicates**, 430/450 passing
 the quality gate.
+
+## Algorithm reels
+
+Reels are the Learn tab's step-by-step walkthroughs. `generate_reels.py` follows
+the same merge/fill/validate shape as the question pipeline:
+
+```bash
+# offline check of the whole path
+python generate_reels.py --mock --limit 3 --out /tmp/reels.json
+
+# top up the shipped set, skipping algorithms already covered
+python generate_reels.py --fill --limit 4 --out ../LeetSwipe/assets/data/reels.json
+```
+
+`--fill` skips any algorithm already present by name, so the 25-entry catalog is
+worked through a few at a time and re-runs cost nothing once it is exhausted.
+
+### Why reels need their own validator
+
+A reel can satisfy the schema completely and still be broken on screen. The
+checks in `validate_reel` cover the failures that actually happen:
+
+| Check | What goes wrong without it |
+|---|---|
+| highlight lines within the listing | a step lights up line 12 of an 8-line program, so nothing highlights |
+| consecutive steps must differ | the learner taps Next and the picture does not move |
+| narration 20-130 words | a step is over before the sentence lands, or drones on |
+| no code syntax in narration | the speech engine reads "open bracket zero close bracket" aloud |
+| steps numbered 1..n | the progress bar desynchronises from the content |
+
+These caught two real bugs in the *hand-authored* reels: binary search had two
+consecutive steps whose visualisation was identical apart from the caption, and
+a two-pointers step had 16 words of narration. Both were fixed at the source.
+
+### Curated reels are built, not written by hand
+
+`seed_reels.py` builds `reels.json` from Python, so the schema validates the
+content at build time rather than the app discovering a malformed reel at
+runtime. A test asserts the shipped JSON still matches what the source produces,
+so the two cannot drift.
+
+```bash
+python seed_reels.py --out ../LeetSwipe/assets/data/reels.json
+```
 
 ## Cost control
 

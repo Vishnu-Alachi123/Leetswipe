@@ -6,6 +6,7 @@
  *   GET  /topics                          categories + counts + difficulty breakdown
  *   GET  /questions?category=&difficulty=&list=&limit=&exclude=
  *                                         randomized filtered deck
+ *   GET  /reels?category=&difficulty=      algorithm walkthroughs (Learn tab)
  *   POST /auth/anon                       issue an anonymous JWT
  *   GET  /saved                           list the caller's saved questions
  *   POST /saved                           save a question (body: MCQ)
@@ -16,7 +17,7 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import { questionsCollection, savedCollection, MCQ, SavedDoc } from './db';
+import { questionsCollection, reelsCollection, savedCollection, MCQ, SavedDoc } from './db';
 import { issueAnonToken, requireAuth, AuthedRequest } from './auth';
 
 const app = express();
@@ -90,6 +91,23 @@ app.get('/questions', async (req, res) => {
   } catch (err) {
     console.error('GET /questions failed:', err);
     res.status(500).json({ error: 'Failed to load questions.' });
+  }
+});
+
+/** Algorithm reels for the Learn tab, optionally filtered by category. */
+app.get('/reels', async (req, res) => {
+  try {
+    const { category, difficulty } = req.query as Record<string, string | undefined>;
+    const match: Record<string, unknown> = {};
+    if (category) match.category = category;
+    if (difficulty) match.difficulty = difficulty;
+
+    const coll = await reelsCollection();
+    const reels = await coll.find(match, { projection: PROJECTION }).toArray();
+    res.json({ reels });
+  } catch (err) {
+    console.error('GET /reels failed:', err);
+    res.status(500).json({ error: 'Failed to load reels.' });
   }
 });
 
