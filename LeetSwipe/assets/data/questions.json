@@ -14935,6 +14935,4775 @@
       "qualityScore": 5,
       "explanationQuality": 5,
       "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-k-sorted-lists-4",
+      "title": "Optimal Data Structure for Merging",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-k-sorted-lists",
+      "difficulty": "Hard",
+      "question": "Which data structure is most efficient for merging multiple sorted linked lists into one sorted linked list?",
+      "options": [
+        "A priority queue (min-heap)",
+        "A doubly linked list",
+        "An array of linked lists",
+        "A single linked list"
+      ],
+      "answer": 0,
+      "explanation": "Using a priority queue (min-heap) allows for efficient retrieval of the smallest element across all lists, achieving a time complexity of O(N log k), where N is the total number of elements and k is the number of lists. The option of a single linked list is tempting but does not provide the necessary efficiency for merging sorted elements.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478173+00:00",
+      "contentHash": "5dfcbbd9781d69baeef5631246b8ba96",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-k-sorted-lists-5",
+      "title": "Time Complexity Consideration",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-k-sorted-lists",
+      "difficulty": "Hard",
+      "question": "What is the time complexity of merging k sorted linked lists using a priority queue?",
+      "options": [
+        "O(N log k)",
+        "O(k log N)",
+        "O(N^2)",
+        "O(N)"
+      ],
+      "answer": 0,
+      "explanation": "The time complexity of merging k sorted linked lists using a priority queue is O(N log k), where N is the total number of nodes across all lists. This is because each insertion and extraction from the heap takes log k time, and we perform this operation for each of the N nodes. The option O(k log N) misrepresents the relationship between k and N.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478232+00:00",
+      "contentHash": "bb037bc429c2ccf4519430b1c99fe346",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-k-sorted-lists-6",
+      "title": "Handling Edge Cases in Merging",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-k-sorted-lists",
+      "difficulty": "Hard",
+      "question": "What issue arises if one of the input linked lists is null when merging multiple sorted linked lists?",
+      "options": [
+        "The merge will fail with an error",
+        "The result will be incorrect",
+        "The null list will be ignored",
+        "The merge will take longer"
+      ],
+      "answer": 2,
+      "explanation": "If one of the input linked lists is null, it will be ignored during the merging process, which is acceptable since merging does not require all lists to be non-null. The tempting option that suggests the merge will fail is incorrect, as null lists can simply be skipped without affecting the outcome.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "List 1 Head",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "List 1 Next",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "List 1 Next",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "List 2 Head",
+              "status": "normal"
+            },
+            {
+              "value": "",
+              "label": "List 3 Head",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "List 3 Next",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1",
+              "4",
+              "5"
+            ],
+            [
+              "1",
+              "null",
+              "null"
+            ],
+            [
+              "null",
+              "2",
+              "6"
+            ]
+          ]
+        },
+        "caption": "Three sorted linked lists being merged."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478289+00:00",
+      "contentHash": "83dfb576a872cd6d5c49c5360845fb4e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-nodes-in-k-group-4",
+      "title": "Choosing the Right Data Structure for Group Reversal",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-nodes-in-k-group",
+      "difficulty": "Hard",
+      "question": "When reversing nodes in groups of k in a linked list, which data structure allows for efficient manipulation of the node pointers during the reversal process?",
+      "options": [
+        "Array",
+        "Stack",
+        "Queue",
+        "Hash Table"
+      ],
+      "answer": 1,
+      "explanation": "A stack is ideal for this problem because it allows for LIFO (Last In, First Out) access, enabling the reversal of nodes as they are popped off the stack. The most tempting distractor, an array, fails because it doesn't support efficient pointer manipulation without additional overhead for shifting elements.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478323+00:00",
+      "contentHash": "4e0d246f3c51383133e0d2db75f4a317",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-nodes-in-k-group-5",
+      "title": "Time Complexity Considerations in Group Reversal",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-nodes-in-k-group",
+      "difficulty": "Hard",
+      "question": "What is the time complexity of reversing nodes in groups of k in a linked list, assuming the linked list has n nodes?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(k)",
+        "O(n^2)"
+      ],
+      "answer": 0,
+      "explanation": "The time complexity is O(n) because each node is processed exactly once during the reversal process. The distractor O(n log n) might seem plausible if one assumes sorting is involved, but this problem is purely about node manipulation without any sorting.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478354+00:00",
+      "contentHash": "18e93f6cfeb27189a808d012acde439a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-nodes-in-k-group-6",
+      "title": "Handling Edge Cases in Group Reversal",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-nodes-in-k-group",
+      "difficulty": "Hard",
+      "question": "What happens if the linked list contains fewer than k nodes at the end during the reversal process?",
+      "options": [
+        "All nodes are reversed",
+        "No nodes are reversed",
+        "Only the last few nodes are reversed",
+        "The list remains unchanged"
+      ],
+      "answer": 1,
+      "explanation": "If there are fewer than k nodes left at the end of the list, those nodes should remain in their original order and not be reversed. The option stating that all nodes are reversed is tempting, but it fails to account for the condition that requires at least k nodes for a reversal.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "head",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1"
+            ],
+            [
+              "2"
+            ],
+            [
+              "3"
+            ],
+            [
+              "4"
+            ],
+            [
+              "5"
+            ],
+            [
+              "6"
+            ]
+          ]
+        },
+        "caption": "Linked list before reversal."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478423+00:00",
+      "contentHash": "268dfb398eac259a407241572f88e410",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "invert-binary-tree-4",
+      "title": "Which approach efficiently inverts a binary tree?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "invert-binary-tree",
+      "difficulty": "Easy",
+      "question": "What is the most efficient way to invert a binary tree?",
+      "options": [
+        "Using a recursive depth-first search (DFS) approach",
+        "Using a breadth-first search (BFS) approach",
+        "Using an iterative approach with a stack",
+        "Using a queue to traverse the tree"
+      ],
+      "answer": 0,
+      "explanation": "The most efficient way to invert a binary tree is using a recursive depth-first search (DFS) approach, which allows you to swap the left and right children of each node as you traverse. The BFS approach is less optimal for this specific task, as it involves more overhead in managing the queue.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478462+00:00",
+      "contentHash": "2831622ef080235c569620f02f4ea06f",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "invert-binary-tree-5",
+      "title": "What is a common edge case when inverting a binary tree?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "invert-binary-tree",
+      "difficulty": "Easy",
+      "question": "Which scenario should be considered when inverting a binary tree?",
+      "options": [
+        "An empty tree",
+        "A tree with only one node",
+        "A tree with only left children",
+        "A tree with only right children"
+      ],
+      "answer": 0,
+      "explanation": "An empty tree is a common edge case to consider, as the result of inverting it should still be an empty tree. Other scenarios like a tree with only one node or all left/right children do not pose issues for the inversion process.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478497+00:00",
+      "contentHash": "84c13bd4bde7e863a4497b217e2ab5b7",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "invert-binary-tree-6",
+      "title": "What is a potential pitfall when inverting a binary tree?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "invert-binary-tree",
+      "difficulty": "Easy",
+      "question": "What mistake might occur when trying to invert a binary tree iteratively?",
+      "options": [
+        "Not swapping the nodes correctly",
+        "Forgetting to handle null nodes",
+        "Using a wrong traversal order",
+        "Not storing the original tree structure"
+      ],
+      "answer": 1,
+      "explanation": "Forgetting to handle null nodes can lead to runtime errors or incorrect results when inverting a binary tree iteratively. While not swapping correctly and traversal order are also concerns, they are less likely to cause immediate issues compared to neglecting null checks.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "null",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "null",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "null",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1",
+              "2",
+              "3"
+            ]
+          ]
+        },
+        "caption": "A simple binary tree before inversion."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478546+00:00",
+      "contentHash": "b90822f342b1fafd6a7d5730e916faba",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "maximum-depth-of-binary-tree-4",
+      "title": "Choosing the Right Data Structure for Depth Calculation",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "maximum-depth-of-binary-tree",
+      "difficulty": "Easy",
+      "question": "Which data structure is most appropriate for calculating the maximum depth of a binary tree efficiently?",
+      "options": [
+        "A stack to perform depth-first traversal",
+        "A queue for breadth-first traversal",
+        "An array to store node values",
+        "A linked list to track visited nodes"
+      ],
+      "answer": 1,
+      "explanation": "Using a queue for breadth-first traversal is optimal for calculating the maximum depth, as it allows you to explore each level of the tree before moving deeper. The stack option, while valid for depth-first traversal, does not inherently track levels as effectively as a queue does. The other options do not provide an efficient way to determine depth.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478589+00:00",
+      "contentHash": "46b27b65ba0a228953529335dca4088d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "maximum-depth-of-binary-tree-5",
+      "title": "Understanding Edge Cases in Binary Trees",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "maximum-depth-of-binary-tree",
+      "difficulty": "Easy",
+      "question": "What is the maximum depth of an empty binary tree?",
+      "options": [
+        "0",
+        "1",
+        "-1",
+        "Undefined"
+      ],
+      "answer": 0,
+      "explanation": "The maximum depth of an empty binary tree is defined as 0, as there are no nodes to traverse. Option 1 might seem plausible if considering a single node as depth 1, but for an empty tree, the depth is indeed 0.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478614+00:00",
+      "contentHash": "1fcc39fefb7ad350b7776abad9190d05",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "maximum-depth-of-binary-tree-6",
+      "title": "Identifying Common Pitfalls in Depth Calculation",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "maximum-depth-of-binary-tree",
+      "difficulty": "Easy",
+      "question": "What mistake might occur if you only count nodes instead of levels when calculating maximum depth?",
+      "options": [
+        "You will always return a depth of zero",
+        "You will underestimate the maximum depth",
+        "You will overestimate the maximum depth",
+        "You will get an infinite loop"
+      ],
+      "answer": 2,
+      "explanation": "Counting nodes instead of levels can lead to overestimating the maximum depth, as it does not account for the structure of the tree. For example, a tree with many nodes but few levels may yield a high node count but a low depth. The other options do not accurately reflect the consequences of this mistake.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478645+00:00",
+      "contentHash": "22bb92b12c00e5e41a019e45f153e006",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "diameter-of-binary-tree-4",
+      "title": "Choosing the Right Approach for Tree Diameter",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "diameter-of-binary-tree",
+      "difficulty": "Easy",
+      "question": "What is the most efficient way to calculate the diameter of a binary tree?",
+      "options": [
+        "Use a depth-first search (DFS) to calculate the height of each subtree and track the maximum diameter found.",
+        "Use a breadth-first search (BFS) to traverse the entire tree level by level and calculate the diameter.",
+        "Use a recursive function to count the number of nodes in the tree and then calculate the diameter based on the node count.",
+        "Use a queue to store all nodes and calculate the diameter by finding the longest path between any two nodes."
+      ],
+      "answer": 0,
+      "explanation": "The most efficient way to calculate the diameter of a binary tree is to use a depth-first search (DFS) to calculate the height of each subtree while tracking the maximum diameter found. The tempting distractor is the BFS approach, which can be less efficient because it may require more space and additional complexity to calculate the diameter.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478696+00:00",
+      "contentHash": "1b2f8be735af587d08ed7f43a15ce57c",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "diameter-of-binary-tree-5",
+      "title": "Understanding the Diameter Definition",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "diameter-of-binary-tree",
+      "difficulty": "Easy",
+      "question": "What does the diameter of a binary tree represent?",
+      "options": [
+        "The number of nodes in the longest path between any two leaf nodes.",
+        "The number of edges in the longest path between any two nodes in the tree.",
+        "The maximum depth of the tree from the root to the farthest leaf node.",
+        "The total number of nodes in the binary tree."
+      ],
+      "answer": 1,
+      "explanation": "The diameter of a binary tree is defined as the number of edges in the longest path between any two nodes in the tree. A common misconception is that it refers to the number of nodes, which would be incorrect because the diameter specifically counts edges, not nodes.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478731+00:00",
+      "contentHash": "8b2e4e6b421e19bdc5ff39d164bde74d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "diameter-of-binary-tree-6",
+      "title": "Handling Edge Cases in Tree Diameter Calculation",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "diameter-of-binary-tree",
+      "difficulty": "Easy",
+      "question": "How should the diameter be calculated for an empty binary tree?",
+      "options": [
+        "Return 0, as there are no nodes or edges to consider.",
+        "Return -1, indicating that the tree is empty.",
+        "Return 1, as there are no edges but one node is considered.",
+        "Return null, as the diameter cannot be defined for an empty tree."
+      ],
+      "answer": 0,
+      "explanation": "For an empty binary tree, the diameter should be returned as 0, since there are no nodes or edges to consider. A common misconception is to return -1, which may imply an error state rather than reflecting the absence of edges.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "Tree Structure",
+            "Diameter"
+          ],
+          "rows": [
+            [
+              "Empty Tree",
+              "0"
+            ],
+            [
+              "Single Node",
+              "0"
+            ],
+            [
+              "Two Nodes",
+              "1"
+            ],
+            [
+              "Three Nodes",
+              "2"
+            ]
+          ]
+        },
+        "caption": "Example diameters for different tree structures."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478773+00:00",
+      "contentHash": "18ba4e08b501ebe716d9cf24f8acf96a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "balanced-binary-tree-4",
+      "title": "Which traversal method is most effective for checking if a binary tree is balanced?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "balanced-binary-tree",
+      "difficulty": "Easy",
+      "question": "Which traversal method is most effective for checking if a binary tree is balanced?",
+      "options": [
+        "Pre-order traversal",
+        "In-order traversal",
+        "Post-order traversal",
+        "Level-order traversal"
+      ],
+      "answer": 2,
+      "explanation": "Post-order traversal is most effective for checking if a binary tree is balanced because it allows you to evaluate the height of subtrees after visiting their children. This way, you can determine balance at each node as you return up the tree. The tempting distractor, level-order traversal, does not provide height information efficiently and would require additional data structures to track subtree heights.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478799+00:00",
+      "contentHash": "18db3280e148a5393a86be3f640b78ec",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "balanced-binary-tree-5",
+      "title": "What is the time complexity of the optimal solution for checking if a binary tree is balanced?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "balanced-binary-tree",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of the optimal solution for checking if a binary tree is balanced?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n log n)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal solution for checking if a binary tree is balanced has a time complexity of O(n) because it must visit every node in the tree to determine its height and balance. The option O(log n) is tempting, as it applies to balanced trees, but in the worst case, the tree can be skewed, leading to O(n).",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478827+00:00",
+      "contentHash": "f4c74456bb2e1713ceeb36126da29c18",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "balanced-binary-tree-6",
+      "title": "Which of the following scenarios could lead to an incorrect balance check?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "balanced-binary-tree",
+      "difficulty": "Easy",
+      "question": "Which of the following scenarios could lead to an incorrect balance check?",
+      "options": [
+        "Counting only leaf nodes",
+        "Ignoring null children",
+        "Using a single height variable",
+        "Checking balance without calculating heights"
+      ],
+      "answer": 3,
+      "explanation": "Checking balance without calculating heights can lead to incorrect results, as it does not provide the necessary information to determine if the tree is balanced. The option about using a single height variable is tempting because it seems efficient, but it fails to account for the heights of both subtrees at each node, which is crucial for balance checking.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478855+00:00",
+      "contentHash": "84f1d326356669026bf95b061b5558c9",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "same-tree-4",
+      "title": "Which traversal method is most suitable for comparing two trees?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "same-tree",
+      "difficulty": "Easy",
+      "question": "What traversal method is typically used to compare two binary trees for equality?",
+      "options": [
+        "In-order traversal",
+        "Pre-order traversal",
+        "Post-order traversal",
+        "Level-order traversal"
+      ],
+      "answer": 1,
+      "explanation": "Pre-order traversal is suitable for comparing two binary trees because it allows you to visit the root node first, followed by the left and right subtrees. This order helps in directly comparing the structure and values of the trees. The most tempting distractor, in-order traversal, does not work for this purpose because it visits nodes in a sorted order, which can lead to incorrect comparisons for non-binary search trees.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478880+00:00",
+      "contentHash": "7dd382596f7e3ba7c5e64ffab6e90dfa",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "same-tree-5",
+      "title": "What is the time complexity of checking if two trees are identical?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "same-tree",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of determining if two binary trees are identical?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "answer": 0,
+      "explanation": "The time complexity of checking if two binary trees are identical is O(n), where n is the number of nodes in the trees. This is because you must potentially visit every node in both trees to compare them. The option O(n log n) might seem plausible if one assumes sorting is involved, but that is incorrect for tree comparison.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478908+00:00",
+      "contentHash": "54cab996bf7c240fd4bc28d2ef950733",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "same-tree-6",
+      "title": "What is a common pitfall when comparing two trees?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "same-tree",
+      "difficulty": "Easy",
+      "question": "What is a common mistake when checking if two binary trees are the same?",
+      "options": [
+        "Ignoring null nodes",
+        "Only comparing root values",
+        "Assuming structure without value checks",
+        "Using depth-first search only"
+      ],
+      "answer": 0,
+      "explanation": "A common mistake is ignoring null nodes, which can lead to false positives when comparing trees. If one tree has a null node where the other does not, they are not identical. The option about assuming structure without value checks is tempting, but both structure and values must be verified for proper comparison.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "null",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "null",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "null",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "null",
+              "label": "right",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1",
+              "2",
+              "3"
+            ],
+            [
+              "null",
+              "null",
+              "null"
+            ]
+          ]
+        },
+        "caption": "Example tree structure to compare."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478961+00:00",
+      "contentHash": "cf9f2d9c33ea2577fb14f09772d55a8f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "subtree-of-another-tree-4",
+      "title": "Which traversal method is most effective for checking if one tree is a subtree of another?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "subtree-of-another-tree",
+      "difficulty": "Easy",
+      "question": "Which traversal method is most effective for checking if one tree is a subtree of another?",
+      "options": [
+        "Level-order traversal",
+        "In-order traversal",
+        "Pre-order traversal",
+        "Post-order traversal"
+      ],
+      "answer": 2,
+      "explanation": "Pre-order traversal is effective because it allows you to check the structure of the trees as you visit nodes, which is essential for subtree comparison. The most tempting distractor, in-order traversal, fails here because it does not preserve the structure of the tree, making it unsuitable for subtree checks.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.478989+00:00",
+      "contentHash": "68a09a72613f113e02c54171b263ade4",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "subtree-of-another-tree-5",
+      "title": "What is the time complexity of the optimal solution for checking if one tree is a subtree of another?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "subtree-of-another-tree",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of the optimal solution for checking if one tree is a subtree of another?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(log n)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal solution can check if one tree is a subtree of another in O(n) time, where n is the number of nodes in the larger tree. The O(n log n) option might seem plausible if considering sorting or multiple comparisons, but it is not applicable here.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479016+00:00",
+      "contentHash": "7ba7f049e1e23d10022a873aaf5d2931",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "subtree-of-another-tree-6",
+      "title": "What common issue arises when checking for subtree equality?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "subtree-of-another-tree",
+      "difficulty": "Easy",
+      "question": "What common issue arises when checking for subtree equality?",
+      "options": [
+        "Handling null nodes",
+        "Ignoring structure",
+        "Comparing values only",
+        "Assuming trees are balanced"
+      ],
+      "answer": 0,
+      "explanation": "Handling null nodes is crucial because both trees can have nulls in corresponding positions, and failing to account for this can lead to incorrect results. The option about ignoring structure is tempting but misses the point that structure must be preserved in subtree checks.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "3",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "C",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Node",
+            "Value"
+          ],
+          "rows": [
+            [
+              "A",
+              "3"
+            ],
+            [
+              "B",
+              "4"
+            ],
+            [
+              "C",
+              "5"
+            ]
+          ]
+        },
+        "caption": "Example nodes in a binary tree."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479052+00:00",
+      "contentHash": "661851cc1c260d165ed329c9060705b5",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "lowest-common-ancestor-of-a-binary-search-tree-6",
+      "title": "Handling Edge Cases in BST",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "lowest-common-ancestor-of-a-binary-search-tree",
+      "difficulty": "Medium",
+      "question": "What issue arises when trying to find the lowest common ancestor if one of the nodes is not present in the binary search tree?",
+      "options": [
+        "The algorithm will still return a valid ancestor",
+        "It will cause a stack overflow",
+        "The algorithm may return null or an incorrect ancestor",
+        "It will always return the root node"
+      ],
+      "answer": 2,
+      "explanation": "If one of the nodes is not present in the binary search tree, the algorithm may return null or an incorrect ancestor because it cannot find a valid path to that node. The option stating that it will return a valid ancestor is tempting but misleading, as the absence of a node means the search cannot complete successfully.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "Node",
+            "Value"
+          ],
+          "rows": [
+            [
+              "A",
+              "5"
+            ],
+            [
+              "B",
+              "3"
+            ],
+            [
+              "C",
+              "7"
+            ],
+            [
+              "D",
+              "2"
+            ],
+            [
+              "E",
+              "4"
+            ],
+            [
+              "F",
+              "6"
+            ],
+            [
+              "G",
+              "8"
+            ]
+          ]
+        },
+        "caption": "Example of a binary search tree structure."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479121+00:00",
+      "contentHash": "1a36bcbc960a04fd8accb097f887e8d3",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "binary-tree-level-order-traversal-6",
+      "title": "Handling Edge Cases in Level Order Traversal",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "binary-tree-level-order-traversal",
+      "difficulty": "Medium",
+      "question": "What is a potential issue when performing level order traversal if the binary tree is unbalanced?",
+      "options": [
+        "Traversal will be slower than O(n)",
+        "Some nodes may be missed",
+        "The output may not be in level order",
+        "Memory usage may increase significantly"
+      ],
+      "answer": 3,
+      "explanation": "In an unbalanced binary tree, the memory usage can increase significantly due to the queue holding more nodes at a time, especially if one side of the tree is much deeper than the other. This can lead to high space complexity. The other options misunderstand the traversal process, as it will still visit all nodes in level order regardless of balance.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "L",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "R",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "LL",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "LR",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "RL",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1"
+            ],
+            [
+              "2",
+              "3"
+            ],
+            [
+              "4",
+              "5",
+              "6"
+            ]
+          ]
+        },
+        "caption": "Example of a binary tree for level order traversal."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479224+00:00",
+      "contentHash": "3a76c9337843c6c2c1e8c42fe6021ced",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "binary-tree-right-side-view-4",
+      "title": "Choosing the Right Data Structure for Tree Traversal",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "binary-tree-right-side-view",
+      "difficulty": "Medium",
+      "question": "Which data structure is most suitable for performing a level-order traversal of a binary tree to view its rightmost nodes?",
+      "options": [
+        "Stack",
+        "Queue",
+        "Array",
+        "Linked List"
+      ],
+      "answer": 1,
+      "explanation": "A queue is ideal for level-order traversal because it allows for FIFO processing of nodes, ensuring that we visit all nodes at the current level before moving to the next. A stack, while useful for depth-first traversal, does not maintain the order needed for level-order processing. The array and linked list options are less efficient for this specific traversal pattern.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479254+00:00",
+      "contentHash": "d768c4b5302f9042c6c26fb608ee63b9",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "binary-tree-right-side-view-5",
+      "title": "Handling Edge Cases in Binary Trees",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "binary-tree-right-side-view",
+      "difficulty": "Medium",
+      "question": "What is a potential issue when implementing a right-side view function for a binary tree that does not account for null nodes?",
+      "options": [
+        "Incorrectly counting nodes",
+        "Missing rightmost nodes",
+        "Returning an empty list",
+        "Infinite recursion"
+      ],
+      "answer": 1,
+      "explanation": "If the implementation does not handle null nodes properly, it may skip rightmost nodes that are not directly linked, leading to an incomplete view. The option about incorrectly counting nodes is tempting, but the main issue is about missing nodes altogether due to improper traversal.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479283+00:00",
+      "contentHash": "25140402893ecd80344b06baeee57fc3",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "binary-tree-right-side-view-6",
+      "title": "Visualizing Level-Order Traversal",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "binary-tree-right-side-view",
+      "difficulty": "Medium",
+      "question": "Given the following binary tree, which nodes would be visible from the right side?",
+      "options": [
+        "1, 3, 4",
+        "1, 2, 3",
+        "1, 2, 5",
+        "1, 3, 5"
+      ],
+      "answer": 3,
+      "explanation": "From the right side, the visible nodes are 1 (root), 3 (right child of 1), and 5 (right child of 2). The option '1, 3, 4' incorrectly includes 4, which is not visible from the right. The others miss the rightmost nodes.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "null",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Node Value",
+            "Position"
+          ],
+          "rows": [
+            [
+              "1",
+              "root"
+            ],
+            [
+              "2",
+              "left"
+            ],
+            [
+              "3",
+              "right"
+            ],
+            [
+              "4",
+              "left"
+            ],
+            [
+              "5",
+              "right"
+            ],
+            [
+              "null",
+              ""
+            ]
+          ]
+        },
+        "caption": "Binary tree structure for right-side view."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479334+00:00",
+      "contentHash": "f73a922314febf33619ce0ef7d95ae53",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "count-good-nodes-in-binary-tree-4",
+      "title": "Choosing the Right Traversal Method",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "count-good-nodes-in-binary-tree",
+      "difficulty": "Medium",
+      "question": "Which traversal method is most suitable for counting good nodes in a binary tree, where a good node is defined as a node whose value is greater than or equal to all values on the path from the root to that node?",
+      "options": [
+        "In-order traversal",
+        "Pre-order traversal",
+        "Post-order traversal",
+        "Level-order traversal"
+      ],
+      "answer": 1,
+      "explanation": "Pre-order traversal is the most suitable method here because it allows you to process the current node before its children, which is essential for comparing the current node's value to the maximum value seen on the path from the root. The tempting distractor, in-order traversal, does not work here as it does not visit nodes in a way that maintains the path context from root to the current node.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479371+00:00",
+      "contentHash": "e3a1c93f4199fbc5c4b35ac1d6a42c9f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "count-good-nodes-in-binary-tree-5",
+      "title": "Handling Edge Cases",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "count-good-nodes-in-binary-tree",
+      "difficulty": "Medium",
+      "question": "What is a crucial edge case to consider when implementing a solution to count good nodes in a binary tree?",
+      "options": [
+        "A tree with only one node",
+        "A tree where all nodes have the same value",
+        "A tree with negative values",
+        "A tree with varying node depths"
+      ],
+      "answer": 0,
+      "explanation": "A tree with only one node is a crucial edge case because it represents the simplest case where that single node is inherently a good node. The distractor about all nodes having the same value is tempting, but it doesn't change the logic of counting good nodes since each node would still be good.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479420+00:00",
+      "contentHash": "e9b94f023e34b1409f3b53ad7216cc58",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "count-good-nodes-in-binary-tree-6",
+      "title": "Space Complexity Considerations",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "count-good-nodes-in-binary-tree",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of a recursive solution for counting good nodes in a binary tree?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "answer": 1,
+      "explanation": "The space complexity of a recursive solution is O(n) in the worst case, where n is the number of nodes in the binary tree, due to the potential for maximum recursion depth. The distractor O(log n) might seem plausible for balanced trees, but it does not account for unbalanced trees where the recursion could go as deep as the number of nodes.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "5",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "8",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "left-left",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "left-right",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "5"
+            ],
+            [
+              "3"
+            ],
+            [
+              "8"
+            ],
+            [
+              "1"
+            ],
+            [
+              "4"
+            ]
+          ]
+        },
+        "caption": "Example binary tree structure."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479522+00:00",
+      "contentHash": "03b766721f595510e6c62c23ec2fa703",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "validate-binary-search-tree-4",
+      "title": "Which traversal method is most effective for validating a binary search tree?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "validate-binary-search-tree",
+      "difficulty": "Medium",
+      "question": "What traversal method can be employed to efficiently check if a binary tree is a valid binary search tree?",
+      "options": [
+        "In-order traversal",
+        "Pre-order traversal",
+        "Post-order traversal",
+        "Level-order traversal"
+      ],
+      "answer": 0,
+      "explanation": "In-order traversal of a binary search tree yields the values in sorted order. This property allows for a straightforward comparison of the current node's value with the previous node's value to validate the BST. The tempting distractor, pre-order traversal, does not guarantee sorted order and thus cannot be used effectively for this validation.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479557+00:00",
+      "contentHash": "a03c4c1d8bf1ae700536afe5e69c75c7",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "validate-binary-search-tree-5",
+      "title": "What is a common edge case when validating a binary search tree?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "validate-binary-search-tree",
+      "difficulty": "Medium",
+      "question": "Which scenario could lead to incorrect validation of a binary search tree?",
+      "options": [
+        "A tree with all nodes having the same value",
+        "A tree with only one node",
+        "A tree where all nodes are in a straight line to the left",
+        "A tree with negative values"
+      ],
+      "answer": 0,
+      "explanation": "A tree where all nodes have the same value fails the BST property, as duplicate values are not allowed in a strict binary search tree. The option about a tree with only one node is valid, as it is trivially a BST, while the other options can still represent valid BSTs.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479590+00:00",
+      "contentHash": "db1d4d9f08db16d3711f83941e582f48",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "validate-binary-search-tree-6",
+      "title": "What is the time complexity of the optimal solution for validating a binary search tree?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "validate-binary-search-tree",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the most efficient algorithm to determine if a binary tree is a valid binary search tree?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n log n)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal approach to validate a binary search tree involves traversing each node exactly once, leading to a time complexity of O(n), where n is the number of nodes in the tree. The option O(log n) is misleading as it applies to balanced trees only, while O(n log n) and O(1) do not accurately reflect the traversal needed.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "5",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "7",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "right",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "5",
+              "3",
+              "7",
+              "2",
+              "4"
+            ]
+          ]
+        },
+        "caption": "Example of a binary tree structure for validation."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479633+00:00",
+      "contentHash": "98c9396d5dd15a0edc422b925da8d8af",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "kth-smallest-element-in-a-bst-5",
+      "title": "Time Complexity of Kth Smallest Element",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "kth-smallest-element-in-a-bst",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of finding the Kth smallest element in a Binary Search Tree using in-order traversal?",
+      "options": [
+        "O(N)",
+        "O(K)",
+        "O(log N)",
+        "O(N log N)"
+      ],
+      "answer": 1,
+      "explanation": "The time complexity of an in-order traversal of a BST is O(N), but since we can stop as soon as we reach the Kth element, the effective time complexity is O(K). The option O(N) is tempting because it considers the full traversal, but we only need K elements.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479664+00:00",
+      "contentHash": "ffdf878150dd45fde032b60371e1a305",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "kth-smallest-element-in-a-bst-6",
+      "title": "Handling Duplicates in BST",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "kth-smallest-element-in-a-bst",
+      "difficulty": "Medium",
+      "question": "What issue arises when trying to find the Kth smallest element in a BST that contains duplicate values?",
+      "options": [
+        "The algorithm will always return the first duplicate",
+        "The duplicates will be counted multiple times",
+        "The algorithm will fail to run",
+        "The duplicates will be ignored completely"
+      ],
+      "answer": 1,
+      "explanation": "When duplicates are present in a BST, they can be counted multiple times during the in-order traversal, which may lead to incorrect results if K refers to unique values. The option stating that the algorithm will fail to run is incorrect, as it can still execute but may yield an inaccurate Kth smallest element.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "5",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "7",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "8",
+              "label": "right",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example BST with duplicates"
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479714+00:00",
+      "contentHash": "6b622318eee699c8a0b44ba7406855c4",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "construct-binary-tree-from-preorder-and-inorder-traversal-4",
+      "title": "Choosing the Right Data Structure for Tree Construction",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+      "difficulty": "Medium",
+      "question": "Which data structure is most suitable for efficiently reconstructing a binary tree from preorder and inorder traversal arrays?",
+      "options": [
+        "A hash map to store indices of inorder elements",
+        "A stack to keep track of nodes during traversal",
+        "A queue for level-order processing",
+        "A simple array for storing tree nodes"
+      ],
+      "answer": 0,
+      "explanation": "Using a hash map to store indices of inorder elements allows for O(1) average-time complexity when locating the root's index during reconstruction. The stack option is plausible but does not provide the necessary efficiency for index lookups, making it less optimal than the hash map.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479751+00:00",
+      "contentHash": "8cf2bc0fdac78a6670cdf50e8a820ea8",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "construct-binary-tree-from-preorder-and-inorder-traversal-5",
+      "title": "Understanding Time Complexity in Tree Reconstruction",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+      "difficulty": "Medium",
+      "question": "What is the overall time complexity of constructing a binary tree from preorder and inorder traversal arrays?",
+      "options": [
+        "O(n log n) due to recursive calls",
+        "O(n) for linear traversal of nodes",
+        "O(n^2) from nested loops",
+        "O(n) for space complexity"
+      ],
+      "answer": 1,
+      "explanation": "The overall time complexity is O(n) because each node is processed once during the reconstruction, making it linear in relation to the number of nodes. The O(n log n) option may seem tempting due to recursive calls, but the recursion does not lead to a logarithmic factor in this case.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479782+00:00",
+      "contentHash": "a19f040b02e67905c96f87f520dac3e2",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "construct-binary-tree-from-preorder-and-inorder-traversal-6",
+      "title": "Handling Edge Cases in Tree Reconstruction",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+      "difficulty": "Medium",
+      "question": "What issue arises if the preorder and inorder traversal arrays contain duplicate values?",
+      "options": [
+        "The tree cannot be uniquely reconstructed",
+        "The algorithm will run in exponential time",
+        "The traversal arrays will be invalid",
+        "The tree will be reconstructed correctly with arbitrary structure"
+      ],
+      "answer": 0,
+      "explanation": "If the preorder and inorder traversal arrays contain duplicate values, the tree cannot be uniquely reconstructed because multiple structures could satisfy the same traversals. The option about running in exponential time is misleading, as the algorithm's complexity remains linear; it\u2019s the uniqueness of the structure that is compromised.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "A",
+              "label": "Root",
+              "status": "normal"
+            },
+            {
+              "value": "B",
+              "label": "Left",
+              "status": "normal"
+            },
+            {
+              "value": "C",
+              "label": "Right",
+              "status": "normal"
+            },
+            {
+              "value": "D",
+              "label": "Left",
+              "status": "normal"
+            },
+            {
+              "value": "E",
+              "label": "Right",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example of traversal arrays with potential duplicates."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479827+00:00",
+      "contentHash": "375cf80424befc9cadcff81ae27f9ee2",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "binary-tree-maximum-path-sum-4",
+      "title": "Choosing the Right Approach for Maximum Path Sum",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "binary-tree-maximum-path-sum",
+      "difficulty": "Hard",
+      "question": "When solving the problem of finding the maximum path sum in a binary tree, which approach is most effective for ensuring all potential paths are considered?",
+      "options": [
+        "Depth-first search with backtracking",
+        "Breadth-first search with a queue",
+        "Dynamic programming with memoization",
+        "Iterative level-order traversal"
+      ],
+      "answer": 0,
+      "explanation": "The most effective approach is depth-first search with backtracking, as it allows you to explore all paths from each node to find the maximum sum. The tempting distractor, dynamic programming with memoization, fails here because it is not suited for problems involving paths that can change direction, which is crucial in a tree structure.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479862+00:00",
+      "contentHash": "cab92f186d89a06c889ad7c8c3c52077",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "binary-tree-maximum-path-sum-5",
+      "title": "Understanding Time Complexity in Tree Traversals",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "binary-tree-maximum-path-sum",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal solution for calculating the maximum path sum in a binary tree?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal solution runs in O(n) time complexity, where n is the number of nodes in the tree, because each node is visited once. The option O(n^2) might seem plausible as it suggests multiple passes, but it is not necessary for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479889+00:00",
+      "contentHash": "2e323a55db44ee5ae4b2f8a64cbe1a35",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "binary-tree-maximum-path-sum-6",
+      "title": "Identifying Edge Cases in Path Sum Problems",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "binary-tree-maximum-path-sum",
+      "difficulty": "Medium",
+      "question": "Which of the following scenarios could lead to incorrect results when calculating the maximum path sum in a binary tree?",
+      "options": [
+        "All nodes have negative values",
+        "The tree is skewed to one side",
+        "The tree contains duplicate values",
+        "The root node has the maximum value"
+      ],
+      "answer": 0,
+      "explanation": "If all nodes have negative values, the algorithm may incorrectly assume the maximum path sum is zero, leading to an incorrect result. The option about the tree being skewed is misleading; while it can affect performance, it doesn't lead to incorrect results.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "-3",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "-2",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "-1",
+              "label": "right",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example of a binary tree with all negative values."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479929+00:00",
+      "contentHash": "267d260bc581076bd29400bbe5ceafac",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "serialize-and-deserialize-binary-tree-4",
+      "title": "Choosing the Right Data Structure for Serialization",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "serialize-and-deserialize-binary-tree",
+      "difficulty": "Hard",
+      "question": "Which data structure is most suitable for efficiently serializing and deserializing a binary tree?",
+      "options": [
+        "Array",
+        "Linked List",
+        "Queue",
+        "Hash Map"
+      ],
+      "answer": 2,
+      "explanation": "A queue is ideal for level-order traversal during serialization and deserialization of a binary tree, allowing you to process nodes in the correct order. The most tempting distractor, an array, lacks the dynamic nature needed for efficiently managing the nodes as they are added or removed during traversal.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479953+00:00",
+      "contentHash": "3174db4345585fcea681824c892e3189",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "serialize-and-deserialize-binary-tree-5",
+      "title": "Handling Edge Cases in Tree Serialization",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "serialize-and-deserialize-binary-tree",
+      "difficulty": "Hard",
+      "question": "What is a critical edge case to consider when serializing a binary tree?",
+      "options": [
+        "Empty tree",
+        "Tree with only one node",
+        "Tree with duplicate values",
+        "Complete binary tree"
+      ],
+      "answer": 0,
+      "explanation": "An empty tree is a crucial edge case that must be handled during serialization to ensure that the output format correctly represents it. The distractor about a tree with only one node is misleading because it is simpler to serialize than an empty tree, which requires special handling.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.479979+00:00",
+      "contentHash": "40b643f62f312ee51f0d67ca3a2e1bcf",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "serialize-and-deserialize-binary-tree-6",
+      "title": "Time Complexity of Serialization and Deserialization",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "serialize-and-deserialize-binary-tree",
+      "difficulty": "Hard",
+      "question": "What is the time complexity of the optimal serialization and deserialization algorithm for a binary tree?",
+      "options": [
+        "O(n) for both",
+        "O(n log n) for both",
+        "O(n) for serialization and O(1) for deserialization",
+        "O(log n) for both"
+      ],
+      "answer": 0,
+      "explanation": "The optimal algorithms for both serialization and deserialization operate in O(n) time, where n is the number of nodes in the tree, as each node must be visited exactly once. The option suggesting O(n log n) is tempting because it implies a more complex operation, but both processes are linear with respect to the number of nodes.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480008+00:00",
+      "contentHash": "ae2b6cdf0a567d837dbe7d913865356f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "kth-largest-element-in-a-stream-4",
+      "title": "Which data structure is optimal for maintaining the Kth largest element in a dynamic stream of numbers?",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "kth-largest-element-in-a-stream",
+      "difficulty": "Easy",
+      "question": "Which data structure is optimal for maintaining the Kth largest element in a dynamic stream of numbers?",
+      "options": [
+        "Array",
+        "Min-Heap",
+        "Max-Heap",
+        "Linked List"
+      ],
+      "answer": 1,
+      "explanation": "A Min-Heap is optimal for this problem because it allows us to efficiently keep track of the K largest elements. The smallest element in the Min-Heap will be the Kth largest overall. An Array would require sorting or scanning, which is less efficient. The Max-Heap would not provide the correct Kth largest element directly, and a Linked List does not offer efficient access for this operation.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480038+00:00",
+      "contentHash": "67da7b74140f7368f4014b437e43c081",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "kth-largest-element-in-a-stream-5",
+      "title": "What is the time complexity of inserting a new element into a Min-Heap of size K?",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "kth-largest-element-in-a-stream",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of inserting a new element into a Min-Heap of size K?",
+      "options": [
+        "O(1)",
+        "O(log K)",
+        "O(K)",
+        "O(n)"
+      ],
+      "answer": 1,
+      "explanation": "The time complexity of inserting an element into a Min-Heap is O(log K) due to the need to maintain the heap property after adding the new element. The O(1) option is tempting but only applies to accessing the root, not insertion. O(K) and O(n) are incorrect as they suggest scanning or sorting, which is not required for heap insertion.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480064+00:00",
+      "contentHash": "63547a646dbb32f1bec0752dda0275a9",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "last-stone-weight-4",
+      "title": "Which data structure is best for efficiently retrieving the two heaviest stones?",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "last-stone-weight",
+      "difficulty": "Easy",
+      "question": "Which data structure is best for efficiently retrieving the two heaviest stones in a collection?",
+      "options": [
+        "Array",
+        "Linked List",
+        "Heap",
+        "Hash Map"
+      ],
+      "answer": 2,
+      "explanation": "A heap is ideal for this scenario because it allows for efficient retrieval of the maximum elements. The most tempting distractor, an array, would require O(n) time to find the two heaviest stones, while a heap can do this in O(log n) time after insertion.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480090+00:00",
+      "contentHash": "aa167c8602d555368febafc33770f05c",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "last-stone-weight-5",
+      "title": "What is the time complexity of repeatedly extracting the two heaviest stones?",
+      "topics": [
+        "Heap",
+        "Time Complexity"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "last-stone-weight",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of repeatedly extracting the two heaviest stones from a max heap until no stones are left?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "answer": 1,
+      "explanation": "The time complexity for extracting the two heaviest stones from a max heap is O(log n) for each extraction, and since we do this n times, the overall complexity is O(n log n). The distractor O(n) might seem plausible if one considers a single extraction, but it doesn't account for the repeated extractions needed until all stones are processed.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480117+00:00",
+      "contentHash": "2fb3312b819bd99871d48cf4f5b28dcf",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "k-closest-points-to-origin-4",
+      "title": "What is the most efficient data structure to maintain the closest points while processing a list of points?",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "k-closest-points-to-origin",
+      "difficulty": "Medium",
+      "question": "Which data structure provides efficient retrieval of the K closest points to the origin as new points are added?",
+      "options": [
+        "Array",
+        "Max Heap",
+        "Min Heap",
+        "Linked List"
+      ],
+      "answer": 1,
+      "explanation": "A Max Heap is ideal for maintaining the K closest points because it allows for efficient retrieval of the farthest point among the closest points. Using an Array would require sorting after each insertion, which is less efficient. A Min Heap would not work as we need to discard the farthest point when the size exceeds K.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480141+00:00",
+      "contentHash": "d3e4bcdc4b8d65332f8ccdfa895d1915",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "k-closest-points-to-origin-6",
+      "title": "Consider the following points and their distances from the origin:",
+      "topics": [
+        "Heap",
+        "Distance Calculation"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "k-closest-points-to-origin",
+      "difficulty": "Medium",
+      "question": "Given the points [(1, 2), (2, 3), (3, 1), (5, 4)] and K = 2, which points would be returned as the closest to the origin?",
+      "options": [
+        "(1, 2) and (2, 3)",
+        "(1, 2) and (3, 1)",
+        "(2, 3) and (5, 4)",
+        "(3, 1) and (5, 4)"
+      ],
+      "answer": 1,
+      "explanation": "Calculating the squared distances gives (1,2) as 5 and (3,1) as 10, making (1,2) and (2,3) the closest. The other options include points that are farther away from the origin.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "(1, 2)",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "(2, 3)",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "(3, 1)",
+              "label": "C",
+              "status": "normal"
+            },
+            {
+              "value": "(5, 4)",
+              "label": "D",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "(1, 2)",
+              "(2, 3)",
+              "(3, 1)",
+              "(5, 4)"
+            ]
+          ]
+        },
+        "caption": "Points and their coordinates"
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480188+00:00",
+      "contentHash": "6dbf6cf757757156dede6331a802afb8",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "kth-largest-element-in-an-array-4",
+      "title": "What is the most efficient data structure for finding the Kth largest element in an array?",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "kth-largest-element-in-an-array",
+      "difficulty": "Medium",
+      "question": "Which data structure provides an efficient way to maintain the K largest elements while allowing for quick retrieval of the Kth largest?",
+      "options": [
+        "Balanced Binary Search Tree",
+        "Max Heap",
+        "Min Heap",
+        "Array Sorting"
+      ],
+      "answer": 2,
+      "explanation": "A Min Heap is ideal for maintaining the K largest elements as it allows for efficient insertion and removal of the smallest element, ensuring that the K largest elements are always present. The tempting distractor, 'Max Heap', fails because it does not efficiently manage the smallest of the K largest elements, which is needed to identify the Kth largest.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480218+00:00",
+      "contentHash": "bb13bbe45cf74ec693978c8c3a306763",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "kth-largest-element-in-an-array-5",
+      "title": "How does the time complexity of a naive approach compare to an optimal one?",
+      "topics": [
+        "Time Complexity",
+        "Algorithm Optimization"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "kth-largest-element-in-an-array",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of sorting the entire array to find the Kth largest element compared to using a Min Heap?",
+      "options": [
+        "O(n log n) for both",
+        "O(n) for sorting, O(k) for heap",
+        "O(n log n) for sorting, O(n + k log k) for heap",
+        "O(n log n) for sorting, O(n) for heap"
+      ],
+      "answer": 0,
+      "explanation": "Sorting the entire array has a time complexity of O(n log n), while using a Min Heap to maintain K elements has a better average case complexity of O(n log k). The common misconception is that both approaches have the same time complexity, which overlooks the efficiency gained by using a heap.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480255+00:00",
+      "contentHash": "a2157727ac37d66f445f3ce88a3011d5",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "kth-largest-element-in-an-array-6",
+      "title": "What edge case must be handled when finding the Kth largest element?",
+      "topics": [
+        "Edge Cases",
+        "Algorithm Robustness"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "kth-largest-element-in-an-array",
+      "difficulty": "Medium",
+      "question": "What potential issue arises if the input array contains fewer than K elements?",
+      "options": [
+        "The algorithm will crash due to an index error",
+        "The result will be undefined",
+        "The Kth largest element cannot be determined",
+        "The algorithm will return the largest element instead"
+      ],
+      "answer": 2,
+      "explanation": "If the input array has fewer than K elements, it is impossible to determine the Kth largest element, which is a critical edge case that must be handled. The most tempting distractor, 'The algorithm will return the largest element instead', fails because it does not address the fundamental issue of insufficient elements to find the Kth largest.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "3",
+              "label": "0",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "2",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "3",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "4",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "5",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "3"
+            ],
+            [
+              "1"
+            ],
+            [
+              "4"
+            ],
+            [
+              "2"
+            ],
+            [
+              "5"
+            ],
+            [
+              "6"
+            ]
+          ]
+        },
+        "caption": "Example array before determining the Kth largest element."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480304+00:00",
+      "contentHash": "6388106f5b5c5348f957ae8cb2e5f1fa",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "task-scheduler-4",
+      "title": "Choosing the Right Data Structure for Scheduling Tasks",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "task-scheduler",
+      "difficulty": "Medium",
+      "question": "Which data structure is most efficient for dynamically retrieving the next task with the highest priority?",
+      "options": [
+        "Array",
+        "Linked List",
+        "Heap",
+        "Hash Table"
+      ],
+      "answer": 2,
+      "explanation": "A heap is the most efficient data structure for this use case because it allows for O(log n) time complexity for both insertion and extraction of the highest priority task. In contrast, an array would require O(n) for extraction, and a linked list would also be inefficient for this purpose. A hash table does not maintain order and is not suitable for priority-based retrieval.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480334+00:00",
+      "contentHash": "58fcc9e863611f17669a93ec735a812e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "task-scheduler-5",
+      "title": "Understanding Time Complexity in Task Scheduling",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "task-scheduler",
+      "difficulty": "Medium",
+      "question": "What is the overall time complexity of a task scheduling algorithm that uses a priority queue to manage tasks?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "answer": 1,
+      "explanation": "The overall time complexity is O(n log n) because each task needs to be inserted into the priority queue, which takes O(log n) time, and this is done for n tasks. The naive option of O(n) would only apply if tasks could be processed in a single pass without priority considerations, which is not the case here.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480363+00:00",
+      "contentHash": "786a46bfa7b4a043ece10a440aca61d1",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "task-scheduler-6",
+      "title": "Handling Edge Cases in Task Scheduling",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "task-scheduler",
+      "difficulty": "Medium",
+      "question": "What issue might arise if tasks have the same priority in a scheduling algorithm?",
+      "options": [
+        "Tasks will be processed in the order they are added",
+        "Tasks will be ignored",
+        "Tasks will cause an infinite loop",
+        "Tasks will always be processed randomly"
+      ],
+      "answer": 0,
+      "explanation": "If tasks have the same priority, they will be processed in the order they were added, which is known as FIFO (First In, First Out) behavior for tasks of equal priority in a priority queue. The option stating that tasks will be ignored is misleading, as they will still be processed, just in the order they were queued. The other options do not accurately describe the behavior of a well-implemented priority queue.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "Task",
+            "Priority"
+          ],
+          "rows": [
+            [
+              "A",
+              "2"
+            ],
+            [
+              "B",
+              "2"
+            ],
+            [
+              "C",
+              "1"
+            ],
+            [
+              "D",
+              "3"
+            ]
+          ]
+        },
+        "caption": "Tasks with varying priorities."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480420+00:00",
+      "contentHash": "e379c33ca13b2ed390c253333f9f8cb0",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "design-twitter-4",
+      "title": "Which data structure is optimal for managing a feed of recent tweets?",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "design-twitter",
+      "difficulty": "Medium",
+      "question": "What data structure would provide efficient access to the most recent tweets in a Twitter-like feed?",
+      "options": [
+        "Array",
+        "Hash Table",
+        "Heap",
+        "Linked List"
+      ],
+      "answer": 2,
+      "explanation": "A heap is optimal for managing a feed of recent tweets because it allows for efficient retrieval of the top elements (most recent tweets) while maintaining a dynamic set of tweets. The most tempting distractor, a hash table, fails because it provides O(1) average time complexity for lookups but does not maintain order, making it unsuitable for retrieving the most recent items efficiently.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480454+00:00",
+      "contentHash": "3703eae253cf237362586d7b7876f69e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "design-twitter-5",
+      "title": "What is a potential issue with a naive implementation of the Twitter feed?",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "design-twitter",
+      "difficulty": "Medium",
+      "question": "What problem may arise if you simply store all tweets in a list and sort them every time a new tweet is added?",
+      "options": [
+        "Increased memory usage",
+        "Slow retrieval of recent tweets",
+        "Incorrect ordering of tweets",
+        "Limited tweet storage capacity"
+      ],
+      "answer": 1,
+      "explanation": "Sorting a list of tweets every time a new tweet is added results in O(n log n) time complexity, which can be inefficient for frequent updates, leading to slow retrieval of recent tweets. The most tempting distractor, incorrect ordering of tweets, fails because sorting ensures correct order, but it is the inefficiency that is the primary concern.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480485+00:00",
+      "contentHash": "afca792a36578a204340224787aa7519",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "design-twitter-6",
+      "title": "How can you efficiently handle a large number of followers in a Twitter-like system?",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "design-twitter",
+      "difficulty": "Medium",
+      "question": "What approach can you use to efficiently manage and retrieve tweets from a user's followers?",
+      "options": [
+        "Store all tweets in a single array",
+        "Use a priority queue for each follower",
+        "Implement a database for storage",
+        "Use a single linked list for all tweets"
+      ],
+      "answer": 1,
+      "explanation": "Using a priority queue for each follower allows for efficient management of tweets, enabling quick access to the most recent tweets from each follower. The most tempting distractor, storing all tweets in a single array, fails because it does not efficiently manage the varying activity levels of followers, leading to potential inefficiencies in retrieval.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "User1",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Tweet1",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "User2",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Tweet2",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "User3",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Tweet3",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "User",
+            "Tweet"
+          ],
+          "rows": [
+            [
+              "User1",
+              "Tweet1"
+            ],
+            [
+              "User2",
+              "Tweet2"
+            ],
+            [
+              "User3",
+              "Tweet3"
+            ]
+          ]
+        },
+        "caption": "Example of tweets from multiple users."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480532+00:00",
+      "contentHash": "fd76b6c23b23eee82fb09bcb51653689",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "find-median-from-data-stream-4",
+      "title": "Which data structure is best for dynamically finding the median in a stream of numbers?",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "find-median-from-data-stream",
+      "difficulty": "Hard",
+      "question": "Which data structure is best for dynamically finding the median in a stream of numbers?",
+      "options": [
+        "A single sorted array",
+        "Two heaps (max-heap and min-heap)",
+        "A balanced binary search tree",
+        "A simple queue"
+      ],
+      "answer": 1,
+      "explanation": "Using two heaps (a max-heap for the lower half and a min-heap for the upper half) allows efficient insertion and median retrieval in logarithmic time. The most tempting distractor, a single sorted array, would require O(n) time to maintain order upon each insertion, making it inefficient for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480565+00:00",
+      "contentHash": "4f207cbe214f1d98bcc99246ad635f92",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "find-median-from-data-stream-5",
+      "title": "What is the time complexity for inserting a new number into the optimal data structure for median finding?",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "find-median-from-data-stream",
+      "difficulty": "Medium",
+      "question": "What is the time complexity for inserting a new number into the optimal data structure for median finding?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "answer": 1,
+      "explanation": "Inserting a new number into either of the two heaps (max-heap or min-heap) takes O(log n) time due to the need to maintain the heap property. The O(1) option is incorrect as it suggests constant time insertion, which is not feasible in this context.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480593+00:00",
+      "contentHash": "88a777507f74f9f0567e325a152fd3c8",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "find-median-from-data-stream-6",
+      "title": "Consider the following sequence of numbers being streamed: [1, 5, 2, 8, 3]. How would the heaps look after processing the first three numbers?",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "find-median-from-data-stream",
+      "difficulty": "Hard",
+      "question": "Consider the following sequence of numbers being streamed: [1, 5, 2, 8, 3]. How would the heaps look after processing the first three numbers?",
+      "options": [
+        "Max-Heap: [1], Min-Heap: [2, 5]",
+        "Max-Heap: [2], Min-Heap: [5]",
+        "Max-Heap: [1], Min-Heap: [5, 2]",
+        "Max-Heap: [2, 1], Min-Heap: [5]"
+      ],
+      "answer": 1,
+      "explanation": "After processing the first three numbers, the max-heap will contain the lower half ([1, 2]) and the min-heap will contain the upper half ([5]). The max-heap is balanced to ensure the median can be derived efficiently. The option with [2] in the max-heap incorrectly suggests an unbalanced state.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "lo",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "hi",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "mid",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "",
+              "1",
+              "5",
+              "2"
+            ]
+          ]
+        },
+        "caption": "Streamed numbers: [1, 5, 2]"
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480639+00:00",
+      "contentHash": "a4d9d1dd73ebb30a8eb4e17834e64732",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "subsets-4",
+      "title": "Choosing a Data Structure for Backtracking",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "subsets",
+      "difficulty": "Medium",
+      "question": "When implementing a backtracking solution to generate subsets, which data structure is typically most effective for storing the current subset being built?",
+      "options": [
+        "Array",
+        "Stack",
+        "Linked List",
+        "Hash Set"
+      ],
+      "answer": 0,
+      "explanation": "An array is the most effective structure for storing the current subset because it allows for easy indexing and dynamic resizing during the backtracking process. A stack might seem plausible since backtracking often uses it, but it is not used to store the current subset directly; rather, it's used to manage the recursion stack.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480722+00:00",
+      "contentHash": "8d7417afaf5faa07cf65545d7089c7ff",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "combination-sum-4",
+      "title": "Choosing the Right Approach for Combinations",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "combination-sum",
+      "difficulty": "Medium",
+      "question": "When trying to find all unique combinations that sum up to a target value, which approach is generally the most efficient?",
+      "options": [
+        "Using recursion with backtracking to explore all combinations",
+        "Implementing a dynamic programming solution to store intermediate results",
+        "Using a greedy algorithm to select the largest numbers first",
+        "Employing a breadth-first search to explore all possible sums"
+      ],
+      "answer": 0,
+      "explanation": "The most efficient approach is using recursion with backtracking, as it allows for exploring all possible combinations while pruning paths that exceed the target. The greedy approach is tempting but fails to guarantee that all combinations are found, especially for cases where smaller numbers are needed to reach the target.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480760+00:00",
+      "contentHash": "49054f79159b47afcf9832da8d37cf37",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "combination-sum-5",
+      "title": "Understanding Edge Cases in Combinations",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "combination-sum",
+      "difficulty": "Medium",
+      "question": "What issue may arise when the input array contains duplicate numbers while finding combinations that sum to a target?",
+      "options": [
+        "The algorithm will run slower due to redundant calculations",
+        "It may produce duplicate combinations in the result",
+        "The algorithm will fail to find any combinations",
+        "The sum will always exceed the target due to duplicates"
+      ],
+      "answer": 1,
+      "explanation": "When the input array contains duplicates, the algorithm may produce duplicate combinations in the result, which can lead to inefficiencies or incorrect results if not handled properly. The other options do not accurately reflect the behavior of backtracking in this context.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480794+00:00",
+      "contentHash": "375358c43899f7d5f27b85c8abfbbd82",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "combination-sum-6",
+      "title": "Space Complexity Considerations",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "combination-sum",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of the backtracking approach used in combination sum problems?",
+      "options": [
+        "O(n) for the recursion stack",
+        "O(2^n) for all possible combinations",
+        "O(n * k) where n is the number of candidates and k is the average depth",
+        "O(1) since no additional space is used"
+      ],
+      "answer": 2,
+      "explanation": "The space complexity is O(n * k), where n is the number of candidates and k is the average depth of the recursion. This accounts for the space needed to store the current combination being explored. The O(2^n) option is misleading as it refers to the number of combinations rather than space used.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480826+00:00",
+      "contentHash": "99b2bc95af44ba98103a2b61a70f773e",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "combination-sum-ii-4",
+      "title": "Choosing the Right Data Structure for Backtracking",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "combination-sum-ii",
+      "difficulty": "Medium",
+      "question": "When implementing a backtracking algorithm to find all unique combinations of numbers that sum to a target, which data structure is most suitable for tracking the current combination being explored?",
+      "options": [
+        "Array",
+        "Set",
+        "Queue",
+        "Stack"
+      ],
+      "answer": 0,
+      "explanation": "An array is ideal for tracking the current combination because it allows for dynamic resizing and easy access to elements. A Set is not suitable here as it does not maintain order and cannot easily represent combinations. A Queue and Stack are more suited for breadth-first and depth-first searches respectively, but do not directly represent combinations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480854+00:00",
+      "contentHash": "7b6a0a9ddfc39768b7aedd1459e6acf4",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "combination-sum-ii-5",
+      "title": "Handling Duplicates in Combinations",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "combination-sum-ii",
+      "difficulty": "Medium",
+      "question": "In a backtracking solution to find unique combinations that sum to a target, what is the best approach to handle duplicate numbers in the input array?",
+      "options": [
+        "Ignore duplicates entirely",
+        "Sort the array and skip duplicates during exploration",
+        "Use a HashMap to count occurrences",
+        "Allow duplicates in combinations"
+      ],
+      "answer": 1,
+      "explanation": "Sorting the array and skipping duplicates during exploration ensures that each combination is unique without re-evaluating the same number multiple times. Ignoring duplicates entirely could lead to missing valid combinations, while using a HashMap complicates the implementation unnecessarily. Allowing duplicates would violate the uniqueness requirement.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480884+00:00",
+      "contentHash": "43d8e8dae2f986a9b943d3b2bf323eb2",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "combination-sum-ii-6",
+      "title": "Understanding the Time Complexity of Backtracking",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "combination-sum-ii",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of a backtracking algorithm that explores all possible combinations of a given set of numbers to find those that sum to a target?",
+      "options": [
+        "O(n^2)",
+        "O(2^n)",
+        "O(n!)",
+        "O(n^k) where k is the target sum"
+      ],
+      "answer": 1,
+      "explanation": "The time complexity is generally O(2^n) because, in the worst case, each number can either be included or excluded from a combination, leading to exponential growth in the number of combinations. O(n^2) and O(n!) do not accurately represent the nature of combination exploration, while O(n^k) is not applicable as k is not a fixed parameter.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "2",
+              "label": "num[0]",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "num[1]",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "num[2]",
+              "status": "normal"
+            },
+            {
+              "value": "7",
+              "label": "num[3]",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "num[4]",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example input array for combination exploration."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480932+00:00",
+      "contentHash": "2fed10071acf8b26543e3b403fb17c85",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "permutations-4",
+      "title": "Choosing the Right Approach for Generating Permutations",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "permutations",
+      "difficulty": "Medium",
+      "question": "When generating all permutations of a list of distinct integers, which approach is generally the most efficient?",
+      "options": [
+        "Using recursion and swapping elements in place",
+        "Iterating through all possible combinations",
+        "Using a queue to store intermediate results",
+        "Sorting the list and generating permutations from it"
+      ],
+      "answer": 0,
+      "explanation": "The most efficient approach for generating permutations is to use recursion and swap elements in place, which avoids the overhead of additional data structures. The option about iterating through all combinations is tempting, but it leads to unnecessary calculations and is not efficient for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480967+00:00",
+      "contentHash": "bd087724e98ab1d78aa29116104405e5",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "permutations-5",
+      "title": "Understanding Backtracking in Permutation Generation",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "permutations",
+      "difficulty": "Medium",
+      "question": "What is the key advantage of using backtracking for generating permutations?",
+      "options": [
+        "It guarantees the shortest permutation sequence",
+        "It allows for easy handling of duplicate elements",
+        "It explores all possibilities while efficiently pruning invalid paths",
+        "It uses less memory than iterative methods"
+      ],
+      "answer": 2,
+      "explanation": "Backtracking efficiently explores all possibilities while pruning invalid paths, which is crucial in generating permutations. The option about handling duplicates is misleading, as backtracking can be adapted for that but isn't its primary advantage.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.480997+00:00",
+      "contentHash": "f2b94ea8df9ae3b603543f253d67c651",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "permutations-6",
+      "title": "Edge Cases in Permutation Problems",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "permutations",
+      "difficulty": "Medium",
+      "question": "What edge case should be considered when generating permutations of a list?",
+      "options": [
+        "An empty list should return an empty list of permutations",
+        "Lists with negative numbers should be treated differently",
+        "Only unique permutations should be counted in the output",
+        "The order of permutations must follow the input order"
+      ],
+      "answer": 0,
+      "explanation": "An empty list should return an empty list of permutations, which is a fundamental edge case to consider. The option about negative numbers is incorrect, as they are treated the same as positive numbers in permutations.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "i",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "j",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "k",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1",
+              "2",
+              "3"
+            ],
+            [
+              "4",
+              "5",
+              "6"
+            ]
+          ]
+        },
+        "caption": "Example input for generating permutations."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481043+00:00",
+      "contentHash": "1adc34e5325c83cd116493e5c28f87ef",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "subsets-ii-4",
+      "title": "Choosing the Right Approach for Subset Generation",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "subsets-ii",
+      "difficulty": "Medium",
+      "question": "When generating all possible subsets of a set that may contain duplicates, which approach is most effective in ensuring that each subset is unique?",
+      "options": [
+        "Use a hash set to store unique subsets",
+        "Sort the input and skip duplicates during recursion",
+        "Generate all subsets and filter duplicates afterwards",
+        "Use a bitmask to represent subsets"
+      ],
+      "answer": 1,
+      "explanation": "Sorting the input allows you to easily skip over duplicates during the recursive generation of subsets, ensuring that only unique subsets are added. The most tempting distractor, using a hash set, can be inefficient because it requires additional space and processing to filter duplicates after generating all subsets.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481081+00:00",
+      "contentHash": "4c20d2639666f5bed6c37d7c487e2faa",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "subsets-ii-6",
+      "title": "Handling Duplicates in Backtracking",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "subsets-ii",
+      "difficulty": "Medium",
+      "question": "In the context of backtracking for generating subsets, what issue arises if duplicates in the input are not handled properly?",
+      "options": [
+        "The algorithm will run in linear time",
+        "The algorithm may generate duplicate subsets",
+        "The algorithm will fail to terminate",
+        "The algorithm will require more memory"
+      ],
+      "answer": 1,
+      "explanation": "If duplicates are not handled properly, the backtracking algorithm may generate the same subset multiple times, leading to incorrect results. The option about linear time is misleading, as the complexity is still exponential regardless of duplicates.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481144+00:00",
+      "contentHash": "779e4c11d6895ffb033b3fe1477bcbe5",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "generate-parentheses-4",
+      "title": "Which approach is most effective for generating all combinations of well-formed parentheses?",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "generate-parentheses",
+      "difficulty": "Medium",
+      "question": "What is the best approach to generate all combinations of well-formed parentheses?",
+      "options": [
+        "Dynamic Programming",
+        "Backtracking",
+        "Iterative Looping",
+        "Greedy Algorithm"
+      ],
+      "answer": 1,
+      "explanation": "Backtracking is the most effective approach for generating all combinations of well-formed parentheses as it allows for exploring all possible configurations while ensuring valid parentheses are formed. The tempting distractor, 'Dynamic Programming', fails because this problem does not require storing intermediate results or overlapping subproblems, which are the hallmarks of dynamic programming.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481167+00:00",
+      "contentHash": "e02066f543c135cbb555f200e06719e4",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "generate-parentheses-6",
+      "title": "What edge case must be considered when generating parentheses?",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "generate-parentheses",
+      "difficulty": "Medium",
+      "question": "Which edge case is critical to account for when generating combinations of parentheses?",
+      "options": [
+        "Empty input",
+        "More closing than opening parentheses",
+        "More opening than closing parentheses",
+        "Only one pair of parentheses"
+      ],
+      "answer": 0,
+      "explanation": "An empty input is a critical edge case to consider when generating combinations of parentheses, as it should return an empty list indicating no combinations. The option 'More closing than opening parentheses' is misleading because the algorithm should only generate valid combinations, thus it would not even reach that state.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "(",
+              "label": "open",
+              "status": "normal"
+            },
+            {
+              "value": ")",
+              "label": "close",
+              "status": "normal"
+            },
+            {
+              "value": "",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Current state of parentheses generation."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481210+00:00",
+      "contentHash": "a277346e85a349ad160cec503282b374",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-search-4",
+      "title": "Choosing the Right Approach for Word Search",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-search",
+      "difficulty": "Medium",
+      "question": "When solving a problem that requires searching for a word in a 2D grid, which algorithmic approach is most suitable for efficiently exploring all possible paths?",
+      "options": [
+        "Breadth-First Search (BFS)",
+        "Depth-First Search (DFS)",
+        "Dynamic Programming",
+        "Greedy Algorithm"
+      ],
+      "answer": 1,
+      "explanation": "Depth-First Search (DFS) is the most suitable approach for exploring all possible paths in a 2D grid, as it allows for backtracking when a path does not lead to a solution. Breadth-First Search (BFS) is less efficient in this context because it explores all neighbors at the present depth before moving on, which can lead to unnecessary explorations in a grid format.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481246+00:00",
+      "contentHash": "3a34c27a029405d5a3ac001afb4406b1",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-search-5",
+      "title": "Handling Edge Cases in Grid Searches",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-search",
+      "difficulty": "Medium",
+      "question": "In a grid search problem, what potential issue arises if the grid contains duplicate letters?",
+      "options": [
+        "It can lead to infinite loops during backtracking.",
+        "It may cause the algorithm to miss valid paths.",
+        "It increases the time complexity significantly.",
+        "It has no impact on the search process."
+      ],
+      "answer": 1,
+      "explanation": "Duplicate letters can lead to the algorithm missing valid paths because the same letter can be used multiple times in different locations, potentially causing the search to overlook a valid sequence. The most tempting distractor is the option suggesting that it leads to infinite loops, which is incorrect as the backtracking mechanism handles revisiting nodes properly.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481277+00:00",
+      "contentHash": "21e9fddea2316fc4a37fff0a7a8ba53e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-search-6",
+      "title": "Visualizing the Backtracking Process",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-search",
+      "difficulty": "Medium",
+      "question": "Given the following grid, which path correctly represents a potential search for the word 'CAT'?",
+      "options": [
+        "C -> A -> T",
+        "C -> T -> A",
+        "A -> C -> T",
+        "T -> C -> A"
+      ],
+      "answer": 0,
+      "explanation": "The correct path is C -> A -> T, as it follows the letters in the correct sequence to form the word 'CAT'. The distractor 'C -> T -> A' fails because it does not follow the correct order of letters needed to spell the word.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "C",
+              "label": "(0,0)",
+              "status": "normal"
+            },
+            {
+              "value": "A",
+              "label": "(0,1)",
+              "status": "normal"
+            },
+            {
+              "value": "T",
+              "label": "(0,2)",
+              "status": "normal"
+            },
+            {
+              "value": "D",
+              "label": "(1,0)",
+              "status": "normal"
+            },
+            {
+              "value": "E",
+              "label": "(1,1)",
+              "status": "normal"
+            },
+            {
+              "value": "F",
+              "label": "(1,2)",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "C",
+              "A",
+              "T"
+            ],
+            [
+              "D",
+              "E",
+              "F"
+            ]
+          ]
+        },
+        "caption": "Searching for 'CAT' in the grid."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481358+00:00",
+      "contentHash": "43e91db8643f79b8f1acff355d0f63f3",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "palindrome-partitioning-4",
+      "title": "Choosing the Right Approach for Partitioning",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "palindrome-partitioning",
+      "difficulty": "Medium",
+      "question": "When attempting to partition a string into palindromic substrings, which approach is most effective for exploring all possible partitions?",
+      "options": [
+        "Iterative dynamic programming",
+        "Recursive backtracking",
+        "Greedy selection of substrings",
+        "Breadth-first search"
+      ],
+      "answer": 1,
+      "explanation": "Recursive backtracking is the most effective approach for exploring all possible partitions of a string into palindromic substrings, as it allows for exploring each potential partition recursively. The tempting distractor, 'Iterative dynamic programming', is less suitable because it does not inherently explore every combination of partitions, which is necessary for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481390+00:00",
+      "contentHash": "5b3f0151a05f813d03977da9d4da4626",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "palindrome-partitioning-5",
+      "title": "Understanding Time Complexity in Backtracking",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "palindrome-partitioning",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the backtracking approach used for generating all palindromic partitions of a string of length n?",
+      "options": [
+        "O(n^2)",
+        "O(2^n)",
+        "O(n!)",
+        "O(n^3)"
+      ],
+      "answer": 1,
+      "explanation": "The time complexity of the backtracking approach for generating all palindromic partitions is O(2^n) due to the exponential number of ways to partition the string. The distractor 'O(n^2)' might seem plausible as it reflects the complexity of checking palindromes, but it does not account for the exponential growth of partitions.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481464+00:00",
+      "contentHash": "ef4f77026b6757e407fc0726196f9085",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "palindrome-partitioning-6",
+      "title": "Edge Cases in Palindrome Partitioning",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "palindrome-partitioning",
+      "difficulty": "Medium",
+      "question": "When implementing a solution for palindrome partitioning, which edge case must be handled to ensure accurate results?",
+      "options": [
+        "Input string is empty",
+        "Input string contains only one character",
+        "Input string consists of all identical characters",
+        "Input string is a long sequence of non-palindromic characters"
+      ],
+      "answer": 0,
+      "explanation": "Handling an empty input string is crucial as it can lead to incorrect results or exceptions if not managed properly. While the other options are valid cases, they do not pose the same level of potential disruption to the algorithm's execution as an empty string does.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "a",
+              "label": "0",
+              "status": "normal"
+            },
+            {
+              "value": "b",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "a",
+              "label": "2",
+              "status": "normal"
+            },
+            {
+              "value": "b",
+              "label": "3",
+              "status": "normal"
+            },
+            {
+              "value": "a",
+              "label": "4",
+              "status": "normal"
+            },
+            {
+              "value": "label",
+              "label": "5",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "a",
+              "b",
+              "a",
+              "b",
+              "a",
+              ""
+            ]
+          ]
+        },
+        "caption": "Example of a string to partition."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481523+00:00",
+      "contentHash": "7858d40ed3632a43107b93da0e9f2f6d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "letter-combinations-of-a-phone-number-4",
+      "title": "Choosing the Right Approach for Combinations",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "letter-combinations-of-a-phone-number",
+      "difficulty": "Medium",
+      "question": "When generating all possible combinations from a set of characters, which approach is typically the most effective?",
+      "options": [
+        "Iterating through all combinations using nested loops",
+        "Using a backtracking algorithm to explore each combination",
+        "Employing a dynamic programming approach to store results",
+        "Using a breadth-first search to explore combinations level by level"
+      ],
+      "answer": 1,
+      "explanation": "Using a backtracking algorithm is effective for generating combinations because it allows for exploring each possibility while pruning paths that don't lead to valid combinations. The most tempting distractor, iterating through all combinations using nested loops, is inefficient as it doesn't scale well with larger inputs, leading to exponential time complexity.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481565+00:00",
+      "contentHash": "90e8a6b3776f4687ebf04df93d74d56c",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "letter-combinations-of-a-phone-number-6",
+      "title": "Handling Edge Cases in Combinations",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "letter-combinations-of-a-phone-number",
+      "difficulty": "Medium",
+      "question": "What issue might arise when generating combinations if the input contains empty strings or non-digit characters?",
+      "options": [
+        "The algorithm will run indefinitely",
+        "The output will contain invalid combinations",
+        "The algorithm will not be able to generate any combinations",
+        "The performance will degrade significantly"
+      ],
+      "answer": 1,
+      "explanation": "If the input contains empty strings or non-digit characters, the output may include invalid combinations that do not correspond to any letters on a phone keypad. The option stating the algorithm will run indefinitely is incorrect, as the algorithm will terminate but may produce incorrect results.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "2",
+              "label": "digit 2",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "digit 3",
+              "status": "normal"
+            },
+            {
+              "value": "",
+              "label": "digit 4",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "digit 5",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Digit",
+            "Characters"
+          ],
+          "rows": [
+            [
+              "2",
+              "abc"
+            ],
+            [
+              "3",
+              "def"
+            ],
+            [
+              "4",
+              ""
+            ],
+            [
+              "5",
+              "jkl"
+            ]
+          ]
+        },
+        "caption": "Example mapping of digits to characters."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481613+00:00",
+      "contentHash": "241c215a1cc6649082100fb35e4da1b5",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "n-queens-4",
+      "title": "Which technique is most effective for solving N Queens?",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "n-queens",
+      "difficulty": "Hard",
+      "question": "What is the most effective algorithmic technique to use for solving the N Queens problem?",
+      "options": [
+        "Dynamic Programming",
+        "Backtracking",
+        "Greedy Algorithm",
+        "Depth-First Search"
+      ],
+      "answer": 1,
+      "explanation": "Backtracking is the most effective technique for solving the N Queens problem because it allows for exploring all possible placements of queens and backtracking when a placement leads to a conflict. The tempting distractor, Dynamic Programming, fails here because the problem does not have overlapping subproblems or optimal substructure that DP typically exploits.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481639+00:00",
+      "contentHash": "d1e8c0791b111d9e838993b1b566cf4d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "n-queens-6",
+      "title": "What is a common pitfall when implementing the N Queens solution?",
+      "topics": [
+        "Backtracking",
+        "Common Mistakes"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "n-queens",
+      "difficulty": "Hard",
+      "question": "What is a common mistake when implementing a backtracking solution for the N Queens problem?",
+      "options": [
+        "Not checking for diagonal conflicts",
+        "Using a static array for queen positions",
+        "Failing to reset the board after backtracking",
+        "Assuming all placements are valid"
+      ],
+      "answer": 0,
+      "explanation": "A common mistake is not checking for diagonal conflicts when placing queens, which can lead to incorrect solutions. The distractor about using a static array for queen positions may seem plausible, but it is more about the logic of placement rather than the data structure itself.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "0",
+              "label": "0,0",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "0,1",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "0,2",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "0,3",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          ]
+        },
+        "caption": "Current state of the chessboard."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481710+00:00",
+      "contentHash": "d19e1189b2da177382d2df08f04ac5d4",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "implement-trie-prefix-tree-4",
+      "title": "What is the primary advantage of using a Trie over a Hash Table for storing strings?",
+      "topics": [
+        "Tries"
+      ],
+      "category": "Tries",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "implement-trie-prefix-tree",
+      "difficulty": "Medium",
+      "question": "What is the primary advantage of using a Trie over a Hash Table for storing strings?",
+      "options": [
+        "Tries can store strings in a sorted order.",
+        "Tries allow for faster prefix searches.",
+        "Tries require less memory than Hash Tables.",
+        "Tries can handle non-string data types."
+      ],
+      "answer": 1,
+      "explanation": "The main advantage of a Trie is that it allows for efficient prefix searches, making it ideal for applications like autocomplete. The tempting distractor is the option about memory usage; while Tries can be memory-intensive due to their structure, they excel at prefix-related queries, which Hash Tables do not inherently support.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481742+00:00",
+      "contentHash": "e677c0ff924e92e18ec570bd998cc005",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "implement-trie-prefix-tree-5",
+      "title": "Which operation is most efficiently supported by a Trie?",
+      "topics": [
+        "Tries"
+      ],
+      "category": "Tries",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "implement-trie-prefix-tree",
+      "difficulty": "Medium",
+      "question": "Which operation is most efficiently supported by a Trie?",
+      "options": [
+        "Inserting a string into the data structure",
+        "Finding the longest common prefix",
+        "Searching for an exact string match",
+        "Deleting a string from the data structure"
+      ],
+      "answer": 1,
+      "explanation": "Finding the longest common prefix is efficiently supported by a Trie, as the structure inherently organizes strings by their prefixes. The option about searching for an exact string match is tempting, but while it is efficient, it does not leverage the unique strengths of a Trie as much as finding prefixes does.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481773+00:00",
+      "contentHash": "fc200beb7f84a5eb34f33f5d15b40470",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "implement-trie-prefix-tree-6",
+      "title": "Consider the following Trie structure during a search operation:",
+      "topics": [
+        "Tries"
+      ],
+      "category": "Tries",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "implement-trie-prefix-tree",
+      "difficulty": "Medium",
+      "question": "Consider the following Trie structure during a search operation:",
+      "options": [
+        "The search must traverse all nodes regardless of the input string length.",
+        "The search can skip nodes that do not match the input string prefix.",
+        "The search will always find the longest string in the Trie first.",
+        "The search can only be performed on complete strings, not prefixes."
+      ],
+      "answer": 1,
+      "explanation": "During a search operation in a Trie, the search can skip nodes that do not match the input string prefix, allowing for efficient traversal. The option stating that the search must traverse all nodes is misleading, as it implies a linear search rather than the optimized path-following nature of a Trie.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "a",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "b",
+              "label": "a",
+              "status": "normal"
+            },
+            {
+              "value": "c",
+              "label": "b",
+              "status": "normal"
+            },
+            {
+              "value": "d",
+              "label": "c",
+              "status": "normal"
+            },
+            {
+              "value": "e",
+              "label": "d",
+              "status": "normal"
+            },
+            {
+              "value": "f",
+              "label": "e",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Node",
+            "Label"
+          ],
+          "rows": [
+            [
+              "a",
+              "root"
+            ],
+            [
+              "b",
+              "a"
+            ],
+            [
+              "c",
+              "b"
+            ],
+            [
+              "d",
+              "c"
+            ],
+            [
+              "e",
+              "d"
+            ],
+            [
+              "f",
+              "e"
+            ]
+          ]
+        },
+        "caption": "A partial Trie structure during a search."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481827+00:00",
+      "contentHash": "26bd648da01c10768f7690eeecf53b97",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "design-add-and-search-words-data-structure-4",
+      "title": "Which data structure is optimal for implementing a word search with prefix matching?",
+      "topics": [
+        "Tries"
+      ],
+      "category": "Tries",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "design-add-and-search-words-data-structure",
+      "difficulty": "Medium",
+      "question": "Which data structure is optimal for implementing a word search with prefix matching?",
+      "options": [
+        "Array",
+        "Hash Table",
+        "Trie",
+        "Linked List"
+      ],
+      "answer": 2,
+      "explanation": "A Trie is specifically designed to efficiently store and search strings, allowing for quick prefix matching. The most tempting distractor, a Hash Table, provides fast lookups but cannot efficiently handle prefix searches without additional complexity.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481852+00:00",
+      "contentHash": "3dde7b4a708898065288e252be6f0532",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "design-add-and-search-words-data-structure-5",
+      "title": "What is the time complexity for inserting a word into a Trie?",
+      "topics": [
+        "Tries"
+      ],
+      "category": "Tries",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "design-add-and-search-words-data-structure",
+      "difficulty": "Medium",
+      "question": "What is the time complexity for inserting a word into a Trie?",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(1)",
+        "O(log n)"
+      ],
+      "answer": 0,
+      "explanation": "Inserting a word into a Trie has a time complexity of O(n), where n is the length of the word, because each character of the word must be processed. The option O(1) is tempting but incorrect, as it implies constant time regardless of word length.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481879+00:00",
+      "contentHash": "6218ca92087e1897d830e0294740bb22",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "design-add-and-search-words-data-structure-6",
+      "title": "Consider the following partial Trie structure. What would happen if we inserted the word 'bat'?",
+      "topics": [
+        "Tries"
+      ],
+      "category": "Tries",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "design-add-and-search-words-data-structure",
+      "difficulty": "Medium",
+      "question": "Consider the following partial Trie structure. What would happen if we inserted the word 'bat'?",
+      "options": [
+        "It will create new nodes for 'b', 'a', and 't'.",
+        "It will overwrite existing nodes for 'b', 'a', and 't'.",
+        "It will not insert anything as 'bat' already exists.",
+        "It will create nodes only for 'a' and 't'."
+      ],
+      "answer": 0,
+      "explanation": "Inserting 'bat' into the Trie will create new nodes for 'b', 'a', and 't' if they do not already exist. The option stating it will overwrite nodes is incorrect because Tries do not overwrite existing nodes; they create new branches as needed. This is fundamental to how Tries manage prefixes.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "b",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "a",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "t",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "",
+              "b",
+              "a",
+              "t"
+            ],
+            [
+              "",
+              " ",
+              " ",
+              " "
+            ]
+          ]
+        },
+        "caption": "Partial Trie structure before inserting 'bat'"
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481935+00:00",
+      "contentHash": "4f854c2f4cba7502731a187c9b7032de",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-search-ii-4",
+      "title": "Which data structure is most efficient for storing a large dictionary of words for quick prefix searches?",
+      "topics": [
+        "Tries"
+      ],
+      "category": "Tries",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-search-ii",
+      "difficulty": "Hard",
+      "question": "Which data structure is most efficient for storing a large dictionary of words for quick prefix searches?",
+      "options": [
+        "Hash Table",
+        "Trie",
+        "Binary Search Tree",
+        "Array"
+      ],
+      "answer": 1,
+      "explanation": "A Trie is specifically designed for efficient prefix searches, allowing for O(n) time complexity for insertions and lookups, where n is the length of the word. The most tempting distractor, a Hash Table, provides O(1) average time complexity for lookups but does not efficiently handle prefix searches as Tries do.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481964+00:00",
+      "contentHash": "0aab47886295dca4fa42b6b9c10a49a5",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-search-ii-5",
+      "title": "What is a common limitation of using a brute-force approach for word search problems?",
+      "topics": [
+        "Tries"
+      ],
+      "category": "Tries",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-search-ii",
+      "difficulty": "Medium",
+      "question": "What is a common limitation of using a brute-force approach for word search problems?",
+      "options": [
+        "It requires more memory than optimal solutions.",
+        "It cannot handle large input sizes efficiently.",
+        "It always finds all possible words.",
+        "It is guaranteed to be the most efficient method."
+      ],
+      "answer": 1,
+      "explanation": "A brute-force approach typically involves exploring all possible paths in the search space, which can lead to exponential time complexity, making it inefficient for large input sizes. The distractor stating it cannot handle large input sizes efficiently is the crux of the issue, as brute-force methods become impractical with larger grids.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.481996+00:00",
+      "contentHash": "b67587c6ec832361fe74e725822fc4cb",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-search-ii-6",
+      "title": "In the context of searching for words in a grid, what is a potential issue when the grid contains duplicate letters?",
+      "topics": [
+        "Tries"
+      ],
+      "category": "Tries",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-search-ii",
+      "difficulty": "Medium",
+      "question": "In the context of searching for words in a grid, what is a potential issue when the grid contains duplicate letters?",
+      "options": [
+        "It can lead to incorrect word counts.",
+        "It complicates the implementation of a Trie.",
+        "It may cause infinite loops during search.",
+        "It does not affect the search process at all."
+      ],
+      "answer": 0,
+      "explanation": "Duplicate letters in a grid can lead to incorrect word counts if the search algorithm does not properly track which letters have been used in forming a word. The most tempting distractor suggests it complicates Trie implementation, but Tries are designed to handle such cases effectively.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "A",
+              "label": "0,0",
+              "status": "normal"
+            },
+            {
+              "value": "B",
+              "label": "0,1",
+              "status": "normal"
+            },
+            {
+              "value": "C",
+              "label": "0,2",
+              "status": "normal"
+            },
+            {
+              "value": "A",
+              "label": "1,0",
+              "status": "normal"
+            },
+            {
+              "value": "D",
+              "label": "1,1",
+              "status": "normal"
+            },
+            {
+              "value": "E",
+              "label": "1,2",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "A",
+              "B",
+              "C"
+            ],
+            [
+              "A",
+              "D",
+              "E"
+            ]
+          ]
+        },
+        "caption": "Example grid with duplicate letters."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.482044+00:00",
+      "contentHash": "1c4f90eccb6b6f996a752332846170d5",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "number-of-islands-4",
+      "title": "Choosing the Right Data Structure for Island Counting",
+      "topics": [
+        "Graphs",
+        "DFS",
+        "BFS"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "number-of-islands",
+      "difficulty": "Medium",
+      "question": "Which data structure is most suitable for efficiently exploring all connected components in a grid representing islands?",
+      "options": [
+        "Stack for Depth-First Search (DFS)",
+        "Queue for Breadth-First Search (BFS)",
+        "Set for tracking visited nodes",
+        "Matrix for direct indexing"
+      ],
+      "answer": 0,
+      "explanation": "A stack is ideal for implementing Depth-First Search (DFS), which is a common approach to explore connected components in a grid. While a queue is suitable for Breadth-First Search (BFS), the question asks for efficiency in exploring all components, which DFS can achieve effectively with a stack. The distractor 'Queue for Breadth-First Search (BFS)' is tempting but does not leverage the efficiency of DFS for this specific problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.482074+00:00",
+      "contentHash": "20f78ac2dbda98e7e4d4cae8fec92a40",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "number-of-islands-5",
+      "title": "Time Complexity of Island Counting Algorithms",
+      "topics": [
+        "Graphs",
+        "Time Complexity"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "number-of-islands",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of an optimal algorithm that counts the number of islands in a grid using DFS or BFS?",
+      "options": [
+        "O(n)",
+        "O(n + m)",
+        "O(n * m)",
+        "O(n^2)"
+      ],
+      "answer": 2,
+      "explanation": "The optimal algorithm for counting islands involves traversing each cell in the grid once, leading to a time complexity of O(n * m), where n is the number of rows and m is the number of columns. The option 'O(n + m)' is misleading as it suggests a linear traversal rather than a full grid scan.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.482101+00:00",
+      "contentHash": "af5ab232349808e87b0bbf3747ad3c0f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "number-of-islands-6",
+      "title": "Handling Edge Cases in Island Counting",
+      "topics": [
+        "Graphs",
+        "Edge Cases"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "number-of-islands",
+      "difficulty": "Medium",
+      "question": "What issue arises if the input grid for counting islands contains only water cells?",
+      "options": [
+        "The algorithm will run indefinitely",
+        "The output will incorrectly count one island",
+        "The output will correctly return zero islands",
+        "The algorithm will crash due to null references"
+      ],
+      "answer": 2,
+      "explanation": "If the grid contains only water cells, the algorithm should correctly identify that there are zero islands and return that value. The option 'The output will incorrectly count one island' is a common misconception; without land, there are no islands to count.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "C",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ]
+        },
+        "caption": "Example grid with no islands."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.482149+00:00",
+      "contentHash": "046b6ed3e155e35a0941edede870e6e7",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "max-area-of-island-4",
+      "title": "Which algorithm is most suitable for finding the maximum area of an island in a grid?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "max-area-of-island",
+      "difficulty": "Medium",
+      "question": "What algorithm is best suited for traversing a grid to find the maximum area of connected components?",
+      "options": [
+        "Depth-First Search (DFS)",
+        "Breadth-First Search (BFS)",
+        "Dijkstra's Algorithm",
+        "A* Search Algorithm"
+      ],
+      "answer": 0,
+      "explanation": "Both Depth-First Search (DFS) and Breadth-First Search (BFS) are suitable for traversing the grid to find connected components. However, DFS is often more straightforward to implement for this problem, making it the best choice. The tempting distractor, BFS, while valid, is generally less intuitive for this specific problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.482181+00:00",
+      "contentHash": "28e71e11b4b898d5aedf05f5766eec3d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "max-area-of-island-5",
+      "title": "What is the time complexity of the optimal approach for this problem?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "max-area-of-island",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of using DFS to find the maximum area of an island in a grid?",
+      "options": [
+        "O(n)",
+        "O(n + m)",
+        "O(n * m)",
+        "O(n^2)"
+      ],
+      "answer": 2,
+      "explanation": "The time complexity of using DFS to traverse the entire grid is O(n * m), where n is the number of rows and m is the number of columns. This is because each cell is visited once. The option O(n + m) is misleading as it suggests a linear relationship rather than the quadratic relationship of the grid's area.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.482206+00:00",
+      "contentHash": "69d918d5f5cf2ad13a6513e2760acfb9",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "max-area-of-island-6",
+      "title": "How does the presence of diagonal connections affect the area calculation?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "max-area-of-island",
+      "difficulty": "Medium",
+      "question": "What impact do diagonal connections have when calculating the area of an island?",
+      "options": [
+        "They double the area count",
+        "They have no effect on the area count",
+        "They can connect separate islands",
+        "They allow for more efficient traversal"
+      ],
+      "answer": 1,
+      "explanation": "Diagonal connections do not affect the area calculation in the context of this problem, as only horizontal and vertical connections are considered part of the same island. The option stating they double the area count is misleading, as it implies an incorrect method of counting.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "1",
+              "1"
+            ]
+          ]
+        },
+        "caption": "Example grid showing island connections."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.482249+00:00",
+      "contentHash": "cb9a33d1bff9d8a1f02a38aba820bb4a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "clone-graph-4",
+      "title": "Which data structure is most suitable for representing a graph in memory for cloning purposes?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "clone-graph",
+      "difficulty": "Medium",
+      "question": "When tasked with cloning a graph, which data structure is typically preferred for representing the graph in memory?",
+      "options": [
+        "Adjacency List",
+        "Matrix Representation",
+        "Edge List",
+        "Hash Table"
+      ],
+      "answer": 0,
+      "explanation": "An adjacency list is the most efficient way to represent a graph for cloning, as it allows for easy traversal and space efficiency, especially for sparse graphs. The matrix representation, while valid, is less efficient in terms of space for sparse graphs, making it a tempting but less optimal choice.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.482279+00:00",
+      "contentHash": "5035663190cf6daf135dcfed0c162e72",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "clone-graph-5",
+      "title": "What is a common pitfall when cloning a graph with cycles?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "clone-graph",
+      "difficulty": "Medium",
+      "question": "When implementing a graph cloning algorithm, what issue might arise if cycles are not properly handled?",
+      "options": [
+        "Infinite Recursion",
+        "Memory Leak",
+        "Incorrect Node Values",
+        "Loss of Node References"
+      ],
+      "answer": 0,
+      "explanation": "If cycles in the graph are not managed correctly, the cloning process can result in infinite recursion as the algorithm repeatedly visits the same nodes. This is a critical issue that can be avoided by using a visited set to track nodes that have already been cloned. The other options could occur under different circumstances but are not the primary concern with cycles.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.482308+00:00",
+      "contentHash": "d4a8afbc52b96e3fc8d9cf7001153710",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "clone-graph-6",
+      "title": "How can you optimize space complexity when cloning a graph?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "clone-graph",
+      "difficulty": "Medium",
+      "question": "What strategy can be employed to reduce the space complexity when cloning a graph?",
+      "options": [
+        "Use a stack to track nodes",
+        "Clone nodes in a single pass",
+        "Avoid storing visited nodes",
+        "Use a hash map to store cloned nodes"
+      ],
+      "answer": 3,
+      "explanation": "Using a hash map to store cloned nodes allows for efficient lookups and prevents the need to store duplicate references, significantly optimizing space complexity. The option to avoid storing visited nodes is misleading, as tracking visited nodes is essential to prevent cycles.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "C",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "D",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "E",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "F",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "A",
+              "B",
+              "C"
+            ],
+            [
+              "D",
+              "E",
+              "F"
+            ]
+          ]
+        },
+        "caption": "Example of graph nodes during cloning."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T09:41:30.482351+00:00",
+      "contentHash": "b4162696709dd5c0b2407fcb396c31bc",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
     }
   ]
 }
