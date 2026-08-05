@@ -1,5 +1,14 @@
 # LeetSwipe v2 — Ideal Prompt for Claude Code (Copy-Paste Ready)
 
+> **Historical.** This was written to plan and commission v2.0. The Phase 1
+> work (deduplication, quality gates, multi-format schema, code execution) and
+> much of Phase 2-3 (algorithm reels, the Learn tab, code challenges, UI polish)
+> has since been built directly in the repo. Do not re-submit this as a task —
+> see `V2_EXECUTIVE_SUMMARY.md` for what shipped and what is genuinely still
+> open, and `backend_question_generation/GENERATION.md` for how the pipeline
+> works now.
+
+
 **Use this prompt to submit to Claude Code for Phase 1 implementation.**  
 **Recommended Model:** Claude Opus 5 with Vision enabled  
 **Estimated Time to Completion:** 2-3 days (15-20 hours)
