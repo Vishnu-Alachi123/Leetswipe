@@ -22,6 +22,36 @@ def _utcnow() -> datetime:
     return datetime.now(timezone.utc)
 
 
+class VisualCell(BaseModel):
+    """One cell of an array/queue diagram attached to a question."""
+
+    value: str = Field(description="The cell's value, as text, e.g. '7'.")
+    label: str = Field(default="", description="Optional pointer name under the cell, e.g. 'i', 'lo'.")
+    status: str = Field(default="normal", description="One of 'normal', 'active', 'visited', 'eliminated'.")
+
+
+class MCQVisualState(BaseModel):
+    """Renderer payload. Fill `cells` for array/queue, `columns`+`rows` for table."""
+
+    cells: list[VisualCell] = Field(default_factory=list)
+    columns: list[str] = Field(default_factory=list)
+    rows: list[list[str]] = Field(default_factory=list)
+
+
+class MCQVisual(BaseModel):
+    """A small diagram shown above a question's options.
+
+    Deliberately narrower than the reel Visualization — every field is a closed,
+    typed shape, because OpenAI's strict structured-output mode rejects any
+    free-form dict in the schema (`additionalProperties` must be false). Trees
+    and graphs are excluded: a question that needs one belongs in a reel.
+    """
+
+    kind: str = Field(description="'array', 'queue', or 'table'.")
+    state: MCQVisualState
+    caption: str = Field(default="", description="One short line under the diagram.")
+
+
 class MCQ(BaseModel):
     leetQuestionId: int = Field(description="The numeric id of the source LeetCode problem.")
     questionId: str = Field(description="Unique id: the leetQuestionId followed by a letter, e.g. '1A', '1B'.")
@@ -36,16 +66,12 @@ class MCQ(BaseModel):
     options: list[str] = Field(description="Exactly four answer choices. No 'A)'/'B)' prefixes.")
     answer: int = Field(description="Index (0-3) of the single correct option in `options`.")
     explanation: str = Field(description="Concise reasoning for why the correct option is right, focused on the algorithmic insight.")
-    visual: dict | None = Field(
+    visual: MCQVisual | None = Field(
         default=None,
         description=(
             "Optional diagram shown above the options, when a picture genuinely helps the "
-            "question (an array being scanned, a comparison table). Omit it otherwise. Format: "
-            "{'kind': 'array'|'table'|'tree'|'graph'|'queue', 'state': {...}, 'caption': str}. "
-            "array/queue state: {'cells': [{'value': 3, 'label': 'i', 'status': "
-            "'normal'|'active'|'visited'|'eliminated'}]}. table state: {'columns': [...], 'rows': "
-            "[[...]]}. tree/graph state: {'nodes': [{'id','value','status'}], 'edges': "
-            "[{'from','to'}]}. The visual must NOT reveal the answer — it sets up the question."
+            "question (an array being scanned, a comparison table). Omit it otherwise. "
+            "The visual must NOT reveal the answer — it sets up the question."
         ),
     )
 

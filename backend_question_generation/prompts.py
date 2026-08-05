@@ -49,10 +49,11 @@ behind solving it. Follow these rules strictly:
 
 9. VISUALS: When a small diagram would genuinely sharpen the question — a concrete
    array with pointer labels, a short comparison table — fill the `visual` field
-   using the documented format. Use real, small values (6-8 array cells max). The
-   visual must set up the scenario WITHOUT giving away the answer: never highlight
-   the element or row that resolves the question. For questions that are purely
-   conceptual, omit the visual entirely; a decorative picture is worse than none.
+   (kind 'array', 'queue', or 'table'; cell values are strings). Use real, small
+   values (6-8 array cells max). The visual must set up the scenario WITHOUT
+   giving away the answer: never highlight the element or row that resolves the
+   question. For questions that are purely conceptual, omit the visual entirely;
+   a decorative picture is worse than none.
 
 Return ONLY the structured set of questions. Do not add commentary."""
 

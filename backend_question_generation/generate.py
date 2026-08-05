@@ -144,11 +144,11 @@ def generate_mock(problem: dict, num: int) -> MCQSet:
             "visual": {
                 "kind": "array",
                 "state": {"cells": [
-                    {"value": 4, "status": "visited", "label": ""},
-                    {"value": 9, "status": "visited", "label": ""},
-                    {"value": 2, "status": "active", "label": "current"},
-                    {"value": 9, "status": "normal", "label": ""},
-                    {"value": 7, "status": "normal", "label": ""},
+                    {"value": "4", "status": "visited"},
+                    {"value": "9", "status": "visited"},
+                    {"value": "2", "status": "active", "label": "current"},
+                    {"value": "9", "status": "normal"},
+                    {"value": "7", "status": "normal"},
                 ]},
                 "caption": "Mid-scan: has 2 been seen before?",
             },
