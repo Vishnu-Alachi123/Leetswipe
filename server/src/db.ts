@@ -54,6 +54,11 @@ async function ensureIndexes(database: Db): Promise<void> {
   // One saved row per (user, question); lookups are always by userId.
   await s.createIndex({ userId: 1, questionId: 1 }, { unique: true });
   await s.createIndex({ userId: 1, savedAt: -1 });
+
+  const p = database.collection('Profiles');
+  await p.createIndex({ userId: 1 }, { unique: true });
+  // The leaderboard is a descending-XP scan; without this it sorts in memory.
+  await p.createIndex({ xp: -1 });
 }
 
 export async function questionsCollection(): Promise<Collection<MCQ>> {
@@ -77,6 +82,22 @@ export interface Reel {
 
 export async function reelsCollection(): Promise<Collection<Reel>> {
   return (await getDb()).collection<Reel>('GeneratedReelsCollection');
+}
+
+/** A signed-in learner's cloud profile: the copy that follows them between devices. */
+export interface ProfileDoc {
+  userId: string;
+  name: string;
+  xp: number;
+  lastActiveDay: string;
+  stats: Record<string, number>;
+  email?: string;
+  photoUrl?: string;
+  updatedAt: string;
+}
+
+export async function profilesCollection(): Promise<Collection<ProfileDoc>> {
+  return (await getDb()).collection<ProfileDoc>('Profiles');
 }
 
 export async function savedCollection(): Promise<Collection<SavedDoc>> {

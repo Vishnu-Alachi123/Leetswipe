@@ -9,7 +9,7 @@
  * it says something specific and actionable — "you keep missing Two Pointers" —
  * and it is trustworthy because Pattern Match questions carry verified labels.
  */
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
   Alert,
   Pressable,
@@ -41,6 +41,17 @@ import {
   type Profile,
 } from '@/api/profile';
 import { getStreak } from '@/api/progress';
+import {
+  fetchLeaderboard,
+  isConfigured as googleConfigured,
+  sessionToken,
+  signInWithIdToken,
+  signOut,
+  syncDown,
+  syncUp,
+  useGoogleAuthRequest,
+  type LeaderboardEntry,
+} from '@/api/auth-google';
 import { COLORS } from '@/constants/colors';
 
 export default function ProfileScreen() {
@@ -49,13 +60,40 @@ export default function ProfileScreen() {
   const [streak, setStreak] = useState(0);
   const [editing, setEditing] = useState(false);
   const [draftName, setDraftName] = useState('');
+  const [board, setBoard] = useState<LeaderboardEntry[]>([]);
+  const [signedIn, setSignedIn] = useState(false);
+  const [, response, promptAsync] = useGoogleAuthRequest();
 
   const load = useCallback(async () => {
-    const [p, m, s] = await Promise.all([getProfile(), getMastery(), getStreak()]);
+    const [p, m, s, token] = await Promise.all([
+      getProfile(),
+      getMastery(),
+      getStreak(),
+      sessionToken(),
+    ]);
     setProfile(p);
     setMastery(m);
     setStreak(s);
+    setSignedIn(Boolean(token));
+    if (token) {
+      // Pull first, then push: the merge keeps whichever device is ahead.
+      const merged = await syncDown();
+      if (merged) setProfile(merged);
+      syncUp();
+    }
+    setBoard(await fetchLeaderboard(20));
   }, []);
+
+  // The auth flow returns here after the browser redirect.
+  useEffect(() => {
+    const idToken = (response as { params?: { id_token?: string } } | null)?.params?.id_token;
+    if (response?.type === 'success' && idToken) {
+      signInWithIdToken(idToken).then((user) => {
+        if (user) load();
+        else Alert.alert('Sign-in failed', 'Could not verify that Google account.');
+      });
+    }
+  }, [response, load]);
 
   useFocusEffect(
     useCallback(() => {
@@ -200,15 +238,65 @@ export default function ProfileScreen() {
         <Text style={styles.sectionLabel}>Account</Text>
         <View style={styles.accountCard}>
           <Text style={styles.accountText}>
-            {profile.email
+            {signedIn && profile.email
               ? `Signed in as ${profile.email}`
               : 'Your progress is saved on this device.'}
           </Text>
           <Text style={styles.accountHint}>
-            Sign-in syncs XP and saved questions across devices. It needs a Google client
-            ID — see GOOGLE_SIGNIN.md.
+            {signedIn
+              ? 'XP and saved questions sync automatically across your devices.'
+              : googleConfigured()
+                ? 'Sign in to carry your XP and saved questions to another device.'
+                : 'Cross-device sync needs a Google client ID — see GOOGLE_SIGNIN.md.'}
           </Text>
+
+          {signedIn ? (
+            <Pressable
+              style={styles.googleBtn}
+              onPress={async () => {
+                await syncUp();
+                await signOut();
+                load();
+              }}>
+              <Text style={styles.googleBtnText}>Sign out</Text>
+            </Pressable>
+          ) : (
+            googleConfigured() && (
+              <Pressable style={styles.googleBtn} onPress={() => promptAsync()}>
+                <Text style={styles.googleBtnText}>Continue with Google</Text>
+              </Pressable>
+            )
+          )}
         </View>
+
+        {/* Leaderboard — only meaningful once a server is attached, so it is
+            hidden rather than shown empty. */}
+        {board.length > 0 && (
+          <>
+            <Text style={styles.sectionLabel}>Leaderboard</Text>
+            <View style={styles.boardCard}>
+              {board.map((entry) => (
+                <View
+                  key={`${entry.rank}-${entry.name}`}
+                  style={[styles.boardRow, entry.isYou && styles.boardRowYou]}>
+                  <Text style={[styles.boardRank, entry.isYou && styles.boardYouText]}>
+                    {entry.rank}
+                  </Text>
+                  <Text
+                    style={[styles.boardName, entry.isYou && styles.boardYouText]}
+                    numberOfLines={1}>
+                    {entry.name}
+                    {entry.isYou ? ' (you)' : ''}
+                  </Text>
+                  <Text style={styles.boardLevel}>Lv {entry.level}</Text>
+                  <Text style={[styles.boardXp, entry.isYou && styles.boardYouText]}>
+                    {entry.xp}
+                  </Text>
+                </View>
+              ))}
+            </View>
+          </>
+        )}
 
         <Pressable
           style={styles.dangerBtn}
@@ -357,6 +445,40 @@ const styles = StyleSheet.create({
   },
   accountText: { color: COLORS.text, fontSize: 14, fontWeight: '600' },
   accountHint: { color: COLORS.muted, fontSize: 12.5, marginTop: 6, lineHeight: 18 },
+  googleBtn: {
+    marginTop: 14,
+    borderWidth: 1,
+    borderColor: COLORS.accent,
+    borderRadius: 12,
+    paddingVertical: 12,
+    alignItems: 'center',
+    minHeight: 46,
+    justifyContent: 'center',
+  },
+  googleBtnText: { color: COLORS.accent, fontWeight: '800', fontSize: 14 },
+  boardCard: {
+    marginTop: 12,
+    backgroundColor: COLORS.card,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    borderRadius: 14,
+    overflow: 'hidden',
+  },
+  boardRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    paddingVertical: 11,
+    paddingHorizontal: 14,
+    borderTopWidth: 1,
+    borderTopColor: COLORS.border,
+  },
+  boardRowYou: { backgroundColor: '#1d3a5f' },
+  boardRank: { color: COLORS.muted, fontSize: 13, fontWeight: '800', width: 24 },
+  boardName: { flex: 1, color: COLORS.text, fontSize: 14, fontWeight: '600' },
+  boardLevel: { color: COLORS.muted, fontSize: 12 },
+  boardXp: { color: COLORS.text, fontSize: 14, fontWeight: '800', fontVariant: ['tabular-nums'] },
+  boardYouText: { color: '#cfe4ff' },
   dangerBtn: {
     marginTop: 22,
     borderWidth: 1,
