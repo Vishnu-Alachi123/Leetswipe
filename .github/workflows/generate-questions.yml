@@ -147,3 +147,18 @@ jobs:
           # different files, so a rebase always lands cleanly.
           git pull --rebase origin main
           git push
+
+      - name: Trigger web deploy
+        if: ${{ github.event.inputs.target != 'db' }}
+        working-directory: .
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Pushes made with the workflow's own token do not fire push-triggered
+          # workflows (recursion guard), so a bot commit never deployed on its
+          # own. workflow_dispatch is exempt from that guard — kick it directly.
+          if git diff --quiet HEAD@{1} HEAD -- LeetSwipe/ 2>/dev/null; then
+            echo "Nothing committed; no deploy needed."
+            exit 0
+          fi
+          gh workflow run deploy-web.yml --ref main
