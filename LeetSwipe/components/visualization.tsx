@@ -10,7 +10,14 @@
  * reel reads as one structure evolving instead of a new picture each time.
  */
 import { useEffect, useRef } from 'react';
-import { Animated, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  Animated,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+} from 'react-native';
 
 import type { VizCell, VizEdge, VizNode, VizStatus, Visualization } from '@/api/reels';
 import { COLORS } from '@/constants/colors';
@@ -83,8 +90,12 @@ function AnimatedCell({ cell, size }: { cell: VizCell; size: number }) {
 }
 
 function CellRow({ cells, horizontal }: { cells: VizCell[]; horizontal?: boolean }) {
-  // Shrink cells as the row grows so a long array still fits without scrolling.
-  const size = cells.length > 10 ? 34 : cells.length > 7 ? 42 : 52;
+  // Size cells from the actual screen so the whole row fits without clipping —
+  // a fixed size overflowed and cut the edge cells on 375px-wide phones.
+  const { width } = useWindowDimensions();
+  const gap = 6;
+  const available = Math.min(width, 460) - 56 - (cells.length - 1) * gap;
+  const size = Math.max(26, Math.min(52, Math.floor(available / Math.max(cells.length, 1))));
   const body = (
     <View style={styles.row}>
       {cells.map((cell, i) => (
@@ -92,7 +103,8 @@ function CellRow({ cells, horizontal }: { cells: VizCell[]; horizontal?: boolean
       ))}
     </View>
   );
-  if (!horizontal) return body;
+  // Scroll only remains as a fallback for pathological cell counts.
+  if (!horizontal || size > 26) return body;
   return (
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.scrollRow}>
       {body}

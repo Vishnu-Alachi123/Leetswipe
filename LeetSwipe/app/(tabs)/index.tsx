@@ -159,24 +159,41 @@ export default function PickerScreen() {
           </>
         )}
 
-        {/* Topic categories. */}
-        <Text style={styles.sectionLabel}>Topics</Text>
-        {topics!.categories.map((c) => (
-          <Pressable
-            key={c.category}
-            accessibilityRole="button"
-            accessibilityLabel={`${c.category}, ${c.total} questions`}
-            style={({ pressed }) => [styles.topicCard, pressed && styles.topicCardPressed]}
-            onPress={() => open({ category: c.category, label: c.category })}>
-            <View style={styles.topicHeader}>
-              <Text style={styles.topicTitle} numberOfLines={1}>
-                {c.category}
-              </Text>
-              <Text style={styles.topicCount}>{c.total}</Text>
-            </View>
-            <DifficultyBar easy={c.easy} medium={c.medium} hard={c.hard} />
-          </Pressable>
-        ))}
+        {/* Topic categories. Counts and bars follow the difficulty filter —
+            if selecting Medium changed nothing visible, a missed tap and a
+            broken filter would look identical. */}
+        <Text style={styles.sectionLabel}>
+          Topics{difficulty ? `  ·  ${difficulty} only` : ''}
+        </Text>
+        {topics!.categories.map((c) => {
+          const filteredCount = difficulty
+            ? { Easy: c.easy, Medium: c.medium, Hard: c.hard }[difficulty]
+            : c.total;
+          if (difficulty && filteredCount === 0) return null;
+          return (
+            <Pressable
+              key={c.category}
+              accessibilityRole="button"
+              accessibilityLabel={`${c.category}, ${filteredCount} ${difficulty ?? ''} questions`}
+              style={({ pressed }) => [styles.topicCard, pressed && styles.topicCardPressed]}
+              onPress={() => open({ category: c.category, label: c.category })}>
+              <View style={styles.topicHeader}>
+                <Text style={styles.topicTitle} numberOfLines={1}>
+                  {c.category}
+                </Text>
+                <Text style={styles.topicCount}>
+                  {filteredCount}
+                  {difficulty ? ` ${difficulty.toLowerCase()}` : ''}
+                </Text>
+              </View>
+              <DifficultyBar
+                easy={!difficulty || difficulty === 'Easy' ? c.easy : 0}
+                medium={!difficulty || difficulty === 'Medium' ? c.medium : 0}
+                hard={!difficulty || difficulty === 'Hard' ? c.hard : 0}
+              />
+            </Pressable>
+          );
+        })}
 
         <Text style={styles.footer}>
           {topics!.total} questions available{difficulty ? ` · filtering ${difficulty}` : ''}
@@ -245,9 +262,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.border,
     borderRadius: 999,
-    paddingHorizontal: 16,
-    paddingVertical: 8,
+    paddingHorizontal: 18,
+    paddingVertical: 10,
     backgroundColor: COLORS.card,
+    // Apple HIG minimum tap target. The old ~35px chip was easy to miss on a
+    // phone, and a missed tap here reads as "the difficulty filter is broken".
+    minHeight: 44,
+    justifyContent: 'center',
   },
   chipText: { color: COLORS.text, fontWeight: '700', fontSize: 14 },
   listCard: {

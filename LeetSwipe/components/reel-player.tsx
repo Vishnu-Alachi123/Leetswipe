@@ -20,8 +20,9 @@ import {
   View,
 } from 'react-native';
 import * as Haptics from 'expo-haptics';
-import * as Speech from 'expo-speech';
 import { LinearGradient } from 'expo-linear-gradient';
+
+import * as Voice from '@/api/voice';
 
 import { codeLines, estimatedSeconds, type AlgorithmReel } from '@/api/reels';
 import { COLORS, DIFFICULTY_COLOR } from '@/constants/colors';
@@ -50,6 +51,11 @@ interface Props {
 export function ReelPlayer({ reel, active, height, narrate, onToggleNarrate }: Props) {
   const [stepIndex, setStepIndex] = useState(0);
   const step = reel.steps[stepIndex];
+  // On short screens (small phones, browser chrome eating height) the fixed
+  // panes overflowed and clipped the controls. Everything fixed-height scales
+  // down from the actual page height instead.
+  const compact = height < 760;
+  const codePaneHeight = compact ? 132 : CODE_PANE_HEIGHT;
   const lines = useMemo(() => codeLines(reel), [reel]);
   const highlighted = useMemo(
     () => new Set(step?.highlightLines ?? []),
@@ -66,13 +72,13 @@ export function ReelPlayer({ reel, active, height, narrate, onToggleNarrate }: P
     if (first == null) return;
     // Aim to sit the line a third of the way down rather than at the very top,
     // so the lines around it stay readable for context.
-    const y = Math.max(0, (first - 1) * CODE_LINE_HEIGHT - CODE_PANE_HEIGHT / 3);
+    const y = Math.max(0, (first - 1) * CODE_LINE_HEIGHT - codePaneHeight / 3);
     codeRef.current?.scrollTo({ y, animated: true });
-  }, [step]);
+  }, [step, codePaneHeight]);
 
   const stop = useCallback(() => {
     if (speaking.current) {
-      Speech.stop();
+      Voice.stop();
       speaking.current = false;
     }
   }, []);
@@ -83,9 +89,7 @@ export function ReelPlayer({ reel, active, height, narrate, onToggleNarrate }: P
     stop();
     if (!active || !narrate || !step) return;
     speaking.current = true;
-    Speech.speak(step.audioScript, {
-      rate: 0.98,
-      pitch: 1.0,
+    Voice.speak(step.audioScript, {
       onDone: () => {
         speaking.current = false;
       },
@@ -171,14 +175,14 @@ export function ReelPlayer({ reel, active, height, narrate, onToggleNarrate }: P
       </View>
 
       {/* Visualisation ------------------------------------------------ */}
-      <View style={styles.vizPane}>
+      <View style={[styles.vizPane, compact && styles.vizPaneCompact]}>
         <VisualizationView viz={step.visualization} />
       </View>
 
       {/* Code --------------------------------------------------------- */}
       <ScrollView
         ref={codeRef}
-        style={styles.codePane}
+        style={[styles.codePane, { height: codePaneHeight }]}
         contentContainerStyle={styles.codeContent}
         showsVerticalScrollIndicator={false}>
         {lines.map((line, i) => {
@@ -271,6 +275,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     minHeight: 172,
   },
+  vizPaneCompact: { minHeight: 118, marginTop: 8, paddingVertical: 4 },
   codePane: {
     height: CODE_PANE_HEIGHT,
     flexGrow: 0,
