@@ -13554,6 +13554,1387 @@
       "qualityFlags": [
         "explanation-asserts-only"
       ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "search-in-rotated-sorted-array-4",
+      "title": "What is the primary advantage of using binary search in a rotated sorted array?",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "search-in-rotated-sorted-array",
+      "difficulty": "Medium",
+      "question": "What is the primary advantage of using binary search in a rotated sorted array?",
+      "options": [
+        "It guarantees finding the maximum element in O(log n) time.",
+        "It allows for O(log n) search time by leveraging the sorted properties.",
+        "It can handle duplicates without any additional logic.",
+        "It simplifies the problem to a linear search approach."
+      ],
+      "answer": 1,
+      "explanation": "The correct option is that binary search allows for O(log n) search time by leveraging the sorted properties of the rotated array. The most tempting distractor is the option about handling duplicates, which fails because while binary search can be adapted for duplicates, it may require additional checks and can degrade to O(n) in the worst case.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.709681+00:00",
+      "contentHash": "1f52614417b37f3d487678f2fb07b219",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "search-in-rotated-sorted-array-5",
+      "title": "How does the presence of a pivot affect the search algorithm?",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "search-in-rotated-sorted-array",
+      "difficulty": "Medium",
+      "question": "How does the presence of a pivot affect the search algorithm?",
+      "options": [
+        "It allows the algorithm to skip half of the elements in each step.",
+        "It requires the algorithm to check all elements sequentially.",
+        "It introduces a need for additional space to store indices.",
+        "It makes the algorithm inherently unstable for large datasets."
+      ],
+      "answer": 0,
+      "explanation": "The presence of a pivot allows the algorithm to skip half of the elements in each step, maintaining the O(log n) complexity. The wrong option suggests that all elements must be checked sequentially, which contradicts the efficiency of binary search.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.709749+00:00",
+      "contentHash": "7d26094507d83ae3e336e723196c9a30",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "search-in-rotated-sorted-array-6",
+      "title": "Consider the following array: [4, 5, 6, 7, 0, 1, 2]. If searching for 0, which part of the array do you first examine?",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "search-in-rotated-sorted-array",
+      "difficulty": "Medium",
+      "question": "Consider the following array: [4, 5, 6, 7, 0, 1, 2]. If searching for 0, which part of the array do you first examine?",
+      "options": [
+        "The first half: [4, 5, 6, 7]",
+        "The second half: [0, 1, 2]",
+        "The entire array sequentially",
+        "The pivot point between the two halves"
+      ],
+      "answer": 1,
+      "explanation": "In this case, you would first examine the second half: [0, 1, 2] because the target 0 is located there. The option suggesting to examine the first half fails as it does not contain the target.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "4",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "7",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Array state during search."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.709811+00:00",
+      "contentHash": "bfababb7f1a2e42389a5d7898a24a97f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "time-based-key-value-store-4",
+      "title": "What data structure is optimal for storing time-based key-value pairs?",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "time-based-key-value-store",
+      "difficulty": "Medium",
+      "question": "Which data structure allows for efficient retrieval of values based on time and key?",
+      "options": [
+        "Hash Map with a list of timestamps",
+        "Sorted Array",
+        "Binary Search Tree",
+        "Linked List"
+      ],
+      "answer": 0,
+      "explanation": "A Hash Map with a list of timestamps allows for O(1) average time complexity for key lookups and efficient time-based retrieval using binary search on the timestamp list. The most tempting distractor, a Sorted Array, would require O(n) time to maintain order upon insertion, making it less efficient for this use case.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.709845+00:00",
+      "contentHash": "c194ce5ef48fc0a3e48bcc50b1ef5790",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "time-based-key-value-store-6",
+      "title": "What is the time complexity of retrieving the latest value for a given key?",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "time-based-key-value-store",
+      "difficulty": "Medium",
+      "question": "What is the expected time complexity for retrieving the most recent value associated with a key?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "answer": 1,
+      "explanation": "The expected time complexity for retrieving the most recent value associated with a key is O(log n) due to the binary search performed on the sorted list of timestamps. The option O(1) is incorrect because it implies direct access without considering the need to search through timestamps.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "Key",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Timestamp",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Value",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "user1",
+              "1",
+              "value1"
+            ],
+            [
+              "user1",
+              "2",
+              "value2"
+            ],
+            [
+              "user1",
+              "3",
+              "value3"
+            ],
+            [
+              "user2",
+              "1",
+              "value4"
+            ],
+            [
+              "user2",
+              "2",
+              "value5"
+            ],
+            [
+              "user2",
+              "3",
+              "value6"
+            ]
+          ]
+        },
+        "caption": "Example of time-based key-value pairs."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.709890+00:00",
+      "contentHash": "d5c543dde116805bbb68f8eaa3f13e84",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "median-of-two-sorted-arrays-4",
+      "title": "What is the optimal approach to find the median of two sorted arrays?",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "median-of-two-sorted-arrays",
+      "difficulty": "Hard",
+      "question": "Which algorithmic technique is best suited for efficiently finding the median of two sorted arrays?",
+      "options": [
+        "Linear search through both arrays",
+        "Merge both arrays and find the median",
+        "Binary search on the shorter array",
+        "Use a heap to store elements from both arrays"
+      ],
+      "answer": 2,
+      "explanation": "The most efficient method is to use binary search on the shorter of the two arrays, reducing the time complexity to O(log(min(n, m))). The linear search through both arrays is tempting but results in O(n + m) time complexity, which is less efficient.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.709930+00:00",
+      "contentHash": "bd61b2d0cc1f9ffb761fb910008f4331",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "median-of-two-sorted-arrays-5",
+      "title": "What is a key edge case when finding the median of two sorted arrays?",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "median-of-two-sorted-arrays",
+      "difficulty": "Hard",
+      "question": "What must be considered when the two sorted arrays have different lengths?",
+      "options": [
+        "The median is always the average of the two middle elements",
+        "The shorter array must be empty",
+        "The longer array's size affects the median calculation",
+        "The median can only be found if both arrays are of equal size"
+      ],
+      "answer": 2,
+      "explanation": "When the arrays have different lengths, the longer array's size can affect the median calculation, especially if the total number of elements is odd or even. The incorrect option is that the median can only be found if both arrays are of equal size, which is not true.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.709967+00:00",
+      "contentHash": "37900b92e3c4994efe53daa948c494ad",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "median-of-two-sorted-arrays-6",
+      "title": "Why does merging the arrays to find the median fail in efficiency?",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "median-of-two-sorted-arrays",
+      "difficulty": "Hard",
+      "question": "What is the primary drawback of merging two sorted arrays before finding the median?",
+      "options": [
+        "It requires additional space proportional to the sum of the arrays' sizes",
+        "It can lead to incorrect median calculations",
+        "It complicates the implementation unnecessarily",
+        "It is slower than binary search in all cases"
+      ],
+      "answer": 0,
+      "explanation": "Merging the arrays requires O(n + m) additional space, which is inefficient compared to the O(log(min(n, m))) space usage of the binary search method. The option stating it can lead to incorrect median calculations is misleading, as merging correctly will give the right median but at a higher cost.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710005+00:00",
+      "contentHash": "63637701daf168e2a76e4e38c4558661",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-linked-list-4",
+      "title": "What is the most efficient way to reverse a singly linked list in place?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-linked-list",
+      "difficulty": "Easy",
+      "question": "Which method allows you to reverse a singly linked list without using additional memory?",
+      "options": [
+        "Using a stack to store nodes",
+        "Iteratively changing pointers",
+        "Recursively reversing the list",
+        "Using an array to hold node values"
+      ],
+      "answer": 1,
+      "explanation": "The correct approach is to iteratively change the pointers of the nodes, which allows you to reverse the list in place with O(1) space complexity. Using a stack or an array, while valid, would require additional memory, which is not optimal for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710035+00:00",
+      "contentHash": "c7186030de0c81febdd9b6f597a26e5a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-linked-list-5",
+      "title": "What is a potential issue when reversing a linked list recursively?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-linked-list",
+      "difficulty": "Easy",
+      "question": "What could happen if the linked list is very long and you attempt to reverse it using recursion?",
+      "options": [
+        "Stack overflow due to too many recursive calls",
+        "The list will not be reversed correctly",
+        "It will take longer than an iterative approach",
+        "The original list will be lost"
+      ],
+      "answer": 0,
+      "explanation": "Using recursion to reverse a linked list can lead to a stack overflow if the list is too long, as each recursive call consumes stack space. The iterative approach avoids this issue and is generally more efficient in terms of space.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710068+00:00",
+      "contentHash": "616d95be2bdad785b0e679df4b859bd6",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-linked-list-6",
+      "title": "How does reversing a linked list affect its structure?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-linked-list",
+      "difficulty": "Easy",
+      "question": "What is the effect on the head pointer after reversing a linked list?",
+      "options": [
+        "It remains unchanged",
+        "It points to the last node of the original list",
+        "It becomes null",
+        "It points to the second node of the original list"
+      ],
+      "answer": 1,
+      "explanation": "After reversing a linked list, the head pointer will point to what was originally the last node of the list. This is crucial to maintain the integrity of the list after the reversal. The option stating it remains unchanged is tempting but incorrect.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "head",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "null",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            []
+          ]
+        },
+        "caption": "Initial state of the linked list before reversal."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710114+00:00",
+      "contentHash": "a002ecd44132b5cbc60b1a8a3e0f4fbc",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-two-sorted-lists-4",
+      "title": "Which data structure is best for merging two sorted lists efficiently?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-two-sorted-lists",
+      "difficulty": "Easy",
+      "question": "When merging two sorted lists, which data structure allows you to maintain the sorted order while efficiently adding elements?",
+      "options": [
+        "Array",
+        "Linked List",
+        "Hash Table",
+        "Stack"
+      ],
+      "answer": 1,
+      "explanation": "A linked list allows for efficient insertion and traversal, making it ideal for merging sorted lists while maintaining order. An array would require shifting elements, leading to inefficiencies. The other options do not provide the necessary sequential access and dynamic resizing needed for this task.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710142+00:00",
+      "contentHash": "3c9180cad65939750a7ace30c6c8c536",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-two-sorted-lists-5",
+      "title": "What is the time complexity of merging two sorted linked lists?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-two-sorted-lists",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of merging two sorted linked lists of lengths m and n?",
+      "options": [
+        "O(m + n)",
+        "O(m * n)",
+        "O(log(m + n))",
+        "O(m + n^2)"
+      ],
+      "answer": 0,
+      "explanation": "The merging process involves traversing both lists once, leading to a linear time complexity of O(m + n). The distractor 'O(m * n)' suggests a nested loop approach, which is not necessary for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710175+00:00",
+      "contentHash": "2509f4a32385d7cfe8efea8a2942f60d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-two-sorted-lists-6",
+      "title": "What issue arises when merging lists with duplicate values?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-two-sorted-lists",
+      "difficulty": "Easy",
+      "question": "When merging two sorted linked lists that may contain duplicate values, what potential issue should be considered?",
+      "options": [
+        "Duplicates may cause infinite loops",
+        "Duplicates can lead to incorrect ordering",
+        "Duplicates can be included without issues",
+        "Duplicates increase memory usage"
+      ],
+      "answer": 2,
+      "explanation": "When merging sorted lists, duplicates can be included without issues, as the merged list can still be sorted. The option suggesting infinite loops is incorrect as the merging process does not rely on unique values. The other options misinterpret how duplicates affect the merging process.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "C",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "D",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "E",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "F",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "F"
+            ]
+          ]
+        },
+        "caption": "Example of two sorted linked lists with duplicates"
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710224+00:00",
+      "contentHash": "1d62036556253fd6fcd386fb49345069",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "linked-list-cycle-4",
+      "title": "Which algorithm is optimal for detecting a cycle in a linked list?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "linked-list-cycle",
+      "difficulty": "Easy",
+      "question": "What is the most efficient algorithm to determine if a linked list contains a cycle?",
+      "options": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Floyd's Tortoise and Hare",
+        "Iterative Traversal with a HashSet"
+      ],
+      "answer": 2,
+      "explanation": "Floyd's Tortoise and Hare algorithm is optimal for cycle detection in a linked list with O(1) space complexity and O(n) time complexity. The other options either use extra space or are not efficient for this specific problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710253+00:00",
+      "contentHash": "7b0970e47e47c24aa37bd62b378e002d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "linked-list-cycle-5",
+      "title": "What is a potential issue with using a hash table for cycle detection?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "linked-list-cycle",
+      "difficulty": "Easy",
+      "question": "What drawback might arise when using a hash table to detect cycles in a linked list?",
+      "options": [
+        "Increased time complexity",
+        "Memory usage grows with list size",
+        "Ineffective for large lists",
+        "Cannot handle multiple cycles"
+      ],
+      "answer": 1,
+      "explanation": "Using a hash table for cycle detection increases memory usage linearly with the size of the linked list, as every node must be stored. This is a significant drawback compared to the constant space used by Floyd's algorithm. The other options do not accurately describe the limitations of using a hash table in this context.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710280+00:00",
+      "contentHash": "4f2fad1ad3b42de7a0beea78c9cdd549",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "linked-list-cycle-6",
+      "title": "How does the presence of a cycle affect traversal of a linked list?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "linked-list-cycle",
+      "difficulty": "Easy",
+      "question": "What happens when traversing a linked list that contains a cycle?",
+      "options": [
+        "Traversal ends at the last node",
+        "Traversal can continue indefinitely",
+        "Traversal will always return to the head",
+        "Traversal will skip nodes randomly"
+      ],
+      "answer": 1,
+      "explanation": "When a linked list contains a cycle, traversal can continue indefinitely as you may keep looping through the cycle without reaching a null pointer. The other options incorrectly suggest a definitive endpoint or behavior that doesn't apply to cyclic structures.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "A",
+              "label": "head",
+              "status": "normal"
+            },
+            {
+              "value": "B",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "C",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "D",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "E",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "F",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F"
+            ]
+          ]
+        },
+        "caption": "Example of a linked list with a cycle."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710324+00:00",
+      "contentHash": "38d7c11052abd57e183a03c31e51af00",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reorder-list-4",
+      "title": "Optimal Approach for Reordering a Linked List",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reorder-list",
+      "difficulty": "Medium",
+      "question": "What is the most efficient way to reorder a linked list in place?",
+      "options": [
+        "Reverse the second half of the list and merge it with the first half",
+        "Create a new linked list and copy elements in the desired order",
+        "Use a stack to reverse the order of nodes while traversing",
+        "Sort the linked list before reordering it"
+      ],
+      "answer": 0,
+      "explanation": "The correct approach is to reverse the second half of the list and then merge it with the first half, which operates in O(n) time and O(1) space. The option to create a new linked list is inefficient as it requires additional space, making it less optimal.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710358+00:00",
+      "contentHash": "87d55a56f7d2e41bacba70a51fa27d7e",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reorder-list-5",
+      "title": "Space Complexity Considerations",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reorder-list",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of the optimal in-place reordering algorithm for a linked list?",
+      "options": [
+        "O(n) due to recursion stack",
+        "O(1) since it uses constant space",
+        "O(n) for storing the reordered list",
+        "O(log n) for the iterative approach"
+      ],
+      "answer": 1,
+      "explanation": "The optimal in-place algorithm for reordering a linked list uses O(1) space since it modifies the list directly without requiring additional data structures. The option suggesting O(n) space is misleading because it assumes a new list is created, which is not the case in this approach.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710389+00:00",
+      "contentHash": "45490ffb451cc2096020c394bc20a814",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reorder-list-6",
+      "title": "Handling Edge Cases in Linked List Reordering",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reorder-list",
+      "difficulty": "Medium",
+      "question": "Which edge case must be considered when reordering a linked list?",
+      "options": [
+        "An empty linked list",
+        "A linked list with two nodes",
+        "A linked list with duplicate values",
+        "A linked list with an odd number of nodes"
+      ],
+      "answer": 0,
+      "explanation": "An empty linked list is a crucial edge case to handle, as attempting to reorder it would lead to errors. While the other options are important, they do not present the same level of risk as an empty list, which can cause null pointer exceptions.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "head",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            []
+          ]
+        },
+        "caption": "Example linked list before reordering."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710429+00:00",
+      "contentHash": "1723f4fe57c0ea8f1a7bc53e0b6dc7da",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "remove-nth-node-from-end-of-list-4",
+      "title": "Choosing the Right Approach for Linked List Modification",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "remove-nth-node-from-end-of-list",
+      "difficulty": "Medium",
+      "question": "When tasked with removing the nth node from the end of a linked list, which approach is generally the most efficient in terms of time complexity?",
+      "options": [
+        "Iterating through the list twice to find the length and then the target node",
+        "Using a single pass with two pointers to locate the target node",
+        "Recursively traversing the list to count nodes and remove the target",
+        "Storing all nodes in an array and accessing the target node by index"
+      ],
+      "answer": 1,
+      "explanation": "The most efficient approach is using two pointers in a single pass, which allows you to find the nth node from the end without needing extra space or multiple iterations. The first option, iterating twice, is less efficient due to its O(n) time complexity compared to the optimal O(n) time with constant space.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710495+00:00",
+      "contentHash": "f2957bd4c2a5d5d41e69c50ef564f2d9",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "remove-nth-node-from-end-of-list-5",
+      "title": "Edge Case Considerations in Linked Lists",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "remove-nth-node-from-end-of-list",
+      "difficulty": "Medium",
+      "question": "What potential issue must be handled when removing the nth node from a linked list, especially if the list is very short?",
+      "options": [
+        "Removing the head node when n equals the length of the list",
+        "Ensuring the list is not empty before attempting removal",
+        "Handling cases where n is greater than the length of the list",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "All listed issues must be addressed: removing the head node if n equals the list length, checking for an empty list, and managing cases where n exceeds the list length. The most tempting distractor might be the first option, but failing to consider all edge cases could lead to runtime errors.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710532+00:00",
+      "contentHash": "be14712ea4bd9dc7a87232b9aa6ed812",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "remove-nth-node-from-end-of-list-6",
+      "title": "Understanding Space Complexity in Linked List Operations",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "remove-nth-node-from-end-of-list",
+      "difficulty": "Medium",
+      "question": "In the context of removing a node from a linked list, what is the space complexity of the optimal solution using the two-pointer technique?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "answer": 0,
+      "explanation": "The two-pointer technique operates in constant space, O(1), as it only uses a fixed amount of extra space regardless of the input size. The option O(n) is a common misconception, as it implies storing nodes or additional data structures, which is not needed in this optimal approach.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710561+00:00",
+      "contentHash": "2e00e0b7e017b2bc2ee65d4b01811d25",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "copy-list-with-random-pointer-4",
+      "title": "What is a common approach to copy a linked list with random pointers?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "copy-list-with-random-pointer",
+      "difficulty": "Medium",
+      "question": "Which method is often used to efficiently copy a linked list with random pointers?",
+      "options": [
+        "Using a hash map to store original to new node mappings",
+        "Recursively copying nodes and their random pointers",
+        "Using an array to store nodes and reconstructing the list",
+        "Performing a depth-first search to clone the list"
+      ],
+      "answer": 0,
+      "explanation": "Using a hash map allows for O(1) time complexity when setting the random pointers, as you can directly access the corresponding new node. The distractor 'Recursively copying nodes and their random pointers' fails because it complicates the random pointer assignment, leading to potential issues without additional data structures.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710593+00:00",
+      "contentHash": "3d5050c696b6601125bd2a7d29159a5d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "copy-list-with-random-pointer-5",
+      "title": "What is the time complexity of the optimal solution for copying a linked list with random pointers?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "copy-list-with-random-pointer",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the most efficient algorithm to copy a linked list with random pointers?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal solution runs in O(n) time because it processes each node a constant number of times. The option 'O(n log n)' is tempting as it suggests a more complex algorithm, but copying a linked list can be done linearly.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710623+00:00",
+      "contentHash": "cc54013447391b3a51c45baae0c7ad02",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "add-two-numbers-4",
+      "title": "Choosing the Right Data Structure for Addition",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "add-two-numbers",
+      "difficulty": "Medium",
+      "question": "When adding two numbers represented by linked lists, which data structure is most suitable for handling the carry during addition?",
+      "options": [
+        "A stack to reverse the order of digits",
+        "A queue for first-in-first-out processing",
+        "A standard array for direct indexing",
+        "A linked list to maintain the result in order"
+      ],
+      "answer": 3,
+      "explanation": "A linked list is ideal for maintaining the result in order as we can easily append new nodes for each digit of the sum. The most tempting distractor, a stack, would reverse the order of the digits, complicating the final output structure.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710660+00:00",
+      "contentHash": "597dede4d9d2cddea5e493760dcfbb44",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "add-two-numbers-5",
+      "title": "Handling Edge Cases in Linked List Addition",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "add-two-numbers",
+      "difficulty": "Medium",
+      "question": "What issue may arise when adding two linked lists that represent numbers of different lengths?",
+      "options": [
+        "The algorithm will fail to compile",
+        "The addition will yield incorrect results due to overflow",
+        "The shorter list will be ignored entirely",
+        "Carry values may be lost if not handled properly"
+      ],
+      "answer": 3,
+      "explanation": "If the lengths of the two linked lists differ, the carry from the longer list may not be fully accounted for, leading to incorrect results. The distractor about ignoring the shorter list is misleading as it suggests that the algorithm would not consider it at all, which is not the case.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710692+00:00",
+      "contentHash": "06baf7f48bd7ed1413116edbc058d143",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "add-two-numbers-6",
+      "title": "Time Complexity of Linked List Addition",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "add-two-numbers",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of adding two numbers represented by linked lists, assuming both lists are of length n?",
+      "options": [
+        "O(n) due to single traversal",
+        "O(n log n) because of sorting",
+        "O(1) since it uses constant space",
+        "O(n^2) because of nested iterations"
+      ],
+      "answer": 0,
+      "explanation": "The time complexity is O(n) because we traverse each linked list once to perform the addition. The distractor suggesting O(n log n) incorrectly assumes a sorting step is involved, which is not the case in this addition process.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710726+00:00",
+      "contentHash": "a078681baf3d4f6243f296ae48b6e9ca",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "find-the-duplicate-number-4",
+      "title": "What is the optimal data structure for detecting duplicates in a linked list with O(n) time complexity?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "find-the-duplicate-number",
+      "difficulty": "Medium",
+      "question": "Which data structure can be used to efficiently detect duplicates in a linked list while maintaining O(n) time complexity?",
+      "options": [
+        "Hash Set",
+        "Array",
+        "Stack",
+        "Queue"
+      ],
+      "answer": 0,
+      "explanation": "A Hash Set allows for O(1) average time complexity for insertions and lookups, making it ideal for detecting duplicates as we traverse the linked list. The array option is less efficient due to potential O(n) lookups, and both stack and queue do not provide the necessary fast access to check for duplicates effectively.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710754+00:00",
+      "contentHash": "f1e72fb99cfe5cbb9911b27f39b5d382",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "find-the-duplicate-number-5",
+      "title": "What is a common issue when using a brute force approach to find duplicates in an array?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "find-the-duplicate-number",
+      "difficulty": "Medium",
+      "question": "What is a significant drawback of using a brute force method to find duplicates in an array?",
+      "options": [
+        "Increased space complexity",
+        "Increased time complexity",
+        "Inability to handle large inputs",
+        "Incorrect results on sorted arrays"
+      ],
+      "answer": 1,
+      "explanation": "The brute force approach typically involves nested loops, leading to O(n^2) time complexity, which is inefficient for large arrays. The distractor about increased space complexity may be tempting, but the brute force method primarily suffers from its poor time efficiency.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710782+00:00",
+      "contentHash": "40325e0d130d34538f511931f917ea7a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "find-the-duplicate-number-6",
+      "title": "How does the Floyd's Tortoise and Hare algorithm help in finding duplicates?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "find-the-duplicate-number",
+      "difficulty": "Medium",
+      "question": "What is the primary benefit of using Floyd's Tortoise and Hare algorithm for detecting duplicates in a linked list?",
+      "options": [
+        "It uses less memory than other methods",
+        "It guarantees finding the first duplicate",
+        "It works without modifying the input data",
+        "It is faster than all other algorithms"
+      ],
+      "answer": 2,
+      "explanation": "Floyd's Tortoise and Hare algorithm is advantageous because it can detect cycles in the linked list without needing additional space, thus preserving the original input structure. While it is efficient, it does not guarantee finding the first duplicate or being the fastest compared to other methods.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710812+00:00",
+      "contentHash": "f1984fcd584b72e856f4d829a9da2f08",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "lru-cache-4",
+      "title": "Which data structure enables O(1) access and removal for an LRU Cache?",
+      "topics": [
+        "Linked List",
+        "Cache"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "lru-cache",
+      "difficulty": "Medium",
+      "question": "What combination of data structures allows for O(1) average time complexity for both accessing and removing the least recently used item in a cache?",
+      "options": [
+        "A doubly linked list and a hash map",
+        "A single linked list and an array",
+        "An array and a stack",
+        "A hash map and a queue"
+      ],
+      "answer": 0,
+      "explanation": "The correct answer is a doubly linked list and a hash map, as this combination allows for O(1) access to both the cache items and the ability to remove the least recently used item efficiently. A single linked list and an array is tempting because they are both common data structures, but they do not provide the necessary O(1) removal and access times.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710844+00:00",
+      "contentHash": "2e93e71cc46658fbf4c5ddfcca90adb6",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "lru-cache-5",
+      "title": "What is a potential issue with using a simple array for an LRU Cache?",
+      "topics": [
+        "Linked List",
+        "Cache"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "lru-cache",
+      "difficulty": "Medium",
+      "question": "What is a significant drawback of using a simple array to implement an LRU Cache?",
+      "options": [
+        "It cannot store more than a fixed number of items",
+        "It requires O(n) time to remove the least recently used item",
+        "It cannot handle duplicate keys",
+        "It has a high memory overhead"
+      ],
+      "answer": 1,
+      "explanation": "Using a simple array would require O(n) time to remove the least recently used item because you would need to search through the entire array to find it. The option about a fixed number of items is misleading as arrays can be resized, and memory overhead is not inherently high. Handling duplicate keys is not a primary concern for LRU caches.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710875+00:00",
+      "contentHash": "c4d0d6a8f54e8ba608decec0ab5ea6c3",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "lru-cache-6",
+      "title": "How does the LRU Cache handle capacity limits?",
+      "topics": [
+        "Linked List",
+        "Cache"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "lru-cache",
+      "difficulty": "Medium",
+      "question": "When the capacity of an LRU Cache is reached, what action is taken to accommodate new entries?",
+      "options": [
+        "It overwrites the least recently used entry",
+        "It throws an error and does not allow new entries",
+        "It expands the capacity automatically",
+        "It removes the most recently used entry"
+      ],
+      "answer": 0,
+      "explanation": "When the capacity of an LRU Cache is reached, it removes the least recently used entry to make space for new entries. This is the core principle of the LRU caching strategy. The option about throwing an error is incorrect, as the cache is designed to replace entries, while expanding capacity automatically is not typical for LRU implementations.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "Key",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Value",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Last Used",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1",
+              "A",
+              "2023-10-01"
+            ],
+            [
+              "2",
+              "B",
+              "2023-10-02"
+            ],
+            [
+              "3",
+              "C",
+              "2023-10-03"
+            ],
+            [
+              "4",
+              "D",
+              "2023-10-04"
+            ]
+          ]
+        },
+        "caption": "Current state of the cache before adding a new entry."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-05T04:39:46.710921+00:00",
+      "contentHash": "a757a51f9065e84576894c1a8086b3c9",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
     }
   ]
 }
