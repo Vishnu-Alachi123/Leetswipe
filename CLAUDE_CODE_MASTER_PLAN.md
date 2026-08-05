@@ -1,5 +1,14 @@
 # LeetSwipe v2 — Master Plan for Claude Code Implementation
 
+> **Historical.** This was written to plan and commission v2.0. The Phase 1
+> work (deduplication, quality gates, multi-format schema, code execution) and
+> much of Phase 2-3 (algorithm reels, the Learn tab, code challenges, UI polish)
+> has since been built directly in the repo. Do not re-submit this as a task —
+> see `V2_EXECUTIVE_SUMMARY.md` for what shipped and what is genuinely still
+> open, and `backend_question_generation/GENERATION.md` for how the pipeline
+> works now.
+
+
 **Document Version:** 1.0  
 **Priority Level:** High (3 phases, 6-8 weeks total)  
 **Recommended Model:** Claude Opus 5 (best for complex architecture + multi-part implementation)

@@ -1,10 +1,42 @@
 # LeetSwipe v2.0 Executive Summary
 
-**Status:** Planning Complete ✅  
-**Ready to Submit to Claude Code:** YES  
+> **This document is historical.** It was written to plan v2.0 before the work
+> started. Most of what it proposes has since been built — see the "What
+> actually shipped" section immediately below for current state, and
+> [`backend_question_generation/GENERATION.md`](backend_question_generation/GENERATION.md)
+> for how the pipeline works now. The estimates and phasing below were not what
+> happened, and are kept only as a record of the original plan.
+
+## What actually shipped
+
+| Planned | Status | Where |
+|---|---|---|
+| Deduplication + quality gate | **Done** | `deduplication.py`, `quality.py` |
+| Fix the scheduled generation job | **Done** | `generate.py`, `GENERATION.md` |
+| Multi-format schema | **Done** | `schema.py` — `StoredMCQ`, `CodeQuestion`, `AlgorithmReel` |
+| Algorithm reels with visualisation | **Done** | Learn tab; 5 curated reels, 32 steps |
+| Narration | **Done**, via on-device `expo-speech` (not ElevenLabs — free and offline) |
+| Reel generation | **Done** | `generate_reels.py`, 25-algorithm catalog |
+| Code challenges | **Done**, graded on-device (not Judge0 — free and offline) | `app/challenge.tsx`, `api/code-runner.ts` |
+| UI polish | **Partly done** | difficulty bars, streak card, celebration, layout fixes |
+| Onboarding, notifications, analytics | **Not started** | — |
+| Spaced repetition | **Not started** | — |
+
+Two significant departures from this plan, both made to keep the app offline-first
+and free to run:
+
+1. **Narration uses on-device TTS**, not a hosted voice. No API key, no per-use
+   cost, works on a plane.
+2. **Code challenges execute on the device**, not through Judge0. Same reasons.
+   Judge0 support still exists in `code_executor.py` for languages a phone
+   cannot run, but nothing depends on it.
+
+---
+
+## Original plan (historical)
+
 **Recommended Model:** Claude Opus 5  
-**Estimated Timeline:** 6-8 weeks (3 phases)  
-**Priority:** LAUNCH v2.0 (massive feature expansion)
+**Estimated Timeline:** 6-8 weeks (3 phases)
 
 ---
 
