@@ -2094,6 +2094,988 @@
       "durationSeconds": 82,
       "source": "llm",
       "generatedAt": "2026-08-05T04:40:32.850094+00:00"
+    },
+    {
+      "type": "reel",
+      "reelId": "quick-sort-py",
+      "algorithmName": "Quick Sort",
+      "description": "Quick Sort is an efficient sorting algorithm that uses a divide-and-conquer approach to sort an array.",
+      "hook": "Sort an array of eight values in just three steps!",
+      "language": "python",
+      "fullCode": "def quick_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quick_sort(left) + middle + quick_sort(right)",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "code": "pivot = arr[len(arr) // 2]  # pivot = 5",
+          "highlightLines": [
+            3
+          ],
+          "explanation": "The pivot is chosen as the middle element, which is 5 in this case.",
+          "audioScript": "We select the pivot element from the array. Here, the pivot is the middle element, which is five. This will help us partition the array into smaller arrays for sorting.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 3,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 6,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 5,
+                  "status": "active",
+                  "label": "pivot"
+                },
+                {
+                  "value": 2,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 1,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 7,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Pivot selected: 5"
+          }
+        },
+        {
+          "stepNumber": 2,
+          "code": "left = [x for x in arr if x < pivot]  # left = [3, 2, 1, 4]",
+          "highlightLines": [
+            4
+          ],
+          "explanation": "The left array contains elements less than the pivot: 3, 2, 1, and 4.",
+          "audioScript": "Next, we create the left array by including all elements that are less than the pivot. In this case, we have three, two, one, and four, which are all less than five.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 3,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 6,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 5,
+                  "status": "active",
+                  "label": "pivot"
+                },
+                {
+                  "value": 2,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 1,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 7,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Left array created: [3, 2, 1, 4]"
+          }
+        },
+        {
+          "stepNumber": 3,
+          "code": "right = [x for x in arr if x > pivot]  # right = [6, 8, 7]",
+          "highlightLines": [
+            5
+          ],
+          "explanation": "The right array contains elements greater than the pivot: 6, 8, and 7.",
+          "audioScript": "Now, we create the right array by including all elements that are greater than the pivot. Here, we have six, eight, and seven, which are all greater than five.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 3,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 6,
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "active",
+                  "label": ""
+                },
+                {
+                  "value": 5,
+                  "status": "found",
+                  "label": "pivot"
+                },
+                {
+                  "value": 2,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 1,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 7,
+                  "status": "active",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Right array created: [6, 8, 7]"
+          }
+        },
+        {
+          "stepNumber": 4,
+          "code": "return quick_sort(left) + middle + quick_sort(right)  # returns [1, 2, 3, 4, 5, 6, 7, 8]",
+          "highlightLines": [
+            6
+          ],
+          "explanation": "The sorted arrays are combined to produce the final sorted array: 1, 2, 3, 4, 5, 6, 7, 8.",
+          "audioScript": "Finally, we recursively sort the left and right arrays and combine them with the pivot. This gives us the fully sorted array: one, two, three, four, five, six, seven, and eight.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 1,
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": 2,
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": 3,
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": 5,
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": 6,
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": 7,
+                  "status": "found",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "found",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Final sorted array: [1, 2, 3, 4, 5, 6, 7, 8]"
+          }
+        }
+      ],
+      "difficulty": "Medium",
+      "topics": [],
+      "category": "Sorting",
+      "lists": [],
+      "sourceSlug": "",
+      "timeComplexity": "",
+      "spaceComplexity": "",
+      "durationSeconds": 47,
+      "source": "llm",
+      "generatedAt": "2026-08-05T16:05:48.123283+00:00"
+    },
+    {
+      "type": "reel",
+      "reelId": "priority-queue-py",
+      "algorithmName": "Heap / Priority Queue",
+      "description": "A priority queue allows you to efficiently retrieve the highest or lowest priority item. It's useful in scheduling and pathfinding algorithms.",
+      "hook": "Manage tasks with different priorities in just a few steps.",
+      "language": "python",
+      "fullCode": "import heapq\n\nclass PriorityQueue:\n    def __init__(self):\n        self.elements = []\n    \n    def is_empty(self):\n        return not self.elements\n    \n    def put(self, item, priority):\n        heapq.heappush(self.elements, (priority, item))\n    \n    def get(self):\n        return heapq.heappop(self.elements)[1]\n\npq = PriorityQueue()\npq.put('task1', 2)\npq.put('task2', 1)\npq.put('task3', 3)\nresult = pq.get()",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "code": "pq.put('task1', 2)",
+          "highlightLines": [
+            7
+          ],
+          "explanation": "Adding 'task1' with priority 2 to the priority queue.",
+          "audioScript": "We start by adding our first task, task one, with a priority of two. The priority queue will organize tasks based on their priority, with lower numbers indicating higher priority. Let's see how that looks now.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "task1",
+                  "status": "normal"
+                },
+                {
+                  "value": "",
+                  "status": "normal"
+                },
+                {
+                  "value": "",
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Added task1 with priority 2"
+          }
+        },
+        {
+          "stepNumber": 2,
+          "code": "pq.put('task2', 1)",
+          "highlightLines": [
+            7
+          ],
+          "explanation": "Adding 'task2' with priority 1 to the priority queue.",
+          "audioScript": "Now we add task two, which has a priority of one. Since one is less than two, task two will be positioned ahead of task one in the queue. Let's update the priority queue.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "task2",
+                  "status": "normal"
+                },
+                {
+                  "value": "task1",
+                  "status": "normal"
+                },
+                {
+                  "value": "",
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Added task2 with priority 1"
+          }
+        },
+        {
+          "stepNumber": 3,
+          "code": "pq.put('task3', 3)",
+          "highlightLines": [
+            7
+          ],
+          "explanation": "Adding 'task3' with priority 3 to the priority queue.",
+          "audioScript": "Next, we add task three, which has a priority of three. Since three is the highest priority so far, it will be placed after the others. Let's check the queue now.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "task2",
+                  "status": "normal"
+                },
+                {
+                  "value": "task1",
+                  "status": "normal"
+                },
+                {
+                  "value": "task3",
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Added task3 with priority 3"
+          }
+        },
+        {
+          "stepNumber": 4,
+          "code": "result = pq.get()",
+          "highlightLines": [
+            10
+          ],
+          "explanation": "Retrieving the highest priority task from the queue.",
+          "audioScript": "Now it's time to get the highest priority task. When we call get, the queue will return task two, since it has the lowest priority number. Let's see what we get.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "task1",
+                  "status": "normal"
+                },
+                {
+                  "value": "task3",
+                  "status": "normal"
+                },
+                {
+                  "value": "",
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Retrieved task2, highest priority"
+          }
+        },
+        {
+          "stepNumber": 5,
+          "code": "result = pq.get()",
+          "highlightLines": [
+            10
+          ],
+          "explanation": "Retrieving the next highest priority task from the queue.",
+          "audioScript": "We call get again to retrieve the next highest priority task. This time, task one will be returned since it has the next lowest priority. Let's see the updated queue.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "task3",
+                  "status": "normal"
+                },
+                {
+                  "value": "",
+                  "status": "normal"
+                },
+                {
+                  "value": "",
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Retrieved task1, next highest priority"
+          }
+        },
+        {
+          "stepNumber": 6,
+          "code": "result = pq.get()",
+          "highlightLines": [
+            10
+          ],
+          "explanation": "Retrieving the last task from the queue.",
+          "audioScript": "Finally, we call get one last time. Now, task three will be returned, as it is the only task left in the queue. Let's see the final state of our priority queue.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": "",
+                  "status": "normal"
+                },
+                {
+                  "value": "",
+                  "status": "normal"
+                },
+                {
+                  "value": "",
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Retrieved task3, queue is now empty"
+          }
+        }
+      ],
+      "difficulty": "Medium",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [],
+      "sourceSlug": "",
+      "timeComplexity": "",
+      "spaceComplexity": "",
+      "durationSeconds": 75,
+      "source": "llm",
+      "generatedAt": "2026-08-05T16:06:01.125661+00:00"
+    },
+    {
+      "type": "reel",
+      "reelId": "union-find-py",
+      "algorithmName": "Union-Find",
+      "description": "Union-Find helps efficiently manage and merge disjoint sets, useful in network connectivity and clustering problems.",
+      "hook": "Connect three nodes in just two operations.",
+      "language": "python",
+      "fullCode": "class UnionFind:\n    def __init__(self, n):\n        self.parent = list(range(n))\n        self.rank = [1] * n\n    def find(self, u):\n        if self.parent[u] != u:\n            self.parent[u] = self.find(self.parent[u])\n        return self.parent[u]\n    def union(self, u, v):\n        rootU = self.find(u)\n        rootV = self.find(v)\n        if rootU != rootV:\n            if self.rank[rootU] > self.rank[rootV]:\n                self.parent[rootV] = rootU\n            elif self.rank[rootU] < self.rank[rootV]:\n                self.parent[rootU] = rootV\n            else:\n                self.parent[rootV] = rootU\n                self.rank[rootU] += 1",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "code": "uf = UnionFind(3)",
+          "highlightLines": [
+            1
+          ],
+          "explanation": "Initialize Union-Find with three elements, each as its own parent.",
+          "audioScript": "We start by creating a Union-Find structure for three nodes. Each node initially points to itself, meaning they are all separate sets.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": "0"
+                },
+                {
+                  "value": 1,
+                  "status": "normal",
+                  "label": "1"
+                },
+                {
+                  "value": 2,
+                  "status": "normal",
+                  "label": "2"
+                }
+              ]
+            },
+            "caption": "Three separate sets created."
+          }
+        },
+        {
+          "stepNumber": 2,
+          "code": "uf.union(0, 1)",
+          "highlightLines": [
+            10
+          ],
+          "explanation": "Union the sets containing nodes 0 and 1.",
+          "audioScript": "Next, we perform a union operation between node zero and node one. This connects the two nodes into a single set, making one the parent of the other.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": "0"
+                },
+                {
+                  "value": 0,
+                  "status": "visited",
+                  "label": "1"
+                },
+                {
+                  "value": 2,
+                  "status": "normal",
+                  "label": "2"
+                }
+              ]
+            },
+            "caption": "Nodes 0 and 1 are now connected."
+          }
+        },
+        {
+          "stepNumber": 3,
+          "code": "uf.union(1, 2)",
+          "highlightLines": [
+            10
+          ],
+          "explanation": "Union the sets containing nodes 1 and 2.",
+          "audioScript": "Now, we union node one with node two. This connects them, making the root of the set containing node zero the parent of node two as well.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": "0"
+                },
+                {
+                  "value": 0,
+                  "status": "visited",
+                  "label": "1"
+                },
+                {
+                  "value": 0,
+                  "status": "visited",
+                  "label": "2"
+                }
+              ]
+            },
+            "caption": "Nodes 1 and 2 are now connected to node 0."
+          }
+        },
+        {
+          "stepNumber": 4,
+          "code": "uf.find(2)",
+          "highlightLines": [
+            6
+          ],
+          "explanation": "Find the root of the set containing node 2.",
+          "audioScript": "Finally, we check which set node two belongs to by finding its root. It should point to zero, as all nodes are now connected.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "found",
+                  "label": "0"
+                },
+                {
+                  "value": 0,
+                  "status": "visited",
+                  "label": "1"
+                },
+                {
+                  "value": 0,
+                  "status": "visited",
+                  "label": "2"
+                }
+              ]
+            },
+            "caption": "Node 2 points to the root, which is node 0."
+          }
+        },
+        {
+          "stepNumber": 5,
+          "code": "uf.find(1)",
+          "highlightLines": [
+            6
+          ],
+          "explanation": "Find the root of the set containing node 1.",
+          "audioScript": "When we check node one, it also points to zero. This confirms that nodes one and two are connected through node zero.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "found",
+                  "label": "0"
+                },
+                {
+                  "value": 0,
+                  "status": "found",
+                  "label": "1"
+                },
+                {
+                  "value": 0,
+                  "status": "visited",
+                  "label": "2"
+                }
+              ]
+            },
+            "caption": "Node 1 also points to the root, confirming connection."
+          }
+        }
+      ],
+      "difficulty": "Medium",
+      "topics": [
+        "Disjoint Sets",
+        "Graph Algorithms"
+      ],
+      "category": "Graphs",
+      "lists": [],
+      "sourceSlug": "",
+      "timeComplexity": "",
+      "spaceComplexity": "",
+      "durationSeconds": 47,
+      "source": "llm",
+      "generatedAt": "2026-08-05T16:07:09.995087+00:00"
+    },
+    {
+      "type": "reel",
+      "reelId": "0-1-knapsack-py",
+      "algorithmName": "0/1 Knapsack",
+      "description": "This algorithm solves the problem of maximizing the total value of items in a knapsack without exceeding its weight capacity.",
+      "hook": "Pack three items into a bag that holds 5 weight for maximum value.",
+      "language": "python",
+      "fullCode": "def knapsack(weights, values, capacity):\n    n = len(values)\n    dp = [[0 for _ in range(capacity + 1)] for _ in range(n + 1)]\n    for i in range(1, n + 1):\n        for w in range(1, capacity + 1):\n            if weights[i - 1] <= w:\n                dp[i][w] = max(dp[i - 1][w], dp[i - 1][w - weights[i - 1]] + values[i - 1])\n            else:\n                dp[i][w] = dp[i - 1][w]\n    return dp[n][capacity]",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "code": "dp[1][1] = max(dp[0][1], dp[0][0] + values[0])",
+          "highlightLines": [
+            5
+          ],
+          "explanation": "The first item can fit in the knapsack, so we calculate its value.",
+          "audioScript": "We're considering the first item with weight one and value one. Since it fits into the knapsack, we can take it. The maximum value so far is one, so we store that in our table.",
+          "visualization": {
+            "kind": "matrix",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "active"
+                },
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 0,
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "First item added to the knapsack."
+          }
+        },
+        {
+          "stepNumber": 2,
+          "code": "dp[1][2] = max(dp[0][2], dp[0][1] + values[0])",
+          "highlightLines": [
+            5
+          ],
+          "explanation": "The first item can still fit in the knapsack, so we update the value for weight 2.",
+          "audioScript": "Now, we're checking for a weight of two. The first item still fits, so we keep the maximum value of one in our table for this weight.",
+          "visualization": {
+            "kind": "matrix",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "active"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 0,
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Value updated for weight two."
+          }
+        },
+        {
+          "stepNumber": 3,
+          "code": "dp[1][3] = max(dp[0][3], dp[0][2] + values[0])",
+          "highlightLines": [
+            5
+          ],
+          "explanation": "The first item can still fit, so we update the value for weight 3 as well.",
+          "audioScript": "For a weight of three, the first item still fits. The maximum remains one, so we update the table again to reflect this.",
+          "visualization": {
+            "kind": "matrix",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "active"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 0,
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Value updated for weight three."
+          }
+        },
+        {
+          "stepNumber": 4,
+          "code": "dp[1][4] = max(dp[0][4], dp[0][3] + values[0])",
+          "highlightLines": [
+            5
+          ],
+          "explanation": "The first item can fit, so we update the value for weight 4.",
+          "audioScript": "At weight four, the first item still fits. We maintain the maximum value of one in our table for this weight.",
+          "visualization": {
+            "kind": "matrix",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "active"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 0,
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Value updated for weight four."
+          }
+        },
+        {
+          "stepNumber": 5,
+          "code": "dp[1][5] = max(dp[0][5], dp[0][4] + values[0])",
+          "highlightLines": [
+            5
+          ],
+          "explanation": "The first item can fit, so we update the value for weight 5.",
+          "audioScript": "Finally, for weight five, the first item fits as well. We again keep the maximum value of one in our table for this weight.",
+          "visualization": {
+            "kind": "matrix",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "active"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Value updated for weight five."
+          }
+        },
+        {
+          "stepNumber": 6,
+          "code": "dp[2][2] = max(dp[1][2], dp[1][0] + values[1])",
+          "highlightLines": [
+            6
+          ],
+          "explanation": "Now considering the second item, we check if it can fit in the knapsack.",
+          "audioScript": "We move on to the second item with weight two and value six. It can fit in the knapsack at weight two, so we calculate the maximum value we can get at this point.",
+          "visualization": {
+            "kind": "matrix",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 6,
+                  "status": "active"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                }
+              ]
+            },
+            "caption": "Second item considered."
+          }
+        },
+        {
+          "stepNumber": 7,
+          "code": "dp[2][5] = max(dp[1][5], dp[1][3] + values[1])",
+          "highlightLines": [
+            6
+          ],
+          "explanation": "The second item can also fit in the knapsack when the weight is 5.",
+          "audioScript": "At weight five, the second item can fit as well. We decide whether to take it or not, and we store the maximum value found so far, which is now seven.",
+          "visualization": {
+            "kind": "matrix",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 6,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 7,
+                  "status": "active"
+                }
+              ]
+            },
+            "caption": "Maximum value updated with second item."
+          }
+        },
+        {
+          "stepNumber": 8,
+          "code": "return dp[2][5]",
+          "highlightLines": [
+            8
+          ],
+          "explanation": "Finally, we return the maximum value for the knapsack with the given items and capacity.",
+          "audioScript": "We reach the end and return the maximum value we can achieve with the knapsack. In this case, it's seven, which is the value of the best combination of items.",
+          "visualization": {
+            "kind": "matrix",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 6,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 1,
+                  "status": "normal"
+                },
+                {
+                  "value": 7,
+                  "status": "found"
+                }
+              ]
+            },
+            "caption": "Final maximum value found."
+          }
+        }
+      ],
+      "difficulty": "Hard",
+      "topics": [
+        "Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [],
+      "sourceSlug": "",
+      "timeComplexity": "",
+      "spaceComplexity": "",
+      "durationSeconds": 87,
+      "source": "llm",
+      "generatedAt": "2026-08-05T16:07:44.897668+00:00"
     }
   ]
 }
