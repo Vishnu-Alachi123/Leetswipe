@@ -36,6 +36,18 @@ class MCQ(BaseModel):
     options: list[str] = Field(description="Exactly four answer choices. No 'A)'/'B)' prefixes.")
     answer: int = Field(description="Index (0-3) of the single correct option in `options`.")
     explanation: str = Field(description="Concise reasoning for why the correct option is right, focused on the algorithmic insight.")
+    visual: dict | None = Field(
+        default=None,
+        description=(
+            "Optional diagram shown above the options, when a picture genuinely helps the "
+            "question (an array being scanned, a comparison table). Omit it otherwise. Format: "
+            "{'kind': 'array'|'table'|'tree'|'graph'|'queue', 'state': {...}, 'caption': str}. "
+            "array/queue state: {'cells': [{'value': 3, 'label': 'i', 'status': "
+            "'normal'|'active'|'visited'|'eliminated'}]}. table state: {'columns': [...], 'rows': "
+            "[[...]]}. tree/graph state: {'nodes': [{'id','value','status'}], 'edges': "
+            "[{'from','to'}]}. The visual must NOT reveal the answer — it sets up the question."
+        ),
+    )
 
     @field_validator("difficulty")
     @classmethod

@@ -13,6 +13,7 @@
 // Bundled fallback deck. Metro bundles JSON imports directly.
 import sample from '../assets/data/questions.json';
 import { API_URL } from './config';
+import type { Visualization } from './reels';
 
 export type Difficulty = 'Easy' | 'Medium' | 'Hard';
 
@@ -31,6 +32,11 @@ export interface Question {
   /** Index (0-3) of the correct option. */
   answer: number;
   explanation: string;
+  /**
+   * Optional diagram shown above the options — the same shape the Learn tab's
+   * renderer draws, so one component library serves every question format.
+   */
+  visual?: Visualization | null;
 }
 
 export interface TopicSummary {

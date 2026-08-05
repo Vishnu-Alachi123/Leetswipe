@@ -21,6 +21,7 @@ import {
 } from 'react-native';
 import * as Haptics from 'expo-haptics';
 import * as Speech from 'expo-speech';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import { codeLines, estimatedSeconds, type AlgorithmReel } from '@/api/reels';
 import { COLORS, DIFFICULTY_COLOR } from '@/constants/colors';
@@ -213,8 +214,14 @@ export function ReelPlayer({ reel, active, height, narrate, onToggleNarrate }: P
           onPress={() => (atEnd ? setStepIndex(0) : go(1))}
           accessibilityRole="button"
           accessibilityLabel={atEnd ? 'Replay from the first step' : 'Next step'}
-          style={[styles.control, styles.controlPrimary]}>
-          <Text style={styles.controlPrimaryText}>{atEnd ? 'Replay' : 'Next step'}</Text>
+          style={styles.controlPrimaryWrap}>
+          <LinearGradient
+            colors={['#4f9dff', '#3a7fe0']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={[styles.control, styles.controlPrimary]}>
+            <Text style={styles.controlPrimaryText}>{atEnd ? 'Replay' : 'Next step'}</Text>
+          </LinearGradient>
         </Pressable>
       </View>
 
@@ -318,7 +325,8 @@ const styles = StyleSheet.create({
     borderColor: COLORS.border,
     backgroundColor: COLORS.card,
   },
-  controlPrimary: { flex: 1, backgroundColor: COLORS.accent },
+  controlPrimaryWrap: { flex: 1 },
+  controlPrimary: { backgroundColor: COLORS.accent },
   controlDisabled: { opacity: 0.35 },
   controlText: { color: COLORS.text, fontWeight: '700', fontSize: 14 },
   controlTextDisabled: { color: COLORS.muted },
