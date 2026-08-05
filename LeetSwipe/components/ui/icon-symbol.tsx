@@ -19,6 +19,7 @@ const MAPPING = {
   'rectangle.stack.fill': 'style',
   'play.rectangle.fill': 'smart-display',
   'heart.fill': 'favorite',
+  'person.crop.circle.fill': 'account-circle',
   'info.circle.fill': 'info',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',

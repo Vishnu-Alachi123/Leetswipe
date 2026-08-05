@@ -23,6 +23,7 @@ import { useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { fetchReels, reelCategories, type AlgorithmReel } from '@/api/reels';
+import { awardXp } from '@/api/profile';
 import { COLORS } from '@/constants/colors';
 import { ReelPlayer } from '@/components/reel-player';
 
@@ -173,6 +174,7 @@ export default function LearnScreen() {
               autoPlay={autoPlay}
               onToggleAutoPlay={() => setAutoPlay((a) => !a)}
               onFinished={() => {
+                awardXp('reelCompleted');
                 // Roll into the next walkthrough, like a video feed.
                 if (index + 1 < reels.length) {
                   listRef.current?.scrollToIndex({ index: index + 1, animated: true });

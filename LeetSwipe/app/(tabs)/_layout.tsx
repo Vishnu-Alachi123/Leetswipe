@@ -38,12 +38,15 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="profile"
         options={{
-          title: 'About',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="info.circle.fill" color={color} />,
+          title: 'Profile',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.crop.circle.fill" color={color} />,
         }}
       />
+      {/* Kept routable for its build/deploy notes, but off the tab bar — four
+          tabs is the ceiling before they crowd on a small phone. */}
+      <Tabs.Screen name="explore" options={{ href: null }} />
     </Tabs>
   );
 }

@@ -16,6 +16,7 @@ import { getStreak } from '@/api/progress';
 import { COLORS, DIFFICULTY_COLOR } from '@/constants/colors';
 import { DifficultyBar } from '@/components/difficulty-bar';
 import { challenges } from '@/api/challenges';
+import { patternQuestions } from '@/api/patterns';
 
 const DIFFICULTIES: Difficulty[] = ['Easy', 'Medium', 'Hard'];
 
@@ -125,6 +126,33 @@ export default function PickerScreen() {
                 <Text style={styles.chevron}>›</Text>
               </Pressable>
             ))}
+          </>
+        )}
+
+        {/* Pattern Match — the technique-recognition drill. Given top billing
+            because it is the skill interviews test and the fastest rep in the
+            app; the speed variant is the same drill against a clock. */}
+        {patternQuestions.length > 0 && (
+          <>
+            <Text style={styles.sectionLabel}>Train your instincts</Text>
+            <View style={styles.modeRow}>
+              <Pressable
+                style={({ pressed }) => [styles.modeCard, pressed && styles.topicCardPressed]}
+                accessibilityRole="button"
+                onPress={() => router.push('/pattern-match')}>
+                <Text style={styles.modeEmoji}>🎯</Text>
+                <Text style={styles.modeTitle}>Pattern Match</Text>
+                <Text style={styles.modeSub}>Which technique does this problem want?</Text>
+              </Pressable>
+              <Pressable
+                style={({ pressed }) => [styles.modeCard, styles.modeCardSpeed, pressed && styles.topicCardPressed]}
+                accessibilityRole="button"
+                onPress={() => router.push({ pathname: '/pattern-match', params: { mode: 'speed' } })}>
+                <Text style={styles.modeEmoji}>⚡</Text>
+                <Text style={styles.modeTitle}>Speed Round</Text>
+                <Text style={styles.modeSub}>How many can you call in 60 seconds?</Text>
+              </Pressable>
+            </View>
           </>
         )}
 
@@ -290,6 +318,20 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   topicCardPressed: { borderColor: COLORS.accent, backgroundColor: '#1a222e' },
+  modeRow: { flexDirection: 'row', gap: 10, marginTop: 10 },
+  modeCard: {
+    flex: 1,
+    backgroundColor: COLORS.card,
+    borderWidth: 1,
+    borderColor: COLORS.accent,
+    borderRadius: 16,
+    padding: 16,
+    minHeight: 128,
+  },
+  modeCardSpeed: { borderColor: '#ffb454' },
+  modeEmoji: { fontSize: 24 },
+  modeTitle: { color: COLORS.text, fontSize: 15, fontWeight: '800', marginTop: 8 },
+  modeSub: { color: COLORS.muted, fontSize: 12, marginTop: 4, lineHeight: 17 },
   challengeRow: { gap: 10, paddingVertical: 2, paddingRight: 4 },
   challengeCard: {
     width: 150,
