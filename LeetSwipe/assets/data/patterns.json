@@ -1,0 +1,2503 @@
+{
+  "questions": [
+    {
+      "questionId": "pattern-contains-duplicate",
+      "sourceSlug": "contains-duplicate",
+      "title": "Contains Duplicate",
+      "statement": "You are given a list of serial numbers from a shipment. Your task is to determine if any serial number appears more than once in the list.",
+      "options": [
+        "Two Pointers",
+        "Sliding Window",
+        "Arrays & Hashing",
+        "Sorting"
+      ],
+      "answer": 2,
+      "category": "Arrays & Hashing",
+      "difficulty": "Easy",
+      "insight": "Using a hash set allows you to efficiently track which serial numbers have already been seen, and check for duplicates in linear time.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-valid-anagram",
+      "sourceSlug": "valid-anagram",
+      "title": "Valid Anagram",
+      "statement": "You have two strings and need to determine if one can be rearranged to form the other. Consider the frequency of each character in both strings to make your decision.",
+      "options": [
+        "Arrays & Hashing",
+        "Two Pointers",
+        "Sorting",
+        "Binary Search"
+      ],
+      "answer": 0,
+      "category": "Arrays & Hashing",
+      "difficulty": "Easy",
+      "insight": "Use arrays or hash maps to count the frequency of characters in each string and compare these counts. The clue is the need to compare character frequencies between two strings.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-two-sum",
+      "sourceSlug": "two-sum",
+      "title": "Two Sum",
+      "statement": "You're given a list of prices and a budget. Find two distinct items whose total cost matches your budget exactly. You need to return the indices of these two items.",
+      "options": [
+        "Two Pointers",
+        "Arrays & Hashing",
+        "Binary Search",
+        "Sliding Window"
+      ],
+      "answer": 1,
+      "category": "Arrays & Hashing",
+      "difficulty": "Easy",
+      "insight": "This is a problem of identifying two numbers in an array that sum up to a target value, which can be efficiently solved using a hash map to store and lookup complements.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-group-anagrams",
+      "sourceSlug": "group-anagrams",
+      "title": "Group Anagrams",
+      "statement": "You have a list of words, and you need to organize them into clusters where each cluster contains words that are rearrangements of each other. Words in the same cluster can be formed by shuffling the letters of another word in that cluster.",
+      "options": [
+        "Arrays & Hashing",
+        "Two Pointers",
+        "Binary Search",
+        "Sorting"
+      ],
+      "answer": 0,
+      "category": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "insight": "The technique is Arrays & Hashing. The clue is the need to group words that are rearrangements of each other, which suggests using a hashable representation of the words, like sorted characters or a character count, to identify anagrams.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-top-k-frequent-elements",
+      "sourceSlug": "top-k-frequent-elements",
+      "title": "Top K Frequent Elements",
+      "statement": "You have a list of customer orders, and you need to identify the top 5 most frequently ordered items. The list contains thousands of orders, and each item can appear multiple times.",
+      "options": [
+        "Two Pointers",
+        "Arrays & Hashing",
+        "Sorting",
+        "Binary Search"
+      ],
+      "answer": 1,
+      "category": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "insight": "The task requires identifying the top k items by frequency, which suggests using a hash map to count appearances and then extracting the top results.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-encode-and-decode-strings",
+      "sourceSlug": "encode-and-decode-strings",
+      "title": "Encode and Decode Strings",
+      "statement": "You need to create a system that can transform a list of messages into a single string for storage, and then reliably recover the original list from this string. Consider how to handle special characters and delimiters that might appear in the messages.",
+      "options": [
+        "Arrays & Hashing",
+        "Sliding Window",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "answer": 0,
+      "category": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "insight": "This calls for using arrays and hashing techniques to encode each string in a way that allows it to be uniquely identified and reconstructed, considering how to handle delimiters within the data.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-product-of-array-except-self",
+      "sourceSlug": "product-of-array-except-self",
+      "title": "Product of Array Except Self",
+      "statement": "You have a list of numbers and need to create a new list where each element is the product of all the numbers in the original list, except for the number at the current position. You cannot use division in your solution.",
+      "options": [
+        "Two Pointers",
+        "Arrays & Hashing",
+        "Sliding Window",
+        "Sorting"
+      ],
+      "answer": 1,
+      "category": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "insight": "The technique involves using auxiliary arrays to store cumulative products from the left and right, which allows you to compute the result in linear time without division.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-valid-sudoku",
+      "sourceSlug": "valid-sudoku",
+      "title": "Valid Sudoku",
+      "statement": "In a 9x9 grid, each row, column, and each of the 3x3 sections must contain unique numbers from 1 to 9. Check if a given grid setup follows these rules without duplicating any number in these areas.",
+      "options": [
+        "Two Pointers",
+        "Sorting",
+        "Binary Search",
+        "Arrays & Hashing"
+      ],
+      "answer": 3,
+      "category": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "insight": "Arrays & Hashing: The problem requires checking for duplicates in multiple dimensions (rows, columns, and sub-grids), which suggests using hash sets or arrays to efficiently track occurrences.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-longest-consecutive-sequence",
+      "sourceSlug": "longest-consecutive-sequence",
+      "title": "Longest Consecutive Sequence",
+      "statement": "You have a collection of numbers, and you need to find the longest sequence of numbers that appear consecutively when sorted, but not necessarily in consecutive order in the input list. How would you efficiently determine the length of this sequence?",
+      "options": [
+        "Arrays & Hashing",
+        "Sorting",
+        "Sliding Window",
+        "Binary Search"
+      ],
+      "answer": 0,
+      "category": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "insight": "Use arrays and hashing to keep track of numbers and quickly check for consecutive elements. The key clue is the need to find consecutive sequences without sorting the entire input.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-valid-palindrome",
+      "sourceSlug": "valid-palindrome",
+      "title": "Valid Palindrome",
+      "statement": "You need to determine if a given string reads the same forwards and backwards, ignoring spaces and punctuation. The string can be very long, so aim for an efficient solution.",
+      "options": [
+        "Two Pointers",
+        "Arrays & Hashing",
+        "Sliding Window",
+        "Binary Search"
+      ],
+      "answer": 0,
+      "category": "Two Pointers",
+      "difficulty": "Easy",
+      "insight": "Two pointers is the technique here. The hint is the need to compare characters from the beginning and end of the string moving towards the center, which is efficiently done with this approach.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-two-sum-ii-input-array-is-sorted",
+      "sourceSlug": "two-sum-ii-input-array-is-sorted",
+      "title": "Two Sum II Input Array Is Sorted",
+      "statement": "You have a list of prices for items in a store, and the list is organized from the least expensive to the most expensive. Your task is to find two different items such that the total cost is exactly equal to a given budget. Return the positions of these two items in the list.",
+      "options": [
+        "Binary Search",
+        "Greedy",
+        "Two Pointers",
+        "Arrays & Hashing"
+      ],
+      "answer": 2,
+      "category": "Two Pointers",
+      "difficulty": "Medium",
+      "insight": "The technique is two pointers. The clue is the sorted list, which suggests iterating from both ends towards the middle to efficiently find the two items that sum up to the target budget.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-3sum",
+      "sourceSlug": "3sum",
+      "title": "3Sum",
+      "statement": "You have a list of integers, and you need to find all unique triplets that add up to zero. The list may contain both positive and negative numbers. Consider how you can efficiently find these triplets when the list is large.",
+      "options": [
+        "Binary Search",
+        "Sliding Window",
+        "Two Pointers",
+        "Arrays & Hashing"
+      ],
+      "answer": 2,
+      "category": "Two Pointers",
+      "difficulty": "Medium",
+      "insight": "Two pointers can be used effectively here; the clue is that you need to find specific combinations of numbers in a sorted list, which suggests an approach involving two pointers to reduce complexity.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-container-with-most-water",
+      "sourceSlug": "container-with-most-water",
+      "title": "Container With Most Water",
+      "statement": "You have a row of vertical posts along the beach, each with a different height. You want to find the maximum amount of water you can trap between any two posts when the tide comes in. Consider the distance between the posts and their heights to calculate the water volume.",
+      "options": [
+        "Two Pointers",
+        "Binary Search",
+        "Sliding Window",
+        "Greedy"
+      ],
+      "answer": 0,
+      "category": "Two Pointers",
+      "difficulty": "Medium",
+      "insight": "Use the two-pointer technique. The key is to optimize by examining potential boundaries from both ends towards the center, adjusting based on height comparisons.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-trapping-rain-water",
+      "sourceSlug": "trapping-rain-water",
+      "title": "Trapping Rain Water",
+      "statement": "Imagine a series of vertical walls of varying heights lined up next to each other. After a heavy rain, water collects between these walls. Determine how much water is trapped after the rain if you know the height of each wall.",
+      "options": [
+        "Arrays & Hashing",
+        "Greedy",
+        "Binary Search",
+        "Two Pointers"
+      ],
+      "answer": 3,
+      "category": "Two Pointers",
+      "difficulty": "Hard",
+      "insight": "Two pointers are used to efficiently calculate the trapped water by scanning from both ends towards the center, leveraging the heights of the walls to keep track of potential water retention boundaries.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-best-time-to-buy-and-sell-stock",
+      "sourceSlug": "best-time-to-buy-and-sell-stock",
+      "title": "Best Time to Buy And Sell Stock",
+      "statement": "Imagine you're tracking the prices of a rare collectible toy over several days. You want to figure out the maximum profit you could make by buying the toy on one day and selling it on another subsequent day. The prices are given in a list corresponding to each day.",
+      "options": [
+        "Greedy",
+        "Two Pointers",
+        "Arrays & Hashing",
+        "Sliding Window"
+      ],
+      "answer": 3,
+      "category": "Sliding Window",
+      "difficulty": "Easy",
+      "insight": "This problem involves finding the maximum difference between two numbers where the smaller number comes before the larger one. The clue is the need to track a minimum price seen so far as you iterate through the list, which is characteristic of a sliding window approach.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-longest-substring-without-repeating-characters",
+      "sourceSlug": "longest-substring-without-repeating-characters",
+      "title": "Longest Substring Without Repeating Characters",
+      "statement": "Imagine you're organizing a line of people for a group photo, but you want each person to have a unique shirt color in the photo. As you move along the line, determine the longest segment where no shirt color is repeated.",
+      "options": [
+        "Two Pointers",
+        "Arrays & Hashing",
+        "1-D Dynamic Programming",
+        "Sliding Window"
+      ],
+      "answer": 3,
+      "category": "Sliding Window",
+      "difficulty": "Medium",
+      "insight": "The technique is a sliding window. The clue is the need to find the longest segment (or substring) without repeating elements, which typically suggests maintaining a dynamic window of valid elements.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-longest-repeating-character-replacement",
+      "sourceSlug": "longest-repeating-character-replacement",
+      "title": "Longest Repeating Character Replacement",
+      "statement": "In a text editor, you can insert any character at most 'k' times to make a substring consist of the same character. Determine the maximum length of such a modified substring that can be achieved within this limit in a given string.",
+      "options": [
+        "Two Pointers",
+        "Sliding Window",
+        "1-D Dynamic Programming",
+        "Arrays & Hashing"
+      ],
+      "answer": 1,
+      "category": "Sliding Window",
+      "difficulty": "Medium",
+      "insight": "Sliding Window is used here. The problem involves finding the maximum length of a contiguous substring where modifications are limited, suggesting a dynamic range of consideration typical of this technique.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-permutation-in-string",
+      "sourceSlug": "permutation-in-string",
+      "title": "Permutation In String",
+      "statement": "You are given two strings, A and B. Determine if there is a way to rearrange the characters of A such that it becomes a substring of B. Both strings consist of lowercase letters only.",
+      "options": [
+        "Two Pointers",
+        "Sliding Window",
+        "Greedy",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 1,
+      "category": "Sliding Window",
+      "difficulty": "Medium",
+      "insight": "This problem can be tackled with a sliding window approach, as you need to check each possible substring of B with the same length as A for a permutation match.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-minimum-window-substring",
+      "sourceSlug": "minimum-window-substring",
+      "title": "Minimum Window Substring",
+      "statement": "You are given a long piece of text and a list of required words. Find the shortest snippet in the text that contains all the words from the list at least once. The text can be very large, but the list of words is relatively small.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Arrays & Hashing",
+        "Sliding Window",
+        "Greedy"
+      ],
+      "answer": 2,
+      "category": "Sliding Window",
+      "difficulty": "Hard",
+      "insight": "The problem involves finding the smallest contiguous segment of the text that meets a certain condition, which is a clue for using a sliding window approach.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-sliding-window-maximum",
+      "sourceSlug": "sliding-window-maximum",
+      "title": "Sliding Window Maximum",
+      "statement": "A busy restaurant wants to analyze customer satisfaction by looking at the ratings given by customers each day. They want to know the highest rating in every 7-day period from a list of daily ratings. The list can have up to 100,000 ratings.",
+      "options": [
+        "Greedy",
+        "Arrays & Hashing",
+        "Sliding Window",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 2,
+      "category": "Sliding Window",
+      "difficulty": "Hard",
+      "insight": "The technique is a sliding window because you need to find the maximum value within a fixed-size subarray (7-day period) as you move through the list.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-valid-parentheses",
+      "sourceSlug": "valid-parentheses",
+      "title": "Valid Parentheses",
+      "statement": "You are tasked with checking whether a sequence of opening and closing brackets (of three types) is properly matched. Each opening bracket must have a corresponding closing bracket of the same type, and they must be correctly nested. Determine if the sequence is valid.",
+      "options": [
+        "Stack",
+        "Linked List",
+        "Greedy",
+        "Two Pointers"
+      ],
+      "answer": 0,
+      "category": "Stack",
+      "difficulty": "Easy",
+      "insight": "Use a stack to manage the opening brackets as you encounter them, and match them with closing brackets to ensure proper nesting and pairing.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-min-stack",
+      "sourceSlug": "min-stack",
+      "title": "Min Stack",
+      "statement": "Design a container that supports adding new items, removing the most recent item, and efficiently finding the smallest item currently in the container.",
+      "options": [
+        "Linked List",
+        "Stack",
+        "Two Pointers",
+        "Arrays & Hashing"
+      ],
+      "answer": 1,
+      "category": "Stack",
+      "difficulty": "Medium",
+      "insight": "Use a stack to manage the items, with an auxiliary stack to keep track of the minimum values. The need to efficiently find the smallest item in constant time suggests this structure.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-evaluate-reverse-polish-notation",
+      "sourceSlug": "evaluate-reverse-polish-notation",
+      "title": "Evaluate Reverse Polish Notation",
+      "statement": "You have a list of instructions that are either numbers or operations like addition and multiplication. Apply these operations in the order they appear, using the most recent numbers as operands, to find the final result.",
+      "options": [
+        "Linked List",
+        "Greedy",
+        "Stack",
+        "Two Pointers"
+      ],
+      "answer": 2,
+      "category": "Stack",
+      "difficulty": "Medium",
+      "insight": "Use a stack to manage operands for operations, as the problem involves processing instructions in a last-in, first-out manner.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-daily-temperatures",
+      "sourceSlug": "daily-temperatures",
+      "title": "Daily Temperatures",
+      "statement": "You have a list of daily temperature readings for a month, and you want to find out how many days you have to wait until a warmer day occurs for each day. If there is no warmer day ahead, return zero for that day.",
+      "options": [
+        "Stack",
+        "Linked List",
+        "Two Pointers",
+        "Greedy"
+      ],
+      "answer": 0,
+      "category": "Stack",
+      "difficulty": "Medium",
+      "insight": "Using a stack helps efficiently track the temperatures that need a warmer day, as they can be processed in a last-in-first-out manner.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-car-fleet",
+      "sourceSlug": "car-fleet",
+      "title": "Car Fleet",
+      "statement": "A number of cars are traveling along a single-lane highway, each with a different starting point and speed. As the cars move, faster cars may eventually catch up and form a group with slower cars ahead. Determine how many separate groups of cars will reach the destination without merging into one another before arriving.",
+      "options": [
+        "Greedy",
+        "Two Pointers",
+        "Linked List",
+        "Stack"
+      ],
+      "answer": 3,
+      "category": "Stack",
+      "difficulty": "Medium",
+      "insight": "Use a stack to keep track of the groups of cars as they form. The key is that groups merge when a faster car catches up to a slower one, which is naturally managed with a stack.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-largest-rectangle-in-histogram",
+      "sourceSlug": "largest-rectangle-in-histogram",
+      "title": "Largest Rectangle In Histogram",
+      "statement": "Imagine you have a row of buildings of varying heights. You want to find the largest area you can cover if you choose a contiguous block of these buildings and use their heights as the height of the area. You have a list of building heights, and you need to calculate this largest possible area efficiently.",
+      "options": [
+        "Two Pointers",
+        "Linked List",
+        "Stack",
+        "Arrays & Hashing"
+      ],
+      "answer": 2,
+      "category": "Stack",
+      "difficulty": "Hard",
+      "insight": "The problem requires finding the largest rectangle in a histogram, which is efficiently solved using a stack. The key is recognizing the need to examine all possible contiguous blocks to find the maximum area, which is a classic signal for using a stack in this context.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-binary-search",
+      "sourceSlug": "binary-search",
+      "title": "Binary Search",
+      "statement": "Imagine you have a long list of numbers that is already sorted from smallest to largest. You need to quickly find out if a particular number exists in this list. The list can contain up to a million numbers, so you need an efficient way to check for the presence of this number.",
+      "options": [
+        "Two Pointers",
+        "Binary Search",
+        "Sorting",
+        "Arrays & Hashing"
+      ],
+      "answer": 1,
+      "category": "Binary Search",
+      "difficulty": "Easy",
+      "insight": "The sorted list and the need for an efficient search indicate that binary search is the appropriate technique.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-search-a-2d-matrix",
+      "sourceSlug": "search-a-2d-matrix",
+      "title": "Search a 2D Matrix",
+      "statement": "You have a grid that is organized like a book, with each row sorted left to right and each column sorted top to bottom. Given a specific number, determine if it is present anywhere in the grid.",
+      "options": [
+        "Greedy",
+        "Binary Search",
+        "Sorting",
+        "Two Pointers"
+      ],
+      "answer": 1,
+      "category": "Binary Search",
+      "difficulty": "Medium",
+      "insight": "The technique is binary search. The clue is the sorted nature of both rows and columns, which allows you to efficiently narrow down the search space.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-koko-eating-bananas",
+      "sourceSlug": "koko-eating-bananas",
+      "title": "Koko Eating Bananas",
+      "statement": "Koko has a pile of bananas and a limited number of hours to finish eating them. Each hour, Koko can eat a varying number of bananas, and you need to determine the minimum number of bananas Koko should eat per hour to finish the pile in time.",
+      "options": [
+        "Two Pointers",
+        "Binary Search",
+        "Arrays & Hashing",
+        "Sorting"
+      ],
+      "answer": 1,
+      "category": "Binary Search",
+      "difficulty": "Medium",
+      "insight": "Use binary search to efficiently determine the minimum eating speed. The clue is that the problem involves finding a minimum value that satisfies a condition, which is a classic use case for binary search.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-find-minimum-in-rotated-sorted-array",
+      "sourceSlug": "find-minimum-in-rotated-sorted-array",
+      "title": "Find Minimum In Rotated Sorted Array",
+      "statement": "You have a circular list of unique numbers that was originally sorted in increasing order but then rotated at some unknown point. Identify the smallest number in this list. Assume the list has no duplicate values.",
+      "options": [
+        "Sorting",
+        "Arrays & Hashing",
+        "Greedy",
+        "Binary Search"
+      ],
+      "answer": 3,
+      "category": "Binary Search",
+      "difficulty": "Medium",
+      "insight": "The problem involves finding a specific element in a rotated sorted array, which points to using binary search due to the sorted nature of the original list and the need for efficient searching.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-search-in-rotated-sorted-array",
+      "sourceSlug": "search-in-rotated-sorted-array",
+      "title": "Search In Rotated Sorted Array",
+      "statement": "You have a list of numbers that was initially in ascending order but has been shifted at some unknown point. Find the position of a specific number in this list efficiently. Assume all numbers are unique.",
+      "options": [
+        "Greedy",
+        "Sorting",
+        "Arrays & Hashing",
+        "Binary Search"
+      ],
+      "answer": 3,
+      "category": "Binary Search",
+      "difficulty": "Medium",
+      "insight": "Binary Search is used here, as the problem involves searching in a rotated sorted array, which can be efficiently tackled by modifying the binary search to account for the rotation.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-median-of-two-sorted-arrays",
+      "sourceSlug": "median-of-two-sorted-arrays",
+      "title": "Median of Two Sorted Arrays",
+      "statement": "You have two separate inventories of items, each sorted by price. Your task is to find the middle price if you were to merge these inventories into one list. The number of items in each inventory can be very large, so aim for an efficient solution.",
+      "options": [
+        "Binary Search",
+        "Arrays & Hashing",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "answer": 0,
+      "category": "Binary Search",
+      "difficulty": "Hard",
+      "insight": "The problem involves finding a median in two sorted lists efficiently, indicating a binary search approach on the sorted arrays to achieve a logarithmic time complexity.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-reverse-linked-list",
+      "sourceSlug": "reverse-linked-list",
+      "title": "Reverse Linked List",
+      "statement": "Imagine you have a row of train cars linked together, and you want to reverse the order of all cars such that the first becomes the last and vice versa. You can only interact with one connection at a time, detaching and reattaching as needed until the entire train is reversed.",
+      "options": [
+        "Linked List",
+        "Two Pointers",
+        "Stack",
+        "Trees"
+      ],
+      "answer": 0,
+      "category": "Linked List",
+      "difficulty": "Easy",
+      "insight": "The technique is linked list manipulation. The clue is the sequential nature of the train cars, which mirrors the node connections in a linked list.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-merge-two-sorted-lists",
+      "sourceSlug": "merge-two-sorted-lists",
+      "title": "Merge Two Sorted Lists",
+      "statement": "You have two lists of names, each already in alphabetical order. Create a new list that combines all names from both lists, keeping the alphabetical order intact.",
+      "options": [
+        "Arrays & Hashing",
+        "Trees",
+        "Linked List",
+        "Two Pointers"
+      ],
+      "answer": 2,
+      "category": "Linked List",
+      "difficulty": "Easy",
+      "insight": "Linked List: The task involves merging two pre-sorted lists into a single sorted list, which is a common application of linked lists.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-linked-list-cycle",
+      "sourceSlug": "linked-list-cycle",
+      "title": "Linked List Cycle",
+      "statement": "Imagine you're tracking a runner on a circular track. You have a device that logs their position each time they complete a lap. Determine if the runner is on a circular path if the device logs the runner's position more than once.",
+      "options": [
+        "Trees",
+        "Stack",
+        "Linked List",
+        "Two Pointers"
+      ],
+      "answer": 2,
+      "category": "Linked List",
+      "difficulty": "Easy",
+      "insight": "Use the cycle detection technique for linked lists. The repeated position logging suggests that the runner is moving in a loop, akin to finding a cycle in a linked list.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-reorder-list",
+      "sourceSlug": "reorder-list",
+      "title": "Reorder List",
+      "statement": "Imagine you have a chain of beads, and you want to rearrange them so that the first bead is followed by the last, then the second, then the second-to-last, and so on. You need to perform this reordering in place without using additional storage for a new chain.",
+      "options": [
+        "Trees",
+        "Linked List",
+        "Stack",
+        "Two Pointers"
+      ],
+      "answer": 1,
+      "category": "Linked List",
+      "difficulty": "Medium",
+      "insight": "This requires manipulating pointers within the linked list structure, as the problem involves rearranging nodes in place without extra space.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-remove-nth-node-from-end-of-list",
+      "sourceSlug": "remove-nth-node-from-end-of-list",
+      "title": "Remove Nth Node From End of List",
+      "statement": "You have a train with carriages linked one after the other, and you need to detach the Nth carriage from the end. You must ensure the train remains connected after removing the carriage. How do you efficiently find and remove this carriage?",
+      "options": [
+        "Linked List",
+        "Two Pointers",
+        "Trees",
+        "Arrays & Hashing"
+      ],
+      "answer": 0,
+      "category": "Linked List",
+      "difficulty": "Medium",
+      "insight": "The technique is using a linked list approach where you traverse the list to find the Nth node from the end. The clue is the need to efficiently locate and remove a node within a sequential structure.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-copy-list-with-random-pointer",
+      "sourceSlug": "copy-list-with-random-pointer",
+      "title": "Copy List With Random Pointer",
+      "statement": "You have a chain of people where each person points to another person in the chain, and sometimes also points to a random person. Your task is to create a new chain with the same structure, ensuring everyone in the new chain has the same pointers as the original.",
+      "options": [
+        "Arrays & Hashing",
+        "Two Pointers",
+        "Stack",
+        "Linked List"
+      ],
+      "answer": 3,
+      "category": "Linked List",
+      "difficulty": "Medium",
+      "insight": "This problem involves creating a deep copy of a complex linked structure. The mention of pointers and ensuring the same structure are clues that this is a linked list problem.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-add-two-numbers",
+      "sourceSlug": "add-two-numbers",
+      "title": "Add Two Numbers",
+      "statement": "Imagine you have two long lists of digits, each representing a number. The digits are stored in reverse order, and you need to add the numbers together to form a new list that also represents a number in reverse order. Each digit of the sum should be calculated and stored individually.",
+      "options": [
+        "Trees",
+        "Two Pointers",
+        "Linked List",
+        "Arrays & Hashing"
+      ],
+      "answer": 2,
+      "category": "Linked List",
+      "difficulty": "Medium",
+      "insight": "The technique is linked list manipulation. The clue is the need to process two lists of digits in reverse order and manage the carry during addition, which suggests iterating through linked lists.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-find-the-duplicate-number",
+      "sourceSlug": "find-the-duplicate-number",
+      "title": "Find The Duplicate Number",
+      "statement": "In a lineup of runners, each runner receives a distinct ID, except for one, which is repeated. If you were to arrange the runners to form a loop where the repeated ID creates the only overlap, identify this ID without modifying the lineup or using additional space.",
+      "options": [
+        "Trees",
+        "Stack",
+        "Two Pointers",
+        "Linked List"
+      ],
+      "answer": 3,
+      "category": "Linked List",
+      "difficulty": "Medium",
+      "insight": "This is a problem about detecting a cycle in a sequence, akin to finding a loop in a linked list. The fact that you are asked to find a repeated element without modifying the sequence or using extra space hints at using the Floyd's Tortoise and Hare cycle detection algorithm.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-lru-cache",
+      "sourceSlug": "lru-cache",
+      "title": "LRU Cache",
+      "statement": "Design a system for a library where books are frequently borrowed and returned. The library has limited shelf space, so when a new book arrives and space is full, the least recently borrowed book should be removed to make room. Ensure that checking out or returning a book is efficient.",
+      "options": [
+        "Arrays & Hashing",
+        "Linked List",
+        "Stack",
+        "Trees"
+      ],
+      "answer": 1,
+      "category": "Linked List",
+      "difficulty": "Medium",
+      "insight": "Use a linked list to manage the order of book usage, allowing efficient updates when a book is borrowed or returned.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-merge-k-sorted-lists",
+      "sourceSlug": "merge-k-sorted-lists",
+      "title": "Merge K Sorted Lists",
+      "statement": "You have several lists of numbers, each already in order. Your task is to combine all these lists into one large list, while maintaining the overall order. The total number of elements across all lists is manageable, but the number of lists can be quite large.",
+      "options": [
+        "Two Pointers",
+        "Arrays & Hashing",
+        "Trees",
+        "Linked List"
+      ],
+      "answer": 3,
+      "category": "Linked List",
+      "difficulty": "Hard",
+      "insight": "Use a priority queue to efficiently merge multiple sorted lists by always choosing the smallest available element. The key clue is the need to maintain sorted order across multiple lists.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-reverse-nodes-in-k-group",
+      "sourceSlug": "reverse-nodes-in-k-group",
+      "title": "Reverse Nodes In K Group",
+      "statement": "Imagine you have a long train made up of individual cars, and you want to reverse the order of every k cars in the train. The train cars are connected in a single line, and you can only reverse them by rearranging the links between the cars. If there are fewer than k cars left at the end of the train, leave them as they are.",
+      "options": [
+        "Stack",
+        "Arrays & Hashing",
+        "Two Pointers",
+        "Linked List"
+      ],
+      "answer": 3,
+      "category": "Linked List",
+      "difficulty": "Hard",
+      "insight": "The problem is about manipulating a linked list to reverse nodes in chunks of k, which is a classic linked list operation. The clue is the need to reverse parts of a sequential structure (the train cars) by adjusting their connections.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-invert-binary-tree",
+      "sourceSlug": "invert-binary-tree",
+      "title": "Invert Binary Tree",
+      "statement": "You have a collection of nested boxes, where each box can contain two smaller boxes, one on the left and one on the right. Design a way to rearrange the boxes such that every box swaps its left and right smaller boxes.",
+      "options": [
+        "Heap / Priority Queue",
+        "Graphs",
+        "Trees",
+        "Backtracking"
+      ],
+      "answer": 2,
+      "category": "Trees",
+      "difficulty": "Easy",
+      "insight": "This is a problem about traversing a tree structure and swapping the nodes, which is typical of problems involving tree manipulation.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-maximum-depth-of-binary-tree",
+      "sourceSlug": "maximum-depth-of-binary-tree",
+      "title": "Maximum Depth of Binary Tree",
+      "statement": "You're given a hierarchy chart representing an organization's structure. Each position can have multiple subordinates, and you want to determine the maximum number of levels from the top position to the deepest subordinate.",
+      "options": [
+        "Heap / Priority Queue",
+        "Trees",
+        "Backtracking",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 1,
+      "category": "Trees",
+      "difficulty": "Easy",
+      "insight": "This problem involves traversing the structure of a tree to determine its depth, which is a common tree traversal problem.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-diameter-of-binary-tree",
+      "sourceSlug": "diameter-of-binary-tree",
+      "title": "Diameter of Binary Tree",
+      "statement": "Imagine a network of connected nodes where each node can have up to two direct connections. You need to find the maximum number of direct connections you can travel through between two nodes in this network.",
+      "options": [
+        "Heap / Priority Queue",
+        "Graphs",
+        "Trees",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 2,
+      "category": "Trees",
+      "difficulty": "Easy",
+      "insight": "The problem involves traversing a binary tree to find the longest path, which is essentially the tree diameter problem. The mention of nodes with up to two connections indicates a binary tree structure.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-balanced-binary-tree",
+      "sourceSlug": "balanced-binary-tree",
+      "title": "Balanced Binary Tree",
+      "statement": "Given a structure where each node connects to two others, determine if the longest path from the top node to any end node differs by no more than one step when compared to the shortest such path.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Backtracking",
+        "Trees",
+        "Graphs"
+      ],
+      "answer": 2,
+      "category": "Trees",
+      "difficulty": "Easy",
+      "insight": "The problem involves determining the balance of a binary tree, which requires understanding tree depth calculations and comparisons.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-same-tree",
+      "sourceSlug": "same-tree",
+      "title": "Same Tree",
+      "statement": "You have two family trees, each representing the lineage of a different person. Your task is to determine if both trees depict the exact same family structure, meaning each family member and their relationships are identical in both trees.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Trees",
+        "Heap / Priority Queue",
+        "Backtracking"
+      ],
+      "answer": 1,
+      "category": "Trees",
+      "difficulty": "Easy",
+      "insight": "The technique is tree traversal because you need to compare the structure and values of two trees node by node.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-subtree-of-another-tree",
+      "sourceSlug": "subtree-of-another-tree",
+      "title": "Subtree of Another Tree",
+      "statement": "You have two gardens represented as branching paths of plants. Determine if one garden is identical to any branching path within the other garden.",
+      "options": [
+        "Trees",
+        "1-D Dynamic Programming",
+        "Backtracking",
+        "Heap / Priority Queue"
+      ],
+      "answer": 0,
+      "category": "Trees",
+      "difficulty": "Easy",
+      "insight": "The technique involves tree traversal to check if one tree structure is a subtree of another. The clue is in the need to compare branching paths, which suggests tree operations.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-lowest-common-ancestor-of-a-binary-search-tree",
+      "sourceSlug": "lowest-common-ancestor-of-a-binary-search-tree",
+      "title": "Lowest Common Ancestor of a Binary Search Tree",
+      "statement": "You are given a family tree where every person has at most two children, and the tree is organized such that each person's descendants are listed in a specific order. Find the earliest common ancestor of two given family members in this tree.",
+      "options": [
+        "Backtracking",
+        "1-D Dynamic Programming",
+        "Trees",
+        "Graphs"
+      ],
+      "answer": 2,
+      "category": "Trees",
+      "difficulty": "Medium",
+      "insight": "The problem involves navigating a binary search tree, a specific type of tree structure, to find the lowest common ancestor of two nodes.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-binary-tree-level-order-traversal",
+      "sourceSlug": "binary-tree-level-order-traversal",
+      "title": "Binary Tree Level Order Traversal",
+      "statement": "Imagine you are tasked with organizing a series of lectures in a multi-story building, where each floor represents a different level of understanding. Your goal is to visit each floor, starting from the ground level and moving upwards, to gather information about the topics covered on each floor.",
+      "options": [
+        "Trees",
+        "Graphs",
+        "1-D Dynamic Programming",
+        "Backtracking"
+      ],
+      "answer": 0,
+      "category": "Trees",
+      "difficulty": "Medium",
+      "insight": "The technique is a breadth-first traversal of a tree structure. The clue is the requirement to visit each level of the building (or tree) in order, starting from the ground level, which mirrors the level order traversal of a binary tree.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-binary-tree-right-side-view",
+      "sourceSlug": "binary-tree-right-side-view",
+      "title": "Binary Tree Right Side View",
+      "statement": "Imagine standing on the right side of a garden where trees are planted in a structured hierarchy. Your task is to list the trees you can see from your position, considering there might be taller trees blocking the view of shorter ones. How would you determine which tree tops are visible from your vantage point?",
+      "options": [
+        "1-D Dynamic Programming",
+        "Trees",
+        "Graphs",
+        "Heap / Priority Queue"
+      ],
+      "answer": 1,
+      "category": "Trees",
+      "difficulty": "Medium",
+      "insight": "Traverse the tree level by level, noting the last node at each level to simulate the right-side view.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-count-good-nodes-in-binary-tree",
+      "sourceSlug": "count-good-nodes-in-binary-tree",
+      "title": "Count Good Nodes In Binary Tree",
+      "statement": "Imagine you're observing a tree where each node has a unique value. Starting from the root, you're tasked with counting how many nodes are considered 'good'. A node is deemed 'good' if its value is greater than or equal to the largest value encountered on the path from the root to that node.",
+      "options": [
+        "Backtracking",
+        "1-D Dynamic Programming",
+        "Trees",
+        "Graphs"
+      ],
+      "answer": 2,
+      "category": "Trees",
+      "difficulty": "Medium",
+      "insight": "The technique involves traversing a tree structure and keeping track of the maximum value encountered on the path. This is a classic tree traversal problem where you need to explore each node and maintain state information about the path.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-validate-binary-search-tree",
+      "sourceSlug": "validate-binary-search-tree",
+      "title": "Validate Binary Search Tree",
+      "statement": "You are given a tree structure where each node contains a number. Your task is to check if this tree meets a certain property: for every node, all numbers in its left subtree are smaller, and all numbers in its right subtree are larger.",
+      "options": [
+        "Heap / Priority Queue",
+        "Trees",
+        "1-D Dynamic Programming",
+        "Graphs"
+      ],
+      "answer": 1,
+      "category": "Trees",
+      "difficulty": "Medium",
+      "insight": "The technique is tree traversal, specifically checking the Binary Search Tree property by ensuring all nodes follow the left < current < right rule.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-kth-smallest-element-in-a-bst",
+      "sourceSlug": "kth-smallest-element-in-a-bst",
+      "title": "Kth Smallest Element In a Bst",
+      "statement": "Imagine you have a neatly arranged library of books where each shelf is ordered by book height from shortest to tallest. You want to find the book with the k-th shortest height. How would you efficiently determine which book this is?",
+      "options": [
+        "1-D Dynamic Programming",
+        "Backtracking",
+        "Trees",
+        "Heap / Priority Queue"
+      ],
+      "answer": 2,
+      "category": "Trees",
+      "difficulty": "Medium",
+      "insight": "The problem involves navigating a structured hierarchy to find an order statistic, which is a hallmark of tree traversal techniques, specifically in-order traversal of a binary search tree.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-construct-binary-tree-from-preorder-and-inorder-traversal",
+      "sourceSlug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+      "title": "Construct Binary Tree From Preorder And Inorder Traversal",
+      "statement": "You have two lists of instructions: one tells you the order in which to open boxes, and the other tells you the order in which the boxes are arranged in a line. Figure out how the boxes are nested within each other.",
+      "options": [
+        "Backtracking",
+        "1-D Dynamic Programming",
+        "Graphs",
+        "Trees"
+      ],
+      "answer": 3,
+      "category": "Trees",
+      "difficulty": "Medium",
+      "insight": "The technique is constructing a binary tree using preorder and inorder traversals. The clue is the two lists of instructions, which correspond to preorder and inorder sequences.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-binary-tree-maximum-path-sum",
+      "sourceSlug": "binary-tree-maximum-path-sum",
+      "title": "Binary Tree Maximum Path Sum",
+      "statement": "In a garden with several interconnected pathways, each path has a signpost with a number. Your task is to find the highest total number you can achieve by starting at any signpost, walking along the paths, and optionally ending at any signpost. You can only use each path once, and the paths can branch out.",
+      "options": [
+        "Backtracking",
+        "Trees",
+        "Graphs",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 1,
+      "category": "Trees",
+      "difficulty": "Hard",
+      "insight": "This is a tree traversal problem, where you need to calculate the maximum path sum in a binary tree. The clue is the interconnected pathways with numbers, similar to nodes and edges in a tree.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-serialize-and-deserialize-binary-tree",
+      "sourceSlug": "serialize-and-deserialize-binary-tree",
+      "title": "Serialize And Deserialize Binary Tree",
+      "statement": "You have a complex garden layout and need to create a detailed map that can be stored in a compact form. Later, you want to be able to recreate the exact layout from this stored map. How would you go about designing such a mapping system?",
+      "options": [
+        "Backtracking",
+        "Graphs",
+        "Trees",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 2,
+      "category": "Trees",
+      "difficulty": "Hard",
+      "insight": "This requires techniques related to trees, as you need to convert a structured data form (the garden layout) into a linear representation (the map) and back.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-kth-largest-element-in-a-stream",
+      "sourceSlug": "kth-largest-element-in-a-stream",
+      "title": "Kth Largest Element In a Stream",
+      "statement": "You're monitoring a continuous stream of incoming numbers and need to consistently know the top 5 largest numbers seen so far. As each new number arrives, efficiently update your record.",
+      "options": [
+        "Greedy",
+        "Binary Search",
+        "Sorting",
+        "Heap / Priority Queue"
+      ],
+      "answer": 3,
+      "category": "Heap / Priority Queue",
+      "difficulty": "Easy",
+      "insight": "Use a min-heap to maintain the top k largest numbers; the stream of numbers requires dynamically updating the largest elements.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-last-stone-weight",
+      "sourceSlug": "last-stone-weight",
+      "title": "Last Stone Weight",
+      "statement": "Imagine you have a collection of rocks, each with a certain weight. You repeatedly smash the two heaviest rocks together. If they are the same weight, both are destroyed. If not, the heavier one is reduced by the weight of the lighter one. Continue this process until one or no rocks remain. Determine the weight of the last remaining rock, if any.",
+      "options": [
+        "Arrays & Hashing",
+        "Binary Search",
+        "Sorting",
+        "Heap / Priority Queue"
+      ],
+      "answer": 3,
+      "category": "Heap / Priority Queue",
+      "difficulty": "Easy",
+      "insight": "The problem involves repeatedly accessing and updating the largest elements, which suggests using a heap or priority queue to efficiently manage and retrieve the heaviest rocks.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-k-closest-points-to-origin",
+      "sourceSlug": "k-closest-points-to-origin",
+      "title": "K Closest Points to Origin",
+      "statement": "You have a list of locations, each with its own coordinates, and you need to find the 5 nearest ones to a specific central point. The list is quite large, with thousands of locations, so efficiency is crucial.",
+      "options": [
+        "Heap / Priority Queue",
+        "Binary Search",
+        "Greedy",
+        "Arrays & Hashing"
+      ],
+      "answer": 0,
+      "category": "Heap / Priority Queue",
+      "difficulty": "Medium",
+      "insight": "Use a heap data structure to efficiently keep track of the closest locations. The requirement to find the closest elements in a large dataset suggests using a heap or priority queue.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-kth-largest-element-in-an-array",
+      "sourceSlug": "kth-largest-element-in-an-array",
+      "title": "Kth Largest Element In An Array",
+      "statement": "You are given a list of numbers and asked to find a number that is larger than all but a few of the others. Specifically, you need to identify the number that is greater than all except for a certain number of elements in the list. The list can be very large, with up to a million numbers.",
+      "options": [
+        "Arrays & Hashing",
+        "Sorting",
+        "Greedy",
+        "Heap / Priority Queue"
+      ],
+      "answer": 3,
+      "category": "Heap / Priority Queue",
+      "difficulty": "Medium",
+      "insight": "Use a heap to efficiently find the k-th largest element. The clue is the need to find a specific \"k-th\" ranked item in a potentially large dataset.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-task-scheduler",
+      "sourceSlug": "task-scheduler",
+      "title": "Task Scheduler",
+      "statement": "You manage a list of tasks, each with a specific urgency level. After completing a task, you must wait for a certain cooldown period before tackling another task of the same type. Determine the optimal order to execute these tasks so that all are completed in the minimum amount of time.",
+      "options": [
+        "Arrays & Hashing",
+        "Greedy",
+        "Heap / Priority Queue",
+        "Binary Search"
+      ],
+      "answer": 2,
+      "category": "Heap / Priority Queue",
+      "difficulty": "Medium",
+      "insight": "The key to solving this problem is recognizing the need to always execute the most urgent task available, adjusting for cooldowns. This is a classic scenario for using a priority queue or heap to efficiently manage task execution based on urgency.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-design-twitter",
+      "sourceSlug": "design-twitter",
+      "title": "Design Twitter",
+      "statement": "A social media platform needs to display the top 10 most recent posts from users that a person follows. Each post has a timestamp, and users can have hundreds of followers. Ensure that the feed is always showing the latest posts.",
+      "options": [
+        "Binary Search",
+        "Heap / Priority Queue",
+        "Sorting",
+        "Arrays & Hashing"
+      ],
+      "answer": 1,
+      "category": "Heap / Priority Queue",
+      "difficulty": "Medium",
+      "insight": "Use a priority queue to efficiently manage and retrieve the most recent posts, leveraging the timestamps to keep the feed up-to-date.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-subsets",
+      "sourceSlug": "subsets",
+      "title": "Subsets",
+      "statement": "You're organizing a party and want to see all possible combinations of snacks you can offer from your pantry. You have a list of snacks, and you need to consider every possible selection, including offering no snacks at all.",
+      "options": [
+        "Backtracking",
+        "Greedy",
+        "1-D Dynamic Programming",
+        "Graphs"
+      ],
+      "answer": 0,
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "insight": "The technique is backtracking. The clue is the need to explore all possible combinations of items from a list, which suggests generating all subsets.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-combination-sum",
+      "sourceSlug": "combination-sum",
+      "title": "Combination Sum",
+      "statement": "You have a selection of ingredients, each with a specific quantity. Your goal is to create dishes such that each dish uses up exactly a specific total quantity of ingredients. Find all the different ways to combine these ingredients to meet the exact quantity needed for the dishes.",
+      "options": [
+        "Graphs",
+        "Backtracking",
+        "Greedy",
+        "Trees"
+      ],
+      "answer": 1,
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "insight": "The problem requires generating all possible combinations of ingredients to reach an exact total, hinting at a trial-and-error approach to explore all subsets, which is characteristic of backtracking.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-combination-sum-ii",
+      "sourceSlug": "combination-sum-ii",
+      "title": "Combination Sum II",
+      "statement": "You have a list of unique items, each with a price. Your task is to find all the ways to exactly spend a given amount of money using any combination of these items, but each item can only be bought once. Consider the constraints that the total number of items is not very large.",
+      "options": [
+        "Trees",
+        "Backtracking",
+        "Graphs",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 1,
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "insight": "The technique is backtracking, which is suggested by the need to explore all combinations of items that sum to a target amount, with each item only usable once.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-permutations",
+      "sourceSlug": "permutations",
+      "title": "Permutations",
+      "statement": "You are organizing a photo shoot and want to arrange a group of people in every possible order for the pictures. How can you systematically explore all these different arrangements?",
+      "options": [
+        "Trees",
+        "Backtracking",
+        "1-D Dynamic Programming",
+        "Greedy"
+      ],
+      "answer": 1,
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "insight": "The task involves generating all possible orderings of a set, which is a classic indicator of using backtracking to explore permutations.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-subsets-ii",
+      "sourceSlug": "subsets-ii",
+      "title": "Subsets II",
+      "statement": "You are organizing a gift bag with various items where some items are identical. List all the unique combinations of items you can put in the bag, regardless of the order.",
+      "options": [
+        "Graphs",
+        "Trees",
+        "1-D Dynamic Programming",
+        "Backtracking"
+      ],
+      "answer": 3,
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "insight": "The requirement to list all unique combinations with potential duplicates hints at using backtracking to explore all possibilities while avoiding repeated subsets.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-generate-parentheses",
+      "sourceSlug": "generate-parentheses",
+      "title": "Generate Parentheses",
+      "statement": "You are designing a system that needs to create all valid combinations of a certain number of open and close tags in a markup language. Each combination must have an equal number of opening and closing tags, and at no point in the sequence can the number of closing tags exceed the number of opening tags. How would you generate all such valid sequences?",
+      "options": [
+        "Trees",
+        "Greedy",
+        "Backtracking",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 2,
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "insight": "The technique is backtracking. The clue is the need to explore all valid combinations while adhering to specific constraints, such as the balance of tags throughout the sequence.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-word-search",
+      "sourceSlug": "word-search",
+      "title": "Word Search",
+      "statement": "Imagine you have a grid of letters and a list of words. You need to figure out if each word can be formed by connecting adjacent letters in the grid, without reusing any letter for the same word. Each connection can be horizontal or vertical.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Trees",
+        "Backtracking",
+        "Greedy"
+      ],
+      "answer": 2,
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "insight": "The technique is backtracking, identified by the need to explore multiple possible paths in the grid to form each word, while ensuring no letter is reused in forming a single word.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-palindrome-partitioning",
+      "sourceSlug": "palindrome-partitioning",
+      "title": "Palindrome Partitioning",
+      "statement": "You have a string of letters and want to divide it into the fewest number of segments, where each segment must read the same forwards and backwards. How can you determine all possible ways to make these divisions?",
+      "options": [
+        "Graphs",
+        "Greedy",
+        "Backtracking",
+        "Trees"
+      ],
+      "answer": 2,
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "insight": "Backtracking is key here, as you need to explore all possible partitions that satisfy the palindrome condition.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-letter-combinations-of-a-phone-number",
+      "sourceSlug": "letter-combinations-of-a-phone-number",
+      "title": "Letter Combinations of a Phone Number",
+      "statement": "Imagine you need to generate all possible words from a keypad where each number can be represented by a set of letters. For example, the number 2 can correspond to the letters 'a', 'b', or 'c'. Given a sequence of numbers, find all the possible letter combinations they can represent.",
+      "options": [
+        "Graphs",
+        "Trees",
+        "Backtracking",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 2,
+      "category": "Backtracking",
+      "difficulty": "Medium",
+      "insight": "The technique is backtracking, as you need to explore all possible combinations by choosing one letter per digit and recursively building the combinations.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-n-queens",
+      "sourceSlug": "n-queens",
+      "title": "N Queens",
+      "statement": "Imagine you're organizing a chess tournament with a twist: you need to place n queens on an n x n chessboard such that no two queens can attack each other. How can you arrange the queens to meet this condition?",
+      "options": [
+        "Backtracking",
+        "1-D Dynamic Programming",
+        "Graphs",
+        "Trees"
+      ],
+      "answer": 0,
+      "category": "Backtracking",
+      "difficulty": "Hard",
+      "insight": "This problem involves exploring different configurations on a chessboard and retreating when a configuration doesn't work, which is characteristic of backtracking.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-design-add-and-search-words-data-structure",
+      "sourceSlug": "design-add-and-search-words-data-structure",
+      "title": "Design Add And Search Words Data Structure",
+      "statement": "Imagine you are building a dictionary tool that allows users to add words and query if a word exists. Additionally, users can search for words using a pattern where '.' can stand for any letter. How would you implement this efficiently?",
+      "options": [
+        "Backtracking",
+        "Graphs",
+        "Tries",
+        "Trees"
+      ],
+      "answer": 2,
+      "category": "Tries",
+      "difficulty": "Medium",
+      "insight": "The problem requires efficiently adding and searching words with wildcard support, which suggests using a trie data structure.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-word-search-ii",
+      "sourceSlug": "word-search-ii",
+      "title": "Word Search II",
+      "statement": "You have a grid of letters and a list of words. Your task is to determine which words from the list can be formed by connecting adjacent letters in the grid. The connections can be vertical, horizontal, or diagonal, but you can only use each letter cell once per word.",
+      "options": [
+        "Trees",
+        "Arrays & Hashing",
+        "Tries",
+        "Graphs"
+      ],
+      "answer": 2,
+      "category": "Tries",
+      "difficulty": "Hard",
+      "insight": "The technique is Tries, as building a trie from the list of words allows efficient searching and backtracking in the grid to find all possible word matches.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-number-of-islands",
+      "sourceSlug": "number-of-islands",
+      "title": "Number of Islands",
+      "statement": "You have a grid of land and water, where each cell is either 'L' for land or 'W' for water. Your task is to count how many separate groups of connected land cells exist in the grid. Two land cells are considered connected if they are adjacent horizontally or vertically.",
+      "options": [
+        "Graphs",
+        "Advanced Graphs",
+        "1-D Dynamic Programming",
+        "Trees"
+      ],
+      "answer": 0,
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "insight": "The problem involves exploring connected components in a grid, which is a classic application of graph traversal techniques like Depth-First Search (DFS) or Breadth-First Search (BFS). The key clue is the need to find connected groups in a grid.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-max-area-of-island",
+      "sourceSlug": "max-area-of-island",
+      "title": "Max Area of Island",
+      "statement": "You are given a map of a grid where each cell is either land or water. Determine the largest connected region of land cells on the map. Consider only horizontal and vertical connections between cells.",
+      "options": [
+        "Graphs",
+        "Trees",
+        "1-D Dynamic Programming",
+        "Advanced Graphs"
+      ],
+      "answer": 0,
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "insight": "The problem involves finding connected components in a grid, which is a classic graph traversal problem. The clue is the need to explore connected regions, suggesting the use of depth-first or breadth-first search.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-clone-graph",
+      "sourceSlug": "clone-graph",
+      "title": "Clone Graph",
+      "statement": "Imagine you have a network of people where each person can be connected to multiple others. You need to create an exact replica of this network, ensuring that the connections between each pair of individuals are preserved.",
+      "options": [
+        "Graphs",
+        "Advanced Graphs",
+        "1-D Dynamic Programming",
+        "Trees"
+      ],
+      "answer": 0,
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "insight": "Use graph traversal techniques like DFS or BFS to explore and duplicate the structure, as the problem involves replicating nodes and their connections in a network.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-walls-and-gates",
+      "sourceSlug": "walls-and-gates",
+      "title": "Walls And Gates",
+      "statement": "In a sprawling building, some rooms are equipped with public loudspeakers while others are not. Your task is to determine the minimum number of rooms a sound must travel through to reach each non-equipped room from the nearest loudspeaker. Consider that sound can travel between adjacent rooms.",
+      "options": [
+        "Advanced Graphs",
+        "Trees",
+        "Backtracking",
+        "Graphs"
+      ],
+      "answer": 3,
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "insight": "This problem requires understanding the shortest path from multiple sources, which is a graph traversal problem.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-rotting-oranges",
+      "sourceSlug": "rotting-oranges",
+      "title": "Rotting Oranges",
+      "statement": "Imagine a garden where some of the plants are infected with a disease. The infection spreads to adjacent plants every hour. Determine how long it will take for all plants to become infected, or if some will remain healthy indefinitely.",
+      "options": [
+        "Advanced Graphs",
+        "Graphs",
+        "1-D Dynamic Programming",
+        "Backtracking"
+      ],
+      "answer": 1,
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "insight": "This is a graph traversal problem. The clue is the spread of infection to adjacent plants, which suggests exploring neighbors, similar to traversing a grid as a graph.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-pacific-atlantic-water-flow",
+      "sourceSlug": "pacific-atlantic-water-flow",
+      "title": "Pacific Atlantic Water Flow",
+      "statement": "In a mountain range, rainwater flows downhill to either the east or west ocean. Each cell in the grid represents a piece of land with a specific height, and water can only flow to adjacent cells with equal or lower height. Determine which cells can let water flow to both oceans.",
+      "options": [
+        "Graphs",
+        "Trees",
+        "Advanced Graphs",
+        "Backtracking"
+      ],
+      "answer": 0,
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "insight": "The technique involves using graph traversal because you need to explore how water can flow from each cell to both sides, resembling a connectivity problem in graphs.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-surrounded-regions",
+      "sourceSlug": "surrounded-regions",
+      "title": "Surrounded Regions",
+      "statement": "Imagine a large grid of land and water, where land is marked as 'L' and water as 'W'. You need to find all the sections of land that are completely surrounded by water and mark them as 'W'. The grid is large but not infinite, and sections connected diagonally are not considered adjacent.",
+      "options": [
+        "Graphs",
+        "1-D Dynamic Programming",
+        "Trees",
+        "Backtracking"
+      ],
+      "answer": 0,
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "insight": "The technique is graph traversal. The clue is the grid structure and the need to explore connected components, typical in graph problems.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-course-schedule",
+      "sourceSlug": "course-schedule",
+      "title": "Course Schedule",
+      "statement": "A group of students must complete a series of classes, but certain classes have prerequisites. Given the list of class pairs where one class must be taken before another, determine if it's possible for all students to finish all classes.",
+      "options": [
+        "Advanced Graphs",
+        "Trees",
+        "Graphs",
+        "Backtracking"
+      ],
+      "answer": 2,
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "insight": "This problem involves finding if a cycle exists in a directed graph, which is a typical graph problem involving topological sorting or cycle detection.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-course-schedule-ii",
+      "sourceSlug": "course-schedule-ii",
+      "title": "Course Schedule II",
+      "statement": "You have a list of tasks, each with certain prerequisites that must be completed before it can begin. Your goal is to determine the order in which all tasks should be performed to ensure every prerequisite is met. If it's impossible to complete all tasks, indicate that.",
+      "options": [
+        "Trees",
+        "Advanced Graphs",
+        "Graphs",
+        "Backtracking"
+      ],
+      "answer": 2,
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "insight": "The problem involves determining an order of tasks with dependencies, which is a classic topological sort problem in graph theory.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-graph-valid-tree",
+      "sourceSlug": "graph-valid-tree",
+      "title": "Graph Valid Tree",
+      "statement": "You are given a network of roads that connect several towns. Determine if all the towns are connected by the roads without any loops, and if there's exactly one way to travel between any two towns.",
+      "options": [
+        "Trees",
+        "Advanced Graphs",
+        "1-D Dynamic Programming",
+        "Graphs"
+      ],
+      "answer": 3,
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "insight": "This problem involves checking if a graph is a tree, which is a connected graph with n-1 edges and no cycles. The key clue is ensuring connectivity and the absence of loops, which are characteristics of trees.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-number-of-connected-components-in-an-undirected-graph",
+      "sourceSlug": "number-of-connected-components-in-an-undirected-graph",
+      "title": "Number of Connected Components In An Undirected Graph",
+      "statement": "You are given a collection of islands and bridges connecting some of them. Determine how many separate groups of islands exist, where a group is defined by islands directly or indirectly connected by bridges.",
+      "options": [
+        "Graphs",
+        "Advanced Graphs",
+        "Trees",
+        "Backtracking"
+      ],
+      "answer": 0,
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "insight": "The technique is to use graph traversal methods like depth-first or breadth-first search to explore connected components. The clue is the need to find distinct groups of connected islands, indicating a traversal of nodes and edges.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-redundant-connection",
+      "sourceSlug": "redundant-connection",
+      "title": "Redundant Connection",
+      "statement": "You have a network of computers connected by cables, and you want to ensure that there's no unnecessary cable causing a loop. Given a list of cable connections, find the last cable that, if removed, would prevent any loops in the network.",
+      "options": [
+        "Graphs",
+        "Trees",
+        "Backtracking",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 0,
+      "category": "Graphs",
+      "difficulty": "Medium",
+      "insight": "The task involves detecting cycles in a network of connections, which is a classic graph problem. The key clue is the need to identify and remove connections that cause loops.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-word-ladder",
+      "sourceSlug": "word-ladder",
+      "title": "Word Ladder",
+      "statement": "You have a dictionary of words and need to transform one word into another by changing one letter at a time. Each intermediate word must also be a valid word in the dictionary. Find the shortest sequence of transformations from the start word to the end word.",
+      "options": [
+        "Graphs",
+        "Backtracking",
+        "Advanced Graphs",
+        "Trees"
+      ],
+      "answer": 0,
+      "category": "Graphs",
+      "difficulty": "Hard",
+      "insight": "This problem involves finding the shortest path in a graph, where each word is a node and edges exist between nodes that differ by one letter.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-network-delay-time",
+      "sourceSlug": "network-delay-time",
+      "title": "Network Delay Time",
+      "statement": "Imagine a network of cities connected by one-way roads with each road taking a specific amount of time to travel. From a starting city, determine the longest time it takes for a message to reach all other cities, if possible. Assume the network has up to 100 cities and 10,000 roads and some cities might not be reachable from the starting city.",
+      "options": [
+        "Graphs",
+        "1-D Dynamic Programming",
+        "Advanced Graphs",
+        "Heap / Priority Queue"
+      ],
+      "answer": 2,
+      "category": "Advanced Graphs",
+      "difficulty": "Medium",
+      "insight": "Use Dijkstra's algorithm for shortest paths in graphs. The key clue is that you need to calculate the time from a single starting point to all other nodes in a network with weighted edges.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-reconstruct-itinerary",
+      "sourceSlug": "reconstruct-itinerary",
+      "title": "Reconstruct Itinerary",
+      "statement": "You have a list of flight tickets represented as pairs of departure and arrival airports. Each ticket is used exactly once to plan a trip starting from a specific airport. Find the itinerary that uses all the tickets and has the smallest lexical order if there are multiple possibilities.",
+      "options": [
+        "Greedy",
+        "Advanced Graphs",
+        "1-D Dynamic Programming",
+        "Graphs"
+      ],
+      "answer": 1,
+      "category": "Advanced Graphs",
+      "difficulty": "Hard",
+      "insight": "This problem requires finding an Eulerian path or circuit in a graph, which is a specific type of advanced graph traversal. The key clue is the need to use all tickets (edges) exactly once.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-min-cost-to-connect-all-points",
+      "sourceSlug": "min-cost-to-connect-all-points",
+      "title": "Min Cost to Connect All Points",
+      "statement": "Imagine you have several islands and you want to build bridges between them. The cost of building a bridge between any two islands is given, and you want to ensure every island is reachable from any other with the minimum total cost. What is the least amount of money you need to spend on bridges?",
+      "options": [
+        "Greedy",
+        "Advanced Graphs",
+        "1-D Dynamic Programming",
+        "Graphs"
+      ],
+      "answer": 1,
+      "category": "Advanced Graphs",
+      "difficulty": "Medium",
+      "insight": "The problem is about finding a minimum spanning tree in a graph, where the cost to connect points (or islands, in this scenario) is given, and you want to minimize it.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-swim-in-rising-water",
+      "sourceSlug": "swim-in-rising-water",
+      "title": "Swim In Rising Water",
+      "statement": "Imagine you have a grid where each cell has a number representing its elevation. Water starts filling the grid from a corner and rises at a steady rate. Find the earliest time you can swim from one corner of the grid to the opposite corner without being submerged at any point.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Greedy",
+        "Heap / Priority Queue",
+        "Advanced Graphs"
+      ],
+      "answer": 3,
+      "category": "Advanced Graphs",
+      "difficulty": "Hard",
+      "insight": "This problem involves navigating a grid with changing conditions, which points to using advanced graph algorithms to find the optimal path through the grid.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-alien-dictionary",
+      "sourceSlug": "alien-dictionary",
+      "title": "Alien Dictionary",
+      "statement": "You are given a list of words in a language with unknown letter order. Determine a possible order of the letters based on the list, assuming that the words are sorted according to this language's order.",
+      "options": [
+        "Heap / Priority Queue",
+        "Advanced Graphs",
+        "Greedy",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 1,
+      "category": "Advanced Graphs",
+      "difficulty": "Hard",
+      "insight": "The task involves determining the order of elements from a list of dependencies, which is a classic graph problem. The clue is in determining the order from a given sorted structure.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-cheapest-flights-within-k-stops",
+      "sourceSlug": "cheapest-flights-within-k-stops",
+      "title": "Cheapest Flights Within K Stops",
+      "statement": "A travel agency needs to determine the lowest cost to fly from city A to city B with at most a certain number of layovers. There are multiple flight paths between cities, each with a specific price, and you need to consider only paths that don't exceed the given layover limit.",
+      "options": [
+        "Graphs",
+        "Advanced Graphs",
+        "Heap / Priority Queue",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 1,
+      "category": "Advanced Graphs",
+      "difficulty": "Medium",
+      "insight": "This is a graph problem where each city is a node and flights are edges. The key clue is finding the minimum cost path with constraints on the number of steps (layovers), suggesting the use of algorithms suitable for constrained pathfinding in graphs.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-climbing-stairs",
+      "sourceSlug": "climbing-stairs",
+      "title": "Climbing Stairs",
+      "statement": "A frog can jump up one or two steps at a time to reach the top of a staircase with n steps. How many distinct ways can the frog reach the top?",
+      "options": [
+        "1-D Dynamic Programming",
+        "2-D Dynamic Programming",
+        "Greedy",
+        "Sliding Window"
+      ],
+      "answer": 0,
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Easy",
+      "insight": "The problem involves finding the number of ways to reach a target step using previous step combinations, hinting at a dynamic programming approach with overlapping subproblems.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-min-cost-climbing-stairs",
+      "sourceSlug": "min-cost-climbing-stairs",
+      "title": "Min Cost Climbing Stairs",
+      "statement": "You have a staircase where each step has a different toll. You can start from the first or second step and can only move one or two steps forward at a time. Determine the minimum cost needed to reach the top of the staircase.",
+      "options": [
+        "Greedy",
+        "2-D Dynamic Programming",
+        "Backtracking",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 3,
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Easy",
+      "insight": "This problem uses 1-D Dynamic Programming. The clue is the need to calculate the minimum cost to reach each step, which builds on the solutions of previous steps.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-house-robber",
+      "sourceSlug": "house-robber",
+      "title": "House Robber",
+      "statement": "You are planning a route through a series of warehouses, each containing a certain value of merchandise. However, visiting two consecutive warehouses triggers an alarm. Determine the maximum value you can collect without setting off any alarms.",
+      "options": [
+        "Sliding Window",
+        "1-D Dynamic Programming",
+        "Backtracking",
+        "2-D Dynamic Programming"
+      ],
+      "answer": 1,
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "This is a 1-D dynamic programming problem. The key clue is the restriction against visiting consecutive warehouses, suggesting that each choice affects future options.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-house-robber-ii",
+      "sourceSlug": "house-robber-ii",
+      "title": "House Robber II",
+      "statement": "You are planning a route to visit several houses arranged in a circle, collecting valuables. Each house has a certain amount of valuables, but you cannot visit two adjacent houses, as the alarm systems are linked. How can you maximize your collection from these houses?",
+      "options": [
+        "1-D Dynamic Programming",
+        "Sliding Window",
+        "Greedy",
+        "Backtracking"
+      ],
+      "answer": 0,
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "The problem involves maximizing a value while dealing with constraints on adjacent elements, suggesting dynamic programming. The circular arrangement indicates a need to consider two subproblems.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-longest-palindromic-substring",
+      "sourceSlug": "longest-palindromic-substring",
+      "title": "Longest Palindromic Substring",
+      "statement": "A string of lowercase letters is given, and you need to find the longest sequence of consecutive characters within it that reads the same forwards and backwards. Consider strings up to 1000 characters long.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Greedy",
+        "Backtracking",
+        "Sliding Window"
+      ],
+      "answer": 0,
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "Use 1-D dynamic programming to solve this, as the problem involves finding the longest contiguous sequence with a specific property, and the length constraint suggests a more efficient approach than checking all substrings.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-palindromic-substrings",
+      "sourceSlug": "palindromic-substrings",
+      "title": "Palindromic Substrings",
+      "statement": "Given a string, determine how many substrings read the same forwards and backwards. The string can be up to 1000 characters long, and you need to consider every possible substring.",
+      "options": [
+        "Sliding Window",
+        "1-D Dynamic Programming",
+        "Backtracking",
+        "Greedy"
+      ],
+      "answer": 1,
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "Use dynamic programming to track palindromic substrings. The repeating subproblem is determining if a substring is a palindrome based on its neighbors.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-decode-ways",
+      "sourceSlug": "decode-ways",
+      "title": "Decode Ways",
+      "statement": "You are given a string representing a sequence of numbers, where each number corresponds to a letter in the alphabet (1 = A, 2 = B, ..., 26 = Z). Determine how many different ways you can interpret this string as a letter sequence. For instance, '12' could be interpreted as 'AB' or 'L'.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Greedy",
+        "Sliding Window",
+        "Backtracking"
+      ],
+      "answer": 0,
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "This problem involves determining the number of ways to interpret a sequence, with overlapping subproblems as you build from smaller sequences to larger ones. This suggests using 1-D dynamic programming to solve it efficiently.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-coin-change",
+      "sourceSlug": "coin-change",
+      "title": "Coin Change",
+      "statement": "You have a set of coins, each with a different value, and you need to find the minimum number of coins required to sum up to a specific amount. You can use each coin as many times as needed. What is the minimum number of coins you need?",
+      "options": [
+        "2-D Dynamic Programming",
+        "Backtracking",
+        "Sliding Window",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 3,
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "The problem involves finding the minimum number of elements from a set to reach a target sum, which is a classic dynamic programming pattern. The need to compute optimal sub-solutions for each possible amount leads to the use of 1-D dynamic programming.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-maximum-product-subarray",
+      "sourceSlug": "maximum-product-subarray",
+      "title": "Maximum Product Subarray",
+      "statement": "You are given a list of numbers, both positive and negative. Your task is to find the highest possible product you can get by multiplying a sequence of consecutive numbers from this list.",
+      "options": [
+        "Backtracking",
+        "Greedy",
+        "Sliding Window",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 3,
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "Use 1-D Dynamic Programming. The clue is the need to consider products of consecutive numbers, which suggests tracking maximum and minimum products up to each point.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-word-break",
+      "sourceSlug": "word-break",
+      "title": "Word Break",
+      "statement": "You are given a long string and a list of valid words. Determine if the string can be segmented into a sequence of valid words from the list. Keep in mind that the same word from the list can be used multiple times.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Sliding Window",
+        "2-D Dynamic Programming",
+        "Backtracking"
+      ],
+      "answer": 0,
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "The problem hints at using dynamic programming by asking if a string can be broken into valid segments, which suggests checking subproblems of the string for valid compositions.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-longest-increasing-subsequence",
+      "sourceSlug": "longest-increasing-subsequence",
+      "title": "Longest Increasing Subsequence",
+      "statement": "You are given a list of integers that represent the heights of buildings in a row. Determine the longest sequence of buildings where each building is taller than the previous one. The list can be as large as 10,000 buildings.",
+      "options": [
+        "Sliding Window",
+        "Backtracking",
+        "Greedy",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 3,
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "Use 1-D dynamic programming to solve this. The clue is the need to find the longest subsequence with a specific order, which suggests using a DP array to track the longest sequence ending at each building.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-partition-equal-subset-sum",
+      "sourceSlug": "partition-equal-subset-sum",
+      "title": "Partition Equal Subset Sum",
+      "statement": "You have a collection of items, each with a specific weight. Determine if you can split these items into two groups so that the total weight of each group is the same. Each item's weight is a positive integer, and the total number of items does not exceed 200.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Greedy",
+        "Backtracking",
+        "Sliding Window"
+      ],
+      "answer": 0,
+      "category": "1-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "The technique is 1-D dynamic programming, identified by the need to decide on subsets that sum to a particular value, leveraging overlapping subproblems.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-unique-paths",
+      "sourceSlug": "unique-paths",
+      "title": "Unique Paths",
+      "statement": "In a factory, a robot has to move from the top-left corner to the bottom-right corner of a grid. The robot can only move either right or down at any point in time. How many different ways can the robot reach its destination if it follows these rules?",
+      "options": [
+        "Greedy",
+        "2-D Dynamic Programming",
+        "Backtracking",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 1,
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "The grid and the movement constraints suggest a 2-D dynamic programming approach, where the number of ways to reach each cell is built up from the number of ways to reach the cells directly above and to the left.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-longest-common-subsequence",
+      "sourceSlug": "longest-common-subsequence",
+      "title": "Longest Common Subsequence",
+      "statement": "You have two strings, each representing a sequence of events. Your task is to find the longest sequence of events that appear in the same order in both strings, although they do not need to be consecutive. What is the length of this sequence?",
+      "options": [
+        "2-D Dynamic Programming",
+        "Backtracking",
+        "Greedy",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 0,
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "Use 2-D dynamic programming to solve this. The clue is the need to compare subsequences in two separate strings, which suggests building a table to track matching sequences.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-best-time-to-buy-and-sell-stock-with-cooldown",
+      "sourceSlug": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "title": "Best Time to Buy And Sell Stock With Cooldown",
+      "statement": "A farmer is deciding when to plant and harvest crops over a series of days to maximize profit. However, after harvesting, they must wait a day before planting again due to soil recovery. Determine the maximum profit they can achieve given daily prices for crops.",
+      "options": [
+        "Backtracking",
+        "1-D Dynamic Programming",
+        "Greedy",
+        "2-D Dynamic Programming"
+      ],
+      "answer": 3,
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "This is a dynamic programming problem. The key clue is the need to make optimal decisions over time with a cooldown period, which suggests overlapping subproblems and a state-based approach.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-coin-change-ii",
+      "sourceSlug": "coin-change-ii",
+      "title": "Coin Change II",
+      "statement": "You have a collection of different coin denominations and an amount of money you want to make change for. Determine the number of different ways you can use the coins to make up that exact amount. Each coin can be used multiple times.",
+      "options": [
+        "2-D Dynamic Programming",
+        "Greedy",
+        "Graphs",
+        "Backtracking"
+      ],
+      "answer": 0,
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "This problem involves determining combinations to reach a target sum using elements that can be reused, which is a hallmark of dynamic programming. The key is recognizing the need to construct solutions incrementally and store intermediate results.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-target-sum",
+      "sourceSlug": "target-sum",
+      "title": "Target Sum",
+      "statement": "You have a collection of positive and negative numbers, and you want to find out how many ways you can add and subtract these numbers to reach a specific target value. Each number can be used once, and you must use all of them.",
+      "options": [
+        "2-D Dynamic Programming",
+        "Graphs",
+        "1-D Dynamic Programming",
+        "Backtracking"
+      ],
+      "answer": 0,
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "The problem involves finding the number of ways to achieve a target sum using all given numbers, which suggests a dynamic programming approach due to the potential overlap in subproblems and the need to explore combinations of adding and subtracting the numbers.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-interleaving-string",
+      "sourceSlug": "interleaving-string",
+      "title": "Interleaving String",
+      "statement": "You have two ribbons, each with a sequence of colors, and you want to weave them together to form a third ribbon. Ensure that the third ribbon maintains the order of colors from both original ribbons. Determine if it's possible to create the third ribbon using all the colors from both ribbons in their respective orders.",
+      "options": [
+        "2-D Dynamic Programming",
+        "Greedy",
+        "Graphs",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 0,
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "The challenge is to check if a third sequence can be formed by interleaving two other sequences while preserving their order. This suggests using a 2-D table to track subproblems, indicating a 2-D dynamic programming approach.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-longest-increasing-path-in-a-matrix",
+      "sourceSlug": "longest-increasing-path-in-a-matrix",
+      "title": "Longest Increasing Path In a Matrix",
+      "statement": "Imagine a grid of numbers where each cell has a unique value. You want to find the length of the longest path you can travel by moving up, down, left, or right, but only if each step lands on a number larger than the previous one. How would you determine this path's length efficiently?",
+      "options": [
+        "Backtracking",
+        "Greedy",
+        "1-D Dynamic Programming",
+        "2-D Dynamic Programming"
+      ],
+      "answer": 3,
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Hard",
+      "insight": "The technique is 2-D dynamic programming. The clue is the need to efficiently find a longest path in a grid while following specific movement rules, hinting at overlapping subproblems and optimal substructure.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-distinct-subsequences",
+      "sourceSlug": "distinct-subsequences",
+      "title": "Distinct Subsequences",
+      "statement": "You are given two strings, a source and a target. Your task is to determine how many ways you can delete characters from the source string to form the target string. Consider that order matters, and the source string can have up to 1000 characters.",
+      "options": [
+        "Backtracking",
+        "Graphs",
+        "Greedy",
+        "2-D Dynamic Programming"
+      ],
+      "answer": 3,
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Hard",
+      "insight": "The problem involves finding the number of ways to form one string from another by deleting characters, which is a classic indicator for using a 2-D dynamic programming table to track subsequence counts.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-edit-distance",
+      "sourceSlug": "edit-distance",
+      "title": "Edit Distance",
+      "statement": "You have two strings representing DNA sequences, and you want to find out how similar they are by determining the minimum number of single-character edits (insertions, deletions, or substitutions) needed to transform one sequence into the other. Each sequence can have a length of up to 1000 characters.",
+      "options": [
+        "Backtracking",
+        "Greedy",
+        "2-D Dynamic Programming",
+        "Graphs"
+      ],
+      "answer": 2,
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Medium",
+      "insight": "The technique is 2-D Dynamic Programming, indicated by the need to minimize operations over two sequences, suggesting a table to track partial solutions.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-burst-balloons",
+      "sourceSlug": "burst-balloons",
+      "title": "Burst Balloons",
+      "statement": "Imagine a row of magic balloons, each with a specific power value inside. By popping a balloon, you gain points equal to the product of the power values of the adjacent balloons, if they exist. You want to collect the maximum points possible by popping all the balloons in an optimal order.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Backtracking",
+        "2-D Dynamic Programming",
+        "Greedy"
+      ],
+      "answer": 2,
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Hard",
+      "insight": "The technique is 2-D dynamic programming. The clue is the need to explore different orders of popping to maximize points, which suggests overlapping subproblems and the need to use a table to store results of subproblems.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-regular-expression-matching",
+      "sourceSlug": "regular-expression-matching",
+      "title": "Regular Expression Matching",
+      "statement": "You are given two strings, one representing a pattern with special wildcard characters and another representing a text. Your task is to determine if the text matches the pattern, where the wildcard characters can represent specific sequences of characters in the text.",
+      "options": [
+        "2-D Dynamic Programming",
+        "1-D Dynamic Programming",
+        "Greedy",
+        "Backtracking"
+      ],
+      "answer": 0,
+      "category": "2-D Dynamic Programming",
+      "difficulty": "Hard",
+      "insight": "The problem involves determining matches with patterns that can vary in length and composition, suggesting a need for a grid or table to track possible matches at each position, hence using a two-dimensional dynamic programming approach.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-maximum-subarray",
+      "sourceSlug": "maximum-subarray",
+      "title": "Maximum Subarray",
+      "statement": "A real estate agent wants to find the most profitable period to sell properties. Given a list of daily profit changes over a year, determine the highest total profit achievable by choosing a continuous stretch of days.",
+      "options": [
+        "Greedy",
+        "Heap / Priority Queue",
+        "Sorting",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 0,
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "insight": "The problem requires finding the maximum sum of a contiguous subarray, which is a classic greedy problem. The clue is the need for a continuous stretch of days with the maximum profit.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-jump-game",
+      "sourceSlug": "jump-game",
+      "title": "Jump Game",
+      "statement": "You are standing on a line of stepping stones, each with a number indicating the maximum number of stones you can hop forward from there. Determine if you can reach the last stone starting from the first one, given that you must always land on a stone within the allowed hops.",
+      "options": [
+        "Greedy",
+        "Heap / Priority Queue",
+        "1-D Dynamic Programming",
+        "Intervals"
+      ],
+      "answer": 0,
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "insight": "The technique is greedy. The clue is the need to decide at each stone the furthest you can reach, making a local optimal choice to ensure reaching the end.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-jump-game-ii",
+      "sourceSlug": "jump-game-ii",
+      "title": "Jump Game II",
+      "statement": "A child stands at the start of a line of stepping stones, each with a number indicating how far forward they can jump. They want to reach the last stone in the fewest jumps possible. Determine the minimum number of jumps needed.",
+      "options": [
+        "Heap / Priority Queue",
+        "1-D Dynamic Programming",
+        "Sorting",
+        "Greedy"
+      ],
+      "answer": 3,
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "insight": "The technique is greedy, as the problem requires making the optimal choice at each step to minimize the number of jumps to the last stone.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-gas-station",
+      "sourceSlug": "gas-station",
+      "title": "Gas Station",
+      "statement": "Imagine planning a circular road trip where you must decide the starting point to ensure you can complete the entire loop without running out of fuel. Each town has a certain amount of fuel available, and you know the distance to the next town. How do you determine the best starting town?",
+      "options": [
+        "Sorting",
+        "Greedy",
+        "1-D Dynamic Programming",
+        "Intervals"
+      ],
+      "answer": 1,
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "insight": "The technique is greedy. The clue is the need to choose the optimal starting point to ensure the entire trip is possible, indicating that a locally optimal choice at each step leads to a global solution.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-hand-of-straights",
+      "sourceSlug": "hand-of-straights",
+      "title": "Hand of Straights",
+      "statement": "You are organizing a card game tournament and need to ensure each player receives a sequence of cards such that each sequence contains cards of consecutive values. Given a pile of cards, determine if it's possible to distribute them into several groups where each group has the same number of cards and the cards in each group form a consecutive sequence.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Heap / Priority Queue",
+        "Sorting",
+        "Greedy"
+      ],
+      "answer": 3,
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "insight": "The technique is greedy. The clue is that you need to form several groups of consecutive cards, which suggests checking and forming groups iteratively based on card availability.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-merge-triplets-to-form-target-triplet",
+      "sourceSlug": "merge-triplets-to-form-target-triplet",
+      "title": "Merge Triplets to Form Target Triplet",
+      "statement": "You have a list of coordinates in a 3D space, each represented by three numbers. You need to determine if it's possible to select some of these coordinates such that their maximum values in each dimension match the target coordinate. Describe the process to achieve this.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Greedy",
+        "Heap / Priority Queue",
+        "Sorting"
+      ],
+      "answer": 1,
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "insight": "The technique is greedy, focusing on selecting coordinates that help you build up to the target by maximizing one dimension at a time while not exceeding others.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-partition-labels",
+      "sourceSlug": "partition-labels",
+      "title": "Partition Labels",
+      "statement": "You have a long piece of string with different colored beads. Your goal is to cut the string into the fewest number of segments, such that each bead color appears in only one segment. How do you decide where to make the cuts?",
+      "options": [
+        "Sorting",
+        "Intervals",
+        "Greedy",
+        "Heap / Priority Queue"
+      ],
+      "answer": 2,
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "insight": "Greedy approach: The key insight is to make cuts at the last occurrence of each bead color, ensuring each color appears in only one segment.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-valid-parenthesis-string",
+      "sourceSlug": "valid-parenthesis-string",
+      "title": "Valid Parenthesis String",
+      "statement": "Imagine you are tasked with organizing a sequence of boxes labeled with '(', ')' and '*'. The '*' can represent either an empty space, a '(' or a ')'. Your goal is to determine if there is a way to rearrange or interpret the sequence so that every opening box has a matching closing box and vice versa, with any '*' used appropriately.",
+      "options": [
+        "Sorting",
+        "1-D Dynamic Programming",
+        "Greedy",
+        "Heap / Priority Queue"
+      ],
+      "answer": 2,
+      "category": "Greedy",
+      "difficulty": "Medium",
+      "insight": "Use a greedy approach to track the balance of opening and closing boxes, considering '*' as a flexible option. The clue is the need to interpret or rearrange the sequence with flexibility, typical of greedy algorithms.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-insert-interval",
+      "sourceSlug": "insert-interval",
+      "title": "Insert Interval",
+      "statement": "You have a series of appointments on your calendar, each with a start and end time. You need to add a new appointment and ensure that overlapping times are merged into a single, continuous time block. How should you update your calendar to reflect this?",
+      "options": [
+        "Two Pointers",
+        "Sorting",
+        "Greedy",
+        "Intervals"
+      ],
+      "answer": 3,
+      "category": "Intervals",
+      "difficulty": "Medium",
+      "insight": "The technique is interval merging. The key clue is the need to merge overlapping time blocks into a single continuous interval.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-merge-intervals",
+      "sourceSlug": "merge-intervals",
+      "title": "Merge Intervals",
+      "statement": "You are given a list of time slots, each with a start and end time, representing booked appointments. Some appointments might overlap, and your task is to combine all overlapping appointments into a single slot. Return the list of non-overlapping appointments after merging.",
+      "options": [
+        "Intervals",
+        "Heap / Priority Queue",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "answer": 0,
+      "category": "Intervals",
+      "difficulty": "Medium",
+      "insight": "The technique is to handle intervals by sorting the appointments by start time and merging overlapping ones. The clue is the need to combine overlapping time slots.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-non-overlapping-intervals",
+      "sourceSlug": "non-overlapping-intervals",
+      "title": "Non Overlapping Intervals",
+      "statement": "You have a list of events with start and end times, and you need to attend as many events as possible without overlapping your schedule. Determine the maximum number of events you can attend given their start and end times.",
+      "options": [
+        "Two Pointers",
+        "Greedy",
+        "Heap / Priority Queue",
+        "Intervals"
+      ],
+      "answer": 3,
+      "category": "Intervals",
+      "difficulty": "Medium",
+      "insight": "The problem involves selecting the maximum number of non-overlapping intervals from a list, a classic greedy algorithm scenario for interval scheduling.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-meeting-rooms",
+      "sourceSlug": "meeting-rooms",
+      "title": "Meeting Rooms",
+      "statement": "You have a list of start and end times for different events throughout the day. Determine if a person can attend all these events without any overlap, assuming they can only be at one event at a time.",
+      "options": [
+        "Sorting",
+        "Greedy",
+        "Intervals",
+        "Heap / Priority Queue"
+      ],
+      "answer": 2,
+      "category": "Intervals",
+      "difficulty": "Easy",
+      "insight": "The technique is interval scheduling. The key clue is the need to check for overlapping times in a list of start and end times, which suggests managing intervals.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-meeting-rooms-ii",
+      "sourceSlug": "meeting-rooms-ii",
+      "title": "Meeting Rooms II",
+      "statement": "A company has a series of meetings scheduled throughout the day, each with a start and end time. Determine the minimum number of conference rooms required so that no meetings overlap. Consider that some meetings may start or end at the same time.",
+      "options": [
+        "Intervals",
+        "Two Pointers",
+        "Sorting",
+        "Greedy"
+      ],
+      "answer": 0,
+      "category": "Intervals",
+      "difficulty": "Medium",
+      "insight": "The technique is interval scheduling, as you need to consider overlapping time intervals to determine the minimum resources needed, indicated by the start and end times of the meetings.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-minimum-interval-to-include-each-query",
+      "sourceSlug": "minimum-interval-to-include-each-query",
+      "title": "Minimum Interval to Include Each Query",
+      "statement": "You have a list of events, each with a start and end time, and a set of questions asking which events cover a specific time. For each question, determine the smallest time span of events that includes the queried time. Events might overlap, and there are many questions to answer.",
+      "options": [
+        "Two Pointers",
+        "Heap / Priority Queue",
+        "Intervals",
+        "Greedy"
+      ],
+      "answer": 2,
+      "category": "Intervals",
+      "difficulty": "Hard",
+      "insight": "The problem involves finding intervals that include specific points, pointing to an interval or range-query technique.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-rotate-image",
+      "sourceSlug": "rotate-image",
+      "title": "Rotate Image",
+      "statement": "You have a square grid of tiles, and you need to turn it 90 degrees clockwise. Each tile has a unique pattern, and you must rearrange them to achieve the new orientation without creating new tiles.",
+      "options": [
+        "Arrays & Hashing",
+        "Math & Geometry",
+        "Bit Manipulation",
+        "Greedy"
+      ],
+      "answer": 1,
+      "category": "Math & Geometry",
+      "difficulty": "Medium",
+      "insight": "The task requires rotating a matrix by 90 degrees, which is a common problem in geometry involving matrix manipulation.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-spiral-matrix",
+      "sourceSlug": "spiral-matrix",
+      "title": "Spiral Matrix",
+      "statement": "Imagine you're given a rectangular table covered with tiles, and you need to collect all tiles in a specific order. Start from the top-left corner and move right until you can't go further, then move down, left, and up, always turning right when you hit an edge or a previously visited tile. Continue this pattern until all tiles are collected.",
+      "options": [
+        "Two Pointers",
+        "Math & Geometry",
+        "Greedy",
+        "Bit Manipulation"
+      ],
+      "answer": 1,
+      "category": "Math & Geometry",
+      "difficulty": "Medium",
+      "insight": "The problem describes a traversal of a 2D space in a spiral order, which hints at using a math and geometry approach to systematically move through the matrix while keeping track of boundaries.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-set-matrix-zeroes",
+      "sourceSlug": "set-matrix-zeroes",
+      "title": "Set Matrix Zeroes",
+      "statement": "Imagine a garden grid where some patches are infected with a disease, marked by a certain symbol. If a patch is infected, it spreads the disease to the entire row and column of that patch. Determine the final state of the garden after the disease has spread.",
+      "options": [
+        "Arrays & Hashing",
+        "Bit Manipulation",
+        "Greedy",
+        "Math & Geometry"
+      ],
+      "answer": 3,
+      "category": "Math & Geometry",
+      "difficulty": "Medium",
+      "insight": "The technique is to use additional markers (or flags) to track which rows and columns need to be changed, without altering the grid prematurely. The clue is the need to update entire rows and columns based on specific conditions.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-happy-number",
+      "sourceSlug": "happy-number",
+      "title": "Happy Number",
+      "statement": "A number is considered joyful if repeatedly summing the squares of its digits eventually leads to the number 1. Determine if a given number is joyful. You may assume that the number is a positive integer.",
+      "options": [
+        "Two Pointers",
+        "Math & Geometry",
+        "Greedy",
+        "Bit Manipulation"
+      ],
+      "answer": 1,
+      "category": "Math & Geometry",
+      "difficulty": "Easy",
+      "insight": "The technique involves detecting cycles in a sequence of transformations, akin to finding cycles in a linked list or using a set to track seen states.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-plus-one",
+      "sourceSlug": "plus-one",
+      "title": "Plus One",
+      "statement": "Imagine you have a digital clock showing hours and minutes, and you need to add one minute to the current time. Consider how the display changes when the minute count hits 59 and rolls over.",
+      "options": [
+        "Bit Manipulation",
+        "Arrays & Hashing",
+        "Math & Geometry",
+        "Greedy"
+      ],
+      "answer": 2,
+      "category": "Math & Geometry",
+      "difficulty": "Easy",
+      "insight": "This problem involves simple arithmetic and handling carry-over, similar to incrementing a number represented by digits. Recognizing the need to handle the carry when the digits roll over is key.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-powx-n",
+      "sourceSlug": "powx-n",
+      "title": "Pow(x, n)",
+      "statement": "You have a base number and need to calculate its power raised to a given exponent. The exponent can be very large, potentially up to a billion, making direct multiplication impractical.",
+      "options": [
+        "Math & Geometry",
+        "Bit Manipulation",
+        "Greedy",
+        "Arrays & Hashing"
+      ],
+      "answer": 0,
+      "category": "Math & Geometry",
+      "difficulty": "Medium",
+      "insight": "This problem requires the use of exponentiation by squaring, a method that efficiently handles large exponents by breaking down the problem into smaller, repeated subproblems.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-multiply-strings",
+      "sourceSlug": "multiply-strings",
+      "title": "Multiply Strings",
+      "statement": "You are given two large numbers, each represented as strings of digits. Your task is to find their product and return it as a string, ensuring the solution handles very large inputs efficiently.",
+      "options": [
+        "Greedy",
+        "Arrays & Hashing",
+        "Math & Geometry",
+        "Two Pointers"
+      ],
+      "answer": 2,
+      "category": "Math & Geometry",
+      "difficulty": "Medium",
+      "insight": "The technique involves simulating the manual multiplication process digit by digit, similar to how you would multiply two numbers on paper. The clue is the need to handle large numbers efficiently, which suggests avoiding direct conversion to integers.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-detect-squares",
+      "sourceSlug": "detect-squares",
+      "title": "Detect Squares",
+      "statement": "You have a collection of points on a 2D grid, and you need to determine if any set of these points can form the four corners of a square. Each point is defined by its x and y coordinates. How would you efficiently check for the existence of such squares given multiple queries?",
+      "options": [
+        "Two Pointers",
+        "Greedy",
+        "Arrays & Hashing",
+        "Math & Geometry"
+      ],
+      "answer": 3,
+      "category": "Math & Geometry",
+      "difficulty": "Medium",
+      "insight": "The technique involves using math and geometry to recognize patterns in the coordinates that satisfy the conditions of a square. The clue is the requirement to identify geometric shapes (squares) from given points.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-single-number",
+      "sourceSlug": "single-number",
+      "title": "Single Number",
+      "statement": "In a warehouse, every type of item comes in pairs except for one unique item that stands alone. You need to identify this solitary item from a large inventory list where every item is represented by a unique code.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Greedy",
+        "Math & Geometry",
+        "Bit Manipulation"
+      ],
+      "answer": 3,
+      "category": "Bit Manipulation",
+      "difficulty": "Easy",
+      "insight": "The technique is bit manipulation, specifically using XOR. The clue is that every item appears in pairs except for one, which suggests using XOR to cancel out paired items and isolate the unique one.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-number-of-1-bits",
+      "sourceSlug": "number-of-1-bits",
+      "title": "Number of 1 Bits",
+      "statement": "You have a machine that can count the number of active switches in a panel. Each switch is either on or off, represented as 1 or 0 in a sequence. How can you determine the total number of active switches when given a single sequence?",
+      "options": [
+        "Greedy",
+        "Arrays & Hashing",
+        "Bit Manipulation",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 2,
+      "category": "Bit Manipulation",
+      "difficulty": "Easy",
+      "insight": "The technique is bit manipulation, and the clue is the reference to counting 'active switches' in a sequence of 1s and 0s, which is analogous to counting 1 bits in a binary number.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-counting-bits",
+      "sourceSlug": "counting-bits",
+      "title": "Counting Bits",
+      "statement": "A factory has a series of machines, each identified by a unique number. For each machine, determine how many parts of its number are active, where an active part is represented by a 1 in the binary representation of the machine's number.",
+      "options": [
+        "Arrays & Hashing",
+        "Bit Manipulation",
+        "Math & Geometry",
+        "Greedy"
+      ],
+      "answer": 1,
+      "category": "Bit Manipulation",
+      "difficulty": "Easy",
+      "insight": "The problem involves counting the number of 1s in the binary form of a number, which points to using bit manipulation techniques.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-reverse-bits",
+      "sourceSlug": "reverse-bits",
+      "title": "Reverse Bits",
+      "statement": "Imagine you have a string of lights, each of which can be on or off. You have a control switch that can flip all the lights at once. How would you configure the switch to make the lights show the opposite pattern, effectively reversing their order?",
+      "options": [
+        "Math & Geometry",
+        "Bit Manipulation",
+        "Arrays & Hashing",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 1,
+      "category": "Bit Manipulation",
+      "difficulty": "Easy",
+      "insight": "The task involves reversing the order of bits in a binary number, which is a classic bit manipulation problem. The clue is the need to \"flip\" or reverse the order of binary states, akin to manipulating individual bits.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-missing-number",
+      "sourceSlug": "missing-number",
+      "title": "Missing Number",
+      "statement": "Imagine a sequence of numbered boxes, all in order from 1 to n, but one box is missing. You need to find out which box is missing using minimal extra space and time.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Bit Manipulation",
+        "Math & Geometry",
+        "Arrays & Hashing"
+      ],
+      "answer": 1,
+      "category": "Bit Manipulation",
+      "difficulty": "Easy",
+      "insight": "Bit manipulation helps find the missing number efficiently using XOR, as it allows you to cancel out the numbers that appear twice, leaving the missing one. The clue is the requirement for minimal extra space and time.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-sum-of-two-integers",
+      "sourceSlug": "sum-of-two-integers",
+      "title": "Sum of Two Integers",
+      "statement": "Imagine you have two numbers and need to find their sum, but you can't use the usual addition operation. Instead, you must rely solely on the individual binary digits of the numbers to compute the result.",
+      "options": [
+        "1-D Dynamic Programming",
+        "Math & Geometry",
+        "Bit Manipulation",
+        "Arrays & Hashing"
+      ],
+      "answer": 2,
+      "category": "Bit Manipulation",
+      "difficulty": "Medium",
+      "insight": "The technique is Bit Manipulation, indicated by the restriction on using only binary digits for addition.",
+      "source": "llm"
+    },
+    {
+      "questionId": "pattern-reverse-integer",
+      "sourceSlug": "reverse-integer",
+      "title": "Reverse Integer",
+      "statement": "You have a numeric code and need to reverse its digits. However, if the reversed code falls outside a certain range, you should return a specific error code instead.",
+      "options": [
+        "Bit Manipulation",
+        "Arrays & Hashing",
+        "Math & Geometry",
+        "1-D Dynamic Programming"
+      ],
+      "answer": 0,
+      "category": "Bit Manipulation",
+      "difficulty": "Medium",
+      "insight": "Bit manipulation helps in reversing digits efficiently and checking range constraints. The need to reverse digits and check against limits indicates this approach.",
+      "source": "llm"
+    }
+  ]
+}
