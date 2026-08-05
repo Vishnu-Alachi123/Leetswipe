@@ -1744,6 +1744,356 @@
       "durationSeconds": 75,
       "source": "curated",
       "generatedAt": "2026-08-05T03:46:17.498906+00:00"
+    },
+    {
+      "type": "reel",
+      "reelId": "prefix-sum",
+      "algorithmName": "Prefix Sum",
+      "description": "Calculate the prefix sums of an array to quickly answer range sum queries.",
+      "hook": "Find the sum of any subarray in constant time!",
+      "language": "python",
+      "fullCode": "def prefix_sum(nums):\n    prefix = [0] * (len(nums) + 1)\n    for i in range(1, len(nums) + 1):\n        prefix[i] = prefix[i - 1] + nums[i - 1]\n    return prefix\n\narr = [3, 1, 4, 1, 5]\nprefix = prefix_sum(arr)",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "code": "prefix = [0] * (len(nums) + 1)",
+          "highlightLines": [
+            2
+          ],
+          "explanation": "Initialize the prefix sum array with zeros.",
+          "audioScript": "We start by creating an array called prefix with one extra space. This array will hold the cumulative sums, starting from zero, which helps us easily calculate any subarray sum later.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Initialized prefix sum array"
+          }
+        },
+        {
+          "stepNumber": 2,
+          "code": "for i in range(1, len(nums) + 1):",
+          "highlightLines": [
+            3
+          ],
+          "explanation": "Start iterating through the input array from the first element.",
+          "audioScript": "Now we begin a loop that will go through each element of the input array. The loop starts at one because we are going to fill in our prefix array from the first position after zero.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "active",
+                  "label": "i"
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Starting to process the input array"
+          }
+        },
+        {
+          "stepNumber": 3,
+          "code": "prefix[i] = prefix[i - 1] + nums[i - 1]  # prefix[1] = 0 + 3",
+          "highlightLines": [
+            4
+          ],
+          "explanation": "Calculate the prefix sum for the first element.",
+          "audioScript": "For the first element, we add the previous prefix sum, which is zero, to the first number, three. So now our prefix array at index one holds the value three.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 3,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Calculated prefix sum for first element"
+          }
+        },
+        {
+          "stepNumber": 4,
+          "code": "prefix[i] = prefix[i - 1] + nums[i - 1]  # prefix[2] = 3 + 1",
+          "highlightLines": [
+            4
+          ],
+          "explanation": "Calculate the prefix sum for the second element.",
+          "audioScript": "Next, we calculate the prefix sum for the second element. We take the previous prefix sum, which is three, and add one, giving us a total of four in the second position.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 3,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Calculated prefix sum for second element"
+          }
+        },
+        {
+          "stepNumber": 5,
+          "code": "prefix[i] = prefix[i - 1] + nums[i - 1]  # prefix[3] = 4 + 4",
+          "highlightLines": [
+            4
+          ],
+          "explanation": "Calculate the prefix sum for the third element.",
+          "audioScript": "For the third element, we add the previous prefix sum, which is four, to the number four. This gives us eight in the third position of our prefix array.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 3,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Calculated prefix sum for third element"
+          }
+        },
+        {
+          "stepNumber": 6,
+          "code": "prefix[i] = prefix[i - 1] + nums[i - 1]  # prefix[4] = 8 + 1",
+          "highlightLines": [
+            4
+          ],
+          "explanation": "Calculate the prefix sum for the fourth element.",
+          "audioScript": "Now we calculate for the fourth element. We take our last prefix sum, eight, and add one to it, resulting in nine at the fourth position of the prefix array.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 3,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 9,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Calculated prefix sum for fourth element"
+          }
+        },
+        {
+          "stepNumber": 7,
+          "code": "prefix[i] = prefix[i - 1] + nums[i - 1]  # prefix[5] = 9 + 5",
+          "highlightLines": [
+            4
+          ],
+          "explanation": "Calculate the prefix sum for the fifth element.",
+          "audioScript": "Finally, we calculate the prefix sum for the last element. We add nine to five, resulting in fourteen at the fifth position of our prefix array.",
+          "visualization": {
+            "kind": "array",
+            "state": {
+              "cells": [
+                {
+                  "value": 0,
+                  "status": "normal",
+                  "label": ""
+                },
+                {
+                  "value": 3,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 4,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 8,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 9,
+                  "status": "visited",
+                  "label": ""
+                },
+                {
+                  "value": 14,
+                  "status": "visited",
+                  "label": ""
+                }
+              ]
+            },
+            "caption": "Calculated prefix sum for fifth element"
+          }
+        }
+      ],
+      "difficulty": "Easy",
+      "topics": [],
+      "category": "Arrays & Hashing",
+      "lists": [],
+      "sourceSlug": "",
+      "timeComplexity": "",
+      "spaceComplexity": "",
+      "durationSeconds": 82,
+      "source": "llm",
+      "generatedAt": "2026-08-05T04:40:32.850094+00:00"
     }
   ]
 }
