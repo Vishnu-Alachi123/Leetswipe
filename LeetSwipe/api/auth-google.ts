@@ -81,14 +81,75 @@ export function useGoogleAuthRequest() {
 }
 
 /**
+ * Read the display fields out of a Google id_token, client-side.
+ *
+ * Used only when no server is configured, to fill in a name and picture for a
+ * profile that lives on this device. It is emphatically **not** authentication:
+ * an unverified token proves nothing, so this must never gate access to
+ * anything or be trusted by a server. Sync and the leaderboard deliberately go
+ * through `/auth/google`, which verifies the signature properly.
+ */
+function decodeIdToken(idToken: string): GoogleUser | null {
+  try {
+    const payload = idToken.split('.')[1];
+    if (!payload) return null;
+    const base64 = payload.replace(/-/g, '+').replace(/_/g, '/');
+    const padded = base64 + '='.repeat((4 - (base64.length % 4)) % 4);
+    const json =
+      typeof atob === 'function'
+        ? decodeURIComponent(
+            atob(padded)
+              .split('')
+              .map((c) => `%${c.charCodeAt(0).toString(16).padStart(2, '0')}`)
+              .join(''),
+          )
+        : Buffer.from(padded, 'base64').toString('utf8');
+    const claims = JSON.parse(json) as {
+      sub?: string;
+      email?: string;
+      name?: string;
+      picture?: string;
+    };
+    if (!claims.sub) return null;
+    return {
+      googleId: claims.sub,
+      email: claims.email ?? '',
+      name: claims.name ?? claims.email?.split('@')[0] ?? 'Coder',
+      photoUrl: claims.picture,
+    };
+  } catch {
+    return null;
+  }
+}
+
+/** Store a Google identity on this device, with no server involved. */
+async function signInLocally(idToken: string): Promise<GoogleUser | null> {
+  const user = decodeIdToken(idToken);
+  if (!user) return null;
+  const profile = await getProfile();
+  profile.googleId = user.googleId;
+  profile.email = user.email;
+  profile.photoUrl = user.photoUrl;
+  if (profile.name === 'Anonymous Coder' && user.name) profile.name = user.name;
+  await saveProfile(profile);
+  // A marker so the UI can show "signed in" without a server session.
+  await AsyncStorage.setItem(TOKEN_KEY, `local:${user.googleId}`);
+  return user;
+}
+
+/**
  * Exchange a Google id_token for a LeetSwipe session.
  *
- * The token is verified server-side (see server/src/auth.ts) — never trust an
- * id_token that has only been parsed on the client, because anything the client
- * decodes, a client can forge.
+ * With a server configured the token is verified there (see server/src/auth.ts)
+ * — never trust an id_token that has only been parsed on the client, because
+ * anything the client decodes, a client can forge.
+ *
+ * With no server, falls back to a device-local profile so sign-in still does
+ * something useful: your name and picture appear, and progress stays on the
+ * device. Cross-device sync and the leaderboard need the server.
  */
 export async function signInWithIdToken(idToken: string): Promise<GoogleUser | null> {
-  if (!API_URL) return null;
+  if (!API_URL) return signInLocally(idToken);
   try {
     const res = await fetch(`${API_URL}/auth/google`, {
       method: 'POST',

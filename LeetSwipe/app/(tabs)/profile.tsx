@@ -52,6 +52,7 @@ import {
   useGoogleAuthRequest,
   type LeaderboardEntry,
 } from '@/api/auth-google';
+import { API_URL } from '@/api/config';
 import { COLORS } from '@/constants/colors';
 
 export default function ProfileScreen() {
@@ -63,6 +64,7 @@ export default function ProfileScreen() {
   const [board, setBoard] = useState<LeaderboardEntry[]>([]);
   const [signedIn, setSignedIn] = useState(false);
   const [, response, promptAsync] = useGoogleAuthRequest();
+  const apiConfigured = Boolean(API_URL);
 
   const load = useCallback(async () => {
     const [p, m, s, token] = await Promise.all([
@@ -240,14 +242,18 @@ export default function ProfileScreen() {
           <Text style={styles.accountText}>
             {signedIn && profile.email
               ? `Signed in as ${profile.email}`
-              : 'Your progress is saved on this device.'}
+              : signedIn
+                ? 'Signed in on this device'
+                : 'Your progress is saved on this device.'}
           </Text>
           <Text style={styles.accountHint}>
             {signedIn
-              ? 'XP and saved questions sync automatically across your devices.'
+              ? apiConfigured
+                ? 'XP and saved questions sync across your devices.'
+                : 'Signed in on this device. Add a server URL to sync across devices.'
               : googleConfigured()
-                ? 'Sign in to carry your XP and saved questions to another device.'
-                : 'Cross-device sync needs a Google client ID — see GOOGLE_SIGNIN.md.'}
+                ? 'Sign in to put your name and picture on your profile.'
+                : 'Set a display name below. Google sign-in needs a client ID — see GOOGLE_SIGNIN.md.'}
           </Text>
 
           {signedIn ? (
@@ -260,12 +266,22 @@ export default function ProfileScreen() {
               }}>
               <Text style={styles.googleBtnText}>Sign out</Text>
             </Pressable>
+          ) : googleConfigured() ? (
+            <Pressable style={styles.googleBtn} onPress={() => promptAsync()}>
+              <Text style={styles.googleBtnText}>Continue with Google</Text>
+            </Pressable>
           ) : (
-            googleConfigured() && (
-              <Pressable style={styles.googleBtn} onPress={() => promptAsync()}>
-                <Text style={styles.googleBtnText}>Continue with Google</Text>
-              </Pressable>
-            )
+            // Sign-in cannot exist without a Google client ID, so offer the
+            // thing it would have done: name yourself. Everything else already
+            // works signed out.
+            <Pressable
+              style={styles.googleBtn}
+              onPress={() => {
+                setDraftName(profile.name === 'Anonymous Coder' ? '' : profile.name);
+                setEditing(true);
+              }}>
+              <Text style={styles.googleBtnText}>Set a display name</Text>
+            </Pressable>
           )}
         </View>
 

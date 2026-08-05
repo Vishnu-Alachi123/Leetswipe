@@ -151,14 +151,25 @@ export default function DeckScreen() {
     [advance, position],
   );
 
+  // The PanResponder is built once, so its handlers close over the *first*
+  // render's `forceSwipe` — which closed over `current` while the deck was
+  // still loading and `current` was undefined. Swiping therefore advanced the
+  // index without ever saving or marking the card seen, while the Save/Skip
+  // buttons (re-created each render) worked. Routing through a ref that always
+  // holds the latest callback keeps one responder instance and fresh state.
+  const forceSwipeRef = useRef(forceSwipe);
+  useEffect(() => {
+    forceSwipeRef.current = forceSwipe;
+  }, [forceSwipe]);
+
   const panResponder = useRef(
     PanResponder.create({
       onStartShouldSetPanResponder: () => false,
       onMoveShouldSetPanResponder: (_, g) => Math.abs(g.dx) > 8 && Math.abs(g.dx) > Math.abs(g.dy),
       onPanResponderMove: (_, g) => position.setValue({ x: g.dx, y: g.dy }),
       onPanResponderRelease: (_, g) => {
-        if (g.dx > SWIPE_THRESHOLD) forceSwipe('right');
-        else if (g.dx < -SWIPE_THRESHOLD) forceSwipe('left');
+        if (g.dx > SWIPE_THRESHOLD) forceSwipeRef.current('right');
+        else if (g.dx < -SWIPE_THRESHOLD) forceSwipeRef.current('left');
         else
           Animated.spring(position, {
             toValue: { x: 0, y: 0 },
