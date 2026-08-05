@@ -1,0 +1,140 @@
+{
+  "challenges": [
+    {
+      "challengeId": "two-sum-js",
+      "title": "Two Sum",
+      "difficulty": "Easy",
+      "category": "Arrays & Hashing",
+      "lists": ["neetcode150"],
+      "sourceSlug": "two-sum",
+      "functionName": "twoSum",
+      "timeEstimate": 5,
+      "problemStatement": "Given an array of integers `nums` and an integer `target`, return the indices of the two numbers that add up to `target`.\n\nEach input has exactly one solution, and you may not use the same element twice. Return the indices in ascending order.",
+      "starterCode": "function twoSum(nums, target) {\n  // Return [i, j] where nums[i] + nums[j] === target\n  \n}",
+      "solution": "function twoSum(nums, target) {\n  const seen = new Map();\n  for (let i = 0; i < nums.length; i++) {\n    const need = target - nums[i];\n    if (seen.has(need)) return [seen.get(need), i];\n    seen.set(nums[i], i);\n  }\n  return [];\n}",
+      "testCases": [
+        { "input": "[2,7,11,15], 9", "expected": "[0,1]", "note": "the answer is at the start" },
+        { "input": "[3,2,4], 6", "expected": "[1,2]", "note": "the answer skips index 0" },
+        { "input": "[3,3], 6", "expected": "[0,1]", "note": "the two values are equal" },
+        { "input": "[-1,-2,-3,-4,-5], -8", "expected": "[2,4]", "note": "negative numbers" }
+      ],
+      "hints": [
+        "The brute force checks every pair. What are you actually asking on each check?",
+        "For each number you need to know whether target − number has been seen already. Which structure answers that in constant time?",
+        "Walk the array once, keeping a map from value to index. Before storing the current value, look up its complement."
+      ],
+      "explanation": "A hash map turns the inner loop into a single lookup. For each element you ask whether its complement has already been seen, which is O(1) on average, so the whole scan is O(n) time and O(n) space. Sorting first and using two pointers also beats the brute force at O(n log n), but it loses the original indices, which is what the problem asks for.",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(n)"
+    },
+    {
+      "challengeId": "valid-anagram-js",
+      "title": "Valid Anagram",
+      "difficulty": "Easy",
+      "category": "Arrays & Hashing",
+      "lists": ["neetcode150"],
+      "sourceSlug": "valid-anagram",
+      "functionName": "isAnagram",
+      "timeEstimate": 5,
+      "problemStatement": "Given two strings `s` and `t`, return `true` if `t` is an anagram of `s`, and `false` otherwise.\n\nAn anagram uses exactly the same characters with the same counts, in any order.",
+      "starterCode": "function isAnagram(s, t) {\n  // Return true if t is a rearrangement of s\n  \n}",
+      "solution": "function isAnagram(s, t) {\n  if (s.length !== t.length) return false;\n  const counts = {};\n  for (const c of s) counts[c] = (counts[c] || 0) + 1;\n  for (const c of t) {\n    if (!counts[c]) return false;\n    counts[c]--;\n  }\n  return true;\n}",
+      "testCases": [
+        { "input": "\"anagram\", \"nagaram\"", "expected": "true", "note": "a straightforward rearrangement" },
+        { "input": "\"rat\", \"car\"", "expected": "false", "note": "same length, different letters" },
+        { "input": "\"a\", \"ab\"", "expected": "false", "note": "different lengths" },
+        { "input": "\"aacc\", \"ccac\"", "expected": "false", "note": "same letters, different counts" }
+      ],
+      "hints": [
+        "Two strings of different lengths can never be anagrams. That check is free.",
+        "You need to compare character counts, not character sets. 'aacc' and 'ccac' use the same letters.",
+        "Count every character in the first string, then decrement while walking the second. Any character that hits zero early means the counts differ."
+      ],
+      "explanation": "Counting characters is O(n) time and O(k) space for the alphabet size. The tempting shortcut — comparing sets of characters — fails on 'aacc' versus 'ccac', which share a character set but not counts. Sorting both strings also works and is easier to write, but at O(n log n) it does strictly more work.",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(k)"
+    },
+    {
+      "challengeId": "max-subarray-js",
+      "title": "Maximum Subarray",
+      "difficulty": "Medium",
+      "category": "1-D Dynamic Programming",
+      "lists": ["neetcode150"],
+      "sourceSlug": "maximum-subarray",
+      "functionName": "maxSubArray",
+      "timeEstimate": 8,
+      "problemStatement": "Given an integer array `nums`, find the contiguous subarray with the largest sum and return that sum.\n\nThe subarray must contain at least one number.",
+      "starterCode": "function maxSubArray(nums) {\n  // Return the largest sum of any contiguous run\n  \n}",
+      "solution": "function maxSubArray(nums) {\n  let best = nums[0];\n  let cur = nums[0];\n  for (let i = 1; i < nums.length; i++) {\n    cur = Math.max(nums[i], cur + nums[i]);\n    best = Math.max(best, cur);\n  }\n  return best;\n}",
+      "testCases": [
+        { "input": "[-2,1,-3,4,-1,2,1,-5,4]", "expected": "6", "note": "the classic case, from [4,-1,2,1]" },
+        { "input": "[1]", "expected": "1", "note": "a single element" },
+        { "input": "[5,4,-1,7,8]", "expected": "23", "note": "the whole array" },
+        { "input": "[-3,-1,-2]", "expected": "-1", "note": "all negative — the answer is the least bad" }
+      ],
+      "hints": [
+        "Checking every subarray is O(n²). What single decision could you make at each element instead?",
+        "At each element you either extend the run you are on or start a new one there. Which is better depends only on whether the run so far is helping.",
+        "Track the best sum ending at the current position, and separately the best seen anywhere. Watch the all-negative case — starting from 0 gives the wrong answer."
+      ],
+      "explanation": "Kadane's algorithm asks one question per element: is the run behind me worth keeping? If the running sum has gone negative it can only hurt, so start fresh. Tracking the best-ending-here and best-anywhere separately gives O(n) time and O(1) space. The classic bug is initialising the running sum to 0, which returns 0 for an all-negative array instead of the largest single element.",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(1)"
+    },
+    {
+      "challengeId": "valid-parentheses-js",
+      "title": "Valid Parentheses",
+      "difficulty": "Easy",
+      "category": "Stack",
+      "lists": ["neetcode150"],
+      "sourceSlug": "valid-parentheses",
+      "functionName": "isValid",
+      "timeEstimate": 6,
+      "problemStatement": "Given a string `s` containing only the characters `()[]{}`, return `true` if every bracket is closed by the matching type, in the correct order.\n\nAn empty string is valid.",
+      "starterCode": "function isValid(s) {\n  // Return true if the brackets are balanced and correctly nested\n  \n}",
+      "solution": "function isValid(s) {\n  const pairs = { ')': '(', ']': '[', '}': '{' };\n  const stack = [];\n  for (const c of s) {\n    if (c === '(' || c === '[' || c === '{') {\n      stack.push(c);\n    } else {\n      if (stack.pop() !== pairs[c]) return false;\n    }\n  }\n  return stack.length === 0;\n}",
+      "testCases": [
+        { "input": "\"()\"", "expected": "true", "note": "the simplest valid case" },
+        { "input": "\"()[]{}\"", "expected": "true", "note": "several pairs in sequence" },
+        { "input": "\"(]\"", "expected": "false", "note": "mismatched types" },
+        { "input": "\"([)]\"", "expected": "false", "note": "correct counts, wrong nesting" },
+        { "input": "\"(\"", "expected": "false", "note": "left open at the end" }
+      ],
+      "hints": [
+        "Counting brackets is not enough — '([)]' has the right counts but is still invalid.",
+        "When you meet a closing bracket, only one opening bracket can legally match it: the most recent unmatched one.",
+        "Push opening brackets onto a stack. On a closing bracket, pop and check the types match. Do not forget to check the stack is empty at the end."
+      ],
+      "explanation": "A stack captures the 'most recent unmatched' rule exactly, which is why counting fails: '([)]' has balanced counts but closes the round bracket while the square one is still open. One pass, O(n) time and O(n) space in the worst case. The two easy bugs are popping from an empty stack on a leading closer, and forgetting the final emptiness check, which would accept '('.",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(n)"
+    },
+    {
+      "challengeId": "best-time-stock-js",
+      "title": "Best Time to Buy and Sell Stock",
+      "difficulty": "Easy",
+      "category": "Sliding Window",
+      "lists": ["neetcode150"],
+      "sourceSlug": "best-time-to-buy-and-sell-stock",
+      "functionName": "maxProfit",
+      "timeEstimate": 6,
+      "problemStatement": "You are given an array `prices` where `prices[i]` is the price of a stock on day `i`.\n\nYou may buy on one day and sell on a later day. Return the maximum profit achievable, or `0` if no profit is possible.",
+      "starterCode": "function maxProfit(prices) {\n  // Return the best profit from one buy and one later sell\n  \n}",
+      "solution": "function maxProfit(prices) {\n  let cheapest = Infinity;\n  let best = 0;\n  for (const price of prices) {\n    if (price < cheapest) cheapest = price;\n    else if (price - cheapest > best) best = price - cheapest;\n  }\n  return best;\n}",
+      "testCases": [
+        { "input": "[7,1,5,3,6,4]", "expected": "5", "note": "buy at 1, sell at 6" },
+        { "input": "[7,6,4,3,1]", "expected": "0", "note": "prices only fall — take no trade" },
+        { "input": "[1,2]", "expected": "1", "note": "the smallest profitable case" },
+        { "input": "[2,4,1]", "expected": "2", "note": "the lowest price comes after the best sale" }
+      ],
+      "hints": [
+        "You must buy before you sell, so the pair is ordered. That rules out simply taking the max minus the min.",
+        "Walk forward. At each day, what is the best you could do if you sold today?",
+        "Track the cheapest price seen so far. Today's best sale is today's price minus that minimum."
+      ],
+      "explanation": "Selling today is only ever worth the cheapest price seen before today, so one pass tracking that minimum is enough — O(n) time, O(1) space. Taking max minus min over the whole array is the tempting shortcut and it breaks on [2,4,1], where the lowest price arrives after the best sale. Returning 0 on a falling market matters too: the problem allows declining to trade.",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(1)"
+    }
+  ]
+}

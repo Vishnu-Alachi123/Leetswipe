@@ -14,6 +14,7 @@ import { fetchTopics, type Difficulty, type TopicsResponse } from '@/api/get-que
 import { getStreak } from '@/api/progress';
 import { COLORS, DIFFICULTY_COLOR } from '@/constants/colors';
 import { DifficultyBar } from '@/components/difficulty-bar';
+import { challenges } from '@/api/challenges';
 
 const DIFFICULTIES: Difficulty[] = ['Easy', 'Medium', 'Hard'];
 
@@ -119,6 +120,37 @@ export default function PickerScreen() {
                 <Text style={styles.chevron}>›</Text>
               </Pressable>
             ))}
+          </>
+        )}
+
+        {/* Code challenges — a different mode from the swipe deck, so it gets
+            its own entry point rather than hiding inside a topic. */}
+        {challenges.length > 0 && (
+          <>
+            <Text style={styles.sectionLabel}>Write code</Text>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.challengeRow}>
+              {challenges.map((c) => (
+                <Pressable
+                  key={c.challengeId}
+                  style={({ pressed }) => [styles.challengeCard, pressed && styles.topicCardPressed]}
+                  accessibilityRole="button"
+                  accessibilityLabel={`${c.title} code challenge, ${c.difficulty}`}
+                  onPress={() => router.push({ pathname: '/challenge', params: { id: c.challengeId } })}>
+                  <Text style={styles.challengeTitle} numberOfLines={2}>
+                    {c.title}
+                  </Text>
+                  <View style={styles.challengeMeta}>
+                    <Text style={[styles.challengeDiff, { color: DIFFICULTY_COLOR[c.difficulty] }]}>
+                      {c.difficulty}
+                    </Text>
+                    <Text style={styles.challengeTime}>~{c.timeEstimate}m</Text>
+                  </View>
+                </Pressable>
+              ))}
+            </ScrollView>
           </>
         )}
 
@@ -232,6 +264,26 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   topicCardPressed: { borderColor: COLORS.accent, backgroundColor: '#1a222e' },
+  challengeRow: { gap: 10, paddingVertical: 2, paddingRight: 4 },
+  challengeCard: {
+    width: 150,
+    minHeight: 92,
+    justifyContent: 'space-between',
+    backgroundColor: COLORS.card,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    borderRadius: 14,
+    padding: 14,
+  },
+  challengeTitle: { color: COLORS.text, fontSize: 14, fontWeight: '700', lineHeight: 19 },
+  challengeMeta: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  challengeDiff: { fontSize: 12, fontWeight: '700' },
+  challengeTime: { color: COLORS.muted, fontSize: 12, fontWeight: '600' },
   topicHeader: {
     flexDirection: 'row',
     alignItems: 'baseline',

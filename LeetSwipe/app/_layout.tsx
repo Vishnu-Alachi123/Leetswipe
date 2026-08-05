@@ -17,6 +17,9 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="deck" options={{ headerShown: false, presentation: 'card' }} />
+        {/* Both screens draw their own back control, so the stack header would
+            be a second, redundant one. */}
+        <Stack.Screen name="challenge" options={{ headerShown: false, presentation: 'card' }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
       </Stack>
       <StatusBar style="auto" />
