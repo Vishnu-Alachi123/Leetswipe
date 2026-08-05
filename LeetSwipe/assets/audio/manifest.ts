@@ -9,4 +9,55 @@
 
 export const reelAudio: Record<string, Record<number, number>> = {
 
+  'binary-search-py': {
+    1: require('./binary-search-py/1.mp3'),
+    2: require('./binary-search-py/2.mp3'),
+    3: require('./binary-search-py/3.mp3'),
+    4: require('./binary-search-py/4.mp3'),
+    5: require('./binary-search-py/5.mp3'),
+    6: require('./binary-search-py/6.mp3'),
+    7: require('./binary-search-py/7.mp3'),
+  },
+  'two-pointers-palindrome-py': {
+    1: require('./two-pointers-palindrome-py/1.mp3'),
+    2: require('./two-pointers-palindrome-py/2.mp3'),
+    3: require('./two-pointers-palindrome-py/3.mp3'),
+    4: require('./two-pointers-palindrome-py/4.mp3'),
+    5: require('./two-pointers-palindrome-py/5.mp3'),
+    6: require('./two-pointers-palindrome-py/6.mp3'),
+  },
+  'sliding-window-py': {
+    1: require('./sliding-window-py/1.mp3'),
+    2: require('./sliding-window-py/2.mp3'),
+    3: require('./sliding-window-py/3.mp3'),
+    4: require('./sliding-window-py/4.mp3'),
+    5: require('./sliding-window-py/5.mp3'),
+    6: require('./sliding-window-py/6.mp3'),
+  },
+  'bfs-py': {
+    1: require('./bfs-py/1.mp3'),
+    2: require('./bfs-py/2.mp3'),
+    3: require('./bfs-py/3.mp3'),
+    4: require('./bfs-py/4.mp3'),
+    5: require('./bfs-py/5.mp3'),
+    6: require('./bfs-py/6.mp3'),
+  },
+  'kadane-py': {
+    1: require('./kadane-py/1.mp3'),
+    2: require('./kadane-py/2.mp3'),
+    3: require('./kadane-py/3.mp3'),
+    4: require('./kadane-py/4.mp3'),
+    5: require('./kadane-py/5.mp3'),
+    6: require('./kadane-py/6.mp3'),
+    7: require('./kadane-py/7.mp3'),
+  },
+  'prefix-sum': {
+    1: require('./prefix-sum/1.mp3'),
+    2: require('./prefix-sum/2.mp3'),
+    3: require('./prefix-sum/3.mp3'),
+    4: require('./prefix-sum/4.mp3'),
+    5: require('./prefix-sum/5.mp3'),
+    6: require('./prefix-sum/6.mp3'),
+    7: require('./prefix-sum/7.mp3'),
+  },
 };
