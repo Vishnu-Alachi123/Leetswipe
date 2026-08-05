@@ -60,6 +60,25 @@ export async function questionsCollection(): Promise<Collection<MCQ>> {
   return (await getDb()).collection<MCQ>('GeneratedQuestionsCollection');
 }
 
+/**
+ * Algorithm reels for the Learn tab. Shaped by schema.AlgorithmReel; the client
+ * treats this as an upgrade over its bundled set, never a requirement.
+ */
+export interface Reel {
+  reelId: string;
+  algorithmName: string;
+  description: string;
+  language: string;
+  fullCode: string;
+  steps: unknown[];
+  difficulty: string;
+  category?: string;
+}
+
+export async function reelsCollection(): Promise<Collection<Reel>> {
+  return (await getDb()).collection<Reel>('GeneratedReelsCollection');
+}
+
 export async function savedCollection(): Promise<Collection<SavedDoc>> {
   return (await getDb()).collection<SavedDoc>('SavedQuestions');
 }

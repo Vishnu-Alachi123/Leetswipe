@@ -138,7 +138,7 @@
                 {
                   "value": 2,
                   "status": "eliminated",
-                  "label": ""
+                  "label": "lo"
                 },
                 {
                   "value": 5,
@@ -153,12 +153,12 @@
                 {
                   "value": 12,
                   "status": "eliminated",
-                  "label": ""
+                  "label": "mid"
                 },
                 {
                   "value": 16,
                   "status": "normal",
-                  "label": "lo"
+                  "label": ""
                 },
                 {
                   "value": 23,
@@ -177,7 +177,7 @@
                 }
               ]
             },
-            "caption": "Half the array eliminated in one comparison"
+            "caption": "12 < 23 \u2192 everything up to mid is out"
           }
         },
         {
@@ -405,7 +405,7 @@
       "spaceComplexity": "O(1)",
       "durationSeconds": 75,
       "source": "curated",
-      "generatedAt": "2026-08-05T03:35:16.936851+00:00"
+      "generatedAt": "2026-08-05T03:46:17.498611+00:00"
     },
     {
       "type": "reel",
@@ -581,7 +581,7 @@
             4
           ],
           "explanation": "'c' and 'c' match. Two characters remain between the pointers.",
-          "audioScript": "Third pair, c and c. Notice we've checked six characters while storing nothing but two numbers.",
+          "audioScript": "Third pair, c and c, and they match as well. Notice what we have not done. There is no reversed copy of the string anywhere in memory. We have checked six characters while storing nothing but two position numbers, no matter how long the input gets.",
           "visualization": {
             "kind": "array",
             "state": {
@@ -743,9 +743,9 @@
       "sourceSlug": "valid-palindrome",
       "timeComplexity": "O(n)",
       "spaceComplexity": "O(1)",
-      "durationSeconds": 54,
+      "durationSeconds": 66,
       "source": "curated",
-      "generatedAt": "2026-08-05T03:35:16.937067+00:00"
+      "generatedAt": "2026-08-05T03:46:17.498721+00:00"
     },
     {
       "type": "reel",
@@ -1094,7 +1094,7 @@
       "spaceComplexity": "O(k)",
       "durationSeconds": 68,
       "source": "curated",
-      "generatedAt": "2026-08-05T03:35:16.937138+00:00"
+      "generatedAt": "2026-08-05T03:46:17.498783+00:00"
     },
     {
       "type": "reel",
@@ -1400,7 +1400,7 @@
       "spaceComplexity": "O(V)",
       "durationSeconds": 64,
       "source": "curated",
-      "generatedAt": "2026-08-05T03:35:16.937208+00:00"
+      "generatedAt": "2026-08-05T03:46:17.498850+00:00"
     },
     {
       "type": "reel",
@@ -1743,7 +1743,7 @@
       "spaceComplexity": "O(1)",
       "durationSeconds": 75,
       "source": "curated",
-      "generatedAt": "2026-08-05T03:35:16.937277+00:00"
+      "generatedAt": "2026-08-05T03:46:17.498906+00:00"
     }
   ]
 }

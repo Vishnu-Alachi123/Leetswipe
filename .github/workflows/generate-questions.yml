@@ -17,9 +17,9 @@ on:
   workflow_dispatch:
     inputs:
       target:
-        description: 'Where to write questions'
+        description: 'What to generate'
         type: choice
-        options: [bundle, db]
+        options: [bundle, reels, db]
         default: 'bundle'
       num:
         description: 'MCQs to generate per problem'
@@ -98,16 +98,33 @@ jobs:
             --app-out ../LeetSwipe/assets/data/questions.json \
             ${{ github.event.inputs.model && format('--model {0}', github.event.inputs.model) || '' }}
 
-      - name: Commit bundled deck
-        if: ${{ github.event.inputs.target == 'bundle' }}
+      - name: Generate algorithm reels
+        if: ${{ github.event.inputs.target == 'reels' }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; then
+            echo "Missing ANTHROPIC_API_KEY / OPENAI_API_KEY secret; cannot generate."
+            exit 1
+          fi
+          # --fill skips algorithms that already have a reel, so this is safe to
+          # re-run and works through the catalog a few at a time.
+          python generate_reels.py --fill \
+            --limit "${{ github.event.inputs.limit || '4' }}" \
+            --out ../LeetSwipe/assets/data/reels.json \
+            ${{ github.event.inputs.model && format('--model {0}', github.event.inputs.model) || '' }}
+
+      - name: Commit generated content
+        if: ${{ github.event.inputs.target != 'db' }}
         working-directory: .
         run: |
-          if git diff --quiet LeetSwipe/assets/data/questions.json; then
+          if git diff --quiet LeetSwipe/assets/data/; then
             echo "No changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add LeetSwipe/assets/data/questions.json
-          git commit -m "Regenerate bundled question deck"
+          git add LeetSwipe/assets/data/
+          git commit -m "Regenerate bundled content"
           git push
