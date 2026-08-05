@@ -18,7 +18,7 @@ import {
   View,
   type ViewToken,
 } from 'react-native';
-import * as Speech from 'expo-speech';
+import * as Speech from '@/api/voice';
 import { useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 

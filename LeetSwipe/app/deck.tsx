@@ -18,7 +18,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { fetchQuestions, type Difficulty, type Question } from '@/api/get-questions';
 import { saveQuestion } from '@/api/saved';
 import { getSeen, markSeen, recordActivity } from '@/api/progress';
-import * as Speech from 'expo-speech';
+import * as Speech from '@/api/voice';
 
 import { COLORS, DIFFICULTY_COLOR } from '@/constants/colors';
 import { Celebration } from '@/components/celebration';
@@ -41,7 +41,10 @@ export default function DeckScreen() {
     list?: string;
     label?: string;
   }>();
-  const filterLabel = params.label || params.category || params.list || 'All questions';
+  const baseLabel = params.label || params.category || params.list || 'All questions';
+  // Name the active difficulty in the header, so the filter being applied is
+  // visible rather than taken on faith.
+  const filterLabel = params.difficulty ? `${baseLabel} · ${params.difficulty}` : baseLabel;
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [loading, setLoading] = useState(true);
@@ -63,7 +66,7 @@ export default function DeckScreen() {
       // A short verdict first, so the audio is useful even if the listener
       // stops it before the full explanation.
       const lead = correct ? 'Correct. ' : 'Not quite. ';
-      Speech.speak(lead + explanation, { rate: 0.98 });
+      Speech.speak(lead + explanation);
     },
     [narrate],
   );
