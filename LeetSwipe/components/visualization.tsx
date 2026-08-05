@@ -62,7 +62,10 @@ function AnimatedCell({ cell, size }: { cell: VizCell; size: number }) {
   });
 
   return (
-    <View style={styles.cellColumn}>
+    // The column is pinned to the cell's width. Without this, a label wider
+    // than its cell ("left=right", "cur=-2") expands the whole column and
+    // pushes the row off-screen on narrow phones.
+    <View style={[styles.cellColumn, { width: size }]}>
       <Animated.View
         style={[
           styles.cell,
@@ -77,12 +80,18 @@ function AnimatedCell({ cell, size }: { cell: VizCell; size: number }) {
         ]}>
         <Text
           numberOfLines={1}
+          maxFontSizeMultiplier={1.2}
           style={[styles.cellText, { color: palette.text, fontSize: size > 44 ? 16 : 13 }]}>
           {String(cell.value)}
         </Text>
       </Animated.View>
-      {/* Reserve the label row always, so cells don't jump as pointers move. */}
-      <Text numberOfLines={1} style={styles.cellLabel}>
+      {/* Reserve the label row always, so cells don't jump as pointers move.
+          Labels may overhang their neighbours slightly rather than widen the
+          layout — overhang is readable, overflow is not. */}
+      <Text
+        numberOfLines={1}
+        maxFontSizeMultiplier={1.2}
+        style={[styles.cellLabel, { width: size + 22, fontSize: size < 34 ? 9 : 11 }]}>
         {cell.label ?? ''}
       </Text>
     </View>
@@ -204,6 +213,7 @@ function TableView({
             <Text
               key={j}
               numberOfLines={2}
+              maxFontSizeMultiplier={1.2}
               style={[styles.tableCell, i === highlight && styles.tableCellActive]}>
               {String(cell)}
             </Text>
@@ -216,6 +226,7 @@ function TableView({
 
 export function VisualizationView({ viz }: { viz: Visualization }) {
   const { kind, state, caption } = viz;
+  const { width } = useWindowDimensions();
 
   let body: React.ReactNode = null;
   switch (kind) {
@@ -256,8 +267,22 @@ export function VisualizationView({ viz }: { viz: Visualization }) {
 
   return (
     <View style={styles.wrap}>
-      <View style={styles.body}>{body}</View>
-      {!!caption && <Text style={styles.caption}>{caption}</Text>}
+      {/* Last-resort safety net: anything wider than the screen — outsized
+          system fonts, a future model emitting 14 cells — becomes scrollable
+          instead of clipped. Content that fits stays centred and the scroll
+          view is inert. */}
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={{ maxWidth: width }}
+        contentContainerStyle={styles.safetyScroll}>
+        <View style={styles.body}>{body}</View>
+      </ScrollView>
+      {!!caption && (
+        <Text style={styles.caption} maxFontSizeMultiplier={1.3}>
+          {caption}
+        </Text>
+      )}
     </View>
   );
 }
@@ -265,9 +290,10 @@ export function VisualizationView({ viz }: { viz: Visualization }) {
 const styles = StyleSheet.create({
   wrap: { alignItems: 'center', justifyContent: 'center', minHeight: 150 },
   body: { alignItems: 'center', justifyContent: 'center' },
+  safetyScroll: { flexGrow: 1, justifyContent: 'center', paddingHorizontal: 6 },
   row: { flexDirection: 'row', alignItems: 'flex-end', gap: 6 },
   scrollRow: { paddingHorizontal: 4, alignItems: 'center' },
-  cellColumn: { alignItems: 'center' },
+  cellColumn: { alignItems: 'center', overflow: 'visible' },
   cell: {
     borderRadius: 10,
     borderWidth: 1.5,
@@ -278,9 +304,9 @@ const styles = StyleSheet.create({
   cellLabel: {
     marginTop: 4,
     height: 14,
-    fontSize: 11,
     fontWeight: '600',
     color: COLORS.accent,
+    textAlign: 'center',
   },
   emptyNote: { color: COLORS.muted, fontStyle: 'italic', fontSize: 13 },
   queueWrap: { flexDirection: 'row', alignItems: 'center', gap: 8 },
@@ -302,7 +328,8 @@ const styles = StyleSheet.create({
     borderColor: COLORS.border,
     borderRadius: 10,
     overflow: 'hidden',
-    minWidth: 260,
+    minWidth: 240,
+    maxWidth: 420,
   },
   tableRow: { flexDirection: 'row', borderTopWidth: 1, borderTopColor: COLORS.border },
   tableHead: { borderTopWidth: 0, backgroundColor: '#141922' },

@@ -19,7 +19,7 @@ on:
       target:
         description: 'What to generate'
         type: choice
-        options: [bundle, reels, db]
+        options: [bundle, reels, audio, db]
         default: 'bundle'
       num:
         description: 'MCQs to generate per problem'
@@ -115,17 +115,32 @@ jobs:
             --out ../LeetSwipe/assets/data/reels.json \
             ${{ github.event.inputs.model && format('--model {0}', github.event.inputs.model) || '' }}
 
+      - name: Render reel narration audio
+        if: ${{ github.event.inputs.target == 'audio' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "Missing OPENAI_API_KEY secret; cannot synthesise audio."
+            exit 1
+          fi
+          # Idempotent: only steps without an mp3 are synthesised, so re-runs
+          # after new reels land only pay for the new steps.
+          python generate_audio.py \
+            --reels ../LeetSwipe/assets/data/reels.json \
+            --out ../LeetSwipe/assets/audio
+
       - name: Commit generated content
         if: ${{ github.event.inputs.target != 'db' }}
         working-directory: .
         run: |
-          if git diff --quiet LeetSwipe/assets/data/; then
+          if git diff --quiet LeetSwipe/assets/ && [ -z "$(git status --porcelain LeetSwipe/assets/)" ]; then
             echo "No changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add LeetSwipe/assets/data/
+          git add LeetSwipe/assets/data/ LeetSwipe/assets/audio/
           git commit -m "Regenerate bundled content"
           # Two queued runs commit back-to-back (bundle then reels), so this
           # checkout may be behind main by the time it pushes. They touch
