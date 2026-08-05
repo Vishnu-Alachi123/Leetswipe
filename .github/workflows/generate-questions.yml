@@ -44,6 +44,9 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' || github.repository == 'vishnu-alachi123/leetswipe' }}
     permissions:
       contents: write
+      # Needed to dispatch deploy-web.yml from the commit step; without it the
+      # dispatch returns 403 and fails the run after the content has landed.
+      actions: write
     defaults:
       run:
         working-directory: backend_question_generation
@@ -161,4 +164,6 @@ jobs:
             echo "Nothing committed; no deploy needed."
             exit 0
           fi
-          gh workflow run deploy-web.yml --ref main
+          # Content is already committed at this point, so a dispatch failure
+          # must not fail the run — it only means the deploy needs a manual kick.
+          gh workflow run deploy-web.yml --ref main || echo "Deploy dispatch failed; run deploy-web.yml manually."

@@ -120,6 +120,40 @@ def _viz_signature(viz: Visualization) -> str:
     return json.dumps(viz.state, sort_keys=True, default=str)
 
 
+def repair_reel(reel: AlgorithmReel) -> list[str]:
+    """Fix what is fixable in place; return a note per repair made.
+
+    Rejecting a whole reel over one bad step throws away seven good ones. The
+    dominant generation fault by far is a step that redraws the previous
+    picture unchanged — a wasted tap, but the steps around it are fine. Dropping
+    the offender leaves a shorter, correct reel.
+    """
+    notes: list[str] = []
+
+    # Collapse consecutive steps whose picture does not change.
+    kept: list[ReelStep] = []
+    for step in reel.steps:
+        if kept and _viz_signature(kept[-1].visualization) == _viz_signature(step.visualization):
+            notes.append(f"dropped step {step.stepNumber} (visualisation unchanged)")
+            continue
+        kept.append(step)
+    if notes:
+        for i, step in enumerate(kept, 1):
+            step.stepNumber = i
+        reel.steps = kept
+
+    # Clamp highlights that point past the end of the listing rather than
+    # losing the reel; an out-of-range highlight simply highlights nothing.
+    line_count = len(reel.fullCode.split("\n"))
+    for step in reel.steps:
+        bad = [n for n in step.highlightLines if not 1 <= n <= line_count]
+        if bad:
+            step.highlightLines = [n for n in step.highlightLines if 1 <= n <= line_count]
+            notes.append(f"step {step.stepNumber}: dropped out-of-range highlight(s) {bad}")
+
+    return notes
+
+
 def validate_reel(reel: AlgorithmReel) -> list[str]:
     """Return the reasons this reel should not ship. Empty means it is fine."""
     problems: list[str] = []
@@ -135,7 +169,9 @@ def validate_reel(reel: AlgorithmReel) -> list[str]:
                 break
 
         words = len(step.audioScript.split())
-        if words < 20:
+        # 12 rather than 20: a final "and that's why it's linear" step lands
+        # around 16 words and reads fine spoken. Below 12 it is a fragment.
+        if words < 12:
             problems.append(f"step {step.stepNumber} narration is only {words} words")
         elif words > 130:
             problems.append(f"step {step.stepNumber} narration is {words} words, too long to listen to")
@@ -294,7 +330,12 @@ def main() -> int:
                   file=sys.stderr)
             return 2
         if args.model is None:
-            args.model = "claude-opus-4-8" if provider == "anthropic" else "gpt-4o-mini"
+            # Reels are a much harder structured-output task than MCQs — nested
+            # steps, per-step visualisation state, line numbers that must match
+            # the listing. gpt-4o-mini dropped required fields often enough to
+            # lose a third of a run, and reels cost a fraction of a cent each,
+            # so the stronger model pays for itself in acceptance rate.
+            args.model = "claude-opus-4-8" if provider == "anthropic" else "gpt-4o"
         print(f"Provider: {provider} · model: {args.model}")
 
     existing = [] if args.replace else load_reels(args.out)
@@ -338,7 +379,14 @@ def main() -> int:
         # pipeline stamps category and lists after generation.
         if category:
             reel.category = category
+        if difficulty:
+            reel.difficulty = difficulty
         reel.source = "mock" if args.mock else "llm"
+
+        repairs = repair_reel(reel)
+        for note in repairs:
+            print(f"    ~ {algorithm}: {note}")
+
         words = sum(len(s.audioScript.split()) for s in reel.steps)
         reel.durationSeconds = max(15, round(words / WORDS_PER_SECOND))
 
