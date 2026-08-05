@@ -21,8 +21,10 @@ import {
 } from 'react-native';
 import * as Haptics from 'expo-haptics';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useAudioPlayer } from 'expo-audio';
 
 import * as Voice from '@/api/voice';
+import { reelAudio } from '@/assets/audio/manifest';
 
 import { codeLines, estimatedSeconds, type AlgorithmReel } from '@/api/reels';
 import { COLORS, DIFFICULTY_COLOR } from '@/constants/colors';
@@ -76,18 +78,34 @@ export function ReelPlayer({ reel, active, height, narrate, onToggleNarrate }: P
     codeRef.current?.scrollTo({ y, animated: true });
   }, [step, codePaneHeight]);
 
+  // Pre-rendered studio narration for this step, when the audio pipeline has
+  // produced one. The device speech engine covers any step without a clip, so
+  // freshly generated reels still narrate before their audio run happens.
+  const clip = reelAudio[reel.reelId]?.[step?.stepNumber ?? -1] ?? null;
+  const player = useAudioPlayer(clip);
+
   const stop = useCallback(() => {
     if (speaking.current) {
       Voice.stop();
       speaking.current = false;
     }
-  }, []);
+    try {
+      player.pause();
+    } catch {
+      // The player may already be released while the reel unmounts.
+    }
+  }, [player]);
 
-  // Speak the current step. Re-runs when the step changes, when narration is
+  // Narrate the current step. Re-runs when the step changes, when narration is
   // toggled, and when the reel scrolls in or out of view.
   useEffect(() => {
     stop();
     if (!active || !narrate || !step) return;
+    if (clip) {
+      player.seekTo(0);
+      player.play();
+      return stop;
+    }
     speaking.current = true;
     Voice.speak(step.audioScript, {
       onDone: () => {
@@ -101,7 +119,7 @@ export function ReelPlayer({ reel, active, height, narrate, onToggleNarrate }: P
       },
     });
     return stop;
-  }, [active, narrate, step, stop]);
+  }, [active, narrate, step, clip, player, stop]);
 
   // Reset to the first step when the reel leaves the screen, so coming back to
   // it starts from the beginning rather than mid-walkthrough.
@@ -159,6 +177,14 @@ export function ReelPlayer({ reel, active, height, narrate, onToggleNarrate }: P
           </Text>
         </Pressable>
       </View>
+
+      {/* The problem being solved. Without this, a reader lands on line one
+          of an algorithm with no idea what question it answers. */}
+      {!!reel.description && (
+        <Text style={styles.context} numberOfLines={compact ? 2 : 3} maxFontSizeMultiplier={1.2}>
+          {reel.description}
+        </Text>
+      )}
 
       {/* Progress ----------------------------------------------------- */}
       <View style={styles.progressRow}>
@@ -243,6 +269,7 @@ const styles = StyleSheet.create({
   title: { fontSize: 22, fontWeight: '800', color: COLORS.text },
   badgeRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 5 },
   badge: { fontSize: 11, fontWeight: '600', color: COLORS.muted },
+  context: { marginTop: 8, fontSize: 13, lineHeight: 18, color: COLORS.muted },
   audioButton: {
     width: 40,
     height: 40,
