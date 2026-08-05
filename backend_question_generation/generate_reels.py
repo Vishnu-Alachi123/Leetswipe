@@ -155,7 +155,11 @@ def generate_openai(algorithm: str, category: str, difficulty: str,
                     language: str, model: str) -> AlgorithmReel:
     from langchain_openai import ChatOpenAI
 
-    llm = ChatOpenAI(model=model, temperature=0.5).with_structured_output(AlgorithmReel)
+    # function_calling, not the default strict json_schema mode: a reel step's
+    # visualization state is a deliberately free-form dict, and strict mode
+    # rejects any schema containing one (additionalProperties must be false).
+    llm = ChatOpenAI(model=model, temperature=0.5).with_structured_output(
+        AlgorithmReel, method="function_calling")
     result = llm.invoke([
         {"role": "system", "content": SYSTEM_PROMPT + "\n\n" + FEW_SHOT_EXAMPLE},
         {"role": "user", "content": build_user_prompt(
