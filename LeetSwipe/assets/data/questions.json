@@ -19704,6 +19704,4977 @@
       "qualityFlags": [
         "explanation-asserts-only"
       ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "walls-and-gates-4",
+      "title": "Which algorithm is most suitable for finding the shortest path in an unweighted grid?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "walls-and-gates",
+      "difficulty": "Medium",
+      "question": "In an unweighted grid where you need to find the shortest path from multiple sources to their nearest destination, which algorithm should you use?",
+      "options": [
+        "Dijkstra's Algorithm",
+        "Depth-First Search (DFS)",
+        "Breadth-First Search (BFS)",
+        "A* Search Algorithm"
+      ],
+      "answer": 2,
+      "explanation": "Breadth-First Search (BFS) is the most suitable algorithm for finding the shortest path in an unweighted grid because it explores all neighbors at the present depth prior to moving on to nodes at the next depth level. Dijkstra's Algorithm is more appropriate for weighted graphs, while DFS can lead to longer paths and A* requires heuristic knowledge that is not applicable here.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.825479+00:00",
+      "contentHash": "b250e0c24032fdc610cc74a3f82a9d04",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "walls-and-gates-5",
+      "title": "What is a potential issue when using a naive DFS approach for this problem?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "walls-and-gates",
+      "difficulty": "Medium",
+      "question": "When attempting to solve the problem of filling distances in a grid using a naive Depth-First Search (DFS) approach, what is a common pitfall?",
+      "options": [
+        "It can handle cycles efficiently.",
+        "It may result in an infinite loop.",
+        "It guarantees the shortest path.",
+        "It uses less memory than BFS."
+      ],
+      "answer": 1,
+      "explanation": "A naive DFS approach may lead to an infinite loop in scenarios where the grid contains cycles or unvisited nodes, as it does not keep track of visited nodes effectively. In contrast, BFS is designed to explore all paths level by level, ensuring the shortest path is found without the risk of infinite recursion.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.825558+00:00",
+      "contentHash": "233fcbf25b06dfcf5761506efa64c961",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "walls-and-gates-6",
+      "title": "How does the presence of walls affect the BFS traversal?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "walls-and-gates",
+      "difficulty": "Medium",
+      "question": "In a grid where some cells are walls, how does this affect the BFS traversal when finding the nearest gates?",
+      "options": [
+        "Walls act as barriers, blocking traversal.",
+        "Walls can be traversed to reach gates.",
+        "Walls have no effect on traversal.",
+        "Walls increase the number of gates found."
+      ],
+      "answer": 0,
+      "explanation": "Walls act as barriers in the BFS traversal, preventing the search from moving through those cells. This is crucial for correctly identifying the nearest gates, as BFS will only traverse through open cells. The other options misrepresent the behavior of walls in the grid.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "0",
+              "label": "G",
+              "status": "normal"
+            },
+            {
+              "value": "\u221e",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "\u221e",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "-1",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "G",
+              "\u221e",
+              "\u221e",
+              "-1"
+            ]
+          ]
+        },
+        "caption": "Grid showing gates and walls."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.825620+00:00",
+      "contentHash": "a170c61708a9f956ac8efaea3b9340ad",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "rotting-oranges-4",
+      "title": "Which algorithm is most suitable for finding the minimum time to rot all oranges?",
+      "topics": [
+        "Graphs",
+        "BFS"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "rotting-oranges",
+      "difficulty": "Medium",
+      "question": "Which algorithm is most suitable for finding the minimum time to rot all oranges in a grid?",
+      "options": [
+        "Depth-First Search (DFS)",
+        "Breadth-First Search (BFS)",
+        "Dijkstra's Algorithm",
+        "A* Search Algorithm"
+      ],
+      "answer": 1,
+      "explanation": "Breadth-First Search (BFS) is the most suitable algorithm for this problem because it explores all neighbors at the present depth prior to moving on to nodes at the next depth level, which aligns with the requirement to spread the rotting effect in minimum time. The tempting distractor, Depth-First Search (DFS), fails because it may not find the shortest path to rot all oranges, as it can get trapped in deeper paths before exploring all immediate neighbors.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.825655+00:00",
+      "contentHash": "c9098244addf35fa174af7547df79bc7",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "rotting-oranges-5",
+      "title": "What is a key edge case to consider in this problem?",
+      "topics": [
+        "Graphs",
+        "Edge Cases"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "rotting-oranges",
+      "difficulty": "Medium",
+      "question": "What is a key edge case to consider when determining if all oranges can rot?",
+      "options": [
+        "All oranges are already rotten",
+        "There are no oranges in the grid",
+        "Some oranges are isolated by empty cells",
+        "All oranges are fresh and adjacent"
+      ],
+      "answer": 2,
+      "explanation": "A key edge case is when some oranges are isolated by empty cells, as this means they cannot be reached by the rotten oranges, preventing them from rotting. The option stating that all oranges are already rotten is misleading because it does not address the scenario of isolated oranges which is crucial for determining the outcome.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.825688+00:00",
+      "contentHash": "28416d15897cbcb9992f7b33cb5e5882",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "rotting-oranges-6",
+      "title": "Which data structure is best for tracking the state of each orange during the process?",
+      "topics": [
+        "Graphs",
+        "Data Structures"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "rotting-oranges",
+      "difficulty": "Medium",
+      "question": "Which data structure is best for tracking the state of each orange during the rotting process?",
+      "options": [
+        "Array",
+        "Queue",
+        "Stack",
+        "Hash Table"
+      ],
+      "answer": 1,
+      "explanation": "A queue is the best data structure for tracking the state of each orange because it allows for processing in a first-in, first-out (FIFO) manner, which is essential for BFS to spread the rotting effect level by level. The stack, while useful for DFS, does not support the required order of operations for this problem.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "F",
+              "label": "Fresh 1",
+              "status": "normal"
+            },
+            {
+              "value": "R",
+              "label": "Rotten 2",
+              "status": "normal"
+            },
+            {
+              "value": "F",
+              "label": "Fresh 3",
+              "status": "normal"
+            },
+            {
+              "value": "E",
+              "label": "Empty 4",
+              "status": "normal"
+            },
+            {
+              "value": "F",
+              "label": "Fresh 5",
+              "status": "normal"
+            },
+            {
+              "value": "R",
+              "label": "Rotten 6",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "F",
+              "R",
+              "F",
+              "E",
+              "F",
+              "R"
+            ]
+          ]
+        },
+        "caption": "State of oranges in the grid (F: Fresh, R: Rotten, E: Empty)"
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.825731+00:00",
+      "contentHash": "952c34f82cdf9d05f253ea6c31bae698",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "pacific-atlantic-water-flow-4",
+      "title": "Which approach is best for finding all cells that can flow to both the Pacific and Atlantic oceans in a grid?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "pacific-atlantic-water-flow",
+      "difficulty": "Medium",
+      "question": "What is the most efficient algorithmic approach to determine which cells in a grid can flow to both oceans?",
+      "options": [
+        "Depth-First Search (DFS) from both oceans",
+        "Breadth-First Search (BFS) from both oceans",
+        "Dynamic Programming to store flow states",
+        "Iterative scanning of each cell for ocean reachability"
+      ],
+      "answer": 0,
+      "explanation": "Using Depth-First Search (DFS) from both oceans allows you to explore all reachable cells efficiently, marking them as reachable. The tempting distractor, Breadth-First Search (BFS) from both oceans, is also efficient but DFS is often simpler to implement for this type of problem, especially when dealing with recursion in a grid.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.825768+00:00",
+      "contentHash": "664ff82eb28c992a9ff2f0ce75b7715e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "pacific-atlantic-water-flow-5",
+      "title": "What is the time complexity of the optimal solution for this problem?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "pacific-atlantic-water-flow",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the most efficient algorithm for determining which cells can flow to both oceans?",
+      "options": [
+        "O(N) where N is the number of cells",
+        "O(N^2) where N is the number of cells",
+        "O(N log N) due to sorting",
+        "O(1) since the grid size is fixed"
+      ],
+      "answer": 1,
+      "explanation": "The optimal solution involves exploring each cell in the grid, leading to a time complexity of O(N^2), where N is the number of cells in the grid. The option O(N) is tempting because it suggests linear time, but the grid structure necessitates a full traversal.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.825810+00:00",
+      "contentHash": "cf2619f8eda3cd2054ef9bea3969e8cf",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "pacific-atlantic-water-flow-6",
+      "title": "What issue arises if the algorithm does not handle visited nodes correctly?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "pacific-atlantic-water-flow",
+      "difficulty": "Medium",
+      "question": "What is a potential pitfall if the algorithm fails to mark cells as visited during traversal?",
+      "options": [
+        "It may cause infinite loops",
+        "It will increase the time complexity",
+        "It will miss some cells that can flow to both oceans",
+        "It will not affect the correctness of the solution"
+      ],
+      "answer": 0,
+      "explanation": "Failing to mark cells as visited can lead to infinite loops, especially in a grid where paths can lead back to previously visited cells. The option stating it will miss some cells is also plausible, but the critical issue is the risk of infinite recursion or looping.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "(0,0)",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "(0,1)",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "(1,0)",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "(1,1)",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "(2,0)",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "(2,1)",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1",
+              "2"
+            ],
+            [
+              "3",
+              "4"
+            ],
+            [
+              "5",
+              "6"
+            ]
+          ]
+        },
+        "caption": "Sample grid representing elevation."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.825864+00:00",
+      "contentHash": "7d7b03840da15e15b24176a40525d431",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "surrounded-regions-4",
+      "title": "Which algorithm is best for identifying surrounded regions in a grid?",
+      "topics": [
+        "Graphs",
+        "Depth-First Search",
+        "Flood Fill"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "surrounded-regions",
+      "difficulty": "Medium",
+      "question": "What algorithm is most suitable for marking regions surrounded by a specific character in a 2D grid?",
+      "options": [
+        "Breadth-First Search",
+        "Depth-First Search",
+        "Dijkstra's Algorithm",
+        "Union-Find"
+      ],
+      "answer": 1,
+      "explanation": "Depth-First Search (DFS) is ideal for marking connected components in a grid, allowing you to explore all adjacent cells recursively. The tempting option, Breadth-First Search (BFS), is also valid but less efficient in terms of stack space for deep grids compared to DFS, which can be implemented with less overhead in this scenario.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.825900+00:00",
+      "contentHash": "053ab46c8ba01ed6280dac47f6268eee",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "surrounded-regions-5",
+      "title": "What is a critical edge case when processing the grid?",
+      "topics": [
+        "Graphs",
+        "Edge Cases"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "surrounded-regions",
+      "difficulty": "Medium",
+      "question": "Which situation must be handled to avoid incorrect results when searching for surrounded regions?",
+      "options": [
+        "Single row or column grids",
+        "Grids with all cells the same value",
+        "Grids with no surrounded regions",
+        "Grids where the boundary cells are the target value"
+      ],
+      "answer": 3,
+      "explanation": "Boundary cells that match the target value can connect to other cells and prevent them from being marked as surrounded. This edge case is crucial because it can lead to incorrect identification of surrounded regions. The option about single row or column grids is tempting, but they can still be processed correctly with the right approach.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.825933+00:00",
+      "contentHash": "a27923cb55b2a162c7cfb3adffdb2eab",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "surrounded-regions-6",
+      "title": "What is the time complexity of the optimal solution for this problem?",
+      "topics": [
+        "Graphs",
+        "Time Complexity"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "surrounded-regions",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the algorithm used to find surrounded regions in a grid?",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(n log n)",
+        "O(1)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal approach for this problem involves traversing each cell in the grid, leading to a time complexity of O(n^2) for an n x n grid. The option O(n) is tempting as it suggests linear complexity, but that would not account for the two-dimensional nature of the grid.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "X",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "O",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "X",
+              "label": "C",
+              "status": "normal"
+            },
+            {
+              "value": "O",
+              "label": "D",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "caption": "Example grid with regions marked."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.825975+00:00",
+      "contentHash": "5503c4f662dff5027a55a654c0f1e1ce",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "course-schedule-4",
+      "title": "What is the best approach to detect cycles in a directed graph?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "course-schedule",
+      "difficulty": "Medium",
+      "question": "Which algorithm is commonly used to detect cycles in a directed graph?",
+      "options": [
+        "Depth-First Search (DFS) with a visited set",
+        "Breadth-First Search (BFS) with a queue",
+        "Topological Sorting",
+        "Union-Find algorithm"
+      ],
+      "answer": 0,
+      "explanation": "Depth-First Search (DFS) with a visited set is effective for cycle detection in directed graphs because it tracks nodes currently in the recursion stack. The tempting distractor, Topological Sorting, fails here as it requires a directed acyclic graph (DAG) and does not help in identifying cycles directly.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826011+00:00",
+      "contentHash": "e2323d4d41959754b652bcf1427e6053",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "course-schedule-5",
+      "title": "What is the time complexity of topological sorting using DFS?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "course-schedule",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of performing topological sorting on a directed graph using depth-first search?",
+      "options": [
+        "O(V + E)",
+        "O(V^2)",
+        "O(E log V)",
+        "O(V log E)"
+      ],
+      "answer": 0,
+      "explanation": "The time complexity of topological sorting using DFS is O(V + E), where V is the number of vertices and E is the number of edges. The option O(V^2) is a common misconception, as it assumes a naive approach that does not leverage the graph's structure.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826043+00:00",
+      "contentHash": "bd06ed903da67b251d8e429bf4c390d1",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "course-schedule-6",
+      "title": "How do you handle multiple prerequisites in course scheduling?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "course-schedule",
+      "difficulty": "Medium",
+      "question": "What is a potential issue when handling multiple prerequisites for a course in a scheduling algorithm?",
+      "options": [
+        "Increased graph density leading to longer processing time",
+        "Difficulties in maintaining a valid topological order",
+        "Inability to detect cycles in the graph",
+        "Redundant edges causing incorrect results"
+      ],
+      "answer": 1,
+      "explanation": "Handling multiple prerequisites can lead to difficulties in maintaining a valid topological order if cycles are present. The option about increased graph density is misleading; while it may affect performance, it does not directly relate to the scheduling logic.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "Course A",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Course B",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Course C",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Course D",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Course",
+            "Prerequisites"
+          ],
+          "rows": [
+            [
+              "Course A",
+              "None"
+            ],
+            [
+              "Course B",
+              "Course A"
+            ],
+            [
+              "Course C",
+              "Course A, Course B"
+            ],
+            [
+              "Course D",
+              "Course C"
+            ]
+          ]
+        },
+        "caption": "Courses and their prerequisites."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826120+00:00",
+      "contentHash": "547450ce34220b385fbca3555716dd5b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "course-schedule-ii-4",
+      "title": "Which approach efficiently detects cycles in a directed graph?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "course-schedule-ii",
+      "difficulty": "Medium",
+      "question": "What is the most efficient algorithm to detect cycles in a directed graph when scheduling courses?",
+      "options": [
+        "Depth-First Search (DFS) with recursion stack tracking",
+        "Breadth-First Search (BFS) with a queue",
+        "Topological sorting using Kahn's algorithm",
+        "Union-Find data structure"
+      ],
+      "answer": 0,
+      "explanation": "Using Depth-First Search (DFS) with recursion stack tracking allows for efficient cycle detection in a directed graph. This method can identify back edges that indicate cycles. The BFS approach is less suitable for cycle detection in directed graphs, as it does not maintain the necessary state to track visited nodes effectively.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826163+00:00",
+      "contentHash": "09e078e9bce6636df648ea00b386b554",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "course-schedule-ii-5",
+      "title": "What is the time complexity of topological sorting using DFS?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "course-schedule-ii",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of performing a topological sort on a directed acyclic graph (DAG) using Depth-First Search?",
+      "options": [
+        "O(V + E)",
+        "O(V^2)",
+        "O(E)",
+        "O(V log V)"
+      ],
+      "answer": 0,
+      "explanation": "The time complexity of topological sorting using Depth-First Search (DFS) is O(V + E), where V is the number of vertices and E is the number of edges. This is because each vertex and edge is processed once. The O(V^2) option is a common misconception that arises from considering naive approaches like adjacency matrix representation.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826193+00:00",
+      "contentHash": "fb6364975efbdae21ef1ebf6cf63cc59",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "course-schedule-ii-6",
+      "title": "Identify the impact of cyclic dependencies on course scheduling.",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "course-schedule-ii",
+      "difficulty": "Medium",
+      "question": "What happens if the course prerequisites form a cycle?",
+      "options": [
+        "All courses can be completed in any order",
+        "No valid course schedule can be generated",
+        "Courses can be completed in a topological order",
+        "The cycle can be ignored and scheduling can proceed"
+      ],
+      "answer": 1,
+      "explanation": "If the course prerequisites form a cycle, it means that there is no valid way to complete the courses, as each course depends on another in a circular manner. This makes it impossible to generate a valid course schedule. The option stating that courses can be completed in any order is misleading because dependencies must be respected.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "Course A",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Course B",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Course C",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Course D",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Course",
+            "Prerequisite"
+          ],
+          "rows": [
+            [
+              "Course A",
+              "Course B"
+            ],
+            [
+              "Course B",
+              "Course C"
+            ],
+            [
+              "Course C",
+              "Course A"
+            ],
+            [
+              "Course D",
+              "Course B"
+            ]
+          ]
+        },
+        "caption": "Example of courses with cyclic dependencies."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826243+00:00",
+      "contentHash": "9203cf002cb7e20d86811db95ff43d54",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "graph-valid-tree-4",
+      "title": "What is a necessary condition for a graph to be a valid tree?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "graph-valid-tree",
+      "difficulty": "Medium",
+      "question": "Which of the following must be true for a graph to be classified as a valid tree?",
+      "options": [
+        "It must be connected and acyclic.",
+        "It must contain at least one cycle.",
+        "It must have exactly one node with no edges.",
+        "It must have more edges than nodes."
+      ],
+      "answer": 0,
+      "explanation": "A valid tree must be connected (all nodes can be reached from any other node) and acyclic (no cycles exist). The option about containing cycles is tempting but fails because cycles violate the acyclic condition of trees.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826277+00:00",
+      "contentHash": "58ec4efeb6bad9622748e8565cffa9cd",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "graph-valid-tree-5",
+      "title": "How does the number of edges relate to nodes in a valid tree?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "graph-valid-tree",
+      "difficulty": "Medium",
+      "question": "What is the relationship between the number of edges and nodes in a valid tree?",
+      "options": [
+        "The number of edges must equal the number of nodes.",
+        "The number of edges must be one less than the number of nodes.",
+        "The number of edges can be greater than the number of nodes.",
+        "The number of edges must be twice the number of nodes."
+      ],
+      "answer": 1,
+      "explanation": "In a valid tree, the number of edges is always one less than the number of nodes (n - 1), which ensures that the graph is connected and acyclic. The option about edges being greater than nodes is misleading, as it would imply cycles.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826314+00:00",
+      "contentHash": "25d508b441ae5174e6cfba573693e92b",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "graph-valid-tree-6",
+      "title": "What is a common naive approach to check if a graph is a valid tree?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "graph-valid-tree",
+      "difficulty": "Medium",
+      "question": "Which of the following is a naive approach to determine if a graph is a valid tree?",
+      "options": [
+        "Performing a depth-first search (DFS) and checking for cycles.",
+        "Counting the number of edges and comparing it to nodes.",
+        "Using breadth-first search (BFS) to traverse all nodes.",
+        "Checking if the graph is connected using a union-find structure."
+      ],
+      "answer": 1,
+      "explanation": "Counting the number of edges and comparing it to the number of nodes is a naive approach, as it does not ensure that the graph is acyclic or connected. The DFS option is tempting but it requires more than just cycle detection; it must also check connectivity.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826351+00:00",
+      "contentHash": "524eb498085012a3df4b4285d9067bec",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "number-of-connected-components-in-an-undirected-graph-4",
+      "title": "Choosing the Right Data Structure for Graph Traversal",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "number-of-connected-components-in-an-undirected-graph",
+      "difficulty": "Medium",
+      "question": "When implementing a graph traversal algorithm to find connected components, which data structure is most suitable for efficiently managing the nodes to be explored?",
+      "options": [
+        "Stack",
+        "Queue",
+        "Set",
+        "Hash Map"
+      ],
+      "answer": 0,
+      "explanation": "A stack is ideal for depth-first search (DFS), allowing you to explore as far as possible along a branch before backtracking. A queue, while effective for breadth-first search (BFS), does not suit DFS. A Set is useful for tracking visited nodes, but it does not manage the traversal itself.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826382+00:00",
+      "contentHash": "73984065bd99cbf71879de27d3966033",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "number-of-connected-components-in-an-undirected-graph-5",
+      "title": "Understanding Time Complexity in Graph Traversal",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "number-of-connected-components-in-an-undirected-graph",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of finding the number of connected components in an undirected graph using depth-first search (DFS)?",
+      "options": [
+        "O(V)",
+        "O(E)",
+        "O(V + E)",
+        "O(V * E)"
+      ],
+      "answer": 2,
+      "explanation": "The time complexity is O(V + E) because each vertex (V) and each edge (E) is processed once during the traversal. The O(V) option only accounts for vertices, while O(E) only accounts for edges, missing the combined effect.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826410+00:00",
+      "contentHash": "19807c0b6de60d28fe0303ccccc717f5",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "number-of-connected-components-in-an-undirected-graph-6",
+      "title": "Handling Edge Cases in Graph Traversal",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "number-of-connected-components-in-an-undirected-graph",
+      "difficulty": "Medium",
+      "question": "What potential issue arises when counting connected components if the input graph contains self-loops or multiple edges between the same nodes?",
+      "options": [
+        "It may lead to infinite loops.",
+        "It can cause incorrect component counts.",
+        "It has no effect on the count.",
+        "It increases the time complexity."
+      ],
+      "answer": 1,
+      "explanation": "Self-loops and multiple edges can lead to miscounting components if not handled correctly, as they may falsely suggest additional connections. The other options either misinterpret the nature of the problem or incorrectly assess the impact on complexity.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "0",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "C",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "D",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Node",
+            "Connections"
+          ],
+          "rows": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "C"
+            ],
+            [
+              "D",
+              "D"
+            ]
+          ]
+        },
+        "caption": "Graph representation with potential self-loops."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826485+00:00",
+      "contentHash": "9a5730d0def2916171ec07e2b5cbe0b8",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "redundant-connection-4",
+      "title": "Which data structure is most suitable for detecting cycles in a graph?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "redundant-connection",
+      "difficulty": "Medium",
+      "question": "What is the most effective data structure for detecting cycles in a graph when using a union-find approach?",
+      "options": [
+        "Array",
+        "Hash Table",
+        "Linked List",
+        "Disjoint Set Union (DSU)"
+      ],
+      "answer": 3,
+      "explanation": "The Disjoint Set Union (DSU) is specifically designed for cycle detection and union operations in graphs, making it the most effective choice. The tempting distractor, 'Hash Table', is often considered for tracking visited nodes but does not efficiently support union operations or cycle detection in the same way DSU does.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826518+00:00",
+      "contentHash": "f1feef23cd0b2d0f1fa16af5c22d4f28",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "redundant-connection-5",
+      "title": "What is a common pitfall when handling graph edges?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "redundant-connection",
+      "difficulty": "Medium",
+      "question": "What issue might arise if the graph contains multiple edges between the same nodes?",
+      "options": [
+        "It can lead to incorrect cycle detection.",
+        "It will always result in a valid tree structure.",
+        "It will not affect the graph's connectivity.",
+        "It will increase the time complexity of the algorithm."
+      ],
+      "answer": 0,
+      "explanation": "Having multiple edges between the same nodes can create false positives in cycle detection, leading to incorrect results. The option 'It will not affect the graph's connectivity' is misleading, as the presence of multiple edges can complicate the logic required to determine unique connections.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826553+00:00",
+      "contentHash": "ba70627f8a22ce1640e5b7149f605002",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "redundant-connection-6",
+      "title": "What is the time complexity of the optimal cycle detection algorithm?",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "redundant-connection",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the union-find algorithm with path compression for cycle detection in a graph?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(log n)",
+        "O(1)"
+      ],
+      "answer": 1,
+      "explanation": "The union-find algorithm with path compression has a time complexity of O(n log n) for processing all edges, making it efficient for cycle detection in dense graphs. The option 'O(n)' is incorrect because it does not account for the logarithmic factor introduced by the union operations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826581+00:00",
+      "contentHash": "a9315f38eeff429776b6ec501bc51eb7",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-ladder-4",
+      "title": "Choosing the Right Data Structure for Word Transformation",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-ladder",
+      "difficulty": "Hard",
+      "question": "Which data structure is most suitable for efficiently finding the shortest transformation sequence in a word ladder problem?",
+      "options": [
+        "Hash Set",
+        "Priority Queue",
+        "Adjacency List",
+        "Binary Search Tree"
+      ],
+      "answer": 2,
+      "explanation": "An adjacency list is ideal for representing the graph of words and their transformations, as it allows for efficient traversal of neighbors. The most tempting distractor, a hash set, only provides O(1) average time complexity for lookups but doesn't support the necessary graph traversal needed for shortest paths.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826612+00:00",
+      "contentHash": "a6aadb21bdb1c03c4b315888c036ae20",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-ladder-5",
+      "title": "Understanding Time Complexity in Word Ladder",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-ladder",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal solution for finding the shortest transformation sequence in a word ladder problem?",
+      "options": [
+        "O(N^2)",
+        "O(N * M)",
+        "O(M^2)",
+        "O(N * 26^M)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal solution typically involves a breadth-first search (BFS) that explores each word and its neighbors, leading to a time complexity of O(N * M), where N is the number of words and M is the length of each word. The option O(N^2) underestimates the complexity by ignoring the word length, while O(M^2) and O(N * 26^M) overestimate it by suggesting unnecessary operations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826641+00:00",
+      "contentHash": "9a74214d5e330949cb3437e69a5509c7",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-ladder-6",
+      "title": "Handling Edge Cases in Word Ladder",
+      "topics": [
+        "Graphs"
+      ],
+      "category": "Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-ladder",
+      "difficulty": "Hard",
+      "question": "What issue arises if the word list does not contain the target word in a word ladder problem?",
+      "options": [
+        "The algorithm runs indefinitely",
+        "The algorithm will return an empty sequence",
+        "The algorithm will throw an error",
+        "The algorithm will return the source word only"
+      ],
+      "answer": 1,
+      "explanation": "If the target word is not in the word list, the algorithm will correctly identify that no transformation is possible and return an empty sequence. The most tempting distractor, suggesting that the algorithm runs indefinitely, misrepresents the termination condition of the search process, which will stop once all possibilities are exhausted.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "hit",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "hot",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "dot",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "dog",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "cog",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "log",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "hit"
+            ],
+            [
+              "hot"
+            ],
+            [
+              "dot"
+            ],
+            [
+              "dog"
+            ],
+            [
+              "cog"
+            ],
+            [
+              "log"
+            ]
+          ]
+        },
+        "caption": "Example word list for transformation."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826709+00:00",
+      "contentHash": "87ba6a591b04e6ea9b305aae3b1e4517",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "network-delay-time-4",
+      "title": "Which algorithm is most suitable for finding the shortest path in a weighted directed graph with non-negative weights?",
+      "topics": [
+        "Advanced Graphs"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "network-delay-time",
+      "difficulty": "Medium",
+      "question": "Which algorithm is most suitable for finding the shortest path in a weighted directed graph with non-negative weights?",
+      "options": [
+        "Dijkstra's Algorithm",
+        "Bellman-Ford Algorithm",
+        "Depth-First Search",
+        "A* Search Algorithm"
+      ],
+      "answer": 0,
+      "explanation": "Dijkstra's Algorithm is the most suitable for finding the shortest path in a weighted directed graph with non-negative weights due to its efficiency in handling such cases. The Bellman-Ford Algorithm, while capable of handling negative weights, is less efficient in this context and would not be optimal here.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826741+00:00",
+      "contentHash": "b8933ba05b3ee5483f2ded54f95f5215",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "network-delay-time-5",
+      "title": "What is a potential issue when using a naive approach to solve the network delay problem?",
+      "topics": [
+        "Advanced Graphs"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "network-delay-time",
+      "difficulty": "Medium",
+      "question": "What is a potential issue when using a naive approach to solve the network delay problem?",
+      "options": [
+        "It may not handle negative weights correctly.",
+        "It could lead to excessive time complexity due to redundant calculations.",
+        "It does not account for the starting node.",
+        "It may produce incorrect results for disconnected graphs."
+      ],
+      "answer": 1,
+      "explanation": "A naive approach may lead to excessive time complexity due to redundant calculations, especially if it involves repeatedly exploring the same paths. This inefficiency can significantly slow down the solution for larger graphs. The option about negative weights is misleading since the problem specifically deals with non-negative weights.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826779+00:00",
+      "contentHash": "343915414e7ee61d881fde95229555b5",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "network-delay-time-6",
+      "title": "In the context of network delay, what does the term 'time to reach all nodes' imply?",
+      "topics": [
+        "Advanced Graphs"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "network-delay-time",
+      "difficulty": "Medium",
+      "question": "In the context of network delay, what does the term 'time to reach all nodes' imply?",
+      "options": [
+        "The maximum time taken to reach any node from the source node.",
+        "The total sum of times taken to reach all nodes from the source node.",
+        "The average time taken to reach all nodes from the source node.",
+        "The time taken to reach the farthest node only."
+      ],
+      "answer": 0,
+      "explanation": "The term 'time to reach all nodes' implies the maximum time taken to reach any node from the source node, as it reflects the overall delay in the network. The total sum of times would not provide a clear indication of the worst-case scenario, which is crucial in network delay problems.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "Node A",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Node B",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "Node C",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Node",
+            "Time to Reach"
+          ],
+          "rows": [
+            [
+              "A",
+              "0"
+            ],
+            [
+              "B",
+              "2"
+            ],
+            [
+              "C",
+              "5"
+            ]
+          ]
+        },
+        "caption": "Example of nodes and their respective times to reach from the source."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826833+00:00",
+      "contentHash": "a0def36af9561efa1a0c2f3c13d8768f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reconstruct-itinerary-4",
+      "title": "Which algorithm is best suited for finding Eulerian paths in a directed graph?",
+      "topics": [
+        "Graphs",
+        "Eulerian Path"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reconstruct-itinerary",
+      "difficulty": "Hard",
+      "question": "What algorithm is most effective for reconstructing an itinerary based on a list of flight tickets represented as directed edges?",
+      "options": [
+        "Depth-First Search (DFS)",
+        "Kruskal's Algorithm",
+        "Dijkstra's Algorithm",
+        "Breadth-First Search (BFS)"
+      ],
+      "answer": 0,
+      "explanation": "Depth-First Search (DFS) is optimal for reconstructing an itinerary since it allows for backtracking, which is essential for exploring all possible paths in the graph. The most tempting distractor, Dijkstra's Algorithm, is inappropriate here because it is designed for finding the shortest path, not for reconstructing paths based on specific visitation constraints.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826866+00:00",
+      "contentHash": "b5177959a7c3707de5d3e5fc090e1a81",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reconstruct-itinerary-5",
+      "title": "What is a common pitfall when handling duplicate tickets?",
+      "topics": [
+        "Graphs",
+        "Path Reconstruction"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reconstruct-itinerary",
+      "difficulty": "Medium",
+      "question": "How should duplicate tickets be managed when reconstructing an itinerary to ensure a valid output?",
+      "options": [
+        "Ignore duplicates entirely",
+        "Use a priority queue to process them",
+        "Count occurrences and treat them as separate edges",
+        "Only consider the first occurrence of each ticket"
+      ],
+      "answer": 1,
+      "explanation": "Using a priority queue to process duplicate tickets ensures that the lexicographically smallest itinerary is constructed, as it allows for proper ordering of the tickets. The option to ignore duplicates entirely fails because it can lead to incomplete itineraries, while counting occurrences could complicate the path reconstruction unnecessarily.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.826897+00:00",
+      "contentHash": "be5908b91cf9e5ba891f65fd1462b19f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reconstruct-itinerary-6",
+      "title": "What is the time complexity of reconstructing an itinerary using DFS?",
+      "topics": [
+        "Graphs",
+        "Time Complexity"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reconstruct-itinerary",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of reconstructing an itinerary from a list of tickets using a depth-first search approach?",
+      "options": [
+        "O(V + E)",
+        "O(E log E)",
+        "O(V^2)",
+        "O(E^2)"
+      ],
+      "answer": 0,
+      "explanation": "The time complexity of reconstructing an itinerary using DFS is O(V + E), where V is the number of vertices (airports) and E is the number of edges (tickets). The option O(E log E) mistakenly suggests a sorting step that is not necessary for the DFS traversal itself.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "JFK",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "SFO",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "ATL",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "LAX",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Airport"
+          ],
+          "rows": [
+            [
+              "JFK"
+            ],
+            [
+              "SFO"
+            ],
+            [
+              "ATL"
+            ],
+            [
+              "LAX"
+            ]
+          ]
+        },
+        "caption": "List of airports involved in the itinerary."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827001+00:00",
+      "contentHash": "f30e9989df15ae3b94a7bfcf1507358f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "min-cost-to-connect-all-points-6",
+      "title": "In a scenario where points are connected by edges with varying weights, what could be a potential issue if the graph contains negative weights?",
+      "topics": [
+        "Advanced Graphs"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "min-cost-to-connect-all-points",
+      "difficulty": "Medium",
+      "question": "In a scenario where points are connected by edges with varying weights, what could be a potential issue if the graph contains negative weights?",
+      "options": [
+        "The algorithm will always find a solution",
+        "Negative cycles may lead to infinite loops",
+        "The minimum spanning tree cannot be formed",
+        "The algorithm will fail to terminate"
+      ],
+      "answer": 2,
+      "explanation": "In the context of minimum spanning trees, negative weights can cause issues because they can lead to incorrect conclusions about the minimum connections needed. Specifically, if a graph has negative weights, it may not yield a valid minimum spanning tree. The distractor about infinite loops is misleading, as most algorithms handle negative weights without entering infinite loops, but they can produce incorrect results.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827132+00:00",
+      "contentHash": "bc97f252fa49533cb307505de34a47a8",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "swim-in-rising-water-4",
+      "title": "Optimal Pathfinding in Dynamic Environments",
+      "topics": [
+        "Graph Theory",
+        "Pathfinding",
+        "Advanced Graphs"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "swim-in-rising-water",
+      "difficulty": "Hard",
+      "question": "In a scenario where water levels rise over time, which algorithm is best suited for finding the minimum time to reach a destination while considering dynamic obstacles?",
+      "options": [
+        "Dijkstra's Algorithm",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "A* Search Algorithm"
+      ],
+      "answer": 0,
+      "explanation": "Dijkstra's Algorithm is optimal for finding the shortest path in a graph with non-negative weights, making it suitable for dynamic environments like rising water levels. The tempting distractor, A* Search Algorithm, while efficient for static environments, relies on heuristics that may not adapt well to changing conditions.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827164+00:00",
+      "contentHash": "09803d55f2dcddd3211c1a18cd74fa14",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "swim-in-rising-water-5",
+      "title": "Handling Edge Cases in Pathfinding",
+      "topics": [
+        "Graph Theory",
+        "Edge Cases",
+        "Advanced Graphs"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "swim-in-rising-water",
+      "difficulty": "Medium",
+      "question": "What issue arises when using a simple BFS approach in a scenario where water levels rise, potentially blocking paths?",
+      "options": [
+        "BFS may find a longer path than necessary",
+        "BFS cannot handle dynamic changes",
+        "BFS may get stuck in cycles",
+        "BFS does not guarantee the shortest path"
+      ],
+      "answer": 1,
+      "explanation": "BFS is not designed to handle dynamic changes in the environment, such as rising water levels that can block previously available paths. The most tempting distractor, 'BFS may find a longer path than necessary', is misleading because BFS will always find the shortest path in an unweighted graph, but it fails in dynamic scenarios.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827197+00:00",
+      "contentHash": "980ded5c8f03df7f0b22f69d5024e944",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "swim-in-rising-water-6",
+      "title": "Space Complexity Considerations",
+      "topics": [
+        "Graph Theory",
+        "Space Complexity",
+        "Advanced Graphs"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "swim-in-rising-water",
+      "difficulty": "Hard",
+      "question": "When implementing a pathfinding algorithm for a grid with rising water, what is the primary concern regarding space complexity?",
+      "options": [
+        "Storing the entire grid state",
+        "Tracking visited nodes",
+        "Maintaining a priority queue",
+        "Handling multiple paths simultaneously"
+      ],
+      "answer": 2,
+      "explanation": "Maintaining a priority queue is crucial for efficiently managing the nodes to explore next in a dynamic environment, impacting space complexity significantly. The tempting distractor, 'Tracking visited nodes', is important but typically requires less space compared to the priority queue, which can grow considerably in complex scenarios.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827226+00:00",
+      "contentHash": "6ae690d7bdd50b6a23bf367daafbd382",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "alien-dictionary-4",
+      "title": "Choosing the Right Data Structure for Topological Sorting",
+      "topics": [
+        "Advanced Graphs",
+        "Topological Sort"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "alien-dictionary",
+      "difficulty": "Hard",
+      "question": "When implementing a topological sort for a directed graph representing an alien dictionary, which data structure is most suitable for efficiently managing the nodes with no incoming edges?",
+      "options": [
+        "A stack to hold nodes in reverse order",
+        "A queue to process nodes in FIFO order",
+        "A priority queue to always process the smallest node",
+        "A set to track visited nodes"
+      ],
+      "answer": 1,
+      "explanation": "A queue is the most suitable data structure for managing nodes with no incoming edges in topological sorting, as it allows for processing nodes in FIFO order, which is essential for maintaining the correct order of dependencies. The tempting option of a stack fails because it processes nodes in LIFO order, which does not respect the dependency constraints of the graph.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827262+00:00",
+      "contentHash": "3d2ff5362793037122c456f743a4e1c2",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "alien-dictionary-5",
+      "title": "Understanding Cycle Detection in Graphs",
+      "topics": [
+        "Advanced Graphs",
+        "Cycle Detection"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "alien-dictionary",
+      "difficulty": "Hard",
+      "question": "What is a key indicator that a directed graph representing an alien dictionary has no valid ordering of characters?",
+      "options": [
+        "The presence of multiple outgoing edges from a node",
+        "The existence of a cycle in the graph",
+        "The graph contains isolated nodes",
+        "The graph has nodes with zero indegree"
+      ],
+      "answer": 1,
+      "explanation": "The existence of a cycle in a directed graph is a key indicator that there is no valid ordering of characters, as it implies that some characters depend on each other in a circular manner. The option about isolated nodes is tempting but incorrect, as isolated nodes do not affect the overall ordering of the other nodes.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827294+00:00",
+      "contentHash": "73040aeb9527fbebc4be86ce5e9896c4",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "alien-dictionary-6",
+      "title": "Handling Edge Cases in Alien Dictionary Problems",
+      "topics": [
+        "Advanced Graphs",
+        "Edge Cases"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "alien-dictionary",
+      "difficulty": "Hard",
+      "question": "In the context of constructing the alien dictionary, what issue might arise if the input words contain duplicates?",
+      "options": [
+        "It could lead to incorrect character ordering",
+        "It may cause an infinite loop during processing",
+        "It will not affect the ordering and can be ignored",
+        "It could result in a cycle in the graph"
+      ],
+      "answer": 0,
+      "explanation": "Duplicate words could lead to incorrect character ordering if not handled properly, as they can reinforce the same ordering constraints without providing new information. The option about infinite loops is misleading, as duplicates do not inherently cause such issues.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "word1",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "word2",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "word3",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Words"
+          ],
+          "rows": [
+            [
+              "apple"
+            ],
+            [
+              "app"
+            ],
+            [
+              "apricot"
+            ]
+          ]
+        },
+        "caption": "Example of words with potential duplicates affecting ordering."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827348+00:00",
+      "contentHash": "be2c4596b17d4f85d341b64d55c091fd",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "cheapest-flights-within-k-stops-4",
+      "title": "Which algorithm is best suited for finding the cheapest flights within a limited number of stops?",
+      "topics": [
+        "Graphs",
+        "Shortest Path"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "cheapest-flights-within-k-stops",
+      "difficulty": "Medium",
+      "question": "When tasked with finding the cheapest flights that allow for a maximum of K stops, which algorithm provides the most efficient solution?",
+      "options": [
+        "Dijkstra's Algorithm",
+        "Bellman-Ford Algorithm",
+        "A* Search Algorithm",
+        "Depth-First Search (DFS)"
+      ],
+      "answer": 1,
+      "explanation": "The Bellman-Ford algorithm is suitable here because it can handle graphs with edges of varying weights and can efficiently find the shortest path within a specified number of edges (or stops). Dijkstra's algorithm fails in this case as it does not account for the number of stops, which is critical for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827383+00:00",
+      "contentHash": "1ab9f2c73fc3d02f9463f934af0848e8",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "cheapest-flights-within-k-stops-5",
+      "title": "What is a key limitation of using a naive brute-force approach for this problem?",
+      "topics": [
+        "Graphs",
+        "Brute Force"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "cheapest-flights-within-k-stops",
+      "difficulty": "Medium",
+      "question": "Why might a brute-force approach be inefficient when solving for the cheapest flights with K stops?",
+      "options": [
+        "It cannot handle negative weight edges.",
+        "It requires more memory than optimal solutions.",
+        "It explores all possible paths, leading to exponential time complexity.",
+        "It does not guarantee finding a solution even if one exists."
+      ],
+      "answer": 2,
+      "explanation": "A brute-force approach would explore all possible paths between the source and destination, leading to exponential time complexity, which is impractical for larger graphs. The most tempting distractor, 'It cannot handle negative weight edges,' is incorrect here, as the problem does not inherently require handling of negative weights.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827419+00:00",
+      "contentHash": "69749d8a3d6d2f2f73b87e671f9ef67d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "cheapest-flights-within-k-stops-6",
+      "title": "How does the presence of cycles in the graph affect the solution?",
+      "topics": [
+        "Graphs",
+        "Cycle Detection"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "cheapest-flights-within-k-stops",
+      "difficulty": "Medium",
+      "question": "In the context of finding the cheapest flights, what impact do cycles in the graph have on the algorithm's performance?",
+      "options": [
+        "Cycles can lead to infinite loops if not handled properly.",
+        "Cycles do not affect performance if K is large enough.",
+        "Cycles can provide shorter paths but complicate the algorithm.",
+        "Cycles are irrelevant since only the shortest path is considered."
+      ],
+      "answer": 0,
+      "explanation": "Cycles can lead to infinite loops if not properly managed, especially in algorithms that do not inherently check for revisiting nodes. The option 'Cycles do not affect performance if K is large enough' is misleading because even with a large K, cycles can still introduce inefficiencies and incorrect paths.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "A",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "B",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "C",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "D",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Source",
+            "Destination",
+            "Cost"
+          ],
+          "rows": [
+            [
+              "A",
+              "B",
+              "100"
+            ],
+            [
+              "A",
+              "C",
+              "200"
+            ],
+            [
+              "B",
+              "C",
+              "100"
+            ],
+            [
+              "C",
+              "D",
+              "300"
+            ],
+            [
+              "B",
+              "D",
+              "400"
+            ],
+            [
+              "D",
+              "B",
+              "50"
+            ]
+          ]
+        },
+        "caption": "Sample flight connections and costs."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827484+00:00",
+      "contentHash": "71d5b92affe2d52e3b014b004e31b067",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "climbing-stairs-4",
+      "title": "Which approach is optimal for solving the climbing stairs problem?",
+      "topics": [
+        "Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "climbing-stairs",
+      "difficulty": "Easy",
+      "question": "What is the most efficient way to compute the number of distinct ways to climb a staircase with `n` steps, where you can take either 1 or 2 steps at a time?",
+      "options": [
+        "Using a recursive approach without memoization",
+        "Using a bottom-up dynamic programming approach",
+        "Using a top-down dynamic programming approach with memoization",
+        "Using a brute-force approach to count all combinations"
+      ],
+      "answer": 1,
+      "explanation": "The bottom-up dynamic programming approach is optimal because it builds the solution iteratively, reducing redundant calculations. The tempting distractor is the recursive approach without memoization, which leads to exponential time complexity due to repeated calculations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827526+00:00",
+      "contentHash": "4d744d7f5b24d8e93533bf4eecec7cd8",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "climbing-stairs-5",
+      "title": "What is the time complexity of the optimal solution?",
+      "topics": [
+        "Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "climbing-stairs",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of the bottom-up dynamic programming solution for the climbing stairs problem?",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(log n)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The bottom-up dynamic programming solution has a time complexity of O(n) because it iterates through the number of steps once to compute the number of ways to reach each step. The option O(n^2) might seem plausible due to nested iterations in some algorithms, but this problem only requires a single pass.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827553+00:00",
+      "contentHash": "a01bdba93e59a7accd0c558622fa3e48",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "climbing-stairs-6",
+      "title": "How does the presence of large `n` affect memory usage?",
+      "topics": [
+        "Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "climbing-stairs",
+      "difficulty": "Easy",
+      "question": "In the climbing stairs problem, if you use an array to store the number of ways to reach each step, how does increasing `n` affect memory usage?",
+      "options": [
+        "Memory usage remains constant regardless of `n`",
+        "Memory usage increases linearly with `n`",
+        "Memory usage decreases as `n` increases",
+        "Memory usage increases exponentially with `n`"
+      ],
+      "answer": 1,
+      "explanation": "Using an array to store results for each step leads to linear memory usage, as the size of the array grows directly with `n`. The distractor stating that memory usage remains constant is misleading since it ignores the growing input size.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "0",
+              "label": "step 0",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "step 1",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "step 2",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "step 3",
+              "status": "normal"
+            },
+            {
+              "value": "?",
+              "label": "step n",
+              "status": "normal"
+            },
+            {
+              "value": "?",
+              "label": "step n+1",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "0"
+            ],
+            [
+              "1"
+            ],
+            [
+              "2"
+            ],
+            [
+              "3"
+            ],
+            [
+              "?"
+            ],
+            [
+              "?"
+            ]
+          ]
+        },
+        "caption": "Array representing ways to reach each step."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827607+00:00",
+      "contentHash": "a900877011717ea2b96ba1fbe6a435d1",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "min-cost-climbing-stairs-4",
+      "title": "Choosing the Right Approach for Minimum Cost",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "min-cost-climbing-stairs",
+      "difficulty": "Easy",
+      "question": "When solving a problem that requires finding the minimum cost to reach the top of stairs, which approach is most efficient in terms of both time and space complexity?",
+      "options": [
+        "Using recursion with memoization",
+        "Implementing a brute-force search",
+        "Iterating through the stairs with a greedy approach",
+        "Using dynamic programming with a bottom-up approach"
+      ],
+      "answer": 3,
+      "explanation": "The dynamic programming approach with a bottom-up strategy efficiently calculates the minimum cost by building up solutions from smaller subproblems, resulting in O(n) time and O(1) space complexity. The brute-force search is tempting but inefficient, as it can lead to exponential time complexity due to redundant calculations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827647+00:00",
+      "contentHash": "f1b61e2c19318d46e83f02d0668e40fc",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "min-cost-climbing-stairs-6",
+      "title": "Analyzing Time Complexity of Solutions",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "min-cost-climbing-stairs",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of the optimal dynamic programming solution for the minimum cost climbing stairs problem?",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(log n)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal dynamic programming solution operates in O(n) time complexity, as it processes each stair once to compute the minimum cost. The O(n^2) option might seem plausible if considering a naive approach, but it would involve unnecessary repeated calculations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827674+00:00",
+      "contentHash": "586fbf56206fa2d14637afa9969eecbd",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "house-robber-4",
+      "title": "Optimal Substructure in Dynamic Programming",
+      "topics": [
+        "Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "house-robber",
+      "difficulty": "Medium",
+      "question": "In a dynamic programming problem like the House Robber, what is the significance of optimal substructure?",
+      "options": [
+        "It allows for a greedy approach to be used effectively.",
+        "It ensures that the problem can be broken down into smaller, overlapping subproblems.",
+        "It guarantees that the solution can be constructed in linear time.",
+        "It indicates that the problem can only be solved using recursion."
+      ],
+      "answer": 1,
+      "explanation": "The correct option highlights that optimal substructure is a key property in dynamic programming, allowing the problem to be divided into smaller, overlapping subproblems. The tempting distractor is the greedy approach, which may not always yield optimal solutions for problems like House Robber.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827713+00:00",
+      "contentHash": "82d8e8c4d31ee2bc5ac0c70bca1303ce",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "house-robber-5",
+      "title": "Space Complexity Trade-offs",
+      "topics": [
+        "Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "house-robber",
+      "difficulty": "Medium",
+      "question": "When solving the House Robber problem, which approach optimally balances time and space complexity?",
+      "options": [
+        "Using a 2D array to store all subproblem results.",
+        "Using a single array to store only the last two results.",
+        "Using a recursive approach with memoization.",
+        "Using a brute force approach to evaluate all combinations."
+      ],
+      "answer": 1,
+      "explanation": "The most efficient approach uses a single array to keep track of only the last two results, thus reducing the space complexity to O(1) while maintaining linear time complexity. The distractor suggesting a 2D array is misleading, as it unnecessarily increases space usage without improving efficiency.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827750+00:00",
+      "contentHash": "63d15d000257e812e28706134424ba7e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "house-robber-6",
+      "title": "Handling Edge Cases in House Robber",
+      "topics": [
+        "Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "house-robber",
+      "difficulty": "Medium",
+      "question": "What is a critical edge case to consider when implementing the House Robber solution?",
+      "options": [
+        "The case when there are no houses to rob.",
+        "The case when all houses have the same amount of money.",
+        "The case when the number of houses is very large.",
+        "The case when the houses are arranged in a circular manner."
+      ],
+      "answer": 0,
+      "explanation": "Considering the scenario where there are no houses to rob is crucial, as it should return a total of zero without any further calculations. The distractor about houses having the same amount of money is tempting but does not require special handling in the algorithm.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "2",
+              "label": "0",
+              "status": "normal"
+            },
+            {
+              "value": "7",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "9",
+              "label": "2",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "3",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "4",
+              "status": "normal"
+            },
+            {
+              "value": "8",
+              "label": "5",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example input for House Robber problem."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827804+00:00",
+      "contentHash": "ad0ceaf4220782ffd849c26ec11a503a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "house-robber-ii-4",
+      "title": "Optimal Approach for Circular Array",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "house-robber-ii",
+      "difficulty": "Medium",
+      "question": "When dealing with a circular array in a dynamic programming problem, what is a common strategy to avoid counting the first and last elements together?",
+      "options": [
+        "Use a single dynamic programming array with a wrap-around condition",
+        "Split the problem into two linear subproblems excluding one endpoint each time",
+        "Iterate through the array using a two-pointer technique",
+        "Use a greedy approach to select non-adjacent elements"
+      ],
+      "answer": 1,
+      "explanation": "The best strategy is to split the problem into two subproblems: one that includes the first element and excludes the last, and another that excludes the first and includes the last. This ensures that you do not count both endpoints together. The tempting distractor is the greedy approach, which fails because it may not yield the optimal solution in cases where the best choice involves skipping elements that seem beneficial at first.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827847+00:00",
+      "contentHash": "fa591882c46161e66a4587143e69815b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "house-robber-ii-5",
+      "title": "Space Complexity in Dynamic Programming",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "house-robber-ii",
+      "difficulty": "Medium",
+      "question": "In a dynamic programming solution for the House Robber II problem, what is the optimal space complexity if you only need to keep track of the last two computed values?",
+      "options": [
+        "O(n)",
+        "O(1)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal space complexity can be reduced to O(1) by only storing the last two computed values instead of maintaining an entire array. This is because the current state only depends on the previous two states. The O(n) option is misleading as it suggests maintaining a full array, which is unnecessary.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827880+00:00",
+      "contentHash": "bff5627bd02317df40bea5ffe59dd64f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "house-robber-ii-6",
+      "title": "Edge Cases in Dynamic Programming",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "house-robber-ii",
+      "difficulty": "Medium",
+      "question": "What special case must be handled when implementing a dynamic programming solution for a circular array, such as in House Robber II?",
+      "options": [
+        "Arrays with only one element should return that element",
+        "Arrays with two elements should return the maximum of the two",
+        "Arrays with three elements should return the sum of the two largest elements",
+        "Arrays with more than three elements can be treated as linear arrays"
+      ],
+      "answer": 1,
+      "explanation": "When handling a circular array, you must ensure that for arrays with two elements, the solution returns the maximum of the two, as you cannot rob both houses. The first option is tempting but does not address the circular nature of the problem. The third option is incorrect as it misinterprets the requirement to avoid adjacent selections.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "House Index",
+            "Value"
+          ],
+          "rows": [
+            [
+              "0",
+              "10"
+            ],
+            [
+              "1",
+              "20"
+            ],
+            [
+              "2",
+              "30"
+            ],
+            [
+              "3",
+              "40"
+            ],
+            [
+              "4",
+              "50"
+            ],
+            [
+              "5",
+              "60"
+            ]
+          ]
+        },
+        "caption": "Example values for houses in a circular arrangement."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827928+00:00",
+      "contentHash": "5347f1e83f5b8c73909e6bb3706147c5",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-palindromic-substring-4",
+      "title": "Which approach efficiently identifies the longest palindromic substring?",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-palindromic-substring",
+      "difficulty": "Medium",
+      "question": "What is the most efficient algorithmic approach to find the longest palindromic substring in a given string?",
+      "options": [
+        "Dynamic Programming",
+        "Brute Force",
+        "Greedy",
+        "Backtracking"
+      ],
+      "answer": 0,
+      "explanation": "Dynamic programming is the most efficient approach for this problem, as it builds on previously computed results to avoid redundant calculations. The brute force option, while straightforward, has a significantly higher time complexity of O(n^3), making it less efficient for larger strings.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827958+00:00",
+      "contentHash": "957c5bd95cebbda78e7f4575788a37b1",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-palindromic-substring-5",
+      "title": "What is the time complexity of the optimal solution?",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-palindromic-substring",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the dynamic programming approach to find the longest palindromic substring?",
+      "options": [
+        "O(n^2)",
+        "O(n log n)",
+        "O(n^3)",
+        "O(n)"
+      ],
+      "answer": 0,
+      "explanation": "The dynamic programming approach has a time complexity of O(n^2) due to the need to fill an n x n table where n is the length of the input string. The O(n^3) option is from the naive brute-force method, which checks all substrings.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.827985+00:00",
+      "contentHash": "9c191af30ebcf4539925722164ce5e9a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-palindromic-substring-6",
+      "title": "What issue arises with the brute force method?",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-palindromic-substring",
+      "difficulty": "Medium",
+      "question": "What is a significant drawback of using a brute force approach to find the longest palindromic substring?",
+      "options": [
+        "It cannot handle empty strings",
+        "It requires more memory than dynamic programming",
+        "It has a higher time complexity",
+        "It does not return the correct result"
+      ],
+      "answer": 2,
+      "explanation": "The brute force approach has a significant drawback in that it has a time complexity of O(n^3), making it inefficient for longer strings. While it can handle empty strings and return correct results, its inefficiency is a major concern. The option about requiring more memory is misleading, as brute force typically uses less memory than dynamic programming.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "a",
+              "label": "0",
+              "status": "normal"
+            },
+            {
+              "value": "b",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "c",
+              "label": "2",
+              "status": "normal"
+            },
+            {
+              "value": "b",
+              "label": "3",
+              "status": "normal"
+            },
+            {
+              "value": "a",
+              "label": "4",
+              "status": "normal"
+            },
+            {
+              "value": "d",
+              "label": "5",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "a",
+              "b",
+              "c",
+              "b",
+              "a",
+              "d"
+            ]
+          ]
+        },
+        "caption": "Example string for palindromic substring search."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828034+00:00",
+      "contentHash": "7bbec9a377260ed9ec4d70ee8db29218",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "palindromic-substrings-4",
+      "title": "Which approach efficiently counts palindromic substrings in a string?",
+      "topics": [
+        "Dynamic Programming",
+        "String Manipulation"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "palindromic-substrings",
+      "difficulty": "Medium",
+      "question": "What is the most efficient approach to count the number of palindromic substrings in a given string?",
+      "options": [
+        "Expand Around Center",
+        "Brute Force with O(n^3)",
+        "Dynamic Programming with O(n^2)",
+        "Suffix Tree Construction"
+      ],
+      "answer": 0,
+      "explanation": "The 'Expand Around Center' approach is efficient as it checks for palindromes by expanding from each character and each pair of characters, leading to O(n^2) time complexity. The tempting distractor, 'Brute Force with O(n^3)', is less efficient due to its cubic time complexity, making it impractical for longer strings.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828087+00:00",
+      "contentHash": "da90393aa6f78700ff18a5ef357106a9",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "palindromic-substrings-5",
+      "title": "What is a key edge case when identifying palindromic substrings?",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "palindromic-substrings",
+      "difficulty": "Medium",
+      "question": "Which edge case must be considered when identifying palindromic substrings?",
+      "options": [
+        "Single character strings",
+        "Strings with no characters",
+        "Strings with all identical characters",
+        "Strings with mixed case sensitivity"
+      ],
+      "answer": 0,
+      "explanation": "Single character strings are inherently palindromic, and this case must be handled correctly to ensure accurate counting. The option 'Strings with no characters' is misleading, as they do not contribute to palindromic counts and are typically ignored.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828118+00:00",
+      "contentHash": "9788dc217930fb19ce8307560e92fb9b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "palindromic-substrings-6",
+      "title": "What is the space complexity of the optimal solution?",
+      "topics": [
+        "Dynamic Programming",
+        "Space Complexity"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "palindromic-substrings",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of the optimal solution for counting palindromic substrings?",
+      "options": [
+        "O(n)",
+        "O(1)",
+        "O(n^2)",
+        "O(log n)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal solution using the 'Expand Around Center' method has a space complexity of O(1) since it only uses a few variables for counting and does not require additional data structures. The option 'O(n)' might seem plausible as it is common in dynamic programming solutions, but it is incorrect in this context.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828144+00:00",
+      "contentHash": "300a4ce9f6abe1ee6f22c9138f0c89ce",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "decode-ways-4",
+      "title": "Which approach is optimal for solving decoding problems involving sequences of digits?",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "decode-ways",
+      "difficulty": "Medium",
+      "question": "What is the most efficient algorithmic approach to solve problems that involve decoding a sequence of digits into letters?",
+      "options": [
+        "Brute force recursion with memoization",
+        "Dynamic programming with a single array",
+        "Dynamic programming with two arrays",
+        "Iterative greedy approach"
+      ],
+      "answer": 1,
+      "explanation": "The optimal approach is dynamic programming with a single array, which allows for efficient storage of intermediate results and reduces time complexity to O(n). The brute force recursion with memoization is tempting but can be less efficient due to overhead. The two arrays approach is unnecessary and complicates the solution.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828175+00:00",
+      "contentHash": "f378a4c8cbe4fbc076391e9cc6230d73",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "decode-ways-5",
+      "title": "How does the presence of leading zeros affect decoding?",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "decode-ways",
+      "difficulty": "Medium",
+      "question": "What happens if the input string contains leading zeros in a decoding problem?",
+      "options": [
+        "It results in an invalid decoding",
+        "It can be treated as a valid single character",
+        "It always leads to multiple valid decodings",
+        "It has no effect on the decoding process"
+      ],
+      "answer": 0,
+      "explanation": "Leading zeros result in an invalid decoding because there is no corresponding letter for '0' and it cannot be decoded. Treating it as a valid single character is incorrect. The other options misinterpret how leading zeros affect the decoding process.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828205+00:00",
+      "contentHash": "1da4264f603d9a8690c874778db52c36",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "decode-ways-6",
+      "title": "What is the time complexity of the optimal solution?",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "decode-ways",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the dynamic programming solution for decoding ways?",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(2^n)",
+        "O(n log n)"
+      ],
+      "answer": 0,
+      "explanation": "The time complexity of the dynamic programming solution is O(n), where n is the length of the input string. This is due to the linear traversal of the string while calculating the number of ways to decode. O(n^2) is a common misconception when considering nested loops, but the optimal approach only requires a single pass.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "Index",
+            "Value"
+          ],
+          "rows": [
+            [
+              "0",
+              "1"
+            ],
+            [
+              "1",
+              "2"
+            ],
+            [
+              "2",
+              "3"
+            ],
+            [
+              "3",
+              "4"
+            ],
+            [
+              "4",
+              "5"
+            ],
+            [
+              "5",
+              "6"
+            ]
+          ]
+        },
+        "caption": "Index and corresponding values during decoding."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828245+00:00",
+      "contentHash": "9f1e0bbbc3670c6724686bc4b47e01fc",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "coin-change-4",
+      "title": "Optimal Substructure in Coin Change",
+      "topics": [
+        "Dynamic Programming",
+        "Greedy Algorithms"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "coin-change",
+      "difficulty": "Medium",
+      "question": "In the context of the Coin Change problem, why is it important to recognize that the problem exhibits optimal substructure?",
+      "options": [
+        "It allows the use of a greedy algorithm to find the solution.",
+        "It enables the problem to be solved using dynamic programming techniques.",
+        "It simplifies the problem by reducing the number of coins needed.",
+        "It guarantees that the solution will always be the minimum possible."
+      ],
+      "answer": 1,
+      "explanation": "Recognizing optimal substructure means that the solution to the problem can be constructed from solutions to its subproblems, which is a key principle for applying dynamic programming. The most tempting distractor is the greedy algorithm option, but greedy methods do not always yield the optimal solution for this problem, especially with certain coin denominations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828289+00:00",
+      "contentHash": "8a4c2b0cf1dcf360c5edd01ecca74554",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "coin-change-5",
+      "title": "Time Complexity of Coin Change Solutions",
+      "topics": [
+        "Dynamic Programming",
+        "Complexity Analysis"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "coin-change",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the dynamic programming solution to the Coin Change problem?",
+      "options": [
+        "O(n * m) where n is the amount and m is the number of coin denominations.",
+        "O(n + m) where n is the amount and m is the number of coin denominations.",
+        "O(n^2) where n is the amount to be made.",
+        "O(m^2) where m is the number of coin denominations."
+      ],
+      "answer": 0,
+      "explanation": "The dynamic programming approach typically involves filling a table of size (amount + 1) by (number of coins), leading to a time complexity of O(n * m), where n is the target amount and m is the number of coin types. The option suggesting O(n + m) is tempting but does not account for the nested iterations required to fill the DP table.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828327+00:00",
+      "contentHash": "f498523c4dfbf0f1bfa06c31ceb9768d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "coin-change-6",
+      "title": "Edge Cases in Coin Change Problem",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "coin-change",
+      "difficulty": "Medium",
+      "question": "When solving the Coin Change problem, which of the following edge cases must be carefully handled?",
+      "options": [
+        "The case where the amount is zero should return zero coins needed.",
+        "The case where all coin denominations are larger than the amount should return a valid solution.",
+        "The case where there are duplicate coin denominations should be ignored.",
+        "The case where the amount is negative should return an error."
+      ],
+      "answer": 0,
+      "explanation": "In the Coin Change problem, if the amount is zero, the correct response is that zero coins are needed, which is a valid base case for the dynamic programming solution. The option regarding all coin denominations being larger than the amount is misleading, as it should indicate that no solution exists, not a valid solution. Handling negative amounts typically involves returning an error or a specific indication that the input is invalid.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "Amount",
+            "Coins"
+          ],
+          "rows": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "1",
+              "N/A"
+            ],
+            [
+              "2",
+              "1,1"
+            ],
+            [
+              "3",
+              "1,2"
+            ],
+            [
+              "4",
+              "2,2"
+            ],
+            [
+              "5",
+              "5"
+            ]
+          ]
+        },
+        "caption": "Example of amounts and their corresponding coin combinations."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828382+00:00",
+      "contentHash": "f7c9f43bd658e59037c34d3999a066be",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "maximum-product-subarray-4",
+      "title": "Choosing the Right Data Structure for Dynamic Programming",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "maximum-product-subarray",
+      "difficulty": "Medium",
+      "question": "When implementing a dynamic programming solution for finding the maximum product subarray, which data structure is most appropriate to store intermediate results?",
+      "options": [
+        "A simple array to store the maximum product up to each index",
+        "A hash table to store the maximum product for each unique subarray",
+        "A stack to keep track of the current product and its indices",
+        "A linked list to dynamically add products as they are calculated"
+      ],
+      "answer": 0,
+      "explanation": "Using a simple array to store the maximum product up to each index allows for efficient access and updates during the iteration. The tempting distractor is the hash table, which is less efficient for this problem as it introduces unnecessary complexity and overhead without providing benefits for subarray calculations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828423+00:00",
+      "contentHash": "bf293da2a86e68162cae102fa7e12ff3",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "maximum-product-subarray-5",
+      "title": "Handling Negative Numbers in Products",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "maximum-product-subarray",
+      "difficulty": "Medium",
+      "question": "What is a critical consideration when calculating the maximum product subarray that involves negative numbers?",
+      "options": [
+        "Negative numbers can only decrease the product, so they should be ignored",
+        "The product of two negative numbers can become positive, affecting the maximum product",
+        "Negative numbers should always be included as they increase the length of the subarray",
+        "The presence of negative numbers means the maximum product will always be negative"
+      ],
+      "answer": 1,
+      "explanation": "The product of two negative numbers can turn positive, which is crucial for finding the maximum product subarray. The most tempting distractor is the first option, as ignoring negative numbers can lead to missing potential maximum products formed by their combinations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828461+00:00",
+      "contentHash": "3f91a678ecb0419abd4a47be10cc69cc",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "maximum-product-subarray-6",
+      "title": "Edge Cases in Maximum Product Subarray",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "maximum-product-subarray",
+      "difficulty": "Medium",
+      "question": "Given an array containing zeros, how does this affect the calculation of the maximum product subarray?",
+      "options": [
+        "Zeros reset the product and should be treated as boundaries for new calculations",
+        "Zeros do not affect the product but should be counted for the length of the subarray",
+        "Zeros can be ignored entirely as they do not contribute to the product",
+        "Zeros should be included in the product calculation as they represent a valid subarray"
+      ],
+      "answer": 0,
+      "explanation": "Zeros reset the product, acting as boundaries that separate potential subarrays. This makes the first option correct, as it allows for recalibrating the product calculation after encountering a zero. The second option is misleading because while zeros affect the length, they do not contribute to the product.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "2",
+              "label": "i",
+              "status": "normal"
+            },
+            {
+              "value": "-3",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "-1",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example array with a zero that affects product calculations."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828516+00:00",
+      "contentHash": "750113a3ae0440a0695042235d37e00f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-break-4",
+      "title": "Optimal Data Structure for Word Break",
+      "topics": [
+        "Dynamic Programming",
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-break",
+      "difficulty": "Medium",
+      "question": "Which data structure is most suitable for efficiently checking if a word exists in a dictionary while solving the word break problem?",
+      "options": [
+        "Array",
+        "Hash Set",
+        "Linked List",
+        "Binary Search Tree"
+      ],
+      "answer": 1,
+      "explanation": "A Hash Set provides average O(1) time complexity for lookups, making it the most efficient choice for checking word existence. An Array, while simple, would require O(n) time for lookups, which is less efficient compared to a Hash Set.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828543+00:00",
+      "contentHash": "f5d8696ae048142f2362a4d048616d35",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-break-6",
+      "title": "Dynamic Programming Approach for Word Break",
+      "topics": [
+        "Dynamic Programming",
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-break",
+      "difficulty": "Medium",
+      "question": "In a dynamic programming solution for the word break problem, what is the primary purpose of the DP array?",
+      "options": [
+        "To store the words from the dictionary",
+        "To track the number of segments found",
+        "To indicate whether a substring can be segmented into dictionary words",
+        "To count the total number of words in the dictionary"
+      ],
+      "answer": 2,
+      "explanation": "The DP array is used to indicate whether a substring can be segmented into words from the dictionary, allowing for efficient construction of solutions. The option about counting segments is misleading, as the DP array focuses on segmentation validity rather than counting.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "a",
+              "label": "i",
+              "status": "normal"
+            },
+            {
+              "value": "pp",
+              "label": "j",
+              "status": "normal"
+            },
+            {
+              "value": "le",
+              "label": "k",
+              "status": "normal"
+            },
+            {
+              "value": "apple",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "",
+              ""
+            ]
+          ]
+        },
+        "caption": "Example of a substring being checked for segmentation."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828600+00:00",
+      "contentHash": "b62d12ec013258bbe183a90d98c22cd9",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-increasing-subsequence-4",
+      "title": "Optimal Substructure in Dynamic Programming",
+      "topics": [
+        "Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-increasing-subsequence",
+      "difficulty": "Medium",
+      "question": "What characteristic of a problem allows it to be solved using dynamic programming techniques?",
+      "options": [
+        "The problem can be divided into overlapping subproblems.",
+        "The problem can be solved using a greedy approach.",
+        "The problem has a single optimal solution that doesn't depend on subproblems.",
+        "The problem requires recursion without overlapping subproblems."
+      ],
+      "answer": 0,
+      "explanation": "The correct answer is that a problem can be divided into overlapping subproblems, which is a key characteristic of dynamic programming. This allows for efficient computation by storing results of subproblems. The tempting distractor is the greedy approach, which does not guarantee optimal solutions in all cases, unlike dynamic programming.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828637+00:00",
+      "contentHash": "3d9a9805b52f19172640f5670f8b3f45",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-increasing-subsequence-5",
+      "title": "Time Complexity of Longest Increasing Subsequence",
+      "topics": [
+        "Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-increasing-subsequence",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the most efficient algorithm to find the longest increasing subsequence?",
+      "options": [
+        "O(n^2)",
+        "O(n log n)",
+        "O(n)",
+        "O(n^3)"
+      ],
+      "answer": 1,
+      "explanation": "The most efficient algorithm for finding the longest increasing subsequence runs in O(n log n) time complexity, typically using a combination of dynamic programming and binary search. The O(n^2) option is a common naive approach that is less efficient, making it a tempting distractor.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828666+00:00",
+      "contentHash": "ffb377a9d4357c2a8f5ab0e5293b378e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-increasing-subsequence-6",
+      "title": "Handling Edge Cases in Subsequence Problems",
+      "topics": [
+        "Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-increasing-subsequence",
+      "difficulty": "Medium",
+      "question": "What issue might arise if the input sequence for a longest increasing subsequence problem contains duplicate elements?",
+      "options": [
+        "The algorithm will fail to find any subsequence.",
+        "The duplicates will not affect the result at all.",
+        "The algorithm may incorrectly count the length of the subsequence.",
+        "The algorithm will run slower due to duplicates."
+      ],
+      "answer": 1,
+      "explanation": "Duplicate elements in the input sequence do not affect the ability to find the longest increasing subsequence, as the subsequence can still include them as long as they are in increasing order. The tempting distractor is the incorrect counting of the subsequence length, which is not an issue as duplicates can be part of a valid subsequence.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "3",
+              "label": "i",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "j",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "k",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "l",
+              "status": "normal"
+            },
+            {
+              "value": "7",
+              "label": "m",
+              "status": "normal"
+            },
+            {
+              "value": "8",
+              "label": "n",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "3",
+              "5",
+              "6",
+              "5",
+              "7",
+              "8"
+            ]
+          ]
+        },
+        "caption": "Example input sequence with duplicates."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828717+00:00",
+      "contentHash": "12b5bf71c338a7c180e2ccd0b75e8aaa",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "partition-equal-subset-sum-4",
+      "title": "Which approach is best for solving subset sum problems with a target value?",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "partition-equal-subset-sum",
+      "difficulty": "Medium",
+      "question": "What is the most efficient approach to determine if a subset of numbers can sum up to a specific target?",
+      "options": [
+        "Recursive backtracking with memoization",
+        "Dynamic programming with a 2D array",
+        "Dynamic programming with a 1D array",
+        "Brute force enumeration of all subsets"
+      ],
+      "answer": 2,
+      "explanation": "The dynamic programming approach using a 1D array optimally reduces space complexity while maintaining the same time complexity as the 2D version. The tempting distractor, 'Dynamic programming with a 2D array', is less efficient in terms of space, as it requires more memory to store intermediate results.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828748+00:00",
+      "contentHash": "12b1479ea11256fd650b4b1c63628663",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "partition-equal-subset-sum-5",
+      "title": "What is a critical edge case for subset sum problems?",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "partition-equal-subset-sum",
+      "difficulty": "Medium",
+      "question": "Which scenario could lead to an incorrect outcome when solving a subset sum problem?",
+      "options": [
+        "All elements are zero",
+        "The target sum is larger than the total sum of elements",
+        "The input array contains negative numbers",
+        "The input array has duplicate values"
+      ],
+      "answer": 1,
+      "explanation": "If the target sum exceeds the total sum of the elements, it is impossible to form that sum, leading to an incorrect conclusion if not handled properly. The option 'The input array contains negative numbers' is misleading; while negative numbers complicate the problem, they do not inherently lead to incorrect outcomes if managed correctly.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828777+00:00",
+      "contentHash": "b3b7fb734a6864d6466cc8f2770605bf",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "partition-equal-subset-sum-6",
+      "title": "How does the space complexity change in dynamic programming for subset sums?",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "partition-equal-subset-sum",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of the optimal dynamic programming solution for the subset sum problem?",
+      "options": [
+        "O(n)",
+        "O(n*m)",
+        "O(1)",
+        "O(log n)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal dynamic programming solution for the subset sum problem can be implemented with a space complexity of O(n), where n is the target sum. The option 'O(n*m)' suggests a misunderstanding; this complexity applies to a 2D DP approach, which is not optimal in this case.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "a[0]",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "a[1]",
+              "status": "normal"
+            },
+            {
+              "value": "11",
+              "label": "a[2]",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "a[3]",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "",
+              ""
+            ]
+          ]
+        },
+        "caption": "Example array for subset sum problem."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828825+00:00",
+      "contentHash": "47c91be0aca6e20d8fd1ef9df5086099",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "unique-paths-4",
+      "title": "Optimal Approach for Counting Paths",
+      "topics": [
+        "Dynamic Programming",
+        "2-D Arrays"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "unique-paths",
+      "difficulty": "Medium",
+      "question": "Which approach efficiently counts the number of unique paths in a grid from the top-left corner to the bottom-right corner?",
+      "options": [
+        "Using a recursive function with memoization",
+        "Iterating through all possible paths using backtracking",
+        "Filling a DP table based on previous computations",
+        "Using a breadth-first search to explore all routes"
+      ],
+      "answer": 2,
+      "explanation": "The most efficient method is filling a DP table based on previous computations, which allows for a time complexity of O(m*n), where m and n are the dimensions of the grid. The tempting distractor, using a recursive function with memoization, while correct, is less efficient than the DP approach due to the overhead of recursive calls and stack space.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828860+00:00",
+      "contentHash": "2c733334f544bee38bdd8357d32e76f6",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "unique-paths-5",
+      "title": "Space Optimization Technique",
+      "topics": [
+        "Dynamic Programming",
+        "Space Complexity"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "unique-paths",
+      "difficulty": "Medium",
+      "question": "What is a common space optimization technique for the unique paths problem?",
+      "options": [
+        "Using a single array to store current and previous row values",
+        "Utilizing a stack to manage the grid states",
+        "Implementing a binary tree to represent possible paths",
+        "Storing all unique paths in a hash table"
+      ],
+      "answer": 0,
+      "explanation": "Using a single array to store current and previous row values reduces space complexity from O(m*n) to O(n), as only the last row's values are needed at any time. The distractor about utilizing a stack is misleading because a stack does not effectively reduce space for this specific problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828894+00:00",
+      "contentHash": "7f378613afc69cddf02b6f032ddffe59",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "unique-paths-6",
+      "title": "Handling Edge Cases in Grid Paths",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "unique-paths",
+      "difficulty": "Medium",
+      "question": "What edge case must be considered when calculating unique paths in a grid?",
+      "options": [
+        "The grid contains obstacles that block paths",
+        "The grid has dimensions of zero",
+        "The grid is not rectangular",
+        "The starting point is also the endpoint"
+      ],
+      "answer": 1,
+      "explanation": "A grid with dimensions of zero (0x0) is a critical edge case, as it leads to undefined behavior in path calculations. While obstacles and rectangularity are important considerations, they are not as fundamental as the grid's dimensions being valid. The distractor regarding the starting point being the endpoint is misleading since it would typically result in one unique path.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "0",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "0",
+            "1",
+            "2"
+          ],
+          "rows": [
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ]
+        },
+        "caption": "Initial grid state for unique paths calculation."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828938+00:00",
+      "contentHash": "cbc205a775926b3576eca614cf8b17e6",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-common-subsequence-4",
+      "title": "Optimal Approach for Longest Common Subsequence",
+      "topics": [
+        "Dynamic Programming",
+        "2-D Array"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-common-subsequence",
+      "difficulty": "Medium",
+      "question": "Which algorithmic approach is most efficient for finding the longest common subsequence between two strings?",
+      "options": [
+        "Recursive backtracking",
+        "Dynamic programming with a 2-D table",
+        "Greedy algorithm",
+        "Brute force enumeration"
+      ],
+      "answer": 1,
+      "explanation": "The dynamic programming approach using a 2-D table is optimal for this problem, as it systematically builds up solutions to subproblems, ensuring that overlapping subproblems are solved only once. The recursive backtracking option is tempting but inefficient due to its exponential time complexity, making it impractical for larger inputs.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828966+00:00",
+      "contentHash": "8e250a5681cb34a026a1aceedb36cbe6",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-common-subsequence-5",
+      "title": "Space Complexity Considerations",
+      "topics": [
+        "Dynamic Programming",
+        "Space Optimization"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-common-subsequence",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of the standard dynamic programming solution for the longest common subsequence?",
+      "options": [
+        "O(n)",
+        "O(m+n)",
+        "O(m*n)",
+        "O(1)"
+      ],
+      "answer": 2,
+      "explanation": "The standard dynamic programming solution requires a 2-D table of size m x n, where m and n are the lengths of the two strings, leading to a space complexity of O(m*n). The O(n) option might seem plausible if one considers optimizing space by using only one row, but this would not capture the full state needed for the entire table.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.828992+00:00",
+      "contentHash": "97473a3c77bc17550ce63821bb8251ee",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-common-subsequence-6",
+      "title": "Handling Edge Cases in LCS",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-common-subsequence",
+      "difficulty": "Medium",
+      "question": "What potential issue arises when the input strings for longest common subsequence are both empty?",
+      "options": [
+        "The output should be 0",
+        "The algorithm will throw an error",
+        "The output should be an empty string",
+        "The algorithm will run indefinitely"
+      ],
+      "answer": 0,
+      "explanation": "When both input strings are empty, the longest common subsequence is defined to be 0, as there are no characters to compare. The option suggesting an error is misleading because most implementations handle this case gracefully, returning 0 without issues.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "String A",
+            "String B",
+            "LCS Length"
+          ],
+          "rows": [
+            [
+              "",
+              "",
+              "0"
+            ],
+            [
+              "a",
+              "b",
+              "0"
+            ],
+            [
+              "abc",
+              "",
+              "0"
+            ],
+            [
+              "",
+              "abc",
+              "0"
+            ]
+          ]
+        },
+        "caption": "Example cases for LCS with empty strings."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829031+00:00",
+      "contentHash": "6090c44ac313ee384f47b18743fa1a7a",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "best-time-to-buy-and-sell-stock-with-cooldown-5",
+      "title": "What is the time complexity of the optimal solution?",
+      "topics": [
+        "Dynamic Programming",
+        "Complexity Analysis"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the dynamic programming solution for the stock trading problem with cooldown?",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(n log n)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal dynamic programming solution runs in O(n) time, where n is the number of days. This is because we only need to iterate through the list of prices once while maintaining a few state variables. The O(n^2) option might seem plausible due to nested loops, but they are not necessary in this case.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829126+00:00",
+      "contentHash": "6765b5276598bc1509cf09dca07bd5c2",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "best-time-to-buy-and-sell-stock-with-cooldown-6",
+      "title": "How does the cooldown period affect the state transitions?",
+      "topics": [
+        "Dynamic Programming",
+        "State Transition"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "difficulty": "Medium",
+      "question": "In the context of dynamic programming for stock trading with a cooldown, how does the cooldown period influence state transitions?",
+      "options": [
+        "It allows immediate selling after buying without restrictions",
+        "It requires waiting before a new buy after a sell",
+        "It has no effect on the profit calculations",
+        "It only affects the initial buying decision"
+      ],
+      "answer": 1,
+      "explanation": "The cooldown period requires that after selling a stock, you must wait one day before making a new buy. This directly influences the state transitions in the dynamic programming solution, as it adds constraints to when a new buy can occur. The option stating no effect on profit calculations is misleading, as the cooldown is crucial for determining valid transactions.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "State",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Buy",
+              "State when stock is bought"
+            ],
+            [
+              "Sell",
+              "State when stock is sold"
+            ],
+            [
+              "Cooldown",
+              "State after selling before next buy"
+            ]
+          ]
+        },
+        "caption": "State transitions in stock trading with cooldown."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829172+00:00",
+      "contentHash": "b4ede3ca32d84853a641ee4c42a61e52",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "coin-change-ii-4",
+      "title": "Choosing the Right Data Structure for Coin Combinations",
+      "topics": [
+        "Dynamic Programming",
+        "2-D Dynamic Programming"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "coin-change-ii",
+      "difficulty": "Medium",
+      "question": "When implementing a solution for counting combinations of coins to make a target amount, which data structure is most suitable for storing the number of ways to achieve each amount?",
+      "options": [
+        "A hash table for O(1) average lookups",
+        "A 2-D array to keep track of combinations",
+        "A stack to manage recursive calls",
+        "A linked list to store intermediate results"
+      ],
+      "answer": 1,
+      "explanation": "A 2-D array is suitable here because it allows us to efficiently keep track of the number of combinations for each amount with respect to the available coins. The hash table option, while fast for lookups, does not provide the necessary structure to handle the combinations effectively.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829213+00:00",
+      "contentHash": "c05c1eac58464637333cb87331664b81",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "coin-change-ii-5",
+      "title": "Understanding Time Complexity in Coin Change Problems",
+      "topics": [
+        "Dynamic Programming",
+        "Time Complexity"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "coin-change-ii",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of a dynamic programming solution that computes the number of ways to make change for a given amount using a set of coins?",
+      "options": [
+        "O(n) where n is the number of coins",
+        "O(m*n) where m is the target amount",
+        "O(n^2) where n is the number of coins",
+        "O(m) where m is the target amount"
+      ],
+      "answer": 1,
+      "explanation": "The time complexity is O(m*n), where m is the target amount and n is the number of coins. This is because we are filling a 2-D array where one dimension represents the target amount and the other represents the coins. The O(n) option is misleading as it does not account for the amount being processed.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829249+00:00",
+      "contentHash": "72406da98ac206287b66b684280ffcae",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "coin-change-ii-6",
+      "title": "Handling Edge Cases in Coin Change Solutions",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "coin-change-ii",
+      "difficulty": "Medium",
+      "question": "What potential issue arises if the input includes a coin with a value greater than the target amount in a coin change problem?",
+      "options": [
+        "It will lead to an infinite loop in the algorithm",
+        "It will not affect the outcome as it cannot be used",
+        "It will increase the time complexity significantly",
+        "It will cause incorrect results when counting combinations"
+      ],
+      "answer": 1,
+      "explanation": "Including a coin with a value greater than the target amount will not affect the outcome since it cannot be used to form the target. The option about increasing time complexity is incorrect as it does not impact the algorithm's efficiency. The other options imply incorrect behavior of the algorithm.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "0",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "2",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "3",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "Amount 0",
+              "Amount 1",
+              "Amount 2",
+              "Amount 3"
+            ]
+          ]
+        },
+        "caption": "Current state of the DP array for amounts."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829297+00:00",
+      "contentHash": "ec16109175acf5e11c284a8d7dc49c66",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "target-sum-4",
+      "title": "Choosing the Right Data Structure for Dynamic Programming",
+      "topics": [
+        "Dynamic Programming",
+        "2-D Array"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "target-sum",
+      "difficulty": "Medium",
+      "question": "In a 2-D dynamic programming problem like Target Sum, which data structure is most suitable for storing intermediate results to avoid redundant calculations?",
+      "options": [
+        "A single-dimensional array",
+        "A hash table",
+        "A 2-D array",
+        "A linked list"
+      ],
+      "answer": 2,
+      "explanation": "A 2-D array is the most suitable for storing intermediate results in problems where the state depends on two dimensions, such as the target sum and the index of the elements. The single-dimensional array is tempting because it uses less space, but it cannot efficiently represent the required states for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829331+00:00",
+      "contentHash": "4e87442274a3c6cc2de05a284a7550fc",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "target-sum-6",
+      "title": "Edge Cases in Dynamic Programming Problems",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "target-sum",
+      "difficulty": "Medium",
+      "question": "When solving the Target Sum problem, which of the following edge cases should be carefully considered to ensure the algorithm works correctly?",
+      "options": [
+        "Negative numbers in the input array",
+        "An empty input array",
+        "A target sum of zero",
+        "All elements being the same"
+      ],
+      "answer": 1,
+      "explanation": "An empty input array is a critical edge case that can lead to incorrect results if not handled properly. While negative numbers and a target sum of zero are also important, they can often be managed within the algorithm's logic. The option about all elements being the same does not represent a unique edge case that would break the algorithm.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "a[0]",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "a[1]",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "a[2]",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "a[3]",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "a[4]",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "a[5]",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1"
+            ],
+            [
+              "2"
+            ],
+            [
+              "3"
+            ],
+            [
+              "4"
+            ],
+            [
+              "5"
+            ],
+            [
+              "6"
+            ]
+          ]
+        },
+        "caption": "Example array of numbers for target sum."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829382+00:00",
+      "contentHash": "994281cddec831dc5f0f35a0cfbfaad6",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "interleaving-string-4",
+      "title": "Optimal Approach for Interleaving Strings",
+      "topics": [
+        "Dynamic Programming",
+        "String Manipulation"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "interleaving-string",
+      "difficulty": "Medium",
+      "question": "What is the most efficient data structure to use when solving the interleaving string problem with dynamic programming?",
+      "options": [
+        "A 2D array to store boolean values",
+        "A 1D array to track previous states",
+        "A hash table to store computed states",
+        "A stack to manage recursive calls"
+      ],
+      "answer": 0,
+      "explanation": "Using a 2D array allows you to store the results of subproblems, which is essential for dynamic programming. This structure efficiently tracks whether substrings can interleave. The hash table option is tempting but does not maintain the necessary order of states for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829417+00:00",
+      "contentHash": "84097aec5c712ff02c5d684cbb34611b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "interleaving-string-5",
+      "title": "Time Complexity Analysis",
+      "topics": [
+        "Dynamic Programming",
+        "Complexity Analysis"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "interleaving-string",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal dynamic programming solution for checking if a string is an interleaving of two others?",
+      "options": [
+        "O(n^2)",
+        "O(n)",
+        "O(n*m)",
+        "O(n log n)"
+      ],
+      "answer": 2,
+      "explanation": "The optimal dynamic programming solution has a time complexity of O(n*m), where n and m are the lengths of the two strings being checked. This is because you fill a 2D array of size n x m. The O(n^2) option is a common misconception, as it underestimates the necessary dimensions for both strings.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829444+00:00",
+      "contentHash": "5d250d68905f202fb3172de05ff34c11",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "interleaving-string-6",
+      "title": "Edge Case Considerations",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "interleaving-string",
+      "difficulty": "Medium",
+      "question": "What edge case must be considered when determining if one string is an interleaving of two others?",
+      "options": [
+        "Strings must be of equal length",
+        "The combined length must equal the sum of the two strings",
+        "Strings can be empty",
+        "All characters must be unique"
+      ],
+      "answer": 1,
+      "explanation": "When checking if a string is an interleaving of two others, it's crucial to ensure that the combined length of the two strings equals the length of the target string. The option about equal lengths is misleading, as the strings can differ in length but still interleave correctly. The uniqueness of characters is irrelevant in this context.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "String A",
+            "String B",
+            "Target String"
+          ],
+          "rows": [
+            [
+              "abc",
+              "def",
+              "adbecf"
+            ],
+            [
+              "aab",
+              "aac",
+              "aabc"
+            ],
+            [
+              "xy",
+              "z",
+              "xyz"
+            ],
+            [
+              "hello",
+              "world",
+              "hwolreldo"
+            ]
+          ]
+        },
+        "caption": "Example strings for interleaving checks."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829484+00:00",
+      "contentHash": "95246d8800d2db75c289db440aaf0462",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-increasing-path-in-a-matrix-4",
+      "title": "Choosing the Right Data Structure for Path Tracking",
+      "topics": [
+        "Dynamic Programming",
+        "Graph Traversal"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-increasing-path-in-a-matrix",
+      "difficulty": "Hard",
+      "question": "Which data structure is most suitable for tracking the longest increasing path in a matrix while ensuring efficient backtracking?",
+      "options": [
+        "A stack to manage the path states",
+        "A queue for breadth-first search",
+        "A hash table to store visited nodes",
+        "A priority queue to explore paths based on values"
+      ],
+      "answer": 3,
+      "explanation": "Using a priority queue allows exploration of paths based on their values, ensuring that we always extend the longest increasing path first. The most tempting distractor, a stack, would lead to depth-first exploration without considering the optimal path length, potentially missing longer paths.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829519+00:00",
+      "contentHash": "54ae0de42c640ea81144b25c24cf2928",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-increasing-path-in-a-matrix-5",
+      "title": "Handling Edge Cases in Matrix Paths",
+      "topics": [
+        "Edge Cases",
+        "Dynamic Programming"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-increasing-path-in-a-matrix",
+      "difficulty": "Hard",
+      "question": "What issue arises if the matrix contains duplicate values when calculating the longest increasing path?",
+      "options": [
+        "It may cause infinite loops during traversal",
+        "It can lead to incorrect path lengths being calculated",
+        "It does not affect the path calculation at all",
+        "It requires additional data structures for tracking"
+      ],
+      "answer": 1,
+      "explanation": "Duplicate values can create multiple valid paths of the same length, which can confuse the algorithm if not handled properly, leading to incorrect path lengths. The option stating that it does not affect the calculation at all is misleading, as duplicates can indeed complicate pathfinding.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829554+00:00",
+      "contentHash": "cb78da98c95a385f0f521ca4e39742ae",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "distinct-subsequences-4",
+      "title": "Choosing Data Structures for Dynamic Programming",
+      "topics": [
+        "Dynamic Programming",
+        "2-D Arrays"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "distinct-subsequences",
+      "difficulty": "Hard",
+      "question": "In a dynamic programming solution to count distinct subsequences, which data structure is most suitable for storing intermediate results?",
+      "options": [
+        "A 1-D array to store counts for each character",
+        "A 2-D array to store counts for each substring",
+        "A hash table to store unique subsequences",
+        "A stack to manage recursive calls"
+      ],
+      "answer": 1,
+      "explanation": "A 2-D array is suitable for storing counts of distinct subsequences for each substring combination of the two input strings. The tempting option of a 1-D array fails because it cannot capture the relationships between multiple characters from both strings.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829586+00:00",
+      "contentHash": "911d154e368e2ce23cb0cb3aedd9dbd2",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "distinct-subsequences-5",
+      "title": "Time Complexity Analysis of Dynamic Programming Solutions",
+      "topics": [
+        "Dynamic Programming",
+        "Time Complexity"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "distinct-subsequences",
+      "difficulty": "Hard",
+      "question": "What is the time complexity of the optimal dynamic programming solution for counting distinct subsequences?",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(n*m)",
+        "O(2^n)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal dynamic programming solution has a time complexity of O(n*m), where n and m are the lengths of the two strings being compared. The O(n^2) option is tempting but does not account for both strings' lengths.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829611+00:00",
+      "contentHash": "f5d68f6eb644eb0984ac6de085b70f6e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "distinct-subsequences-6",
+      "title": "Handling Edge Cases in Subsequences Counting",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "distinct-subsequences",
+      "difficulty": "Hard",
+      "question": "When counting distinct subsequences, what issue arises if the input strings contain duplicate characters?",
+      "options": [
+        "It increases the number of subsequences exponentially",
+        "It can lead to incorrect counts if not handled properly",
+        "It has no effect on the count of distinct subsequences",
+        "It reduces the time complexity of the solution"
+      ],
+      "answer": 1,
+      "explanation": "Duplicate characters can lead to incorrect counts if not properly managed, as they can create overlapping subsequences that are counted multiple times. The option suggesting no effect is misleading, as duplicates fundamentally alter the distinctness of subsequences.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "String A",
+            "String B",
+            "Distinct Subsequences Count"
+          ],
+          "rows": [
+            [
+              "abc",
+              "ab",
+              ""
+            ],
+            [
+              "abc",
+              "ac",
+              ""
+            ],
+            [
+              "abc",
+              "abc",
+              ""
+            ]
+          ]
+        },
+        "caption": "Example of input strings for subsequence counting."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829650+00:00",
+      "contentHash": "bc5b0d2daf48fa09cc04d884a99a9d82",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "edit-distance-4",
+      "title": "Which approach is most efficient for calculating the edit distance between two strings?",
+      "topics": [
+        "Dynamic Programming",
+        "String Manipulation"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "edit-distance",
+      "difficulty": "Medium",
+      "question": "What is the most efficient algorithmic approach to compute the edit distance between two strings?",
+      "options": [
+        "Recursive backtracking",
+        "Dynamic programming",
+        "Greedy algorithm",
+        "Breadth-first search"
+      ],
+      "answer": 1,
+      "explanation": "The dynamic programming approach is the most efficient for calculating edit distance, as it builds a table to store results of subproblems, allowing for optimal overlapping subproblems and avoiding recomputation. The recursive backtracking approach, while valid, has exponential time complexity due to redundant calculations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829679+00:00",
+      "contentHash": "d15e3e8f245ce32aaeca036c029fb278",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "edit-distance-5",
+      "title": "What is the time complexity of the optimal edit distance algorithm?",
+      "topics": [
+        "Time Complexity",
+        "Dynamic Programming"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "edit-distance",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the dynamic programming solution to compute the edit distance?",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(n*m)",
+        "O(2^(n+m))"
+      ],
+      "answer": 2,
+      "explanation": "The dynamic programming solution for edit distance has a time complexity of O(n*m), where n and m are the lengths of the two strings. This is because it requires filling an n x m table. The O(2^(n+m)) complexity is typical of brute-force approaches, which do not utilize dynamic programming.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829704+00:00",
+      "contentHash": "468fd4e11e31103362522f9d9b924de3",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "edit-distance-6",
+      "title": "What edge case should be considered when calculating edit distance?",
+      "topics": [
+        "Edge Cases",
+        "Dynamic Programming"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "edit-distance",
+      "difficulty": "Medium",
+      "question": "Which edge case could significantly impact the edit distance calculation?",
+      "options": [
+        "Both strings are empty",
+        "One string is a substring of the other",
+        "Strings contain special characters",
+        "Strings are of equal length"
+      ],
+      "answer": 0,
+      "explanation": "The case where both strings are empty is crucial because the edit distance is defined as zero, and handling this case correctly is essential for the algorithm to function properly. The other options may influence the distance but do not represent fundamental edge cases.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "String A",
+            "String B",
+            "Edit Distance"
+          ],
+          "rows": [
+            [
+              "",
+              "",
+              "0"
+            ],
+            [
+              "abc",
+              "",
+              "3"
+            ],
+            [
+              "",
+              "abc",
+              "3"
+            ],
+            [
+              "abc",
+              "abc",
+              "0"
+            ]
+          ]
+        },
+        "caption": "Sample edit distances for various string pairs."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829738+00:00",
+      "contentHash": "8524e05d855b43a48de14b60378b3a39",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "burst-balloons-4",
+      "title": "Choosing the Right Data Structure for DP Table",
+      "topics": [
+        "Dynamic Programming",
+        "2-D Arrays"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "burst-balloons",
+      "difficulty": "Hard",
+      "question": "When implementing a 2-D dynamic programming solution for a problem like bursting balloons, which data structure is most appropriate for storing intermediate results?",
+      "options": [
+        "A one-dimensional array to save space",
+        "A 2-D array to represent all subproblems",
+        "A hash table for quick lookups",
+        "A stack to manage recursive calls"
+      ],
+      "answer": 1,
+      "explanation": "A 2-D array is ideal for representing all subproblems in a dynamic programming approach, allowing you to store the maximum coins obtainable for each combination of balloons. The one-dimensional array option fails as it cannot capture the relationships between multiple dimensions of the problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829777+00:00",
+      "contentHash": "cc10b193f2fef806ba0a1bfb3f234d30",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "burst-balloons-5",
+      "title": "Understanding Time Complexity in DP",
+      "topics": [
+        "Dynamic Programming",
+        "Time Complexity"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "burst-balloons",
+      "difficulty": "Hard",
+      "question": "What is the time complexity of a typical dynamic programming solution for the burst balloons problem, assuming n is the number of balloons?",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(n^3)",
+        "O(2^n)"
+      ],
+      "answer": 2,
+      "explanation": "The time complexity is O(n^3) due to the three nested loops typically required to fill the DP table, where each loop iterates over the range of balloons. The O(n^2) option is tempting but does not account for the additional loop needed for the DP transitions.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829808+00:00",
+      "contentHash": "fa782d9fe0cc9e9f6578fdf002a93c99",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "burst-balloons-6",
+      "title": "Edge Cases in Balloon Problems",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "burst-balloons",
+      "difficulty": "Hard",
+      "question": "In the context of bursting balloons, what edge case must be handled to ensure the algorithm functions correctly?",
+      "options": [
+        "All balloons have the same value",
+        "There are no balloons to burst",
+        "Balloons are arranged in descending order",
+        "Balloons have negative values"
+      ],
+      "answer": 1,
+      "explanation": "Handling the case where there are no balloons is critical, as it prevents the algorithm from attempting to access invalid indices or perform unnecessary computations. The option about negative values is misleading since the problem typically assumes non-negative values.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "0",
+              "label": "i",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "j",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "k",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "4",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "6",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "Balloon 1",
+              "Balloon 2",
+              "Balloon 3",
+              "Balloon 4",
+              "Balloon 5",
+              "Balloon 6"
+            ]
+          ]
+        },
+        "caption": "Example of balloon arrangement."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829856+00:00",
+      "contentHash": "b1f7ec7980d79c9c8fc4e9bb3a11ca7c",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "regular-expression-matching-4",
+      "title": "Choosing the Right Data Structure for Dynamic Programming",
+      "topics": [
+        "Dynamic Programming",
+        "2-D Arrays"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "regular-expression-matching",
+      "difficulty": "Hard",
+      "question": "In a dynamic programming approach for regular expression matching, which data structure is most suitable for storing intermediate results?",
+      "options": [
+        "A 1-D array to store the current state",
+        "A 2-D array to store states for each character and pattern position",
+        "A hash map to store only the matching states",
+        "A stack to keep track of previous states"
+      ],
+      "answer": 1,
+      "explanation": "A 2-D array is the most suitable structure as it allows us to store the results for each combination of string and pattern indices, which is essential for the matching process. The tempting distractor, a hash map, fails because it does not maintain the necessary order of states and can lead to missed combinations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829892+00:00",
+      "contentHash": "22793539a0d97fe1eacc5847afcc1017",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "regular-expression-matching-5",
+      "title": "Time Complexity Analysis of Regular Expression Matching",
+      "topics": [
+        "Dynamic Programming",
+        "Time Complexity"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "regular-expression-matching",
+      "difficulty": "Hard",
+      "question": "What is the time complexity of the optimal dynamic programming solution for regular expression matching?",
+      "options": [
+        "O(n)",
+        "O(m + n)",
+        "O(m * n)",
+        "O(m * n * k) where k is the number of unique characters"
+      ],
+      "answer": 2,
+      "explanation": "The time complexity is O(m * n), where m is the length of the string and n is the length of the pattern. This is because we fill a 2-D table of size m by n. The option O(m + n) is tempting but underestimates the interactions between the string and the pattern.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829922+00:00",
+      "contentHash": "ab16ad6fbbbe694ac915a2bf36be902f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "regular-expression-matching-6",
+      "title": "Handling Edge Cases in Regular Expression Matching",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "regular-expression-matching",
+      "difficulty": "Hard",
+      "question": "Which of the following edge cases can cause incorrect results in a naive regular expression matching approach?",
+      "options": [
+        "An empty string and an empty pattern",
+        "A string with only special characters",
+        "A pattern with multiple consecutive '*'",
+        "A string that matches the pattern but has additional characters at the end"
+      ],
+      "answer": 2,
+      "explanation": "A pattern with multiple consecutive '*' can lead to incorrect matches if not handled properly, as it can match an empty sequence or any number of characters. The first option is actually a valid match, making it a poor choice for this specific edge case.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "String",
+            "Pattern",
+            "Match Result"
+          ],
+          "rows": [
+            [
+              "abc",
+              "a*b*c",
+              "True"
+            ],
+            [
+              "abc",
+              ".*",
+              "True"
+            ],
+            [
+              "abc",
+              "a*c",
+              "False"
+            ],
+            [
+              "abc",
+              "a*b*c*",
+              "True"
+            ]
+          ]
+        },
+        "caption": "Example scenarios in regular expression matching."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829965+00:00",
+      "contentHash": "88ee8967af6be2f12a0492ac6575f291",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "maximum-subarray-4",
+      "title": "Optimal Subarray Approach",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "maximum-subarray",
+      "difficulty": "Medium",
+      "question": "Which algorithmic technique is most effective for finding the maximum sum of a contiguous subarray?",
+      "options": [
+        "Divide and Conquer",
+        "Dynamic Programming",
+        "Brute Force",
+        "Greedy"
+      ],
+      "answer": 1,
+      "explanation": "Dynamic programming is the most effective technique for this problem because it allows us to build up solutions to subproblems efficiently, using previously computed results. The brute force method, while correct, is inefficient with a time complexity of O(n^2), making it impractical for larger inputs.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.829991+00:00",
+      "contentHash": "2be2aa4d55d9f8d2c0b6234e3aec5d21",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "maximum-subarray-5",
+      "title": "Handling Negative Numbers",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "maximum-subarray",
+      "difficulty": "Medium",
+      "question": "What is the impact of having all negative numbers in the input array on the maximum subarray sum?",
+      "options": [
+        "The sum will always be zero",
+        "The subarray with the least negative sum should be chosen",
+        "The algorithm will fail to find a solution",
+        "The maximum subarray sum will be the largest single element"
+      ],
+      "answer": 3,
+      "explanation": "When all numbers are negative, the maximum subarray sum is simply the largest single element, as it represents the least negative value. The option suggesting a sum of zero is incorrect because there are no positive numbers to contribute to such a sum.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.830026+00:00",
+      "contentHash": "8087b76ce8b779363a170b0fc0ce2956",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "maximum-subarray-6",
+      "title": "Time Complexity Considerations",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "maximum-subarray",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal solution for the maximum subarray problem?",
+      "options": [
+        "O(n^2)",
+        "O(n log n)",
+        "O(n)",
+        "O(1)"
+      ],
+      "answer": 2,
+      "explanation": "The optimal solution for the maximum subarray problem has a time complexity of O(n), as it involves a single pass through the array while maintaining a running sum. The O(n^2) option represents a naive brute force approach, while O(n log n) suggests a divide-and-conquer strategy that is less efficient for this specific problem.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "-2",
+              "label": "0",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "-3",
+              "label": "2",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "3",
+              "status": "normal"
+            },
+            {
+              "value": "-1",
+              "label": "4",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "5",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "-2",
+              "1",
+              "-3",
+              "4",
+              "-1",
+              "2"
+            ]
+          ]
+        },
+        "caption": "Example input array for maximum subarray analysis."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-06T09:44:56.830088+00:00",
+      "contentHash": "9102c5d364d78f8170f61fa4e0c9702b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
     }
   ]
 }
