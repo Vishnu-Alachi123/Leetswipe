@@ -24675,6 +24675,4568 @@
       "qualityScore": 5,
       "explanationQuality": 5,
       "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "jump-game-4",
+      "title": "Optimal Approach for Jumping",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "jump-game",
+      "difficulty": "Medium",
+      "question": "What is the main advantage of using a greedy algorithm to solve the Jump Game problem?",
+      "options": [
+        "It guarantees the shortest path to the end.",
+        "It minimizes the number of jumps needed to reach the end.",
+        "It allows for backtracking to find alternative paths.",
+        "It ensures that each jump is the maximum possible length."
+      ],
+      "answer": 1,
+      "explanation": "The greedy algorithm minimizes the number of jumps needed to reach the end by always making the optimal choice at each step. The option about backtracking is tempting, but it fails because greedy algorithms do not backtrack; they make a single pass through the data.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936280+00:00",
+      "contentHash": "a50989eded35163c8b78d0e0a65fc207",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "jump-game-5",
+      "title": "Handling Edge Cases",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "jump-game",
+      "difficulty": "Medium",
+      "question": "Which of the following scenarios could lead to a failure in a naive approach for solving the Jump Game problem?",
+      "options": [
+        "Starting with a jump length of zero.",
+        "Having all jump lengths equal to one.",
+        "Having a large number of jumps with varying lengths.",
+        "Starting from the last index of the array."
+      ],
+      "answer": 0,
+      "explanation": "A naive approach may fail if the first jump length is zero, as it would not allow any movement from the starting position. The option about all jumps being one is misleading because it would still allow reaching the end.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936348+00:00",
+      "contentHash": "c5345e1cf9721316a3c1e067ba077484",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "jump-game-6",
+      "title": "Greedy Strategy Visualization",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "jump-game",
+      "difficulty": "Medium",
+      "question": "Given the array [2, 3, 1, 1, 4], which index should be prioritized to ensure the best chance of reaching the end using a greedy approach?",
+      "options": [
+        "Index 0",
+        "Index 1",
+        "Index 2",
+        "Index 3"
+      ],
+      "answer": 1,
+      "explanation": "Index 1 should be prioritized because it has the maximum jump length (3), allowing the farthest reach. While index 0 is also valid, it does not provide as much flexibility as index 1. The distractor about index 0 may seem appealing but does not maximize the potential jumps.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "2",
+              "label": "0",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "2",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "3",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "4",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Array representing jump lengths at each index."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936402+00:00",
+      "contentHash": "8637c2401b752a88d420a19b2d67d9d7",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "jump-game-ii-4",
+      "title": "Optimal Jump Strategy",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "jump-game-ii",
+      "difficulty": "Medium",
+      "question": "In a scenario where you need to minimize the number of jumps to reach the end of an array, which strategy is most effective?",
+      "options": [
+        "Jump to the farthest reachable index at each step",
+        "Jump to the nearest index that increases your reach",
+        "Jump to every index sequentially until the end",
+        "Jump to the index that has the maximum value"
+      ],
+      "answer": 0,
+      "explanation": "The most effective strategy is to jump to the farthest reachable index at each step, as this minimizes the total number of jumps needed. The option to jump to the nearest index that increases your reach is tempting but may lead to more jumps overall, as it does not guarantee the optimal path.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936443+00:00",
+      "contentHash": "f92fd5b6e226e61682bc91a0e9da9dba",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "jump-game-ii-5",
+      "title": "Handling Edge Cases",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "jump-game-ii",
+      "difficulty": "Medium",
+      "question": "What is a critical edge case to consider when implementing the jump game algorithm?",
+      "options": [
+        "An array with only one element",
+        "An array with all elements as zero",
+        "An empty array",
+        "An array with negative values"
+      ],
+      "answer": 0,
+      "explanation": "A critical edge case is an array with only one element, where no jumps are needed. While an array with all elements as zero might seem problematic, it is not a valid input for this problem as it implies you cannot move. The empty array and negative values are also irrelevant in this context.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936474+00:00",
+      "contentHash": "a926bfa87c0650e1d3082b3ede1ea23a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "jump-game-ii-6",
+      "title": "Time Complexity Analysis",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "jump-game-ii",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal solution for the jump game problem?",
+      "options": [
+        "O(n^2)",
+        "O(n log n)",
+        "O(n)",
+        "O(2^n)"
+      ],
+      "answer": 2,
+      "explanation": "The optimal solution for the jump game problem has a time complexity of O(n), as it processes each element of the array at most once. The O(n^2) option is a common misconception from considering a brute force approach that examines all possible jumps.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936507+00:00",
+      "contentHash": "1b0105df4b3a92bfe74660de9130296c",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "gas-station-4",
+      "title": "Choosing the Right Approach for Fuel Efficiency",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "gas-station",
+      "difficulty": "Medium",
+      "question": "When trying to determine the optimal starting point for a gas station problem, which approach is most effective?",
+      "options": [
+        "Start at the station with the highest fuel capacity",
+        "Simulate starting at each station and track the total fuel",
+        "Use a greedy approach to find the first station that allows a complete circuit",
+        "Calculate the average fuel needed per station and start from the midpoint"
+      ],
+      "answer": 2,
+      "explanation": "The greedy approach of finding the first station that allows a complete circuit is effective because it minimizes the number of checks needed to find a valid starting point. The tempting distractor, simulating each station, is inefficient and can lead to excessive time complexity, especially for larger inputs.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936548+00:00",
+      "contentHash": "ef6dcf1e2ede879eacb325258b84b9a3",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "gas-station-6",
+      "title": "Handling Edge Cases in Fuel Calculations",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "gas-station",
+      "difficulty": "Medium",
+      "question": "In the gas station problem, what issue arises if the input includes stations with zero fuel?",
+      "options": [
+        "It can lead to infinite loops in greedy calculations",
+        "The solution will always be invalid regardless of the route",
+        "It can create scenarios where no valid starting point exists",
+        "It will not affect the algorithm as long as other stations have fuel"
+      ],
+      "answer": 2,
+      "explanation": "Including stations with zero fuel can create scenarios where a valid starting point cannot be found, as the vehicle may run out of fuel before reaching the next station. The distractor suggesting it won't affect the algorithm is incorrect, as the presence of zero-fuel stations directly impacts the feasibility of completing the circuit.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "4",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "C",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "D",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "E",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "F",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "A",
+              "4"
+            ],
+            [
+              "B",
+              "0"
+            ],
+            [
+              "C",
+              "3"
+            ],
+            [
+              "D",
+              "5"
+            ],
+            [
+              "E",
+              "2"
+            ],
+            [
+              "F",
+              "1"
+            ]
+          ]
+        },
+        "caption": "Gas stations with varying fuel capacities."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936610+00:00",
+      "contentHash": "456440e6c5cb2e5fa565b2a1aaf8fab7",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "hand-of-straights-4",
+      "title": "Which data structure is optimal for tracking available cards in a hand of straights?",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "hand-of-straights",
+      "difficulty": "Medium",
+      "question": "In the problem of forming straights from a hand of cards, which data structure allows for efficient tracking and retrieval of the next required card?",
+      "options": [
+        "Hash Map",
+        "Max Heap",
+        "Sorted Array",
+        "Linked List"
+      ],
+      "answer": 2,
+      "explanation": "A sorted array allows for efficient tracking of the next required card, enabling binary search and quick access to consecutive elements. The max heap is tempting as it can provide the largest element quickly, but it does not help in tracking consecutive sequences effectively.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936647+00:00",
+      "contentHash": "18afb710ded4219668a75c94ba64c339",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "hand-of-straights-5",
+      "title": "What is the time complexity of the optimal solution for forming straights?",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "hand-of-straights",
+      "difficulty": "Medium",
+      "question": "When implementing the optimal algorithm for forming straights from a hand of cards, what is the overall time complexity of the solution?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(log n)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal solution typically involves sorting the cards, which takes O(n log n) time, followed by a linear scan to check for straights. The O(n) option is misleading as it overlooks the sorting step.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936680+00:00",
+      "contentHash": "53e32501d0d0e43cdd189691c8025cfe",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "hand-of-straights-6",
+      "title": "Which edge case could cause the greedy approach to fail in forming straights?",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "hand-of-straights",
+      "difficulty": "Medium",
+      "question": "In the context of forming straights from a hand of cards, which scenario could lead to an incorrect result when using a greedy algorithm?",
+      "options": [
+        "All cards are of the same rank",
+        "Cards are in perfect consecutive order",
+        "Input contains duplicates",
+        "The number of cards is less than the required straight length"
+      ],
+      "answer": 2,
+      "explanation": "Having duplicates can disrupt the greedy approach since it may lead to incorrect assumptions about the availability of distinct cards needed to form straights. The other options do not inherently break the greedy logic.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "i",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example hand of cards with duplicates."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936731+00:00",
+      "contentHash": "e56ac3d314e66f41aa7613362e58dc28",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-triplets-to-form-target-triplet-5",
+      "title": "Time Complexity of Merging Triplets",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-triplets-to-form-target-triplet",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal algorithm for merging triplets to form a target triplet?",
+      "options": [
+        "O(n) where n is the number of triplets",
+        "O(n log n) due to sorting the triplets",
+        "O(n^2) for nested iterations",
+        "O(1) since it uses constant space"
+      ],
+      "answer": 0,
+      "explanation": "The optimal approach for merging triplets involves a single pass through the triplets to determine the maximum values, resulting in a time complexity of O(n). The common misconception is O(n log n) due to sorting, which is unnecessary for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936767+00:00",
+      "contentHash": "5b3dbd1fa5f28ce863ed40effdb9926b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-triplets-to-form-target-triplet-6",
+      "title": "Handling Edge Cases in Triplet Merging",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-triplets-to-form-target-triplet",
+      "difficulty": "Medium",
+      "question": "What could cause the merging algorithm to fail when attempting to form the target triplet?",
+      "options": [
+        "Triplets that contain negative values",
+        "Triplets that exceed the target values",
+        "Duplicate triplets in the input",
+        "Triplets that do not cover all components of the target"
+      ],
+      "answer": 3,
+      "explanation": "If the input triplets do not cover all components of the target triplet, it becomes impossible to form the target, leading to failure. The distractor about duplicate triplets is misleading because duplicates do not inherently affect the ability to form the target triplet.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "C",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "D",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "E",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "F",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "(1,2,3)",
+              "(2,3,4)",
+              "(3,4,5)",
+              "(4,5,6)",
+              "(1,1,1)",
+              "(2,2,2)"
+            ]
+          ]
+        },
+        "caption": "Example triplets to consider for merging."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936817+00:00",
+      "contentHash": "d28b877ec5f6fe90aba67d2a3a06489d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "partition-labels-4",
+      "title": "What is the most efficient way to track character positions for partitioning?",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "partition-labels",
+      "difficulty": "Medium",
+      "question": "Which data structure is best suited for efficiently tracking the last occurrence of each character in a string?",
+      "options": [
+        "Array",
+        "Hash Map",
+        "Stack",
+        "Linked List"
+      ],
+      "answer": 1,
+      "explanation": "A hash map allows O(1) average time complexity for lookups and updates, making it ideal for tracking the last occurrence of each character. An array could work but would require additional space if the character set is large. The other options do not provide the necessary efficiency for this task.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936848+00:00",
+      "contentHash": "e026196d3be6cd0ef6577d004f2fed55",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "partition-labels-5",
+      "title": "How do partitions handle overlapping characters?",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "partition-labels",
+      "difficulty": "Medium",
+      "question": "What issue arises if a character appears in multiple partitions?",
+      "options": [
+        "Partitions can overlap, causing incorrect counts.",
+        "Each character can only belong to one partition.",
+        "Partitions will always be of equal size.",
+        "Characters must be unique within a partition."
+      ],
+      "answer": 0,
+      "explanation": "If a character appears in multiple partitions, it can lead to overlapping partitions, which would cause incorrect counts of the partitions. The other options misinterpret how characters can be distributed among partitions.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936880+00:00",
+      "contentHash": "fa8a1e2fc39e0d79509c49e809faa123",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "partition-labels-6",
+      "title": "What is a common naive approach to partitioning?",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "partition-labels",
+      "difficulty": "Medium",
+      "question": "What naive strategy might one use to partition the string without considering efficiency?",
+      "options": [
+        "Iterate through the string and create partitions at every character.",
+        "Create a partition for each unique character.",
+        "Use a sliding window to dynamically adjust partitions.",
+        "Count characters and create partitions based on frequency."
+      ],
+      "answer": 0,
+      "explanation": "A naive approach might involve creating partitions at every character, leading to excessive partitions and poor performance. The other strategies either misunderstand the problem requirements or do not yield efficient solutions.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "a",
+              "label": "0",
+              "status": "normal"
+            },
+            {
+              "value": "b",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "c",
+              "label": "2",
+              "status": "normal"
+            },
+            {
+              "value": "a",
+              "label": "3",
+              "status": "normal"
+            },
+            {
+              "value": "d",
+              "label": "4",
+              "status": "normal"
+            },
+            {
+              "value": "e",
+              "label": "5",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example of character positions in a string."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936931+00:00",
+      "contentHash": "342fe760c9c67f6f062fb2727fab59ee",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-parenthesis-string-4",
+      "title": "What is a suitable data structure to track open parentheses in a valid parenthesis string problem?",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-parenthesis-string",
+      "difficulty": "Medium",
+      "question": "Which data structure is most effective for keeping track of unmatched opening parentheses when validating a string of parentheses?",
+      "options": [
+        "Stack",
+        "Queue",
+        "Hash Table",
+        "Array"
+      ],
+      "answer": 0,
+      "explanation": "A stack is the most effective data structure for tracking unmatched opening parentheses because it follows the Last In First Out (LIFO) principle, allowing you to easily match the most recent opening parenthesis with a closing one. A queue, while useful for other scenarios, does not provide the necessary access pattern for this problem, leading to incorrect matching.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.936958+00:00",
+      "contentHash": "528f113e539897c75001c134eff07e45",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-parenthesis-string-5",
+      "title": "What is the time complexity of the optimal solution for validating parentheses?",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-parenthesis-string",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the most efficient algorithm for checking if a string of parentheses is valid?",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(log n)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal algorithm for validating a parentheses string processes each character exactly once, leading to a linear time complexity of O(n). The O(n^2) option might arise from naive approaches that involve nested loops, which are unnecessary for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937029+00:00",
+      "contentHash": "ad873e912c41873bb2ce28e4e6b01978",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-parenthesis-string-6",
+      "title": "What issue arises when using a simple counter instead of a stack for validation?",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-parenthesis-string",
+      "difficulty": "Medium",
+      "question": "What problem would you encounter if you only used a counter to track the balance of parentheses instead of a stack?",
+      "options": [
+        "Incorrectly matching parentheses",
+        "Ignoring closing parentheses",
+        "Not handling empty strings",
+        "Inefficient memory usage"
+      ],
+      "answer": 0,
+      "explanation": "Using a counter alone can lead to incorrect matching of parentheses because it does not maintain the order of the opening parentheses. This can result in situations where a closing parenthesis does not match the correct opening one. The other options either do not accurately describe the limitations of a counter or are not relevant to the validation process.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "(",
+              "label": "i",
+              "status": "normal"
+            },
+            {
+              "value": ")",
+              "label": "j",
+              "status": "normal"
+            },
+            {
+              "value": "(",
+              "label": "k",
+              "status": "normal"
+            },
+            {
+              "value": "*",
+              "label": "l",
+              "status": "normal"
+            },
+            {
+              "value": ")",
+              "label": "m",
+              "status": "normal"
+            },
+            {
+              "value": "(",
+              "label": "n",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example string of parentheses with potential wildcards."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937081+00:00",
+      "contentHash": "7edac7c06ab830bab98b60c5a2ee2c27",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "insert-interval-4",
+      "title": "Choosing the Right Data Structure for Intervals",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "insert-interval",
+      "difficulty": "Medium",
+      "question": "Which data structure is optimal for efficiently managing and merging overlapping intervals?",
+      "options": [
+        "Array",
+        "Linked List",
+        "Balanced Binary Search Tree",
+        "Hash Table"
+      ],
+      "answer": 2,
+      "explanation": "A Balanced Binary Search Tree allows for efficient insertion and merging of overlapping intervals, maintaining order and enabling quick lookups. An Array would require O(n) time for insertion and merging, making it less efficient. The Linked List also suffers from similar inefficiencies, while a Hash Table does not maintain order, making it unsuitable for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937109+00:00",
+      "contentHash": "ccb49400181172f6e564d1dd6a99a391",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "insert-interval-5",
+      "title": "Time Complexity of Interval Insertion",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "insert-interval",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of inserting a new interval into a sorted list of intervals?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n log n)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The time complexity is O(n) because, in the worst case, we may need to traverse all existing intervals to find the correct position for the new interval and merge any overlaps. O(log n) applies to binary search operations, which are not directly applicable here. O(n log n) would suggest sorting, which is unnecessary, and O(1) implies constant time, which is not feasible for this operation.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937135+00:00",
+      "contentHash": "aa29be360c2719cbc48a3702d15c63aa",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "insert-interval-6",
+      "title": "Handling Edge Cases in Interval Problems",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "insert-interval",
+      "difficulty": "Medium",
+      "question": "What potential issue arises when inserting an interval that overlaps with multiple existing intervals?",
+      "options": [
+        "It can cause incorrect merging of intervals",
+        "It will always be added to the end",
+        "It will not affect the existing intervals",
+        "It can lead to an infinite loop"
+      ],
+      "answer": 0,
+      "explanation": "The primary issue is that overlapping intervals must be merged correctly, which can become complex if the new interval overlaps with multiple existing intervals. This requires careful handling to ensure all relevant intervals are merged into one. The option stating it will always be added to the end is misleading, as the position depends on the overlaps. The other distractors do not accurately represent the challenges in this scenario.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "[1,3]",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "[6,9]",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "[2,5]",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "[10,12]",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Current intervals before inserting a new one."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937182+00:00",
+      "contentHash": "79bbd0f1c58182735ebc78efc135ff0e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-intervals-4",
+      "title": "What is the most efficient way to merge overlapping intervals?",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-intervals",
+      "difficulty": "Medium",
+      "question": "Which approach is optimal for merging overlapping intervals in a list?",
+      "options": [
+        "Sorting the intervals by their start times and then merging them in a single pass.",
+        "Using a hash map to store intervals and then merging them.",
+        "Iterating through each interval and comparing it with every other interval.",
+        "Using a binary search to find overlapping intervals."
+      ],
+      "answer": 0,
+      "explanation": "The optimal approach is to sort the intervals by their start times and then merge them in a single pass. This method ensures that overlapping intervals are efficiently identified and merged. The second option, using a hash map, is less efficient because it does not guarantee the correct order of intervals for merging.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937218+00:00",
+      "contentHash": "35cd47da6b444a9657a54946072dda4b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-intervals-5",
+      "title": "How does sorting affect the merging process?",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-intervals",
+      "difficulty": "Medium",
+      "question": "Why is sorting the intervals by start time crucial before merging them?",
+      "options": [
+        "It ensures that all intervals are processed in the order they appear in the input.",
+        "It allows for efficient identification of overlapping intervals in a single pass.",
+        "It eliminates the need to check for overlaps entirely.",
+        "It reduces the overall time complexity of the merging process to O(n log n)."
+      ],
+      "answer": 1,
+      "explanation": "Sorting the intervals by start time is crucial because it allows for efficient identification of overlapping intervals in a single pass. This way, once an interval is merged, you can simply move to the next one. The option suggesting that sorting eliminates the need to check for overlaps is misleading, as overlaps still need to be checked after sorting.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937254+00:00",
+      "contentHash": "04b66d8344eb78bc272c60c5ae143f48",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-intervals-6",
+      "title": "What edge cases should be considered when merging intervals?",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-intervals",
+      "difficulty": "Medium",
+      "question": "Which edge case could complicate the merging of intervals?",
+      "options": [
+        "Intervals that are completely separate from each other.",
+        "Intervals that touch at a single point, such as [1,2] and [2,3].",
+        "Intervals that are identical, such as [1,3] and [1,3].",
+        "Intervals that are in descending order."
+      ],
+      "answer": 1,
+      "explanation": "Intervals that touch at a single point, such as [1,2] and [2,3], can complicate the merging process because they are considered overlapping in many definitions. The other options do not present complications for the merging process, as separate intervals or identical intervals can be handled straightforwardly.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "C",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "D",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "E",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "F",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "[1,2]",
+              "[2,3]",
+              "[3,4]",
+              "[5,6]",
+              "[6,7]",
+              "[8,9]"
+            ]
+          ]
+        },
+        "caption": "Example intervals to consider for merging."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937308+00:00",
+      "contentHash": "832fec10bb004375350e6eab5410366a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "non-overlapping-intervals-4",
+      "title": "Optimal Strategy for Interval Overlap",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "non-overlapping-intervals",
+      "difficulty": "Medium",
+      "question": "When tasked with finding the maximum number of non-overlapping intervals, which strategy is most effective for ensuring optimal selection?",
+      "options": [
+        "Sort intervals by their start time",
+        "Sort intervals by their end time",
+        "Select intervals in the order they appear",
+        "Randomly select intervals until no overlaps remain"
+      ],
+      "answer": 1,
+      "explanation": "Sorting intervals by their end time is the most effective strategy because it allows you to select the interval that finishes the earliest, maximizing the remaining time for subsequent intervals. The most tempting distractor, sorting by start time, fails as it may lead to earlier intervals blocking later ones, thus reducing the total count of non-overlapping intervals.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937344+00:00",
+      "contentHash": "9028944a4328fa5f4a587cc9cd9deca3",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "non-overlapping-intervals-5",
+      "title": "Handling Edge Cases in Interval Problems",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "non-overlapping-intervals",
+      "difficulty": "Medium",
+      "question": "What potential issue arises when the input intervals contain duplicates or overlapping intervals with the same endpoints?",
+      "options": [
+        "The algorithm will run slower due to increased comparisons",
+        "It may lead to incorrect counting of non-overlapping intervals",
+        "Duplicates can be ignored without any impact on the result",
+        "The output will always be the same regardless of duplicates"
+      ],
+      "answer": 1,
+      "explanation": "When duplicates or overlapping intervals with the same endpoints are present, it can lead to incorrect counting of non-overlapping intervals because the algorithm might mistakenly consider them as valid selections. The option stating that duplicates can be ignored is tempting but incorrect, as they can affect the final count.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937379+00:00",
+      "contentHash": "e9f9e7fb566b80fbdff46de0f5506c20",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "non-overlapping-intervals-6",
+      "title": "Space Complexity in Interval Selection",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "non-overlapping-intervals",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of the optimal algorithm for selecting non-overlapping intervals when implemented correctly?",
+      "options": [
+        "O(n) due to storing the result list",
+        "O(1) since only a few variables are needed",
+        "O(log n) for the sorting step",
+        "O(n log n) due to sorting and storing intervals"
+      ],
+      "answer": 1,
+      "explanation": "The optimal algorithm can be implemented with O(1) space complexity if it only uses a few variables to track the current end of the last selected interval and the count of non-overlapping intervals. The option suggesting O(n) is misleading, as it implies that a list is needed to store results, which is not necessary for counting. ",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "[1,2]",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "[2,3]",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "[3,4]",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "[1,3]",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "[4,5]",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "[5,6]",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "[1,2]",
+              "[2,3]",
+              "[3,4]",
+              "[1,3]",
+              "[4,5]",
+              "[5,6]"
+            ]
+          ]
+        },
+        "caption": "Example of overlapping intervals"
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937430+00:00",
+      "contentHash": "bada614bd98fec70603913ce9355b665",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "meeting-rooms-4",
+      "title": "Choosing the Right Data Structure for Interval Management",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "meeting-rooms",
+      "difficulty": "Easy",
+      "question": "Which data structure is most suitable for efficiently managing a collection of intervals to check for overlaps?",
+      "options": [
+        "Array",
+        "Hash Set",
+        "Binary Search Tree",
+        "Priority Queue"
+      ],
+      "answer": 3,
+      "explanation": "A Priority Queue is ideal for managing intervals because it allows efficient retrieval of the next interval to process based on start time, facilitating overlap checks. The most tempting distractor, a Binary Search Tree, would require more overhead for maintaining order and could complicate overlap checks compared to a priority queue's straightforward approach.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937457+00:00",
+      "contentHash": "8f87a2e48ce2b76e1ab90a1773ca487e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "meeting-rooms-5",
+      "title": "Understanding Edge Cases in Interval Problems",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "meeting-rooms",
+      "difficulty": "Easy",
+      "question": "What is a potential issue when handling intervals that are exactly adjacent to each other?",
+      "options": [
+        "They should be counted as overlapping.",
+        "They should be merged into one interval.",
+        "They can be treated as non-overlapping.",
+        "They require sorting before processing."
+      ],
+      "answer": 2,
+      "explanation": "Adjacent intervals (e.g., [1, 2] and [2, 3]) are considered non-overlapping, meaning they do not conflict and can coexist. The most tempting distractor, suggesting they should be merged, fails because merging applies only when intervals overlap, not when they merely touch at endpoints.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937490+00:00",
+      "contentHash": "ea670d4fbf42ef44b7613656c71542c0",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "meeting-rooms-6",
+      "title": "Evaluating Time Complexity of Interval Overlap Checking",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "meeting-rooms",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of checking for overlapping intervals after sorting them?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "After sorting the intervals, checking for overlaps can be done in a single pass through the list, resulting in O(n) time complexity. The most tempting distractor, O(n log n), reflects the sorting step but does not account for the subsequent linear scan, which is efficient for overlap checking.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937515+00:00",
+      "contentHash": "a47b2d1052df86ecbf917cb55e3224c1",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "meeting-rooms-ii-4",
+      "title": "Which data structure is optimal for managing overlapping intervals?",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "meeting-rooms-ii",
+      "difficulty": "Medium",
+      "question": "What data structure would you use to efficiently manage and track overlapping intervals when scheduling meetings?",
+      "options": [
+        "Array",
+        "Hash Map",
+        "Min-Heap",
+        "Linked List"
+      ],
+      "answer": 2,
+      "explanation": "A Min-Heap is optimal for managing overlapping intervals as it allows for efficient retrieval of the earliest ending meeting, enabling quick decisions on whether a new meeting can be scheduled. A Hash Map, while useful for quick lookups, does not help with ordering intervals by their end times, which is crucial in this context.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937538+00:00",
+      "contentHash": "d3c999da5ff1fa9e0d105dc82137f9f6",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "meeting-rooms-ii-5",
+      "title": "What is the time complexity of the optimal solution?",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "meeting-rooms-ii",
+      "difficulty": "Medium",
+      "question": "If you sort the intervals and then process them to determine the minimum number of meeting rooms required, what is the overall time complexity of this approach?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(log n)"
+      ],
+      "answer": 1,
+      "explanation": "The overall time complexity is O(n log n) due to the sorting step, which dominates the linear processing of the intervals. The naive O(n^2) approach would involve checking each interval against every other interval, which is not necessary in the optimal solution.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937566+00:00",
+      "contentHash": "b04e7c650021ab9a6b5cffd2267eaae1",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "minimum-interval-to-include-each-query-4",
+      "title": "Choosing the Right Data Structure for Interval Queries",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "minimum-interval-to-include-each-query",
+      "difficulty": "Hard",
+      "question": "Which data structure is most efficient for answering range queries on intervals where you need to find the minimum interval containing a given point?",
+      "options": [
+        "Segment Tree",
+        "Binary Search Tree",
+        "Hash Table",
+        "Array"
+      ],
+      "answer": 0,
+      "explanation": "A Segment Tree is optimal for range queries like finding the minimum interval containing a point because it allows for efficient updates and queries in logarithmic time. A Binary Search Tree is less efficient for this specific use case due to potential unbalanced states, while a Hash Table does not support range queries, and an Array would require linear time for each query.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937593+00:00",
+      "contentHash": "5d38854448a2d36f7e54080e07271414",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "minimum-interval-to-include-each-query-5",
+      "title": "Understanding Time Complexity in Interval Problems",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "minimum-interval-to-include-each-query",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of a naive approach that checks each interval for every query in an interval inclusion problem?",
+      "options": [
+        "O(n log n)",
+        "O(n)",
+        "O(n^2)",
+        "O(log n)"
+      ],
+      "answer": 2,
+      "explanation": "The naive approach involves iterating through all intervals for each query, leading to a time complexity of O(n * m), where n is the number of intervals and m is the number of queries. In the worst case, if m equals n, this results in O(n^2). The other options do not accurately reflect this quadratic relationship.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937620+00:00",
+      "contentHash": "5e9e3c1c356d681b4a77caebdd5b94b3",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "minimum-interval-to-include-each-query-6",
+      "title": "Handling Edge Cases in Interval Queries",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "minimum-interval-to-include-each-query",
+      "difficulty": "Medium",
+      "question": "What potential issue arises when intervals contain overlapping ranges in an interval query problem?",
+      "options": [
+        "Increased time complexity",
+        "Incorrect minimum interval selection",
+        "Memory overflow",
+        "Unsorted intervals"
+      ],
+      "answer": 1,
+      "explanation": "When intervals overlap, it can lead to incorrectly identifying the minimum interval that contains a query point, as the overlapping intervals may lead to ambiguity. This is a common pitfall in interval problems. The other options do not directly relate to the specific issue of overlapping intervals affecting correctness.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "Interval Start",
+            "Interval End"
+          ],
+          "rows": [
+            [
+              "1",
+              "5"
+            ],
+            [
+              "3",
+              "7"
+            ],
+            [
+              "6",
+              "10"
+            ],
+            [
+              "8",
+              "12"
+            ]
+          ]
+        },
+        "caption": "Example of overlapping intervals."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937711+00:00",
+      "contentHash": "e8e0faf3b923763ce7ae833465c586dc",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "rotate-image-4",
+      "title": "Which method efficiently rotates a 2D matrix in place?",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "rotate-image",
+      "difficulty": "Medium",
+      "question": "What is the most efficient way to rotate a square 2D matrix by 90 degrees?",
+      "options": [
+        "Transpose the matrix and then reverse each row",
+        "Reverse each row and then transpose the matrix",
+        "Reverse each column and then transpose the matrix",
+        "Transpose the matrix and then reverse each column"
+      ],
+      "answer": 0,
+      "explanation": "Transposing the matrix and then reversing each row correctly rotates the matrix in place. The most tempting distractor, reversing each row and then transposing, fails because it does not achieve the desired rotation, leading to incorrect results.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937746+00:00",
+      "contentHash": "39a353a1899221a4712e669281ffe1db",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "rotate-image-5",
+      "title": "What is the time complexity of rotating an image?",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "rotate-image",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal algorithm for rotating a 2D matrix by 90 degrees?",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(n log n)",
+        "O(1)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal algorithm involves visiting each element of the n x n matrix, resulting in a time complexity of O(n^2). The option O(n) is tempting but does not account for the need to process all elements in a square matrix.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937776+00:00",
+      "contentHash": "a22646155a4cfb1ca3c66c96a52d16e2",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "rotate-image-6",
+      "title": "What edge case must be handled when rotating a matrix?",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "rotate-image",
+      "difficulty": "Medium",
+      "question": "Which edge case should be considered when rotating a square matrix?",
+      "options": [
+        "An empty matrix",
+        "A matrix with a single element",
+        "A non-square matrix",
+        "A matrix filled with zeros"
+      ],
+      "answer": 1,
+      "explanation": "A matrix with a single element is a critical edge case because rotating it should yield the same matrix. The option of an empty matrix is plausible but does not apply since the problem specifies a square matrix, which cannot be empty.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "0,0",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "0,1",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "0,2",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "1,0",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "1,1",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "1,2",
+              "status": "normal"
+            },
+            {
+              "value": "7",
+              "label": "2,0",
+              "status": "normal"
+            },
+            {
+              "value": "8",
+              "label": "2,1",
+              "status": "normal"
+            },
+            {
+              "value": "9",
+              "label": "2,2",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1",
+              "2",
+              "3"
+            ],
+            [
+              "4",
+              "5",
+              "6"
+            ],
+            [
+              "7",
+              "8",
+              "9"
+            ]
+          ]
+        },
+        "caption": "Example of a 3x3 matrix before rotation."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937830+00:00",
+      "contentHash": "4f2c666fb311641ddef558a1f542f64e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "spiral-matrix-4",
+      "title": "Optimal Approach for Spiral Traversal",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "spiral-matrix",
+      "difficulty": "Medium",
+      "question": "What is the most efficient way to traverse a matrix in a spiral order?",
+      "options": [
+        "Use a recursive function to explore all elements",
+        "Iteratively adjust boundaries while moving in four directions",
+        "Sort the matrix before traversal",
+        "Flatten the matrix into a single array first"
+      ],
+      "answer": 1,
+      "explanation": "The optimal approach involves iteratively adjusting the boundaries of the matrix while moving in four directions (right, down, left, and up). The first option, using recursion, can lead to excessive function calls and stack overflow for large matrices, making it less efficient.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937863+00:00",
+      "contentHash": "52843e367b61185ab829d1de2b1bbcfc",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "spiral-matrix-5",
+      "title": "Handling Edge Cases in Spiral Matrix",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "spiral-matrix",
+      "difficulty": "Medium",
+      "question": "What issue might arise if the input matrix has only one row or one column?",
+      "options": [
+        "The traversal will fail to return any elements",
+        "The traversal will return elements in the wrong order",
+        "The algorithm will work correctly without any issues",
+        "The algorithm will enter an infinite loop"
+      ],
+      "answer": 2,
+      "explanation": "In cases where the matrix has only one row or one column, the algorithm will still function correctly and return the elements in the proper order. The most tempting distractor is that it will return elements in the wrong order, but the spiral traversal logic handles these cases seamlessly.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937893+00:00",
+      "contentHash": "1d119b48415f7bbb4f65221f7cade753",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "spiral-matrix-6",
+      "title": "Space Complexity Considerations",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "spiral-matrix",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of an in-place spiral matrix traversal?",
+      "options": [
+        "O(n) due to the output storage",
+        "O(1) since no extra space is used",
+        "O(m+n) for storing boundaries",
+        "O(log n) for recursion stack space"
+      ],
+      "answer": 1,
+      "explanation": "The space complexity of an in-place spiral traversal is O(1) since it modifies the input matrix directly without requiring additional data structures for storage. The most misleading option is O(m+n) for storing boundaries, as this is not necessary when using in-place modifications.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "a",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "b",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "c",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "d",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "e",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "f",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1",
+              "2",
+              "3"
+            ],
+            [
+              "4",
+              "5",
+              "6"
+            ]
+          ]
+        },
+        "caption": "Example of a 2x3 matrix for spiral traversal."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.937938+00:00",
+      "contentHash": "b62bdb813026d8dea5f5d569879ade60",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "set-matrix-zeroes-4",
+      "title": "Choosing the Right Approach for Matrix Modification",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "set-matrix-zeroes",
+      "difficulty": "Medium",
+      "question": "When tasked with modifying a matrix in place to set entire rows and columns to zero based on specific conditions, which approach is generally most efficient in terms of space complexity?",
+      "options": [
+        "Using a secondary matrix of the same size",
+        "Utilizing a single pass with a flag variable",
+        "Using the first row and first column of the matrix as markers",
+        "Iterating through the matrix multiple times to find zeroes"
+      ],
+      "answer": 2,
+      "explanation": "The most efficient approach is to use the first row and first column of the matrix as markers, allowing you to modify the matrix in place without requiring additional space. The tempting distractor is using a secondary matrix, which, while correct, increases space complexity to O(m*n). This is unnecessary when the first row and column can serve as markers.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938021+00:00",
+      "contentHash": "9bdb3c4d2fa3d62425b39a06f698dc07",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "set-matrix-zeroes-5",
+      "title": "Handling Edge Cases in Matrix Zeroing",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "set-matrix-zeroes",
+      "difficulty": "Medium",
+      "question": "What potential issue arises when the input matrix contains zeroes in both the first row and first column when using them as markers?",
+      "options": [
+        "The entire matrix will be zeroed incorrectly",
+        "The algorithm will run slower due to extra checks",
+        "The original values in the first row and column will be lost",
+        "The algorithm will not work at all"
+      ],
+      "answer": 0,
+      "explanation": "If zeroes are present in both the first row and column, the algorithm may mistakenly zero out the entire matrix instead of just the necessary rows and columns. The most tempting distractor is the idea that the algorithm will not work at all, which is incorrect; it will work but produce an undesired outcome.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938060+00:00",
+      "contentHash": "0a98004ec9116bd54ef5acf55108631a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "set-matrix-zeroes-6",
+      "title": "Time Complexity Analysis of Matrix Operations",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "set-matrix-zeroes",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal algorithm for setting matrix zeroes when using the first row and column as markers?",
+      "options": [
+        "O(n)",
+        "O(n*m)",
+        "O(n^2)",
+        "O(log n)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal algorithm runs in O(n*m) time complexity, where n is the number of rows and m is the number of columns, as it involves a single pass through the entire matrix to set the markers and another pass to zero out the necessary rows and columns. The distractor O(n) is tempting because it suggests a linear time solution, but the matrix must be fully traversed.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Column 0",
+            "Column 1",
+            "Column 2"
+          ],
+          "rows": [
+            [
+              "Row 0"
+            ],
+            [
+              "Row 1"
+            ],
+            [
+              "Row 2"
+            ]
+          ]
+        },
+        "caption": "A sample matrix before applying the zeroing algorithm."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938108+00:00",
+      "contentHash": "932a4fca10b4b7cc6950c101d1608c94",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "happy-number-4",
+      "title": "Identifying Happy Numbers",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "happy-number",
+      "difficulty": "Easy",
+      "question": "What is the primary characteristic of a happy number in relation to its digit squares?",
+      "options": [
+        "The sum of the squares of its digits eventually equals 1",
+        "The sum of the squares of its digits is always even",
+        "The sum of the squares of its digits cycles through a fixed set of numbers",
+        "The sum of the squares of its digits is greater than the original number"
+      ],
+      "answer": 0,
+      "explanation": "A happy number is defined by the property that the sum of the squares of its digits eventually equals 1. The most tempting distractor is the option stating that the sum cycles through a fixed set of numbers, which describes non-happy numbers instead.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938148+00:00",
+      "contentHash": "35ab12ebfc1500b9ee8841f9a556e208",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "happy-number-5",
+      "title": "Cycle Detection in Number Sequences",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "happy-number",
+      "difficulty": "Easy",
+      "question": "Which algorithmic technique is most suitable for detecting cycles in the sequence generated by the sum of squares of digits?",
+      "options": [
+        "Depth-First Search (DFS)",
+        "Breadth-First Search (BFS)",
+        "Floyd's Cycle Detection Algorithm",
+        "Dynamic Programming"
+      ],
+      "answer": 2,
+      "explanation": "Floyd's Cycle Detection Algorithm, also known as the tortoise and hare algorithm, is ideal for detecting cycles in sequences generated by iterative processes. The option suggesting DFS is tempting but is more suited for traversing tree-like structures rather than detecting cycles in a linear sequence.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938178+00:00",
+      "contentHash": "9281749d32b73f2cc2d6dcdc9ff10b99",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "happy-number-6",
+      "title": "Handling Edge Cases in Happy Numbers",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "happy-number",
+      "difficulty": "Easy",
+      "question": "What is a potential edge case to consider when determining if a number is happy?",
+      "options": [
+        "The number is negative",
+        "The number is zero",
+        "The number is a single-digit non-happy number",
+        "The number has repeating digits"
+      ],
+      "answer": 2,
+      "explanation": "A single-digit non-happy number, such as 4, can be an edge case because it will immediately show that it does not lead to 1. The option about negative numbers is misleading, as happy numbers are generally considered for positive integers only.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938205+00:00",
+      "contentHash": "7fb17c85ff32ba85a9fb30b513b73d05",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "plus-one-4",
+      "title": "What is the most efficient way to handle carry when incrementing a number represented as an array?",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "plus-one",
+      "difficulty": "Easy",
+      "question": "When incrementing a number represented as an array of digits, which approach efficiently manages the carry?",
+      "options": [
+        "Start from the least significant digit and propagate the carry backwards through the array.",
+        "Convert the array to an integer, add one, and convert it back to an array.",
+        "Use a stack to reverse the array and handle carry during the pop operation.",
+        "Iterate through the array from the most significant digit to the least significant digit."
+      ],
+      "answer": 0,
+      "explanation": "The correct approach is to start from the least significant digit and propagate the carry backwards through the array, which ensures that all digits are updated correctly. The option to convert the array to an integer and back is inefficient due to potential overflow issues and unnecessary conversions.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938245+00:00",
+      "contentHash": "b3c9ef3ed4cb8168df230f44f64cb554",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "plus-one-5",
+      "title": "How does the presence of leading zeros affect the output?",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "plus-one",
+      "difficulty": "Easy",
+      "question": "If the input array representing a number has leading zeros, how should the output be formatted?",
+      "options": [
+        "The output should also have leading zeros to maintain the same length.",
+        "Leading zeros should be removed in the output.",
+        "The output should be a single digit if the number is zero.",
+        "Leading zeros are not allowed in the output, so return an empty array if the input is all zeros."
+      ],
+      "answer": 1,
+      "explanation": "The correct answer is that leading zeros should be removed in the output to represent the number accurately. The option suggesting to maintain leading zeros fails because it does not represent the number correctly as an integer.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938281+00:00",
+      "contentHash": "f8dcca4c5c00738d7046545d8092855e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "powx-n-4",
+      "title": "Optimal Approach for Exponentiation",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "powx-n",
+      "difficulty": "Medium",
+      "question": "Which method is the most efficient for calculating x raised to the power of n?",
+      "options": [
+        "Iterative multiplication for n times",
+        "Recursive method with O(log n) complexity",
+        "Using a lookup table for precomputed powers",
+        "Directly using the built-in power function"
+      ],
+      "answer": 1,
+      "explanation": "The recursive method with O(log n) complexity is optimal because it reduces the number of multiplications needed by dividing the problem in half at each step. The iterative multiplication for n times is less efficient, as it has a linear time complexity of O(n).",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938310+00:00",
+      "contentHash": "349be4a5a35fc825d8bc8dae97766c9b",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "powx-n-5",
+      "title": "Handling Negative Exponents",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "powx-n",
+      "difficulty": "Medium",
+      "question": "What is the correct way to handle negative exponents when calculating x raised to the power of n?",
+      "options": [
+        "Return 0 for negative n",
+        "Calculate 1/(x^|n|)",
+        "Ignore the sign and compute x^n normally",
+        "Return an error for negative n"
+      ],
+      "answer": 1,
+      "explanation": "The correct approach for negative exponents is to compute 1/(x^|n|), which effectively gives the reciprocal of the positive exponent result. Returning 0 for negative n is incorrect, as it does not reflect the mathematical definition of exponentiation.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938339+00:00",
+      "contentHash": "0a36812bb2092fc815345868477972d3",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "powx-n-6",
+      "title": "Edge Cases in Exponentiation",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "powx-n",
+      "difficulty": "Medium",
+      "question": "What potential issue arises when calculating x raised to the power of n if x is 0 and n is negative?",
+      "options": [
+        "It will return 1",
+        "It will cause a division by zero error",
+        "It will return 0",
+        "It will return infinity"
+      ],
+      "answer": 1,
+      "explanation": "Calculating 0 raised to a negative power results in a division by zero error, as it involves computing 1/(0^|n|). Returning 1 or 0 is incorrect, and returning infinity does not accurately reflect the mathematical operation involved.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "x",
+            "n",
+            "Result"
+          ],
+          "rows": [
+            [
+              "0",
+              "-1",
+              "?"
+            ],
+            [
+              "2",
+              "3",
+              "?"
+            ],
+            [
+              "3",
+              "0",
+              "?"
+            ],
+            [
+              "-1",
+              "-2",
+              "?"
+            ],
+            [
+              "0",
+              "1",
+              "?"
+            ],
+            [
+              "4",
+              "-1",
+              "?"
+            ]
+          ]
+        },
+        "caption": "Evaluating edge cases for exponentiation."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938383+00:00",
+      "contentHash": "268481ce07c6dce7e5d8f01de21bf501",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "multiply-strings-4",
+      "title": "Optimal Approach for String Multiplication",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "multiply-strings",
+      "difficulty": "Medium",
+      "question": "When multiplying two numbers represented as strings, which approach is most efficient in terms of time complexity?",
+      "options": [
+        "Using a nested loop to multiply each digit directly",
+        "Converting strings to integers and multiplying",
+        "Using a single loop to process digits and accumulate results",
+        "Using a dynamic programming approach to store intermediate results"
+      ],
+      "answer": 2,
+      "explanation": "Using a single loop to process digits and accumulate results is efficient because it avoids the overhead of converting strings to integers, which can lead to overflow issues. The nested loop approach, while straightforward, has a higher time complexity of O(n*m), which is less efficient than the optimal method that processes digits in a single pass.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938420+00:00",
+      "contentHash": "b04ee137cc69cff39d7f1c02c536a161",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "multiply-strings-5",
+      "title": "Handling Edge Cases in String Multiplication",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "multiply-strings",
+      "difficulty": "Medium",
+      "question": "What potential issue must be handled when multiplying two string representations of numbers?",
+      "options": [
+        "Leading zeros in the result",
+        "Negative numbers represented as strings",
+        "Empty strings as input",
+        "Decimal points in string representations"
+      ],
+      "answer": 0,
+      "explanation": "Leading zeros in the result must be handled to ensure the output is formatted correctly. For instance, multiplying '02' and '03' should yield '6', not '06'. The other options do not apply to the standard multiplication of non-negative integers in string form, making them less relevant.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938448+00:00",
+      "contentHash": "c0cbd9ba25964d095f50ec7d8482b55b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "multiply-strings-6",
+      "title": "Space Complexity in String Multiplication",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "multiply-strings",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of the optimal algorithm for multiplying two strings?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(n*m)",
+        "O(n + m)"
+      ],
+      "answer": 3,
+      "explanation": "The space complexity of the optimal algorithm is O(n + m) because it requires space to store the result, which can be at most the sum of the lengths of the two input strings. The other options do not accurately reflect the requirement for additional space for the result array, especially in cases where the input strings are of different lengths.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938475+00:00",
+      "contentHash": "7da6f396578f0fe1d91424f97f613b90",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "detect-squares-4",
+      "title": "Which data structure is optimal for tracking points in a 2D plane for square detection?",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "detect-squares",
+      "difficulty": "Medium",
+      "question": "Which data structure is optimal for tracking points in a 2D plane for square detection?",
+      "options": [
+        "A hash set for O(1) average lookups",
+        "A list for maintaining order",
+        "A binary search tree for sorted access",
+        "An array for fixed-size storage"
+      ],
+      "answer": 0,
+      "explanation": "Using a hash set allows for O(1) average time complexity for lookups, which is crucial when checking if the corners of a square exist. The list option, while it maintains order, has O(n) lookup time, making it inefficient for this task.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938504+00:00",
+      "contentHash": "20eabe96020c2e7646cca3c28ea4f901",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "detect-squares-5",
+      "title": "What is the time complexity of the optimal approach to detect squares?",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "detect-squares",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal approach to detect squares?",
+      "options": [
+        "O(n^2) due to nested iterations",
+        "O(n) if using a hash map",
+        "O(n log n) for sorting points",
+        "O(1) for constant time checks"
+      ],
+      "answer": 1,
+      "explanation": "The optimal approach leverages a hash map to store points, allowing for O(n) time complexity since each point can be processed in constant time for lookups. The O(n^2) option suggests a brute force method which is inefficient.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938532+00:00",
+      "contentHash": "e2da4e3f7731632ae507957ab76b46ea",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "detect-squares-6",
+      "title": "How does the presence of duplicate points affect square detection?",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "detect-squares",
+      "difficulty": "Medium",
+      "question": "How does the presence of duplicate points affect square detection?",
+      "options": [
+        "It can lead to incorrect square counts",
+        "It has no effect on detection",
+        "It simplifies the detection process",
+        "It requires a different data structure"
+      ],
+      "answer": 0,
+      "explanation": "Duplicate points can lead to overcounting squares since the same corner may be counted multiple times. This can skew the results, making it crucial to handle duplicates properly. The option stating it has no effect is misleading, as duplicates complicate the counting.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "Point X",
+            "Point Y"
+          ],
+          "rows": [
+            [
+              "1",
+              "1"
+            ],
+            [
+              "1",
+              "2"
+            ],
+            [
+              "2",
+              "1"
+            ],
+            [
+              "2",
+              "2"
+            ],
+            [
+              "1",
+              "1"
+            ],
+            [
+              "3",
+              "3"
+            ]
+          ]
+        },
+        "caption": "Sample points in a 2D plane."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938568+00:00",
+      "contentHash": "431e22a86e02b9775baa016a7fac7f08",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "single-number-4",
+      "title": "Optimal Approach for Unique Element Identification",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "single-number",
+      "difficulty": "Easy",
+      "question": "What is the most efficient way to find a unique element in an array where every other element appears twice?",
+      "options": [
+        "Using a hash table to count occurrences",
+        "Sorting the array and checking adjacent elements",
+        "Using the XOR operation to isolate the unique element",
+        "Brute force comparison of each element"
+      ],
+      "answer": 2,
+      "explanation": "The XOR operation is the most efficient method for this problem because it has a time complexity of O(n) and a space complexity of O(1). The tempting distractor is using a hash table, which, while correct, has a higher space complexity of O(n) due to storing counts.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938610+00:00",
+      "contentHash": "b5db4fbb8c5e86859210f940138a0122",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "single-number-5",
+      "title": "Understanding XOR Properties",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "single-number",
+      "difficulty": "Easy",
+      "question": "Why does the XOR operation effectively isolate the unique number in a list of paired integers?",
+      "options": [
+        "XOR of a number with itself results in zero",
+        "XOR is commutative and associative",
+        "XOR of zero with any number returns that number",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "All of the listed properties of XOR contribute to isolating the unique number: XORing a number with itself cancels it out, and the commutative and associative properties ensure that the order of operations does not matter. The most tempting distractor might be just one of these properties, but they all work together to achieve the result.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938642+00:00",
+      "contentHash": "78963f948b29f32e84338fcef93fcc50",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "single-number-6",
+      "title": "Edge Case Consideration",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "single-number",
+      "difficulty": "Easy",
+      "question": "What issue arises if the input array contains negative numbers when using a naive approach?",
+      "options": [
+        "Negative numbers cannot be counted correctly",
+        "The XOR operation fails with negative integers",
+        "The algorithm will not terminate",
+        "The unique number might be misidentified"
+      ],
+      "answer": 3,
+      "explanation": "If the input array contains negative numbers, a naive counting approach may misidentify the unique number because it may not account for the sign correctly. The tempting distractor is the idea that XOR fails with negatives, but it actually works correctly with all integers. Thus, understanding the nature of the algorithm is crucial.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "-1",
+              "label": "a",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "b",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "c",
+              "status": "normal"
+            },
+            {
+              "value": "-1",
+              "label": "d",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "e",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "f",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example array with negative and positive integers."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938688+00:00",
+      "contentHash": "99cb0b60114c89ef27cb06d6adb4d8d4",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "number-of-1-bits-4",
+      "title": "Optimal Approach for Counting Bits",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "number-of-1-bits",
+      "difficulty": "Easy",
+      "question": "Which method provides an efficient way to count the number of 1 bits in an integer?",
+      "options": [
+        "Using a loop to check each bit individually",
+        "Using bitwise AND with a mask",
+        "Using a lookup table for precomputed results",
+        "Using recursion to count bits"
+      ],
+      "answer": 1,
+      "explanation": "The bitwise AND method is efficient because it allows you to isolate the least significant bit and count 1s without checking each bit individually. The loop option is tempting but inefficient, as it has a linear time complexity relative to the number of bits.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938719+00:00",
+      "contentHash": "5a71d6bc5b15e3b9bedf9fc7c0a1216d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "number-of-1-bits-5",
+      "title": "Space Complexity Considerations",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "number-of-1-bits",
+      "difficulty": "Easy",
+      "question": "What is the space complexity of the optimal method for counting 1 bits in an integer?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal method for counting bits typically uses a constant amount of space, O(1), since it only requires a few variables for counting and does not depend on the size of the input. The O(n) option is misleading as it suggests space grows with input size, which is not the case here.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938743+00:00",
+      "contentHash": "3b324024079750e62830dad0b8b5392a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "number-of-1-bits-6",
+      "title": "Handling Edge Cases in Bit Counting",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "number-of-1-bits",
+      "difficulty": "Easy",
+      "question": "What issue might arise when counting bits in negative integers using unsigned bit manipulation?",
+      "options": [
+        "Negative integers have no bits to count",
+        "The sign bit may be incorrectly counted",
+        "The method works the same as for positive integers",
+        "Negative integers are always zero in bit representation"
+      ],
+      "answer": 1,
+      "explanation": "When using unsigned bit manipulation, the sign bit of a negative integer can be incorrectly counted as a 1, leading to inaccurate results. The option about the method working the same is tempting but fails to recognize the implications of signed versus unsigned representation.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "0",
+              "label": "0",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "2",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "3",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "4",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "0",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1"
+            ]
+          ]
+        },
+        "caption": "Example of a 6-bit integer representation."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938788+00:00",
+      "contentHash": "8baa9f6da7b92dc088eff294bb21a84f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "counting-bits-4",
+      "title": "Optimal Bit Counting Method",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "counting-bits",
+      "difficulty": "Easy",
+      "question": "Which method provides an efficient way to count the number of 1 bits in a binary representation of a number?",
+      "options": [
+        "Using a loop to check each bit individually",
+        "Using Brian Kernighan's algorithm to clear the least significant bit",
+        "Converting the number to a string and counting '1's",
+        "Using bitwise AND with a mask to count bits in pairs"
+      ],
+      "answer": 1,
+      "explanation": "Brian Kernighan's algorithm is efficient because it reduces the number of iterations to the number of 1 bits in the number, clearing the least significant bit each time. The first option is tempting but inefficient as it checks every bit, leading to a time complexity of O(n) where n is the number of bits.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938829+00:00",
+      "contentHash": "c2f970008c26328f835f413bc4cf2d9c",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "counting-bits-5",
+      "title": "Space Complexity Consideration",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "counting-bits",
+      "difficulty": "Easy",
+      "question": "What is the space complexity of the optimal solution for counting bits in numbers from 0 to n?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n log n)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal solution typically uses an array of size n+1 to store the results, but the space complexity can be considered O(1) if we only care about the space used for computation and not the output storage. The option 'O(n)' is misleading as it suggests the space grows with the input size.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938855+00:00",
+      "contentHash": "567033e0ba084be7514051dccd5a2b1b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "counting-bits-6",
+      "title": "Handling Edge Cases in Bit Counting",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "counting-bits",
+      "difficulty": "Easy",
+      "question": "What edge case must be considered when implementing a bit counting algorithm?",
+      "options": [
+        "Negative integers",
+        "Zero",
+        "Large integers",
+        "Floating point numbers"
+      ],
+      "answer": 1,
+      "explanation": "The edge case of zero is crucial since it has a binary representation of '0', and the count of 1 bits should return 0. Negative integers are not typically considered in this context, and the algorithm should be defined for non-negative integers only.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "0",
+              "label": "i",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "2",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "3",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "4",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "5",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "0"
+            ],
+            [
+              "1"
+            ],
+            [
+              "2"
+            ],
+            [
+              "3"
+            ],
+            [
+              "4"
+            ],
+            [
+              "5"
+            ]
+          ]
+        },
+        "caption": "Counting bits for numbers from 0 to 5."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938897+00:00",
+      "contentHash": "5f579198992c1ac0b77ae048955582db",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-bits-4",
+      "title": "Which operation is most efficient for reversing bits in an integer?",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-bits",
+      "difficulty": "Easy",
+      "question": "What is the most efficient operation to reverse the bits of an integer?",
+      "options": [
+        "Using a loop to shift bits one at a time",
+        "Using bitwise AND and OR operations",
+        "Using a lookup table for precomputed values",
+        "Using recursion to reverse the bits"
+      ],
+      "answer": 2,
+      "explanation": "Using a lookup table allows for O(1) time complexity for each 8-bit segment, making it the most efficient option. The tempting option of using a loop to shift bits one at a time results in O(n) time complexity, which is less efficient.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938932+00:00",
+      "contentHash": "5859e0619f29063a75a873963fbf3452",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-bits-5",
+      "title": "What is a potential pitfall when reversing bits?",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-bits",
+      "difficulty": "Easy",
+      "question": "What common issue might arise when reversing the bits of a signed integer?",
+      "options": [
+        "Incorrectly handling the sign bit",
+        "Overflows due to large integers",
+        "Ignoring leading zeros",
+        "Assuming all bits are significant"
+      ],
+      "answer": 0,
+      "explanation": "When reversing bits of a signed integer, the sign bit must be handled correctly to avoid incorrect results. The distractor about ignoring leading zeros is tempting, but leading zeros do not affect the value of the integer.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.938977+00:00",
+      "contentHash": "938e4c2df5d008210a2ff960a160164f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-bits-6",
+      "title": "How does bitwise manipulation affect performance?",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-bits",
+      "difficulty": "Easy",
+      "question": "Why is bitwise manipulation generally faster than arithmetic operations?",
+      "options": [
+        "It uses less memory overall",
+        "It directly operates on binary representations",
+        "It avoids type conversion overhead",
+        "It requires fewer CPU cycles"
+      ],
+      "answer": 1,
+      "explanation": "Bitwise manipulation operates directly on the binary representation of numbers, making it inherently faster than arithmetic operations that may involve more complex calculations. The option about avoiding type conversion is misleading, as type conversion is not a primary factor in performance differences.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939009+00:00",
+      "contentHash": "ddba378c2abf36eb9e05e6e951a27949",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "missing-number-4",
+      "title": "Optimal Approach for Finding Missing Numbers",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "missing-number",
+      "difficulty": "Easy",
+      "question": "What is the most efficient way to find a missing number in a sequence from 0 to n using bit manipulation?",
+      "options": [
+        "Use XOR to combine all numbers in the range and the given numbers.",
+        "Sort the array and find the missing number by comparing indices.",
+        "Use a hash set to store all numbers and check for the missing one.",
+        "Iterate through the array and sum the numbers, then subtract from the expected sum."
+      ],
+      "answer": 0,
+      "explanation": "The XOR approach is optimal because it allows us to find the missing number in O(n) time and O(1) space by leveraging the properties of XOR. The sorting method, while valid, has a higher time complexity of O(n log n) and is less efficient.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939052+00:00",
+      "contentHash": "4200f4684183e8e52f8d77cfcb8d02eb",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "missing-number-5",
+      "title": "Space Complexity Consideration",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "missing-number",
+      "difficulty": "Easy",
+      "question": "What is the space complexity of the optimal bit manipulation solution for finding a missing number?",
+      "options": [
+        "O(n) due to additional data structures used.",
+        "O(1) since no extra space is required apart from variables.",
+        "O(log n) for stack space in recursive approaches.",
+        "O(n log n) due to sorting overhead."
+      ],
+      "answer": 1,
+      "explanation": "The optimal bit manipulation solution uses only a constant amount of extra space, which is O(1), as it only requires a few variables for calculations. The O(n) option is misleading because it assumes the use of additional data structures, which is not necessary in this case.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939086+00:00",
+      "contentHash": "f1435e8a5debece80698080a3c2622dc",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "missing-number-6",
+      "title": "Handling Edge Cases",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "missing-number",
+      "difficulty": "Easy",
+      "question": "What potential issue arises if the input array contains duplicates when finding the missing number using XOR?",
+      "options": [
+        "The XOR method will still work correctly without any issues.",
+        "Duplicates will cause the algorithm to miss the correct missing number.",
+        "The algorithm will run into an infinite loop when processing duplicates.",
+        "The algorithm will return an incorrect count of missing numbers."
+      ],
+      "answer": 1,
+      "explanation": "Using XOR on an array with duplicates can lead to incorrect results because the same number will cancel itself out, potentially missing the actual missing number. The first option is incorrect because the method relies on unique occurrences to function properly.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "0",
+              "label": "i",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "0"
+            ],
+            [
+              "1"
+            ],
+            [
+              "2"
+            ],
+            [
+              "3"
+            ],
+            [
+              "4"
+            ],
+            [
+              "5"
+            ]
+          ]
+        },
+        "caption": "Example array with potential duplicates."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939140+00:00",
+      "contentHash": "b78eb0c562c2f8e578317c704731b64d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "sum-of-two-integers-4",
+      "title": "Optimal Approach for Integer Addition",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "sum-of-two-integers",
+      "difficulty": "Medium",
+      "question": "What is the most efficient way to add two integers without using the '+' operator?",
+      "options": [
+        "Using bitwise XOR and AND operations in a loop",
+        "Using a recursive function to break down the addition",
+        "Converting integers to strings and concatenating them",
+        "Using a lookup table for precomputed sums"
+      ],
+      "answer": 0,
+      "explanation": "The correct approach is to use bitwise XOR and AND operations in a loop to perform addition without the '+' operator. This method efficiently handles carries and sums the bits. The tempting distractor is using a recursive function, which can lead to stack overflow for large integers and is less efficient than the bit manipulation approach.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939173+00:00",
+      "contentHash": "e0bf48378d0f785e0d5240a7f0f2e884",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "sum-of-two-integers-5",
+      "title": "Handling Negative Integers in Addition",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "sum-of-two-integers",
+      "difficulty": "Medium",
+      "question": "How does the bit manipulation technique handle the addition of negative integers?",
+      "options": [
+        "It uses two's complement representation for negative numbers",
+        "It treats negative numbers as zero",
+        "It ignores the sign and adds their absolute values",
+        "It requires a separate algorithm for negative numbers"
+      ],
+      "answer": 0,
+      "explanation": "Bit manipulation handles negative integers by using their two's complement representation, allowing the same addition logic to apply regardless of the sign. The distractor that suggests treating negative numbers as zero fails because it would lead to incorrect results when adding negative integers.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939208+00:00",
+      "contentHash": "74a6814e199ffa12e4c8941b1247115b",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "sum-of-two-integers-6",
+      "title": "Edge Cases in Bit Manipulation",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "sum-of-two-integers",
+      "difficulty": "Medium",
+      "question": "What potential issue must be considered when using bit manipulation for integer addition?",
+      "options": [
+        "Overflow for large integers",
+        "Incorrect results for negative integers",
+        "Infinite loop if inputs are very large",
+        "Loss of precision for floating-point numbers"
+      ],
+      "answer": 0,
+      "explanation": "When using bit manipulation for integer addition, one must consider the risk of overflow for large integers, as the result may exceed the maximum representable value. The distractor about incorrect results for negative integers is misleading since the method correctly handles negative values through two's complement.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "15",
+              "label": "a",
+              "status": "normal"
+            },
+            {
+              "value": "-10",
+              "label": "b",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example of adding positive and negative integers using bit manipulation."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939248+00:00",
+      "contentHash": "fd39b2563526470dcd12e02ee21c54bc",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-integer-4",
+      "title": "Choosing the Right Data Type for Reversal",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-integer",
+      "difficulty": "Medium",
+      "question": "When reversing an integer, which data type should be used to avoid overflow issues in a typical implementation?",
+      "options": [
+        "64-bit integer",
+        "32-bit integer",
+        "16-bit integer",
+        "Floating-point number"
+      ],
+      "answer": 1,
+      "explanation": "Using a 32-bit integer is crucial because the problem typically specifies that the input is a 32-bit signed integer. A 64-bit integer could handle larger values but is unnecessary and may lead to inefficiencies. The 16-bit integer would overflow for larger inputs, and floating-point numbers are not suitable for integer operations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939276+00:00",
+      "contentHash": "fcac4435d0f5552e340dd9ee6c7d4b6f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-integer-6",
+      "title": "Bit Manipulation Techniques",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-integer",
+      "difficulty": "Medium",
+      "question": "Which bit manipulation technique can be beneficial when reversing an integer to ensure efficiency?",
+      "options": [
+        "Using bitwise operators to isolate digits",
+        "Using a stack to reverse digits",
+        "Using recursion to reverse digits",
+        "Using a queue to store digits temporarily"
+      ],
+      "answer": 1,
+      "explanation": "Using a stack is beneficial because it allows for easy reversal of the digits as they are pushed and popped. While bitwise operators can be useful for certain operations, they are not directly applicable for reversing digits. Recursion could work but may lead to increased space complexity, and a queue does not provide the necessary LIFO structure for reversal.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "i",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1"
+            ],
+            [
+              "2"
+            ],
+            [
+              "3"
+            ],
+            [
+              "4"
+            ],
+            [
+              "5"
+            ],
+            [
+              "6"
+            ]
+          ]
+        },
+        "caption": "Example array of digits before reversal."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939324+00:00",
+      "contentHash": "c8e66a2ddbc0d0e1ef7c3c2481f080de",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "binary-tree-level-order-traversal-7",
+      "title": "Handling Edge Cases in Level Order Traversal",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "binary-tree-level-order-traversal",
+      "difficulty": "Medium",
+      "question": "What edge case must be considered when implementing level order traversal?",
+      "options": [
+        "Empty tree",
+        "Full binary tree",
+        "Complete binary tree",
+        "Binary tree with only left children"
+      ],
+      "answer": 0,
+      "explanation": "An empty tree is a critical edge case that must be handled when implementing level order traversal, as it should return an empty list or similar output. The other options represent valid tree structures but do not pose unique challenges for the traversal algorithm.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "null",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "L",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "R",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "LL",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "LR",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "RL",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "RR",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example of a binary tree structure."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939477+00:00",
+      "contentHash": "17370896ce41b1d7005ab444f7fd8e4c",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "subsets-5",
+      "title": "What is the primary advantage of using backtracking for generating subsets?",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "subsets",
+      "difficulty": "Medium",
+      "question": "What is the primary advantage of using backtracking for generating subsets?",
+      "options": [
+        "It guarantees the fastest execution time for all inputs.",
+        "It systematically explores all potential combinations without repetition.",
+        "It uses less memory than iterative methods.",
+        "It simplifies the code structure significantly."
+      ],
+      "answer": 1,
+      "explanation": "Backtracking systematically explores all potential combinations of elements, ensuring that all subsets are generated without repetition. The most tempting distractor is the option suggesting it guarantees the fastest execution time, which is misleading since backtracking can still have exponential time complexity in the worst case.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939509+00:00",
+      "contentHash": "b419077811d3075cdecfe5d9bfbd1e30",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "subsets-7",
+      "title": "What is a common pitfall when generating subsets with duplicates?",
+      "topics": [
+        "Backtracking",
+        "Edge Cases"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "subsets",
+      "difficulty": "Medium",
+      "question": "What is a common pitfall when generating subsets with duplicates?",
+      "options": [
+        "Forgetting to sort the input array before processing.",
+        "Not accounting for the size of the input array.",
+        "Generating duplicate subsets in the output.",
+        "Using a non-recursive approach to generate subsets."
+      ],
+      "answer": 2,
+      "explanation": "A common pitfall when generating subsets from an array with duplicates is failing to prevent the generation of duplicate subsets in the output. The option about sorting the input array is tempting because sorting can help, but it does not directly address the issue of duplicates in the output.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "a",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "b",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "c",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "d",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1",
+              "2",
+              "2",
+              "3"
+            ]
+          ]
+        },
+        "caption": "Array of elements to generate subsets from."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939592+00:00",
+      "contentHash": "9090513ee554a2b3ae4054e5c6288370",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "min-cost-to-connect-all-points-7",
+      "title": "Space Complexity Considerations in Graph Algorithms",
+      "topics": [
+        "Advanced Graphs"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "min-cost-to-connect-all-points",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of Prim's algorithm when implemented using a priority queue for this problem?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The space complexity of Prim's algorithm with a priority queue is O(n), where n is the number of points, as we need to store the distances for all points. The option for O(n log n) might seem plausible since it relates to the complexity of operations in a priority queue, but that pertains to time complexity, not space.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "(0,0)",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "(1,1)",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "(2,2)",
+              "label": "C",
+              "status": "normal"
+            },
+            {
+              "value": "(3,3)",
+              "label": "D",
+              "status": "normal"
+            },
+            {
+              "value": "(1,1)",
+              "label": "E",
+              "status": "normal"
+            },
+            {
+              "value": "(4,4)",
+              "label": "F",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "(0,0)",
+              "(1,1)",
+              "(2,2)",
+              "(3,3)",
+              "(1,1)",
+              "(4,4)"
+            ]
+          ]
+        },
+        "caption": "Sample points in a 2D plane."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939696+00:00",
+      "contentHash": "e98512b2fc35c294d01af8485c7294fe",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-anagram-7",
+      "title": "How do you handle case sensitivity when checking for anagrams?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-anagram",
+      "difficulty": "Easy",
+      "question": "What must you consider regarding character casing when determining if two strings are anagrams?",
+      "options": [
+        "Convert both strings to lowercase",
+        "Ignore spaces and punctuation",
+        "Count only alphabetic characters",
+        "Use a character set that includes case sensitivity"
+      ],
+      "answer": 0,
+      "explanation": "Converting both strings to lowercase ensures that the comparison is case insensitive, which is crucial for correctly identifying anagrams. Ignoring spaces and punctuation is not necessary unless specified, and counting only alphabetic characters may lead to incorrect results.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939761+00:00",
+      "contentHash": "cdb1a03ed24e9ec72a912a13ee8b7097",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "valid-anagram-8",
+      "title": "What is a common mistake when checking for anagrams?",
+      "topics": [
+        "Arrays & Hashing"
+      ],
+      "category": "Arrays & Hashing",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "valid-anagram",
+      "difficulty": "Easy",
+      "question": "What is a common pitfall when implementing an anagram check?",
+      "options": [
+        "Assuming strings of different lengths can be anagrams",
+        "Counting characters without considering case",
+        "Using a brute force comparison of all permutations",
+        "Ignoring non-alphabetic characters"
+      ],
+      "answer": 1,
+      "explanation": "A frequent mistake is counting characters without considering case, which can lead to false negatives. Assuming different lengths can be anagrams is incorrect, but it is a common misconception. Brute force comparisons are inefficient and ignoring non-alphabetic characters is not always relevant to the definition of anagrams.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "a",
+              "label": "0",
+              "status": "normal"
+            },
+            {
+              "value": "n",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "g",
+              "label": "2",
+              "status": "normal"
+            },
+            {
+              "value": "r",
+              "label": "3",
+              "status": "normal"
+            },
+            {
+              "value": "a",
+              "label": "4",
+              "status": "normal"
+            },
+            {
+              "value": "m",
+              "label": "5",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "a",
+              "n",
+              "g",
+              "r",
+              "a",
+              "m"
+            ]
+          ]
+        },
+        "caption": "Example string for an anagram check."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939810+00:00",
+      "contentHash": "718a2403df508f1970708e64b893bd0c",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-repeating-character-replacement-7",
+      "title": "What is a key consideration when using a sliding window for this problem?",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-repeating-character-replacement",
+      "difficulty": "Medium",
+      "question": "When applying the sliding window technique, what condition must be maintained to ensure the window remains valid?",
+      "options": [
+        "The window must contain at least one character of each type",
+        "The number of characters replaced must not exceed 'k'",
+        "The window must always be of a fixed size",
+        "The characters in the window must be sorted"
+      ],
+      "answer": 1,
+      "explanation": "The key condition is that the number of characters that need to be replaced (i.e., the total characters in the window minus the count of the most frequent character) must not exceed 'k'. This ensures that the substring can be transformed into a valid result. The fixed size option is incorrect as the window size changes dynamically.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939878+00:00",
+      "contentHash": "30fd619261941e4afa71b489a84c2699",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-repeating-character-replacement-8",
+      "title": "How does the presence of duplicate characters affect the solution?",
+      "topics": [
+        "Sliding Window"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-repeating-character-replacement",
+      "difficulty": "Medium",
+      "question": "What impact do duplicate characters have when determining the maximum length of a substring with character replacements?",
+      "options": [
+        "They can be ignored entirely since only unique characters matter",
+        "They can help reduce the number of replacements needed",
+        "They complicate the counting of characters in the window",
+        "They have no effect on the outcome of the algorithm"
+      ],
+      "answer": 1,
+      "explanation": "Duplicate characters can help reduce the number of replacements needed because they increase the count of the most frequent character, allowing for a longer valid substring. Ignoring them would lead to an incorrect assessment of the substring's potential length. The complexity of counting is managed through the sliding window approach.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "A",
+              "label": "i",
+              "status": "normal"
+            },
+            {
+              "value": "A",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "B",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "C",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "A",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "B",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "A",
+              "A",
+              "B",
+              "C",
+              "A",
+              "B"
+            ]
+          ]
+        },
+        "caption": "Example string for sliding window analysis."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939933+00:00",
+      "contentHash": "6f95e9d427f8dbdcf87b677accebe9b4",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "permutation-in-string-6",
+      "title": "Which data structure is optimal for counting character frequencies in a sliding window approach?",
+      "topics": [
+        "Sliding Window",
+        "Hash Table"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "permutation-in-string",
+      "difficulty": "Medium",
+      "question": "What is the most suitable data structure to maintain character frequencies when using a sliding window technique to check for permutations?",
+      "options": [
+        "Array",
+        "Hash Table",
+        "Linked List",
+        "Stack"
+      ],
+      "answer": 1,
+      "explanation": "A hash table is optimal for counting character frequencies because it allows for O(1) average time complexity for insertions and lookups. An array could work if the character set is limited, but a hash table is more flexible for different character sets. The linked list and stack do not provide efficient frequency counting.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.939982+00:00",
+      "contentHash": "f5875b34aa43226752de608816211c4f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "permutation-in-string-7",
+      "title": "How does the sliding window technique improve efficiency in this context?",
+      "topics": [
+        "Sliding Window",
+        "Algorithm Optimization"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "permutation-in-string",
+      "difficulty": "Medium",
+      "question": "What advantage does the sliding window technique provide when checking for permutations in a string?",
+      "options": [
+        "Reduces space complexity",
+        "Minimizes the number of comparisons",
+        "Eliminates the need for sorting",
+        "Allows for dynamic window size adjustment"
+      ],
+      "answer": 2,
+      "explanation": "The sliding window technique allows for checking permutations without sorting, which would be O(n log n). Instead, it maintains a frequency count and adjusts the window dynamically, leading to an O(n) solution. The other options do not accurately describe the main benefit of this approach.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940038+00:00",
+      "contentHash": "e19c7279cbdd9542d76487bb94251258",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "permutation-in-string-8",
+      "title": "What edge case should be considered when implementing the sliding window for permutations?",
+      "topics": [
+        "Sliding Window",
+        "Edge Cases"
+      ],
+      "category": "Sliding Window",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "permutation-in-string",
+      "difficulty": "Medium",
+      "question": "Which edge case might cause issues when using a sliding window to detect permutations of a string?",
+      "options": [
+        "Empty strings",
+        "Strings with all unique characters",
+        "Strings with varying lengths",
+        "Strings containing special characters"
+      ],
+      "answer": 0,
+      "explanation": "Empty strings can lead to unexpected behavior, as the algorithm may not handle them correctly if not explicitly checked. While the other options are valid scenarios, they are generally manageable within the sliding window approach. Handling empty strings is crucial to avoid errors.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "a",
+              "label": "start",
+              "status": "normal"
+            },
+            {
+              "value": "b",
+              "label": " ",
+              "status": "normal"
+            },
+            {
+              "value": "c",
+              "label": " ",
+              "status": "normal"
+            },
+            {
+              "value": " ",
+              "label": " ",
+              "status": "normal"
+            },
+            {
+              "value": " ",
+              "label": " ",
+              "status": "normal"
+            },
+            {
+              "value": " ",
+              "label": " ",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              " ",
+              " ",
+              " ",
+              " ",
+              " ",
+              " "
+            ]
+          ]
+        },
+        "caption": "Example of a sliding window with characters."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940086+00:00",
+      "contentHash": "baaff1b962405a89afaeaee76988d748",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "min-stack-7",
+      "title": "What is the time complexity of retrieving the minimum element in an optimal min stack implementation?",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "min-stack",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of retrieving the minimum element in an optimal min stack implementation?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n log n)"
+      ],
+      "answer": 0,
+      "explanation": "In an optimal min stack implementation, retrieving the minimum element is done in constant time, O(1), because the minimum is stored in a second stack that is updated alongside the main stack. The most tempting distractor, O(n), suggests that you would need to search through elements, which is unnecessary with the right data structure.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940124+00:00",
+      "contentHash": "e825521645e0402cc75ae9b01abce210",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "min-stack-8",
+      "title": "Consider the following stack operations: push(3), push(5), push(2), push(1). What would the minimum stack contain after these operations?",
+      "topics": [
+        "Stack"
+      ],
+      "category": "Stack",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "min-stack",
+      "difficulty": "Medium",
+      "question": "Consider the following stack operations: push(3), push(5), push(2), push(1). What would the minimum stack contain after these operations?",
+      "options": [
+        "[3, 5, 2, 1]",
+        "[3, 2, 1]",
+        "[5, 2, 1]",
+        "[1]"
+      ],
+      "answer": 3,
+      "explanation": "After executing the given operations, the minimum stack will only contain the minimum element at each stage, which is 1 after the last push. The most tempting distractor, [3, 2, 1], incorrectly suggests that all elements are stored, rather than just the minimums at each stage.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "3",
+              "label": "top",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Stack after performing the operations."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940218+00:00",
+      "contentHash": "b301925ae919d28db4ab7aa525d93b22",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "koko-eating-bananas-6",
+      "title": "Optimal Search Technique for Finding Minimum Speed",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "koko-eating-bananas",
+      "difficulty": "Medium",
+      "question": "What is the most efficient way to determine the minimum eating speed required for Koko to finish all bananas in a given time?",
+      "options": [
+        "Iterate through all possible speeds and calculate the time for each",
+        "Use binary search over the range of possible speeds",
+        "Utilize a greedy algorithm to select the maximum speed",
+        "Perform a linear search to find the minimum speed"
+      ],
+      "answer": 1,
+      "explanation": "The most efficient approach is to use binary search over the range of possible speeds, as it allows us to quickly narrow down the minimum speed that allows Koko to finish in time. The first option, iterating through all speeds, is inefficient and does not leverage the properties of the problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940306+00:00",
+      "contentHash": "feadeb198cc0286eb1623834b80a3c3c",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "koko-eating-bananas-7",
+      "title": "Time Complexity Analysis of the Approach",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "koko-eating-bananas",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the binary search approach used to solve the problem of Koko eating bananas?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(log n)",
+        "O(m log n) where m is the maximum number of bananas"
+      ],
+      "answer": 3,
+      "explanation": "The time complexity is O(m log n), where m is the maximum number of bananas in any pile, and n is the number of piles. This is because for each speed guess (log n), we need to calculate the total time taken to eat all bananas, which requires iterating through all piles (O(n)). The distractor 'O(log n)' fails because it ignores the iteration over the piles.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940384+00:00",
+      "contentHash": "3485b6dfae3f8f4660e17da7e900ec61",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "koko-eating-bananas-8",
+      "title": "Handling Edge Cases in the Problem",
+      "topics": [
+        "Binary Search"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "koko-eating-bananas",
+      "difficulty": "Medium",
+      "question": "What potential issue arises if the input includes piles with zero bananas?",
+      "options": [
+        "The algorithm will run slower due to unnecessary calculations",
+        "It will not affect the outcome since zero bananas require no time",
+        "The binary search may miss the correct minimum speed",
+        "It will cause an infinite loop in the binary search process"
+      ],
+      "answer": 1,
+      "explanation": "Having piles with zero bananas does not affect the outcome since Koko does not need time to eat from those piles. The second option correctly identifies that zero bananas require no time. The third option is misleading because the binary search will still function correctly even with zero piles.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "0",
+              "label": "Pile 1",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "Pile 2",
+              "status": "normal"
+            },
+            {
+              "value": "0",
+              "label": "Pile 3",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "Pile 4",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "0",
+              "3",
+              "0",
+              "5"
+            ]
+          ]
+        },
+        "caption": "Example of banana piles with some containing zero bananas."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940478+00:00",
+      "contentHash": "4ee35692ec3c7e0e0fc5ce91a1cdef98",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "time-based-key-value-store-7",
+      "title": "Handling Duplicate Timestamps",
+      "topics": [
+        "Binary Search",
+        "Edge Cases"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "time-based-key-value-store",
+      "difficulty": "Medium",
+      "question": "What issue arises when storing multiple values for the same timestamp in a time-based key-value store?",
+      "options": [
+        "Increased memory usage",
+        "Difficulty in retrieving the latest value",
+        "Loss of data integrity",
+        "Longer retrieval times"
+      ],
+      "answer": 1,
+      "explanation": "When multiple values are stored for the same timestamp, it complicates the retrieval process as the store must determine which value to return. The most common mistake is assuming that the latest value can be retrieved easily, but without a clear retrieval strategy, it can lead to confusion. Increased memory usage is not a primary concern since the store is meant to handle multiple values efficiently.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940596+00:00",
+      "contentHash": "ecfb95fc0bb4b48f3693f77be700a168",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "time-based-key-value-store-8",
+      "title": "Optimizing Space Complexity",
+      "topics": [
+        "Binary Search",
+        "Space Complexity"
+      ],
+      "category": "Binary Search",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "time-based-key-value-store",
+      "difficulty": "Medium",
+      "question": "How can you optimize space complexity in a time-based key-value store?",
+      "options": [
+        "Store only the latest value per key",
+        "Use a fixed-size array for timestamps",
+        "Compress the timestamp data",
+        "Limit the number of keys stored"
+      ],
+      "answer": 0,
+      "explanation": "Storing only the latest value per key minimizes the amount of memory used, especially if older timestamps are not needed for retrieval. The option to compress timestamp data is not as effective as it may still require additional processing. Using a fixed-size array for timestamps can lead to wasted space if the array is not fully utilized, and limiting the number of keys stored could hinder functionality.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940652+00:00",
+      "contentHash": "dcb9b49700c9463988343d0b90e0b734",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "copy-list-with-random-pointer-6",
+      "title": "Which approach efficiently handles deep copying of linked lists with random pointers?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "copy-list-with-random-pointer",
+      "difficulty": "Medium",
+      "question": "What is the most efficient way to create a deep copy of a linked list where each node has a random pointer?",
+      "options": [
+        "Use a hash map to store original nodes and their copies",
+        "Perform a two-pass traversal to create copies and set pointers",
+        "Use a stack to store nodes and backtrack to set random pointers",
+        "Iterate through the list and create copies in place without extra space"
+      ],
+      "answer": 0,
+      "explanation": "Using a hash map allows for O(1) average time complexity when mapping original nodes to their copies, ensuring that both next and random pointers can be set correctly. The second option is a common approach but can be less efficient due to the two-pass requirement.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940717+00:00",
+      "contentHash": "ac221ffecb9cf47df71ea739cbc54eda",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "copy-list-with-random-pointer-7",
+      "title": "What is the space complexity of the optimal solution for copying a linked list with random pointers?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "copy-list-with-random-pointer",
+      "difficulty": "Medium",
+      "question": "What is the space complexity of the optimal solution that uses a hash map to copy a linked list with random pointers?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal solution using a hash map requires O(n) space to store the mapping of original nodes to their copies. The O(1) option is incorrect because it implies no additional space is used, which is not the case here.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940766+00:00",
+      "contentHash": "4f0e2d9c466d4e738b79bd8da12ef2a9",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "copy-list-with-random-pointer-8",
+      "title": "What issue arises when copying a linked list with random pointers using a naive approach?",
+      "topics": [
+        "Linked List"
+      ],
+      "category": "Linked List",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "copy-list-with-random-pointer",
+      "difficulty": "Medium",
+      "question": "What problem occurs if you attempt to copy a linked list with random pointers without proper handling of the random references?",
+      "options": [
+        "Infinite loops due to circular references",
+        "Random pointers may point to null",
+        "Incorrectly duplicated nodes leading to data loss",
+        "Random pointers may reference original nodes instead of copies"
+      ],
+      "answer": 3,
+      "explanation": "If random pointers are not properly handled, they may still reference the original nodes instead of the newly created copies, leading to incorrect behavior in the copied list. The first option is misleading as it implies a structural issue rather than a reference issue.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "Node 1",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "Node 2",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "Node 3",
+              "label": "C",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Node",
+            "Random Pointer"
+          ],
+          "rows": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        },
+        "caption": "Example of a linked list with random pointers."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940857+00:00",
+      "contentHash": "01a04838935974273fb347909ef6556d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "kth-smallest-element-in-a-bst-7",
+      "title": "What is the time complexity of finding the Kth smallest element in a balanced BST?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "kth-smallest-element-in-a-bst",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of finding the Kth smallest element in a balanced Binary Search Tree?",
+      "options": [
+        "O(log n)",
+        "O(n)",
+        "O(k)",
+        "O(n log n)"
+      ],
+      "answer": 0,
+      "explanation": "In a balanced BST, finding the Kth smallest element can be done in O(log n) time on average by using in-order traversal and stopping when the Kth element is reached. The distractor O(n) would apply if you had to visit all nodes, which is unnecessary in this case.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940918+00:00",
+      "contentHash": "97339d14eeca478b730ca5d2228b9471",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "kth-smallest-element-in-a-bst-8",
+      "title": "What issue arises if duplicates are present in the BST when finding the Kth smallest element?",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "kth-smallest-element-in-a-bst",
+      "difficulty": "Medium",
+      "question": "How do duplicates in a Binary Search Tree affect the search for the Kth smallest element?",
+      "options": [
+        "They have no effect at all",
+        "They can lead to incorrect results",
+        "They make the BST unbalanced",
+        "They reduce the time complexity"
+      ],
+      "answer": 1,
+      "explanation": "Duplicates in a BST can lead to incorrect results when searching for the Kth smallest element, as they may cause the counting of elements to be skewed. The option stating that they have no effect is tempting, but in reality, they can distort the expected order of elements.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "5",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "7",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "8",
+              "label": "right",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "5"
+            ],
+            [
+              "3"
+            ],
+            [
+              "7"
+            ],
+            [
+              "3"
+            ],
+            [
+              "6"
+            ],
+            [
+              "8"
+            ]
+          ]
+        },
+        "caption": "Example BST with duplicate values."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-07T08:20:04.940999+00:00",
+      "contentHash": "e3ec21d7ede775f1d41206b2d50ca248",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
     }
   ]
 }
