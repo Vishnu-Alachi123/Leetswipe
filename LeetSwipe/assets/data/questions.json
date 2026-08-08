@@ -29237,6 +29237,1648 @@
       "qualityScore": 5,
       "explanationQuality": 5,
       "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "lowest-common-ancestor-of-a-binary-search-tree-7",
+      "title": "Handling Edge Cases in Ancestor Search",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "lowest-common-ancestor-of-a-binary-search-tree",
+      "difficulty": "Medium",
+      "question": "What issue arises if the input tree contains duplicate values when searching for the lowest common ancestor?",
+      "options": [
+        "The search may return multiple ancestors",
+        "The search will always fail",
+        "The search will be inefficient",
+        "The concept of ancestor becomes ambiguous"
+      ],
+      "answer": 3,
+      "explanation": "In a binary search tree, duplicates can lead to ambiguity in determining the lowest common ancestor since the definition relies on unique node values. The option about inefficiency is tempting, but the primary concern is the ambiguity caused by duplicates.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "5",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "8",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "1",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "right",
+              "status": "normal"
+            },
+            {
+              "value": "7",
+              "label": "left",
+              "status": "normal"
+            },
+            {
+              "value": "9",
+              "label": "right",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "A sample binary search tree."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.269457+00:00",
+      "contentHash": "7ad0ea0bd57d459e29a1c9a70b674902",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "binary-tree-level-order-traversal-8",
+      "title": "Handling Edge Cases in Level Order Traversal",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "binary-tree-level-order-traversal",
+      "difficulty": "Medium",
+      "question": "What is a potential issue when performing level order traversal on a binary tree with varying node values, such as duplicates?",
+      "options": [
+        "Traversal order is affected",
+        "Memory usage increases",
+        "Output structure remains the same",
+        "No issues arise"
+      ],
+      "answer": 2,
+      "explanation": "Level order traversal outputs the structure of the tree, so even with duplicate values, the traversal will still maintain the correct order of nodes. The option suggesting traversal order is affected is misleading; duplicates do not change the traversal method or output structure. Memory usage may increase due to more nodes, but it does not affect the traversal process itself.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "root",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "6",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "7",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1"
+            ],
+            [
+              "2",
+              "3"
+            ],
+            [
+              "4",
+              "5",
+              "6",
+              "7"
+            ]
+          ]
+        },
+        "caption": "Example binary tree for level order traversal."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.269570+00:00",
+      "contentHash": "2c8d97702c5d5b7f8d5b2bd139025dca",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "kth-largest-element-in-a-stream-8",
+      "title": "How does the presence of duplicate elements affect the Kth largest element in a stream?",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "kth-largest-element-in-a-stream",
+      "difficulty": "Easy",
+      "question": "How does the presence of duplicate elements affect the Kth largest element in a stream?",
+      "options": [
+        "It has no effect; Kth largest remains the same.",
+        "It can change the Kth largest to a duplicate value.",
+        "It prevents the Kth largest from being calculated.",
+        "It requires a different data structure to handle duplicates."
+      ],
+      "answer": 1,
+      "explanation": "The presence of duplicate elements can change the Kth largest element to a duplicate value, especially if the duplicates are among the largest K elements. The option stating it has no effect is misleading, as duplicates can indeed alter the result. The other distractors incorrectly suggest that duplicates fundamentally alter the approach or data structure required.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "3",
+              "label": "1",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "2",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "3",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "4",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "5",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "3"
+            ],
+            [
+              "5"
+            ],
+            [
+              "2"
+            ],
+            [
+              "4"
+            ],
+            [
+              "5"
+            ]
+          ]
+        },
+        "caption": "Current elements in the stream."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.269677+00:00",
+      "contentHash": "07c599b5318e39e7786e030d0d763c1c",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "last-stone-weight-6",
+      "title": "Optimal Data Structure for Last Stone Weight",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "last-stone-weight",
+      "difficulty": "Easy",
+      "question": "Which data structure is most suitable for efficiently retrieving the two largest stones in the Last Stone Weight problem?",
+      "options": [
+        "Array",
+        "Linked List",
+        "Heap",
+        "Stack"
+      ],
+      "answer": 2,
+      "explanation": "A heap is ideal for this scenario because it allows for efficient retrieval of the largest elements, specifically in O(log n) time for insertion and deletion. The most tempting distractor, an array, would require O(n) time to find the two largest stones, making it less efficient for this problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.269707+00:00",
+      "contentHash": "23e93564f2a3457f9a1987cf37a4f80a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "last-stone-weight-7",
+      "title": "Time Complexity of the Optimal Approach",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "last-stone-weight",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of the optimal solution for the Last Stone Weight problem using a max heap?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "answer": 1,
+      "explanation": "The optimal approach involves repeatedly extracting the two largest stones, which takes O(log n) time for each extraction. Since this process is repeated for all stones, the overall time complexity is O(n log n). The distractor O(n) would imply a linear process, which is not feasible given the need for repeated maximum retrievals.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.269734+00:00",
+      "contentHash": "5f804ee1e0c6a7c640a61f88ad36a6ef",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "k-closest-points-to-origin-7",
+      "title": "Time Complexity Consideration",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "k-closest-points-to-origin",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of retrieving the K closest points to the origin using a Max-Heap?",
+      "options": [
+        "O(N)",
+        "O(K log K)",
+        "O(N log K)",
+        "O(log N)"
+      ],
+      "answer": 2,
+      "explanation": "The time complexity is O(N log K) because we need to iterate through all N points to push them into the Max-Heap, and maintaining the heap structure for K elements takes log K time. The option O(K log K) is misleading, as it suggests we only consider K points rather than all N.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.269800+00:00",
+      "contentHash": "cd31bfe4aa94bf4c17ac7ed17032c77c",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "k-closest-points-to-origin-8",
+      "title": "Handling Edge Cases with Duplicates",
+      "topics": [
+        "Heap",
+        "Priority Queue"
+      ],
+      "category": "Heap / Priority Queue",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "k-closest-points-to-origin",
+      "difficulty": "Medium",
+      "question": "What issue might arise if the input points contain duplicates when finding the K closest points?",
+      "options": [
+        "Redundant calculations",
+        "Incorrect distance calculations",
+        "Heap overflow",
+        "No issue arises"
+      ],
+      "answer": 0,
+      "explanation": "Redundant calculations may occur when duplicates exist, leading to unnecessary processing of the same point multiple times. This can affect performance but does not impact correctness. The option suggesting 'No issue arises' fails to recognize that handling duplicates can lead to inefficiencies.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "(1,2)",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "(2,3)",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "(1,2)",
+              "label": "C",
+              "status": "normal"
+            },
+            {
+              "value": "(3,1)",
+              "label": "D",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Sample points including duplicates."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.269843+00:00",
+      "contentHash": "f9c9fff0b517d9c7998fd61dd2821c3e",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "subsets-ii-7",
+      "title": "What is a common pitfall when handling duplicates in subset generation?",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "subsets-ii",
+      "difficulty": "Medium",
+      "question": "In the context of generating subsets from an array with duplicates, what common mistake can lead to incorrect results?",
+      "options": [
+        "Using a HashSet to store subsets",
+        "Not sorting the array before processing",
+        "Ignoring the order of elements in subsets",
+        "Including the same element multiple times in one subset"
+      ],
+      "answer": 3,
+      "explanation": "Including the same element multiple times in one subset is a common pitfall that can lead to incorrect results, as it violates the definition of a subset. The distractor about ignoring the order is misleading because subsets are inherently unordered, but the uniqueness of elements is crucial.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.269906+00:00",
+      "contentHash": "b2c981bb414c99361f52c330c0277f17",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "subsets-ii-8",
+      "title": "How does sorting the input array affect the subset generation process?",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "subsets-ii",
+      "difficulty": "Medium",
+      "question": "What is the primary benefit of sorting the input array before generating subsets with backtracking?",
+      "options": [
+        "It reduces the space complexity of the algorithm",
+        "It allows for easier identification of duplicates",
+        "It guarantees that subsets are generated in lexicographical order",
+        "It simplifies the implementation of the backtracking algorithm"
+      ],
+      "answer": 1,
+      "explanation": "Sorting the input array allows for easier identification of duplicates, enabling the algorithm to skip over repeated elements and thus avoid generating duplicate subsets. The distractor about space complexity is incorrect because sorting does not inherently reduce space usage; it primarily aids in managing duplicates.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.269937+00:00",
+      "contentHash": "22c7eb005d256efcf8e0ee2c66f37671",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "generate-parentheses-8",
+      "title": "What edge case must be handled when generating parentheses?",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "generate-parentheses",
+      "difficulty": "Medium",
+      "question": "When generating combinations of parentheses, which edge case must be considered to ensure valid outputs?",
+      "options": [
+        "Empty input string",
+        "Uneven number of parentheses",
+        "Maximum depth of recursion",
+        "Leading/trailing spaces in the input"
+      ],
+      "answer": 1,
+      "explanation": "An uneven number of parentheses will lead to invalid combinations, making it essential to check the counts of opening and closing parentheses. The most tempting distractor, empty input string, is not an edge case since it can simply return an empty output as a valid case.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "(",
+              "label": "open",
+              "status": "normal"
+            },
+            {
+              "value": "",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "",
+              "label": "",
+              "status": "normal"
+            },
+            {
+              "value": "",
+              "label": "",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "",
+              "open",
+              "open",
+              "open",
+              "close",
+              "close"
+            ]
+          ]
+        },
+        "caption": "Current state of parentheses generation."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270007+00:00",
+      "contentHash": "f5f9e083d0b17b9f4f48cf3dfd88b4b1",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "letter-combinations-of-a-phone-number-7",
+      "title": "What is a common edge case when generating combinations?",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "letter-combinations-of-a-phone-number",
+      "difficulty": "Medium",
+      "question": "When generating combinations from a set of characters corresponding to a phone number, which edge case should be handled carefully?",
+      "options": [
+        "Empty input string",
+        "Input string with all identical characters",
+        "Input string with special characters",
+        "Input string of maximum length"
+      ],
+      "answer": 0,
+      "explanation": "An empty input string is a common edge case that should be handled, as it should return an empty set of combinations. The distractor about an input string with all identical characters is tempting but does not require special handling since it would still generate valid combinations.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270066+00:00",
+      "contentHash": "f6d99842bd700e9fe34b7f483e45653f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "letter-combinations-of-a-phone-number-8",
+      "title": "How does the choice of data structure impact backtracking performance?",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "letter-combinations-of-a-phone-number",
+      "difficulty": "Medium",
+      "question": "In a backtracking approach for generating combinations, which data structure is most beneficial for tracking the current combination being built?",
+      "options": [
+        "Array",
+        "Stack",
+        "Hash Table",
+        "Linked List"
+      ],
+      "answer": 1,
+      "explanation": "Using a stack is beneficial in a backtracking approach because it naturally supports the Last In, First Out (LIFO) behavior needed to explore combinations and backtrack efficiently. The array option is tempting because it can also be used, but it lacks the inherent backtracking capabilities that a stack provides.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "2",
+              "label": "input",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "input",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "input",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "input",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "Current Combination: ",
+              ""
+            ]
+          ]
+        },
+        "caption": "Tracking the current combination during backtracking."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270104+00:00",
+      "contentHash": "262cce77277205f47339fa87d4e1e2b0",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "n-queens-7",
+      "title": "Understanding Backtracking Complexity",
+      "topics": [
+        "Backtracking"
+      ],
+      "category": "Backtracking",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "n-queens",
+      "difficulty": "Hard",
+      "question": "What is the time complexity of a backtracking algorithm used to solve the N Queens problem?",
+      "options": [
+        "O(N!)",
+        "O(N^2)",
+        "O(N^N)",
+        "O(N^3)"
+      ],
+      "answer": 0,
+      "explanation": "The time complexity of the backtracking algorithm for the N Queens problem is O(N!), as it explores all possible arrangements of queens across N rows, leading to factorial growth. The option O(N^N) might seem tempting as it suggests exponential growth, but it overestimates the complexity.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270163+00:00",
+      "contentHash": "eb9315e5279fe64d5dc75c12a400f99f",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "min-cost-to-connect-all-points-8",
+      "title": "Consider the following points on a grid: (1, 1), (2, 2), (3, 3). What is a potential issue if points can have duplicate coordinates?",
+      "topics": [
+        "Advanced Graphs"
+      ],
+      "category": "Advanced Graphs",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "min-cost-to-connect-all-points",
+      "difficulty": "Medium",
+      "question": "Consider the following points on a grid: (1, 1), (2, 2), (3, 3). What is a potential issue if points can have duplicate coordinates?",
+      "options": [
+        "The graph may become disconnected",
+        "The cost to connect all points may increase",
+        "The algorithm may need to handle multiple edges between the same nodes",
+        "The points may be treated as a single node"
+      ],
+      "answer": 2,
+      "explanation": "If points can have duplicate coordinates, the algorithm may need to handle multiple edges between the same nodes, which complicates the graph structure and could lead to inefficiencies or incorrect calculations. The other options do not accurately reflect the implications of duplicate coordinates.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "(1,1)",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "(2,2)",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "(3,3)",
+              "label": "C",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Points on a grid for connection."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270269+00:00",
+      "contentHash": "81fb808e128f8224e4aa980c144efa4a",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "min-cost-climbing-stairs-7",
+      "title": "Space Complexity in DP Solutions",
+      "topics": [
+        "1-D Dynamic Programming"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "min-cost-climbing-stairs",
+      "difficulty": "Easy",
+      "question": "When optimizing a dynamic programming solution for climbing stairs, which space complexity improvement is commonly applied?",
+      "options": [
+        "Using a recursive approach with memoization.",
+        "Storing only the last two computed results instead of the entire array.",
+        "Utilizing a stack to manage previous states.",
+        "Implementing a breadth-first search for state exploration."
+      ],
+      "answer": 1,
+      "explanation": "In many dynamic programming problems, including climbing stairs, you can reduce space complexity by only keeping track of the last few computed results, as only those are necessary for the next computation. The recursive approach with memoization is tempting but still requires more space for the entire call stack.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270340+00:00",
+      "contentHash": "205f0ae905a0cf3c91f73b978e3ba536",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-break-7",
+      "title": "What is a common edge case to consider in the word break problem?",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-break",
+      "difficulty": "Medium",
+      "question": "Which of the following is an important edge case when implementing a solution for the word break problem?",
+      "options": [
+        "An empty string with an empty dictionary",
+        "A string with no spaces and a dictionary containing single characters",
+        "A string that is a concatenation of multiple words in the dictionary",
+        "A string that contains special characters not in the dictionary"
+      ],
+      "answer": 0,
+      "explanation": "An empty string with an empty dictionary is a crucial edge case because it tests the base condition of the problem. The other options, while relevant, do not address the foundational logic of the problem as directly.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270407+00:00",
+      "contentHash": "83d0b577650131a8d3291aed0c3104c0",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "word-break-8",
+      "title": "How does the presence of overlapping subproblems affect the word break solution?",
+      "topics": [
+        "Dynamic Programming",
+        "Overlapping Subproblems"
+      ],
+      "category": "1-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "word-break",
+      "difficulty": "Medium",
+      "question": "Why is dynamic programming preferred over a naive recursive approach for the word break problem?",
+      "options": [
+        "Dynamic programming avoids recalculating results for overlapping subproblems",
+        "Dynamic programming can handle larger dictionaries efficiently",
+        "Dynamic programming guarantees a solution in linear time",
+        "Dynamic programming simplifies the problem by reducing the input size"
+      ],
+      "answer": 0,
+      "explanation": "Dynamic programming is preferred because it stores results of overlapping subproblems, which prevents redundant calculations and improves efficiency. The naive recursive approach does not leverage this, leading to exponential time complexity, making it a common misconception.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270442+00:00",
+      "contentHash": "3365d408d45055274b17d305717802fb",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "best-time-to-buy-and-sell-stock-with-cooldown-7",
+      "title": "What is the time complexity of the optimal solution for this problem?",
+      "topics": [
+        "Dynamic Programming",
+        "Time Complexity"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "difficulty": "Medium",
+      "question": "How efficient is the optimal algorithm for calculating the maximum profit from stock trades with cooldowns?",
+      "options": [
+        "O(n^2) due to nested iterations",
+        "O(n) with a single pass through the data",
+        "O(n log n) from sorting the prices",
+        "O(1) since it uses constant space"
+      ],
+      "answer": 1,
+      "explanation": "The optimal algorithm runs in O(n) time complexity because it processes each day's stock price in a single pass, updating the maximum profit dynamically. The O(n^2) complexity is a common misconception stemming from naive approaches that consider all pairs of buy/sell days.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270511+00:00",
+      "contentHash": "9ad3a27e7ab84295ae105bb6dfb18d39",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "best-time-to-buy-and-sell-stock-with-cooldown-8",
+      "title": "What potential issue arises if you do not handle the cooldown correctly?",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "difficulty": "Medium",
+      "question": "What could happen if the cooldown period is not properly implemented in the algorithm?",
+      "options": [
+        "The algorithm may return a profit that exceeds the possible maximum",
+        "It could lead to an infinite loop during execution",
+        "The solution might fail to account for valid trading days",
+        "It may incorrectly suggest buying and selling on the same day"
+      ],
+      "answer": 2,
+      "explanation": "If the cooldown period is not properly handled, the solution may fail to account for valid trading days, leading to incorrect profit calculations. This could result in missing profitable trades that are separated by the cooldown. The option about an infinite loop is incorrect as the algorithm is designed to terminate.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "Day",
+            "Price"
+          ],
+          "rows": [
+            [
+              "1",
+              "7"
+            ],
+            [
+              "2",
+              "1"
+            ],
+            [
+              "3",
+              "5"
+            ],
+            [
+              "4",
+              "3"
+            ],
+            [
+              "5",
+              "6"
+            ],
+            [
+              "6",
+              "4"
+            ]
+          ]
+        },
+        "caption": "Sample stock prices over six days."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270557+00:00",
+      "contentHash": "3d53222b9d1710f84f31573be4cac583",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "target-sum-7",
+      "title": "Time Complexity Considerations",
+      "topics": [
+        "Dynamic Programming",
+        "Complexity Analysis"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "target-sum",
+      "difficulty": "Medium",
+      "question": "When analyzing the time complexity of a dynamic programming solution for problems like target sum, what is the primary factor that determines the overall complexity?",
+      "options": [
+        "The number of possible target sums",
+        "The size of the input array",
+        "The number of unique states in the DP table",
+        "The depth of recursion used in the solution"
+      ],
+      "answer": 2,
+      "explanation": "The number of unique states in the DP table is the primary factor affecting time complexity, as it directly correlates with how many subproblems need to be solved. The most tempting distractor is the size of the input array, which influences the number of iterations but does not capture the essence of state space in DP.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270629+00:00",
+      "contentHash": "cf75bea5e9ee20f28350e448990b2cd4",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "target-sum-8",
+      "title": "Handling Edge Cases in Dynamic Programming",
+      "topics": [
+        "Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "target-sum",
+      "difficulty": "Medium",
+      "question": "In a dynamic programming solution for target sum, how should you handle cases where the input array contains negative numbers?",
+      "options": [
+        "Ignore negative numbers and only calculate with positive ones",
+        "Use absolute values of the numbers for calculations",
+        "Adjust the DP table to accommodate negative indices",
+        "Assume all sums are possible regardless of negative values"
+      ],
+      "answer": 2,
+      "explanation": "Adjusting the DP table to accommodate negative indices is necessary when dealing with negative numbers, as it ensures all possible sums can be represented. The tempting distractor is to ignore negative numbers, which would lead to incorrect results since they can affect the achievable target sums.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "-1",
+              "label": "a[0]",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "a[1]",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "a[2]",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "a[3]",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "-1"
+            ],
+            [
+              "2"
+            ],
+            [
+              "3"
+            ],
+            [
+              "4"
+            ]
+          ]
+        },
+        "caption": "Example array with negative and positive values."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270680+00:00",
+      "contentHash": "ae0fd97242aeb996001d8cd405fc5bda",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-increasing-path-in-a-matrix-7",
+      "title": "Time Complexity Analysis",
+      "topics": [
+        "2-D Dynamic Programming",
+        "Complexity Analysis"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-increasing-path-in-a-matrix",
+      "difficulty": "Hard",
+      "question": "What is the time complexity of the optimal approach for finding the longest increasing path in a matrix using dynamic programming and memoization?",
+      "options": [
+        "O(n*m) for n rows and m columns",
+        "O(n*m*log(n*m)) due to sorting",
+        "O(n*m^2) for nested iterations",
+        "O(n*m) for each cell with constant time updates"
+      ],
+      "answer": 0,
+      "explanation": "The optimal approach involves visiting each cell once and storing the results in a memoization table, leading to a time complexity of O(n*m). The nested iterations option is misleading as each cell is processed only once, not repeatedly.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270717+00:00",
+      "contentHash": "2994b797dadd2f19556905f45d972d70",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "longest-increasing-path-in-a-matrix-8",
+      "title": "Handling Edge Cases",
+      "topics": [
+        "2-D Dynamic Programming",
+        "Edge Cases"
+      ],
+      "category": "2-D Dynamic Programming",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "longest-increasing-path-in-a-matrix",
+      "difficulty": "Hard",
+      "question": "What potential issue arises when the input matrix contains duplicate values while searching for the longest increasing path?",
+      "options": [
+        "It may lead to infinite loops in DFS",
+        "It can cause incorrect path lengths to be calculated",
+        "It will not affect the result as duplicates can be part of a valid path",
+        "It requires additional data structures to handle duplicates"
+      ],
+      "answer": 2,
+      "explanation": "Duplicate values can be part of a valid path, so they do not inherently cause issues in finding the longest increasing path. The concern about infinite loops is unfounded since the algorithm is designed to handle revisits correctly. The incorrect path length option is misleading as the algorithm still correctly identifies valid paths.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "(0,0)",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "(0,1)",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "(0,2)",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "(1,0)",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "(1,1)",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "(1,2)",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": [
+            [
+              "1",
+              "2",
+              "3"
+            ],
+            [
+              "2",
+              "3",
+              "4"
+            ]
+          ]
+        },
+        "caption": "Example matrix with duplicate values."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270766+00:00",
+      "contentHash": "2c8873a6d76e10a36d706bee0a0f3f82",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "gas-station-7",
+      "title": "Time Complexity of the Gas Station Problem",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "gas-station",
+      "difficulty": "Medium",
+      "question": "What is the time complexity of the optimal solution for the gas station problem?",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(log n)",
+        "O(1)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal solution runs in O(n) time complexity, as it requires a single pass to calculate total gas and total cost. The O(n^2) option is a common misconception due to thinking of simulating each station. O(log n) and O(1) do not apply to this problem due to the need to evaluate each station's gas and cost.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270843+00:00",
+      "contentHash": "13116e7565721036e8fb968ad10956bb",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "gas-station-8",
+      "title": "Edge Cases in Gas Station Problem",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "gas-station",
+      "difficulty": "Medium",
+      "question": "Which scenario could lead to an incorrect conclusion about completing the circuit in the gas station problem?",
+      "options": [
+        "All gas stations have the same amount of gas and cost",
+        "One station has significantly more gas than others",
+        "The total gas is equal to the total cost",
+        "The starting station has zero gas"
+      ],
+      "answer": 2,
+      "explanation": "If the total gas is equal to the total cost, it does not guarantee that a circuit can be completed, as the distribution of gas and costs matters. The first option might seem plausible, but it doesn't affect the overall ability to complete the circuit. The last option is also misleading, as starting with zero gas would obviously fail.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [],
+          "columns": [
+            "Station",
+            "Gas",
+            "Cost"
+          ],
+          "rows": [
+            [
+              "1",
+              "4",
+              "5"
+            ],
+            [
+              "2",
+              "6",
+              "4"
+            ],
+            [
+              "3",
+              "5",
+              "3"
+            ],
+            [
+              "4",
+              "2",
+              "6"
+            ],
+            [
+              "5",
+              "3",
+              "2"
+            ]
+          ]
+        },
+        "caption": "Gas and cost distribution across stations."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270883+00:00",
+      "contentHash": "9cb8e6d6696f951a5ce45f06f88d2fba",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-triplets-to-form-target-triplet-7",
+      "title": "Understanding Edge Cases in Triplet Merging",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-triplets-to-form-target-triplet",
+      "difficulty": "Medium",
+      "question": "What issue arises if the input contains duplicate triplets when trying to form the target triplet?",
+      "options": [
+        "It will always succeed in forming the target triplet",
+        "It may lead to incorrect maximum values",
+        "It will slow down the merging process significantly",
+        "It will not affect the outcome"
+      ],
+      "answer": 1,
+      "explanation": "Duplicate triplets can lead to incorrect maximum values if they are not handled properly, as they can skew the results of the merging process. The option about slowing down the process is misleading; while duplicates may not help, they do not inherently slow down the algorithm.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270944+00:00",
+      "contentHash": "14d8e93e3685c7c7535c7d210cdf337d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "merge-triplets-to-form-target-triplet-8",
+      "title": "Evaluating Greedy Algorithms for Triplet Merging",
+      "topics": [
+        "Greedy"
+      ],
+      "category": "Greedy",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "merge-triplets-to-form-target-triplet",
+      "difficulty": "Medium",
+      "question": "Why might a brute force approach fail to efficiently solve the triplet merging problem?",
+      "options": [
+        "It can handle all edge cases effectively",
+        "It has exponential time complexity",
+        "It guarantees finding the optimal solution",
+        "It requires sorting the input first"
+      ],
+      "answer": 1,
+      "explanation": "A brute force approach would involve checking all combinations of triplets, leading to exponential time complexity, which is impractical for larger inputs. The option claiming it handles edge cases effectively is misleading, as brute force does not guarantee efficiency.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.270972+00:00",
+      "contentHash": "d2b8dddd09916127b7fe25454a6529b4",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "meeting-rooms-ii-6",
+      "title": "Which data structure is optimal for tracking the end times of meetings in a scheduling problem?",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "meeting-rooms-ii",
+      "difficulty": "Medium",
+      "question": "In a problem where you need to determine the minimum number of meeting rooms required for a set of meetings with given start and end times, which data structure should you use to efficiently track the end times of meetings?",
+      "options": [
+        "A priority queue (min-heap)",
+        "A hash table",
+        "A linked list",
+        "An array"
+      ],
+      "answer": 0,
+      "explanation": "A priority queue (min-heap) is optimal for tracking end times because it allows for efficient retrieval of the earliest ending meeting, enabling quick decisions on room allocation. The hash table option fails as it does not maintain order, making it inefficient for this type of scheduling problem.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.271004+00:00",
+      "contentHash": "e71a3f88a2850597cdb13cc67a701099",
+      "qualityScore": 3,
+      "explanationQuality": 5,
+      "qualityFlags": [
+        "option-length-tell"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "meeting-rooms-ii-7",
+      "title": "What is a common pitfall when handling overlapping intervals?",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "meeting-rooms-ii",
+      "difficulty": "Medium",
+      "question": "When determining the number of meeting rooms required for overlapping meetings, what is a common mistake to avoid?",
+      "options": [
+        "Assuming meetings with the same start time do not overlap",
+        "Counting meetings without considering their end times",
+        "Using a greedy approach without sorting intervals first",
+        "Ignoring edge cases with single meetings"
+      ],
+      "answer": 2,
+      "explanation": "A common mistake is to use a greedy approach without sorting the intervals first, which can lead to incorrect room counts. The option about counting meetings without considering end times is tempting but does not capture the essence of the scheduling problem, which relies on the order of meetings.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.271036+00:00",
+      "contentHash": "4dfcd2b2c318eca0b0c1b3c9297d85ea",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "meeting-rooms-ii-8",
+      "title": "How does sorting intervals affect the solution's efficiency?",
+      "topics": [
+        "Intervals"
+      ],
+      "category": "Intervals",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "meeting-rooms-ii",
+      "difficulty": "Medium",
+      "question": "In the context of scheduling meetings, how does sorting the intervals impact the efficiency of your algorithm?",
+      "options": [
+        "It reduces the time complexity to O(n log n) for the entire process",
+        "It eliminates the need for a data structure to track end times",
+        "It allows for a linear scan to determine overlaps",
+        "It complicates the logic of the algorithm unnecessarily"
+      ],
+      "answer": 0,
+      "explanation": "Sorting the intervals reduces the time complexity to O(n log n) for the sorting step, which is necessary for efficiently determining overlaps and allocating rooms. The option suggesting it eliminates the need for a data structure is incorrect, as a data structure is still needed to manage the end times effectively.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "1",
+              "label": "Start 1",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "End 1",
+              "status": "normal"
+            },
+            {
+              "value": "2",
+              "label": "Start 2",
+              "status": "normal"
+            },
+            {
+              "value": "4",
+              "label": "End 2",
+              "status": "normal"
+            },
+            {
+              "value": "3",
+              "label": "Start 3",
+              "status": "normal"
+            },
+            {
+              "value": "5",
+              "label": "End 3",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Meeting",
+            "Time"
+          ],
+          "rows": [
+            [
+              "Meeting 1",
+              "1"
+            ],
+            [
+              "Meeting 1",
+              "3"
+            ],
+            [
+              "Meeting 2",
+              "2"
+            ],
+            [
+              "Meeting 2",
+              "4"
+            ],
+            [
+              "Meeting 3",
+              "3"
+            ],
+            [
+              "Meeting 3",
+              "5"
+            ]
+          ]
+        },
+        "caption": "Example of meeting start and end times."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.271103+00:00",
+      "contentHash": "7d07d3ecfbabc5bd86ccfc9cfbcedd2d",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "plus-one-6",
+      "title": "What is the best approach to increment a number represented as an array of digits?",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "plus-one",
+      "difficulty": "Easy",
+      "question": "Which method is most efficient for incrementing a number represented as an array of digits?",
+      "options": [
+        "Iterate from the end and carry over if needed",
+        "Convert the array to an integer, increment, then convert back",
+        "Use a stack to manage carries",
+        "Perform binary addition directly on the array"
+      ],
+      "answer": 0,
+      "explanation": "The most efficient method is to iterate from the end of the array and handle carries as needed. This avoids the overhead of converting to and from integers, which can be costly in terms of time and space. The second option, converting to an integer, is tempting but inefficient due to potential overflow issues and unnecessary conversions.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.271135+00:00",
+      "contentHash": "a2573691e76827ca86ecf4656821d817",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "plus-one-7",
+      "title": "How to handle edge cases when the input array represents the maximum digit?",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "plus-one",
+      "difficulty": "Easy",
+      "question": "What should be considered when the input array consists of all nines?",
+      "options": [
+        "The output should be a larger array with a leading one",
+        "The output should remain the same",
+        "The output should be the same length as input",
+        "The output should be an empty array"
+      ],
+      "answer": 0,
+      "explanation": "When the input consists of all nines, the result should be a new array with a leading one followed by zeros (e.g., [1, 0, 0, 0] for [9, 9, 9]). This is a common edge case that needs careful handling. The option stating the output should remain the same fails because it ignores the increment.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.271164+00:00",
+      "contentHash": "23834c7e7abd5c2230ec1ab3dc2184ad",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "plus-one-8",
+      "title": "What is the time complexity of the optimal solution for this problem?",
+      "topics": [
+        "Math & Geometry"
+      ],
+      "category": "Math & Geometry",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "plus-one",
+      "difficulty": "Easy",
+      "question": "What is the time complexity of the most efficient algorithm to solve this problem?",
+      "options": [
+        "O(n)",
+        "O(1)",
+        "O(n^2)",
+        "O(log n)"
+      ],
+      "answer": 0,
+      "explanation": "The optimal solution has a time complexity of O(n), where n is the number of digits in the input array. This is because, in the worst case, we may need to iterate through the entire array to handle carries. The option of O(1) is incorrect as it suggests constant time, which is not feasible for variable-length inputs.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.271187+00:00",
+      "contentHash": "d39a95276a81bb4eaa1c2419f1c17f7a",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-integer-7",
+      "title": "Which approach is optimal for reversing an integer?",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-integer",
+      "difficulty": "Medium",
+      "question": "What is the most efficient method to reverse an integer?",
+      "options": [
+        "Using string manipulation to reverse the digits",
+        "Iteratively extracting digits and building the reversed number",
+        "Using recursion to reverse the integer",
+        "Converting the integer to binary and reversing the bits"
+      ],
+      "answer": 1,
+      "explanation": "The most efficient method to reverse an integer is to iteratively extract digits and build the reversed number, which operates in O(log(n)) time. The string manipulation approach is less efficient due to additional overhead. Recursion can lead to stack overflow for large integers.",
+      "visual": null,
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.271243+00:00",
+      "contentHash": "3a6e33e6fcfa73f969776c5b6e263eb8",
+      "qualityScore": 4,
+      "explanationQuality": 4,
+      "qualityFlags": [
+        "explanation-asserts-only"
+      ]
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "reverse-integer-8",
+      "title": "How does negative input affect integer reversal?",
+      "topics": [
+        "Bit Manipulation"
+      ],
+      "category": "Bit Manipulation",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "reverse-integer",
+      "difficulty": "Medium",
+      "question": "What must be considered when reversing a negative integer?",
+      "options": [
+        "The negative sign must be handled separately",
+        "Negative integers cannot be reversed",
+        "The reversal should maintain the sign at the end",
+        "The process is the same as for positive integers"
+      ],
+      "answer": 0,
+      "explanation": "When reversing a negative integer, the negative sign must be handled separately to ensure the reversed integer retains its correct sign. The distractor suggesting that negative integers cannot be reversed is incorrect, as they can be reversed just like positive integers, but with special consideration for the sign.",
+      "visual": {
+        "kind": "array",
+        "state": {
+          "cells": [
+            {
+              "value": "-123",
+              "label": "num",
+              "status": "normal"
+            }
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "caption": "Example of a negative integer to reverse."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-08T07:51:29.271384+00:00",
+      "contentHash": "1ea6e2616779a41cefc0e02c05d71392",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
     }
   ]
 }
