@@ -30879,6 +30879,86 @@
       "qualityScore": 5,
       "explanationQuality": 5,
       "qualityFlags": []
+    },
+    {
+      "leetQuestionId": 0,
+      "questionId": "lowest-common-ancestor-of-a-binary-search-tree-8",
+      "title": "Handling Edge Cases in LCA",
+      "topics": [
+        "Trees"
+      ],
+      "category": "Trees",
+      "lists": [
+        "neetcode150"
+      ],
+      "source": "llm",
+      "sourceSlug": "lowest-common-ancestor-of-a-binary-search-tree",
+      "difficulty": "Medium",
+      "question": "What issue arises if the nodes for which the lowest common ancestor is being searched are not present in the binary search tree?",
+      "options": [
+        "The algorithm returns null",
+        "The algorithm returns the root node",
+        "The algorithm raises an exception",
+        "The algorithm returns the last visited node"
+      ],
+      "answer": 0,
+      "explanation": "If the nodes are not present in the binary search tree, the algorithm will correctly return null, indicating that no common ancestor exists. The option stating that it returns the root node is misleading, as the root does not represent the ancestor of non-existent nodes.",
+      "visual": {
+        "kind": "table",
+        "state": {
+          "cells": [
+            {
+              "value": "Node A",
+              "label": "A",
+              "status": "normal"
+            },
+            {
+              "value": "Node B",
+              "label": "B",
+              "status": "normal"
+            },
+            {
+              "value": "Node C",
+              "label": "C",
+              "status": "normal"
+            },
+            {
+              "value": "Node D",
+              "label": "D",
+              "status": "normal"
+            }
+          ],
+          "columns": [
+            "Node",
+            "Status"
+          ],
+          "rows": [
+            [
+              "A",
+              "normal"
+            ],
+            [
+              "B",
+              "normal"
+            ],
+            [
+              "C",
+              "normal"
+            ],
+            [
+              "D",
+              "normal"
+            ]
+          ]
+        },
+        "caption": "Nodes in the binary search tree."
+      },
+      "type": "mcq",
+      "generatedAt": "2026-08-09T07:53:53.417097+00:00",
+      "contentHash": "6c74127bc681b5ffe160c9a395faea74",
+      "qualityScore": 5,
+      "explanationQuality": 5,
+      "qualityFlags": []
     }
   ]
 }
