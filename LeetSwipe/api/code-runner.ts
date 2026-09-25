@@ -16,6 +16,27 @@
 
 const TICK = '__leetswipeTick';
 
+/**
+ * Real, disruptive browser globals that have no place in a pure function, with
+ * the honest error to give when one is called.
+ *
+ * `new Function`'s scope chain falls back to the real `window` for any name
+ * not declared as a parameter — harmless for something like `Math`, but not
+ * for these. The one that actually shipped: a learner writes `print(x)` out of
+ * Python habit to debug, expecting a `ReferenceError`. Instead it silently
+ * calls the *browser's* print function, opening the system print dialog once
+ * per test case the grader runs it against. Shadowing the name with a
+ * parameter gives the error they should have gotten in the first place.
+ */
+const SANDBOXED_GLOBALS: Record<string, string> = {
+  print: 'This is JavaScript, not Python — there is no built-in print(). Did you mean console.log?',
+  alert: 'alert() blocks the whole app waiting for a click, which has no meaning inside a test run.',
+  confirm: 'confirm() blocks the whole app waiting for a click, which has no meaning inside a test run.',
+  prompt: 'prompt() waits for typed input, which has no meaning inside a test run — the test case supplies the input already.',
+  open: 'open() opens a new browser tab, which has no meaning here.',
+  close: 'close() closes the browser tab, which has no meaning here.',
+};
+
 /** Iterations before a run is abandoned. Comfortably above any real solution. */
 const TICK_BUDGET = 2_000_000;
 
@@ -389,8 +410,10 @@ interface Compiled {
 
 function compile(source: string, functionName: string): Compiled {
   const instrumented = instrument(source);
+  const sandboxedNames = Object.keys(SANDBOXED_GLOBALS);
   const factory = new Function(
     TICK,
+    ...sandboxedNames,
     `"use strict";\n${instrumented}\nreturn typeof ${functionName} === "function" ? ${functionName} : null;`,
   );
 
@@ -408,7 +431,10 @@ function compile(source: string, functionName: string): Compiled {
     }
   };
 
-  const fn = factory(tick);
+  const sandboxedArgs = sandboxedNames.map((name) => () => {
+    throw new Error(`${name}(...) does something real here, not what you probably expect: ${SANDBOXED_GLOBALS[name]}`);
+  });
+  const fn = factory(tick, ...sandboxedArgs);
   if (typeof fn !== 'function') {
     throw new Error(`No function named ${functionName} was defined.`);
   }
