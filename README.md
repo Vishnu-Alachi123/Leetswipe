@@ -10,6 +10,8 @@ Interview practice in three formats, all of which work offline:
 
 **▶ Live web demo:** https://vishnu-alachi123.github.io/Leetswipe/ (works on mobile too)
 **📱 Run on your phone:** see [`LeetSwipe/MOBILE.md`](LeetSwipe/MOBILE.md) (Expo Go / EAS Build)
+**🧪 Testing & QA:** see [`TESTING.md`](TESTING.md) — how to run the suites, how to
+serve the web export correctly, and the audit log of what has been checked
 
 ## Stack
 - **Frontend:** React Native / Expo (`LeetSwipe/`) — topic picker, swipe deck, Learn

@@ -45,6 +45,14 @@ export interface RunOutcome {
   cases: CaseOutcome[];
   /** Set when the code could not run at all — a syntax error, say. */
   error?: string;
+  /**
+   * Set when every single case threw the same error.
+   *
+   * A typo like `retrun` fails all four cases identically, and printing the
+   * same red line four times reads as four problems instead of one. The screen
+   * shows this once, above the list.
+   */
+  commonError?: string;
   durationMs: number;
 }
 
@@ -129,13 +137,16 @@ export function instrument(source: string): string {
         i += keyword.length;
         continue;
       }
-      let depth = 0;
+      // Named `parens`, not `depth`: shadowing the outer brace counter used to
+      // leave it un-incremented for every loop body, so `}` decremented a depth
+      // that had never gone up and the do-while bookkeeping below drifted.
+      let parens = 0;
       let k = j;
       for (; k < n; k += 1) {
-        if (source[k] === '(') depth += 1;
+        if (source[k] === '(') parens += 1;
         else if (source[k] === ')') {
-          depth -= 1;
-          if (depth === 0) {
+          parens -= 1;
+          if (parens === 0) {
             k += 1;
             break;
           }
@@ -183,8 +194,24 @@ export function instrument(source: string): string {
         doBodyDepths.push(depth);
         i = j + 1;
       } else {
-        out += 'do';
-        i += 2;
+        // An unbraced body: `do i += 1; while (c);`. The old code re-emitted
+        // `do` on top of the copy above and never instrumented the statement,
+        // which both corrupted the source and left the one loop shape that
+        // could still freeze the app with no tick in it. Wrap it in a block.
+        let parens = 0;
+        let p = j;
+        for (; p < n; p += 1) {
+          if (source[p] === '(') parens += 1;
+          else if (source[p] === ')') parens -= 1;
+          else if (source[p] === ';' && parens === 0) {
+            p += 1;
+            break;
+          }
+        }
+        out += `{${TICK}();${source.slice(j, p)}}`;
+        i = p;
+        // The `while` that follows is this do's header, not a new loop.
+        expectDoWhile = true;
       }
       continue;
     }
@@ -207,6 +234,105 @@ export function instrument(source: string): string {
   }
 
   return out;
+}
+
+/** Curly quotes and dashes a phone keyboard substitutes silently. */
+const SMART_CHARS: Array<[RegExp, string]> = [
+  [/[“”]/, 'curly double quotes (“ ”) instead of "'],
+  [/[‘’]/, 'curly single quotes (‘ ’) instead of \''],
+  [/[–—]/, 'a long dash (– —) instead of -'],
+  [/ /, 'a non-breaking space'],
+];
+
+/**
+ * Turn an engine error into something a learner can act on.
+ *
+ * V8 says "Invalid or unexpected token" with no position, which on a phone is
+ * close to useless — especially for smart quotes, where the character looks
+ * almost identical to the one the learner meant to type. Naming the actual
+ * cause is the difference between a two-second fix and giving up.
+ */
+function describeCompileError(e: unknown, source: string, functionName: string): string {
+  const raw = e instanceof Error ? e.message : String(e);
+
+  if (/No function named/.test(raw)) {
+    // Far and away the most common version of this: a near-miss on the name.
+    const defined = [...source.matchAll(/(?:function\s+|(?:const|let|var)\s+)([A-Za-z_$][\w$]*)/g)]
+      .map((m) => m[1])
+      .filter((name) => name !== functionName);
+    const near = defined.find((name) => name.toLowerCase() === functionName.toLowerCase());
+    if (near) {
+      return `The tests call ${functionName}, but your code defines ${near}. Check the capitalisation.`;
+    }
+    if (defined.length) {
+      return `The tests call ${functionName}, but your code defines ${defined.join(', ')}. Rename it to ${functionName}.`;
+    }
+    return `No function named ${functionName} was defined.`;
+  }
+
+  if (e instanceof SyntaxError) {
+    for (const [pattern, description] of SMART_CHARS) {
+      if (pattern.test(source)) {
+        return `Your code contains ${description}. Autocorrect does this — replace them with plain ASCII characters.`;
+      }
+    }
+    const unbalanced = describeUnbalanced(source);
+    return `Your code has a syntax error${unbalanced ? ` — ${unbalanced}` : ''}. (${raw})`;
+  }
+
+  return raw;
+}
+
+/**
+ * Report a bracket imbalance, counting only real code.
+ *
+ * Reuses the scanner's skip rules so a brace inside a string or comment is not
+ * counted; a naive count would send the learner hunting for a bug in a comment.
+ */
+function describeUnbalanced(source: string): string | null {
+  const pairs: Array<[string, string, string]> = [
+    ['{', '}', 'brace'],
+    ['(', ')', 'parenthesis'],
+    ['[', ']', 'bracket'],
+  ];
+  const counts = new Map<string, number>();
+  let i = 0;
+  const n = source.length;
+  while (i < n) {
+    const c = source[i];
+    const next = source[i + 1];
+    if (c === '/' && next === '/') {
+      const end = source.indexOf('\n', i);
+      i = end === -1 ? n : end;
+      continue;
+    }
+    if (c === '/' && next === '*') {
+      const end = source.indexOf('*/', i + 2);
+      i = end === -1 ? n : end + 2;
+      continue;
+    }
+    if (c === '"' || c === "'" || c === '`') {
+      let j = i + 1;
+      while (j < n) {
+        if (source[j] === '\\') {
+          j += 2;
+          continue;
+        }
+        if (source[j] === c) break;
+        j += 1;
+      }
+      i = j + 1;
+      continue;
+    }
+    counts.set(c, (counts.get(c) ?? 0) + 1);
+    i += 1;
+  }
+  for (const [open, close, name] of pairs) {
+    const diff = (counts.get(open) ?? 0) - (counts.get(close) ?? 0);
+    if (diff > 0) return `${diff} unclosed ${name}${diff > 1 ? 's' : ''} (${open})`;
+    if (diff < 0) return `${-diff} extra closing ${name}${diff < -1 ? 'es' : ''} (${close})`;
+  }
+  return null;
 }
 
 function serialize(value: unknown): string {
@@ -246,7 +372,22 @@ function deepEqual(a: unknown, b: unknown): boolean {
  * `new Function` rather than `eval` so the body cannot reach this module's
  * scope, and the tick function is passed in explicitly.
  */
-function compile(source: string, functionName: string): (...args: unknown[]) => unknown {
+interface Compiled {
+  fn: (...args: unknown[]) => unknown;
+  /**
+   * Start a fresh budget for one test case.
+   *
+   * The budget has to be per case, not per compile. When it was shared, a
+   * perfectly correct O(n) solution that simply had several large cases to get
+   * through would exhaust the allowance partway down the list and report "is
+   * there an infinite loop?" on every case after that — accusing the learner of
+   * a bug that is not in their code, which is the worst failure this screen can
+   * have.
+   */
+  resetBudget: () => void;
+}
+
+function compile(source: string, functionName: string): Compiled {
   const instrumented = instrument(source);
   const factory = new Function(
     TICK,
@@ -254,7 +395,7 @@ function compile(source: string, functionName: string): (...args: unknown[]) => 
   );
 
   let ticks = 0;
-  const start = Date.now();
+  let start = Date.now();
   const tick = () => {
     ticks += 1;
     if (ticks > TICK_BUDGET) {
@@ -271,7 +412,13 @@ function compile(source: string, functionName: string): (...args: unknown[]) => 
   if (typeof fn !== 'function') {
     throw new Error(`No function named ${functionName} was defined.`);
   }
-  return fn as (...args: unknown[]) => unknown;
+  return {
+    fn: fn as (...args: unknown[]) => unknown,
+    resetBudget: () => {
+      ticks = 0;
+      start = Date.now();
+    },
+  };
 }
 
 /**
@@ -287,17 +434,27 @@ export function runTests(
 ): RunOutcome {
   const started = Date.now();
 
-  let fn: (...args: unknown[]) => unknown;
+  if (!source.trim()) {
+    return {
+      passed: false,
+      cases: [],
+      error: `The editor is empty — write a function called ${functionName} to get started.`,
+      durationMs: Date.now() - started,
+    };
+  }
+
+  let compiled: Compiled;
   try {
-    fn = compile(source, functionName);
+    compiled = compile(source, functionName);
   } catch (e) {
     return {
       passed: false,
       cases: [],
-      error: e instanceof Error ? e.message : String(e),
+      error: describeCompileError(e, source, functionName),
       durationMs: Date.now() - started,
     };
   }
+  const { fn, resetBudget } = compiled;
 
   const outcomes: CaseOutcome[] = cases.map((testCase) => {
     let expected: unknown;
@@ -309,6 +466,8 @@ export function runTests(
 
     try {
       const args = new Function(`"use strict"; return [${testCase.input}];`)() as unknown[];
+      // Each case gets the full allowance; see Compiled.resetBudget.
+      resetBudget();
       const actual = fn(...args);
       return {
         passed: deepEqual(actual, expected),
@@ -329,9 +488,14 @@ export function runTests(
     }
   });
 
+  const errors = outcomes.map((o) => o.error);
+  const everyCaseThrewTheSame =
+    outcomes.length > 1 && errors.every((msg) => msg && msg === errors[0]);
+
   return {
     passed: outcomes.length > 0 && outcomes.every((o) => o.passed),
     cases: outcomes,
+    commonError: everyCaseThrewTheSame ? errors[0] : undefined,
     durationMs: Date.now() - started,
   };
 }

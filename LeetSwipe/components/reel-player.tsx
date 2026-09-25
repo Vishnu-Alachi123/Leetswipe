@@ -39,7 +39,24 @@ function haptic() {
 // Line metrics are needed in JS to scroll the code pane, so they live here and
 // the stylesheet reads them rather than the other way round.
 const CODE_LINE_HEIGHT = 21;
-const CODE_PANE_HEIGHT = 178;
+const CODE_PANE_PADDING = 8;
+/**
+ * How many lines the pane shows, by screen height.
+ *
+ * Sized in whole lines rather than pixels on purpose: a pixel height that is
+ * not a multiple of the line height slices the last row through the middle of
+ * its glyphs, which reads as broken rather than as "scroll for more".
+ */
+const CODE_LINES_VISIBLE = 7;
+const CODE_LINES_VISIBLE_COMPACT = 5;
+const CODE_LINES_VISIBLE_SHORT = 4;
+/**
+ * Only the leading pad counts: the trailing one sits after the *last* line, so
+ * when the code overflows, adding it just exposes a sliver of the next row.
+ */
+const paneHeightFor = (lineCount: number) =>
+  lineCount * CODE_LINE_HEIGHT + CODE_PANE_PADDING;
+const CODE_PANE_HEIGHT = paneHeightFor(CODE_LINES_VISIBLE);
 
 interface Props {
   reel: AlgorithmReel;
@@ -71,8 +88,18 @@ export function ReelPlayer({
   // panes overflowed and clipped the controls. Everything fixed-height scales
   // down from the actual page height instead.
   const compact = height < 760;
-  const codePaneHeight = compact ? 132 : CODE_PANE_HEIGHT;
+  // A 568pt screen cannot seat the compact layout either; the visualisation has
+  // to give up more room again or the code pane gets squeezed to a sliver.
+  const veryShort = height < 620;
   const lines = useMemo(() => codeLines(reel), [reel]);
+  // Never taller than the code actually is, so a four-line snippet does not sit
+  // in a half-empty box on the screen where space is tightest.
+  const codePaneHeight = paneHeightFor(
+    Math.min(
+      lines.length,
+      veryShort ? CODE_LINES_VISIBLE_SHORT : compact ? CODE_LINES_VISIBLE_COMPACT : CODE_LINES_VISIBLE,
+    ),
+  );
   const highlighted = useMemo(
     () => new Set(step?.highlightLines ?? []),
     [step],
@@ -266,7 +293,8 @@ export function ReelPlayer({
       </View>
 
       {/* Visualisation ------------------------------------------------ */}
-      <View style={[styles.vizPane, compact && styles.vizPaneCompact]}>
+      <View
+        style={[styles.vizPane, compact && styles.vizPaneCompact, veryShort && styles.vizPaneShort]}>
         <VisualizationView viz={step.visualization} />
       </View>
 
@@ -369,15 +397,20 @@ const styles = StyleSheet.create({
     minHeight: 172,
   },
   vizPaneCompact: { minHeight: 118, marginTop: 8, paddingVertical: 4 },
+  vizPaneShort: { minHeight: 84, marginTop: 4, paddingVertical: 2 },
   codePane: {
     height: CODE_PANE_HEIGHT,
     flexGrow: 0,
+    // Without this the pane is a flex child that shrinks under pressure, and on
+    // a short screen it collapsed to a line and a half of code sliced through
+    // the middle. The visualisation above is the piece that should yield.
+    flexShrink: 0,
     backgroundColor: COLORS.card,
     borderRadius: 12,
     borderWidth: 1,
     borderColor: COLORS.border,
   },
-  codeContent: { paddingVertical: 10 },
+  codeContent: { paddingVertical: CODE_PANE_PADDING },
   codeLine: {
     flexDirection: 'row',
     paddingHorizontal: 10,
