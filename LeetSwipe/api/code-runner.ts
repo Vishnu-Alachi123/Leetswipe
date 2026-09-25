@@ -35,7 +35,77 @@ const SANDBOXED_GLOBALS: Record<string, string> = {
   prompt: 'prompt() waits for typed input, which has no meaning inside a test run — the test case supplies the input already.',
   open: 'open() opens a new browser tab, which has no meaning here.',
   close: 'close() closes the browser tab, which has no meaning here.',
+  // Not a function call at all — the dangerous move is *assigning* to it, e.g.
+  // `location = coords;` with the `let`/`const` left off by mistake, which is
+  // plausible in a grid/coordinate problem. Assigning to the real `location`
+  // navigates the page away, discarding the whole run (and anything else on
+  // screen) with no dialog to cancel — worse than any of the ones above.
+  location: 'Assigning to location navigates away from the app. Did you forget a let/const?',
+  history: 'history controls page navigation, which has no meaning inside a test run.',
 };
+
+/**
+ * Names that resolve to the real global/window object itself.
+ *
+ * Shadowing the functions above stops `print()`, but not `window.print()` —
+ * `window` is not shadowed, so the qualified form reaches the genuine
+ * function regardless. Same for `self.`, `globalThis.`, `top.`, `parent.`.
+ * These are shadowed with a Proxy that throws on any property access or call,
+ * which closes the qualified form without needing to enumerate every property
+ * of `window` individually.
+ */
+const GLOBAL_OBJECT_ALIASES = ['window', 'self', 'globalThis', 'top', 'parent', 'frames'];
+
+const NO_BROWSER_ACCESS_MESSAGE =
+  'This code runs in a sandbox with no access to the browser or the page — write a pure function that only uses its arguments and return value.';
+
+function makeGlobalObjectStub(): unknown {
+  // A callable Proxy (target is a function) so both `window.x` and, if
+  // someone does something stranger like `window()`, both paths throw the
+  // same clear message instead of a generic "is not a function".
+  const throwing = () => {
+    throw new Error(NO_BROWSER_ACCESS_MESSAGE);
+  };
+  return new Proxy(throwing, {
+    get() {
+      throw new Error(NO_BROWSER_ACCESS_MESSAGE);
+    },
+    apply() {
+      throw new Error(NO_BROWSER_ACCESS_MESSAGE);
+    },
+  });
+}
+
+/** Parameter names and matching argument values for every shadowed name, in order. */
+function sandboxNamesAndArgs(): { names: string[]; args: unknown[] } {
+  const fnNames = Object.keys(SANDBOXED_GLOBALS);
+  const fnArgs = fnNames.map((name) => () => {
+    throw new Error(
+      `${name}(...) does something real here, not what you probably expect: ${SANDBOXED_GLOBALS[name]}`,
+    );
+  });
+  const objArgs = GLOBAL_OBJECT_ALIASES.map(() => makeGlobalObjectStub());
+  return {
+    names: [...fnNames, ...GLOBAL_OBJECT_ALIASES],
+    args: [...fnArgs, ...objArgs],
+  };
+}
+
+/**
+ * Evaluate a literal JS expression from bundled challenge data — e.g. `[0,1]`
+ * or `nums.length` — with the same global shadowing as learner code.
+ *
+ * This data is authored by the generation pipeline, not typed by a learner, so
+ * the trust boundary is different — but the pipeline is LLM-driven, and there
+ * is no reason for this eval to have any more reach than the sandboxed one
+ * above. A malformed test case should fail loudly, not be able to do
+ * something a learner's own code is not allowed to do.
+ */
+function evalLiteral(expr: string): unknown {
+  const { names, args } = sandboxNamesAndArgs();
+  const factory = new Function(...names, `"use strict"; return (${expr});`);
+  return factory(...args);
+}
 
 /** Iterations before a run is abandoned. Comfortably above any real solution. */
 const TICK_BUDGET = 2_000_000;
@@ -410,10 +480,10 @@ interface Compiled {
 
 function compile(source: string, functionName: string): Compiled {
   const instrumented = instrument(source);
-  const sandboxedNames = Object.keys(SANDBOXED_GLOBALS);
+  const { names: sandboxNames, args: sandboxArgs } = sandboxNamesAndArgs();
   const factory = new Function(
     TICK,
-    ...sandboxedNames,
+    ...sandboxNames,
     `"use strict";\n${instrumented}\nreturn typeof ${functionName} === "function" ? ${functionName} : null;`,
   );
 
@@ -431,10 +501,7 @@ function compile(source: string, functionName: string): Compiled {
     }
   };
 
-  const sandboxedArgs = sandboxedNames.map((name) => () => {
-    throw new Error(`${name}(...) does something real here, not what you probably expect: ${SANDBOXED_GLOBALS[name]}`);
-  });
-  const fn = factory(tick, ...sandboxedArgs);
+  const fn = factory(tick, ...sandboxArgs);
   if (typeof fn !== 'function') {
     throw new Error(`No function named ${functionName} was defined.`);
   }
@@ -485,13 +552,13 @@ export function runTests(
   const outcomes: CaseOutcome[] = cases.map((testCase) => {
     let expected: unknown;
     try {
-      expected = new Function(`"use strict"; return (${testCase.expected});`)();
+      expected = evalLiteral(testCase.expected);
     } catch {
       expected = testCase.expected;
     }
 
     try {
-      const args = new Function(`"use strict"; return [${testCase.input}];`)() as unknown[];
+      const args = evalLiteral(`[${testCase.input}]`) as unknown[];
       // Each case gets the full allowance; see Compiled.resetBudget.
       resetBudget();
       const actual = fn(...args);
