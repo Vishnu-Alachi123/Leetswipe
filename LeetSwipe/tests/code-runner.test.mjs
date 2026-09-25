@@ -223,3 +223,78 @@ test('every shipped challenge is solvable and non-trivial', async () => {
     assert.ok(c.testCases.length >= 3, `${c.title} has too few test cases`);
   }
 });
+
+// ------------------------------------------------- regressions, 2026-09-25
+// Each of these is a bug that shipped. They were found by driving the
+// challenge screen the way a learner uses it, so they are pinned here rather
+// than left to be rediscovered from a bug report.
+
+test('the loop budget is per test case, not per run', () => {
+  // Was: one budget for the whole run, so a correct O(n) solution with several
+  // large cases exhausted it partway down and every later case was reported as
+  // an infinite loop — blaming the learner for a bug in the grader.
+  const n = 300_000;
+  const cases = Array.from({ length: 10 }, () => ({
+    input: String(n),
+    expected: String((n * (n - 1)) / 2),
+  }));
+  const r = runTests('function sumTo(x){let s=0;for(let i=0;i<x;i++){s+=i;}return s;}', 'sumTo', cases);
+  assert.equal(r.passed, true, r.cases.find((c) => !c.passed)?.error);
+});
+
+test('an unbraced do-while survives instrumentation and still gets a tick', () => {
+  // Was: emitted `do do i++; while(c){tick();;}` — valid code turned into a
+  // syntax error, and the one loop shape with no tick in it at all.
+  const src = 'function f(n){ let i=0; do i++; while(i<n); return i; }';
+  assert.equal(
+    (instrument(src).match(/__leetswipeTick\(\)/g) || []).length,
+    1,
+    instrument(src),
+  );
+  assert.equal(runTests(src, 'f', [{ input: '5', expected: '5' }]).passed, true);
+
+  // And the tick has to actually stop it.
+  const spin = runTests('function f(n){ let i=0; do i++; while(true); return i; }', 'f', [
+    { input: '5', expected: '5' },
+  ]);
+  assert.match(spin.cases[0].error ?? '', /infinite loop|too long/);
+});
+
+test('a do-while tail is never given a body of its own', () => {
+  // Was: an inner `depth` shadowed the brace counter, so the closing
+  // `while (...)` picked up a stray `{tick();}` block.
+  const out = instrument(
+    'function f(n){let k=0;do{for(let i=0;i<2;i++){k++;}k++;}while(k<n);return k;}',
+  );
+  assert.ok(!/while\s*\([^)]*\)\s*\{__leetswipeTick/.test(out), out);
+});
+
+test('compile errors name the cause rather than quoting the engine', () => {
+  const at = (src, fn = 'twoSum') => runTests(src, fn, [{ input: '1', expected: '1' }]).error ?? '';
+
+  assert.match(at(''), /editor is empty/i);
+  assert.match(at('function twoSum(a){const s = “hi”; return a;}'), /curly double quotes/i);
+  assert.match(at('function twosum(a){return a;}'), /capitalisation/i);
+  assert.match(at('function solve(a){return a;}'), /defines solve/i);
+  assert.match(at('function twoSum(a){ if (a) { return a;'), /unclosed brace/i);
+});
+
+test('one error shared by every case is reported once', () => {
+  // `retrun [0]` parses (as indexing an undeclared name) and throws at call
+  // time, which is the case that produces one identical error per test case.
+  const r = runTests('function twoSum(a){ return retrun[0]; }', 'twoSum', [
+    { input: '1', expected: '1' },
+    { input: '2', expected: '2' },
+  ]);
+  assert.match(r.commonError ?? '', /retrun is not defined/);
+
+  // A run where only some cases throw must NOT be collapsed — the second case
+  // here simply returns the wrong number, which is a different kind of failure.
+  const mixed = runTests('function twoSum(a){ return a.length; }', 'twoSum', [
+    { input: 'null', expected: '1' },
+    { input: '[1,2]', expected: '1' },
+  ]);
+  assert.equal(mixed.commonError, undefined);
+  assert.ok(mixed.cases[0].error, 'first case should throw');
+  assert.ok(!mixed.cases[1].error, 'second case should fail on value, not throw');
+});

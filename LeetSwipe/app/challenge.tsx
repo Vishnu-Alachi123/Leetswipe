@@ -9,8 +9,9 @@
  * see hint three has no reason to read hint one, and hint one is the one that
  * actually teaches.
  */
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import {
+  Keyboard,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -70,10 +71,21 @@ export default function ChallengeScreen() {
   const [showSolution, setShowSolution] = useState(false);
   const [burst, setBurst] = useState<number | null>(null);
 
+  const scrollRef = useRef<ScrollView>(null);
+  // On a phone the statement, editor and buttons fill the screen, so results
+  // render below the fold and tapping Run looks like it did nothing. Scrolling
+  // is armed here and performed in the results' own onLayout: the position is
+  // not known until that block has been measured, and on the first run the
+  // block does not exist yet.
+  const scrollToResults = useRef(false);
+
   const run = useCallback(() => {
     if (!challenge) return;
+    // The keyboard covers the results on a phone, and nothing below needs it.
+    Keyboard.dismiss();
     const outcome = runTests(code, challenge.functionName, challenge.testCases);
     setResult(outcome);
+    scrollToResults.current = true;
     if (outcome.passed) {
       // Only the first pass earns — re-running a solved challenge is free.
       if (!solved) awardXp('challengeSolved');
@@ -119,7 +131,10 @@ export default function ChallengeScreen() {
       <KeyboardAvoidingView
         style={styles.flex}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-        <ScrollView contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled">
+        <ScrollView
+          ref={scrollRef}
+          contentContainerStyle={styles.body}
+          keyboardShouldPersistTaps="handled">
           <Celebration trigger={burst} />
 
           <View style={styles.titleRow}>
@@ -163,7 +178,16 @@ export default function ChallengeScreen() {
 
           {/* Results ------------------------------------------------- */}
           {result && (
-            <View style={styles.results}>
+            <View
+              style={styles.results}
+              onLayout={(e) => {
+                if (!scrollToResults.current) return;
+                scrollToResults.current = false;
+                // Leave the Run button just above the results, so the tap
+                // target that produced them stays in sight.
+                const y = Math.max(0, e.nativeEvent.layout.y - 90);
+                scrollRef.current?.scrollTo({ y, animated: true });
+              }}>
               {result.error ? (
                 <View style={styles.errorBox}>
                   <Text style={styles.errorTitle}>Your code didn&apos;t run</Text>
@@ -177,6 +201,14 @@ export default function ChallengeScreen() {
                       : `${passedCount} of ${result.cases.length} tests passed`}
                     <Text style={styles.timing}> · {result.durationMs}ms</Text>
                   </Text>
+                  {/* One typo fails every case with the same message; saying it
+                      once reads as one problem rather than four. */}
+                  {!!result.commonError && (
+                    <View style={styles.errorBox}>
+                      <Text style={styles.errorTitle}>Every case hit the same error</Text>
+                      <Text style={styles.errorText}>{result.commonError}</Text>
+                    </View>
+                  )}
                   {result.cases.map((c, i) => (
                     <View key={i} style={[styles.caseRow, c.passed ? styles.casePass : styles.caseFail]}>
                       <Text style={styles.caseIcon}>{c.passed ? '✓' : '✗'}</Text>
@@ -189,7 +221,9 @@ export default function ChallengeScreen() {
                             <Text style={styles.caseDetail}>
                               expected {c.expected} · got {c.actual}
                             </Text>
-                            {!!c.error && <Text style={styles.caseError}>{c.error}</Text>}
+                            {!!c.error && !result.commonError && (
+                              <Text style={styles.caseError}>{c.error}</Text>
+                            )}
                             {!!c.note && <Text style={styles.caseNote}>this case checks: {c.note}</Text>}
                           </>
                         )}
