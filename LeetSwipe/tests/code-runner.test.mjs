@@ -331,3 +331,47 @@ test('a local variable legitimately named like a sandboxed global still works', 
   );
   assert.equal(r.passed, true, r.cases[0]?.error);
 });
+
+test('qualified access (window.X, self.X, globalThis.X) is sandboxed too', () => {
+  // Shadowing the bare name `print` stops `print()`, but not `window.print()`
+  // — `window` itself was reachable and unshadowed, so the qualified form
+  // reached the real function regardless. Confirmed live in a browser: before
+  // this fix, `window.print()` inside a solution opened the real system print
+  // dialog even though bare `print()` was already caught.
+  for (const alias of ['window', 'self', 'globalThis', 'top', 'parent', 'frames']) {
+    const r = runTests(`function f(a){ ${alias}.print(a); return a; }`, 'f', [
+      { input: '1', expected: '1' },
+    ]);
+    assert.match(
+      r.cases[0].error ?? '',
+      /no access to the browser/i,
+      `${alias}.print(): unexpected message "${r.cases[0].error}"`,
+    );
+  }
+});
+
+test('assigning to a bare, undeclared "location" does not navigate — it just becomes a local', () => {
+  // Confirmed live in a browser: `location = x` with the `let`/`const` left
+  // off (plausible in a grid/coordinate problem) navigated the whole tab away
+  // via the real Location setter — no dialog, no way back, worse than print().
+  // The fix makes `location` an ordinary (shadowed) local parameter, so the
+  // assignment just sets that local and the function runs normally.
+  const r = runTests(
+    'function f(nums){ location = [nums[0], nums[1]]; return location; }',
+    'f',
+    [{ input: '[3,4]', expected: '[3,4]' }],
+  );
+  assert.equal(r.passed, true, r.cases[0]?.error);
+});
+
+test('bundled test-case expressions get the same sandboxing as learner code', () => {
+  // testCase.expected/input are evaluated with new Function too, and until
+  // now that eval had no shadowing at all — a bad generation run could in
+  // principle produce a test case that reaches a real global directly, with
+  // no defence whatsoever. The pipeline is LLM-authored, so "in principle"
+  // is worth closing cheaply rather than trusting it never happens.
+  const r = runTests('function f(a){ return a; }', 'f', [
+    { input: 'print()', expected: '1' },
+  ]);
+  assert.match(r.cases[0].error ?? '', /no built-in print/i);
+});
