@@ -298,3 +298,36 @@ test('one error shared by every case is reported once', () => {
   assert.ok(mixed.cases[0].error, 'first case should throw');
   assert.ok(!mixed.cases[1].error, 'second case should fail on value, not throw');
 });
+
+test('print, alert, confirm, prompt, open and close are sandboxed', () => {
+  // On the web these are real, disruptive browser globals — `new Function`'s
+  // scope chain falls back to `window` for any name not declared locally, so
+  // an undeclared call reaches the real thing instead of throwing. The bug
+  // that shipped: a learner writes `print(x)` out of Python habit to debug,
+  // and the *browser's* print dialog opens once per test case the grader
+  // runs their function against, instead of the ReferenceError they expect.
+  for (const [name, hint] of [
+    ['print', /Python|console\.log/i],
+    ['alert', /blocks the whole app/i],
+    ['confirm', /blocks the whole app/i],
+    ['prompt', /waits for typed input/i],
+    ['open', /new browser tab/i],
+    ['close', /browser tab/i],
+  ]) {
+    const r = runTests(`function f(a){ ${name}(a); return a; }`, 'f', [{ input: '1', expected: '1' }]);
+    assert.ok(r.cases[0].error, `${name}() should be caught, not silently succeed`);
+    assert.match(r.cases[0].error, hint, `${name}: unexpected message "${r.cases[0].error}"`);
+  }
+});
+
+test('a local variable legitimately named like a sandboxed global still works', () => {
+  // The shadow is a function parameter, so ordinary lexical shadowing by the
+  // learner's own declarations must still take priority — this is not about
+  // banning the word "open", only about not falling through to the browser.
+  const r = runTests(
+    'function f(nums){ const open = nums.filter(n => n > 0); return open.length; }',
+    'f',
+    [{ input: '[1,-1,2]', expected: '2' }],
+  );
+  assert.equal(r.passed, true, r.cases[0]?.error);
+});

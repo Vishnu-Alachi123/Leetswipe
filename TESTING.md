@@ -82,6 +82,7 @@ them. All are fixed and carry regression tests where a test can express them.
 | Reel code pane clipped | Pane height was not a multiple of the line height and flex-shrank on short screens, slicing a row through its glyphs | Height snapped to whole lines, `flexShrink: 0`, extra tier for <620pt screens |
 | Chrome followed the system colour scheme | White tab bar and stack backgrounds framing a dark app on a light-mode device | Navigation theme pinned dark (`app/_layout.tsx`) |
 | `app/modal.tsx` | Leftover Expo template screen ("This is a modal") shipped as a public route | Deleted |
+| `print()` reached the real browser global | A learner debugging with Python-style `print(x)` silently opened the **system print dialog**, once per test case, instead of getting a `ReferenceError` | `new Function`'s scope chain falls back to `window` for any undeclared name; `print`, `alert`, `confirm`, `prompt`, `open`, `close` are now shadowed with parameters that throw an honest, actionable error instead |
 
 ### Checked and found correct
 
