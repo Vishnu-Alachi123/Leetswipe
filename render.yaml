@@ -1,0 +1,36 @@
+# Render Blueprint for the LeetSwipe API.
+#
+# Render reads this file automatically when you connect this repo as a
+# "Blueprint" (New + -> Blueprint at render.com), so the service, build
+# command, and start command never need typing into their dashboard by hand.
+# What you still set by hand, once, are the secrets below — see
+# DEPLOY_BACKEND.md for the full walkthrough.
+#
+# Free tier caveat: a free web service on Render sleeps after ~15 minutes with
+# no traffic and takes 30-60s to wake on the next request. Fine for testing
+# and a small first audience; upgrade the plan below to "starter" ($7/mo) once
+# that cold start is actually costing you real users.
+services:
+  - type: web
+    name: leetswipe-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Secrets — set these in the Render dashboard after the first deploy,
+      # not here (this file is committed to a public repo).
+      - key: MONGODB_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: GOOGLE_WEB_CLIENT_ID
+        sync: false
+      - key: GOOGLE_IOS_CLIENT_ID
+        sync: false
+      - key: GOOGLE_ANDROID_CLIENT_ID
+        sync: false

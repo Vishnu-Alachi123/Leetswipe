@@ -11,7 +11,28 @@ import { randomUUID } from 'crypto';
 import jwt from 'jsonwebtoken';
 import type { Request, Response, NextFunction } from 'express';
 
-const SECRET = process.env.JWT_SECRET || 'dev-insecure-secret-change-me';
+const INSECURE_DEFAULT = 'dev-insecure-secret-change-me';
+
+/**
+ * Refuse to boot with the placeholder secret once this is actually deployed.
+ *
+ * `npm run dev` on a laptop with no `.env` is a normal, harmless way to poke at
+ * the API, so the fallback stays for that. But every token this process signs
+ * is trusted for a year (TOKEN_TTL below) and gates every account's saved
+ * questions and XP — silently deploying with a secret anyone can read in this
+ * public repo would let anyone mint a valid token for any userId. NODE_ENV is
+ * set to "production" by essentially every host (Render, Railway, Fly, …), so
+ * this only fires on a real deployment, not a local `npm run dev`.
+ */
+if (process.env.NODE_ENV === 'production' && !process.env.JWT_SECRET) {
+  throw new Error(
+    'JWT_SECRET is not set. Refusing to start in production with the ' +
+      `public default secret ("${INSECURE_DEFAULT}") — set a long random ` +
+      'value (e.g. `openssl rand -hex 32`) in the environment.',
+  );
+}
+
+const SECRET = process.env.JWT_SECRET || INSECURE_DEFAULT;
 const TOKEN_TTL = '365d';
 
 export interface AuthedRequest extends Request {

@@ -100,6 +100,9 @@ links to every route resolve under the Pages base path.
 - **Only 5 code challenges** ship. The swipe deck has 450 MCQs, so the Write
   format is by far the thinnest of the three.
 - **Cross-device sync and the leaderboard need the server deployed**; without
-  it, sign-in stores a device-local profile only (see `GOOGLE_SIGNIN.md`).
+  it, sign-in stores a device-local profile only. The server itself is
+  reviewed and deploy-ready (typechecks, builds, DB-dependent routes fail
+  cleanly rather than crashing when unreachable — verified directly, not
+  assumed) but nothing is hosted yet. See `DEPLOY_BACKEND.md`.
 - Reels generated since the last audio run narrate with the on-device voice
   until `generate_audio.py` is run for them.
