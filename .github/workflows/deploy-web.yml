@@ -39,6 +39,16 @@ jobs:
 
       - name: Export web build
         run: npx expo export --platform web
+        env:
+          # Baked into the client bundle at build time (Expo's EXPO_PUBLIC_
+          # convention), not read at runtime. All optional: unset, the app
+          # runs exactly as it does today — fully offline, device-local
+          # profiles. Set these as repo secrets once the backend from
+          # DEPLOY_BACKEND.md is live to switch every future deploy over.
+          EXPO_PUBLIC_API_URL: ${{ secrets.EXPO_PUBLIC_API_URL }}
+          EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID: ${{ secrets.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID }}
+          EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID: ${{ secrets.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID }}
+          EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID: ${{ secrets.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID }}
 
       - name: Add Pages helpers (.nojekyll + SPA fallback)
         run: |

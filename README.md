@@ -12,6 +12,9 @@ Interview practice in three formats, all of which work offline:
 **📱 Run on your phone:** see [`LeetSwipe/MOBILE.md`](LeetSwipe/MOBILE.md) (Expo Go / EAS Build)
 **🧪 Testing & QA:** see [`TESTING.md`](TESTING.md) — how to run the suites, how to
 serve the web export correctly, and the audit log of what has been checked
+**☁️ Accounts today:** device-local only — no server is deployed. See
+[`DEPLOY_BACKEND.md`](DEPLOY_BACKEND.md) to make sign-in, cross-device sync, and
+the leaderboard real (~30 min, $0)
 
 ## Stack
 - **Frontend:** React Native / Expo (`LeetSwipe/`) — topic picker, swipe deck, Learn
